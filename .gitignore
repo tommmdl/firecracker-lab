@@ -1,0 +1,11 @@
+# Lista de arquivos permitidos; artefatos locais ficam exclu?dos por padr?o.
+/*
+!/.gitignore
+!/README.md
+!/config/
+!/docs/
+/config/*
+!/config/vm-config.example.json
+/docs/*
+!/docs/validation.md
+!/docs/roadmap.md
