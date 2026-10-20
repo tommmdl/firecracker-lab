@@ -1,0 +1,2 @@
+* text=auto eol=lf
+tests/fixtures/historical-framing.txt -text -diff

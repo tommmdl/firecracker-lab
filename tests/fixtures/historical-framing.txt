@@ -1,0 +1,6 @@
+ubuntu-fc-uvm login: root (automatic login)
+AUDIT_GUEST_BEGIN
+uid=0(root) gid=0(root) groups=0(root)
+6.18.54+
+/dev/vda ext4   rw,relatime
+AUDIT_GUEST_END

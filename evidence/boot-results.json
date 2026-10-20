@@ -1,0 +1,156 @@
+{
+  "executed_on": "2026-10-20",
+  "environment": {
+    "host": "Ubuntu WSL2 x86-64 with KVM",
+    "firecracker": "1.17.0",
+    "guest": "Ubuntu 24.04.5 LTS",
+    "vcpu_count": 2,
+    "mem_size_mib": 1024,
+    "network_interfaces": 0
+  },
+  "controller_sha256": "14fe8b4def3d1d583088ddd2bc2f9478ec2b1ef9d76072bde13cc6831a63f6aa",
+  "reader_tests": {
+    "command": "python3 -m unittest discover -s tests -v",
+    "tests": 7,
+    "failures": 0
+  },
+  "scope": "Local tests on fresh copies of existing artifacts; no GitHub Actions boot run. Raw logs, disks and full reports remain under the original local lab directory; only reviewed summaries are committed.",
+  "runs": [
+    {
+      "schema": 1,
+      "started_at": "2026-10-20T14:46:14.202069+00:00",
+      "status": "passed",
+      "failure": null,
+      "guest": {
+        "uid": "0",
+        "kernel": "6.18.54+",
+        "rootfs": "/dev/vda ext4   rw,relatime"
+      },
+      "forced_stop": false,
+      "shutdown_http_status": 204,
+      "exit_code": 0,
+      "network_interfaces": 0,
+      "original_sha256_before": {
+        "firecracker": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+        "kernel": "445b3d0ed9650869e854656308d60e6cca773190526b037b45941cbf61910f0d",
+        "rootfs": "48f95671ce1903228a347340cf747f5af9dcc9f665685bc35e5bd871b2b3c1d4",
+        "config": "87a3c0a9ee91020d7986ad908c1eb27475ed514f22b6778e8d8309261114a564"
+      },
+      "original_sha256_after": {
+        "firecracker": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+        "kernel": "445b3d0ed9650869e854656308d60e6cca773190526b037b45941cbf61910f0d",
+        "rootfs": "48f95671ce1903228a347340cf747f5af9dcc9f665685bc35e5bd871b2b3c1d4",
+        "config": "87a3c0a9ee91020d7986ad908c1eb27475ed514f22b6778e8d8309261114a564"
+      },
+      "clone_sha256_before": "48f95671ce1903228a347340cf747f5af9dcc9f665685bc35e5bd871b2b3c1d4",
+      "boot_evidence_seconds": 6.183,
+      "originals_unchanged": true,
+      "console_sha256": "97e3342c6279d7ea3d83215b7466b57eab0f541af81d91b4ba6be18a34c53fd8",
+      "elapsed_seconds": 55.23,
+      "local_run_id": "boot-4grim0vz",
+      "scenario": "normal-1",
+      "controller_exit_code": 0,
+      "console_findings": [
+        "2026-10-20T11:46:59.959887253 [anonymous-instance:fc_vcpu 0] vcpu: IO write @ 0xcf8:0x4 failed: Failed to find address range.",
+        "2026-10-20T11:46:59.959996653 [anonymous-instance:fc_vcpu 0] vcpu: IO read @ 0xcfc:0x2 failed: Failed to find address range.",
+        "2026-10-20T11:47:00.690282656 [anonymous-instance:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T11:47:00.690331756 [anonymous-instance:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T11:47:00.699096756 [anonymous-instance:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T11:47:00.699169656 [anonymous-instance:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T11:47:01.201178757 [anonymous-instance:fc_vcpu 1] vcpu: IO read @ 0x87:0x1 failed: Failed to find address range.",
+        "[    1.808769] check access for rdinit=/init failed: -2, ignoring",
+        "SELinux:  Could not open policy file <= /etc/selinux/targeted/policy/policy.35:  No such file or directory"
+      ],
+      "unexpected_root_command": false
+    },
+    {
+      "schema": 1,
+      "started_at": "2026-10-20T14:47:24.944146+00:00",
+      "status": "passed",
+      "failure": null,
+      "guest": {
+        "uid": "0",
+        "kernel": "6.18.54+",
+        "rootfs": "/dev/vda ext4   rw,relatime"
+      },
+      "forced_stop": false,
+      "shutdown_http_status": 204,
+      "exit_code": 0,
+      "network_interfaces": 0,
+      "original_sha256_before": {
+        "firecracker": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+        "kernel": "445b3d0ed9650869e854656308d60e6cca773190526b037b45941cbf61910f0d",
+        "rootfs": "48f95671ce1903228a347340cf747f5af9dcc9f665685bc35e5bd871b2b3c1d4",
+        "config": "87a3c0a9ee91020d7986ad908c1eb27475ed514f22b6778e8d8309261114a564"
+      },
+      "original_sha256_after": {
+        "firecracker": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+        "kernel": "445b3d0ed9650869e854656308d60e6cca773190526b037b45941cbf61910f0d",
+        "rootfs": "48f95671ce1903228a347340cf747f5af9dcc9f665685bc35e5bd871b2b3c1d4",
+        "config": "87a3c0a9ee91020d7986ad908c1eb27475ed514f22b6778e8d8309261114a564"
+      },
+      "clone_sha256_before": "48f95671ce1903228a347340cf747f5af9dcc9f665685bc35e5bd871b2b3c1d4",
+      "boot_evidence_seconds": 4.61,
+      "originals_unchanged": true,
+      "console_sha256": "155902f910145611286fa5b694b8c391fe997ead56495de21246518f3dfbef59",
+      "elapsed_seconds": 31.263,
+      "local_run_id": "boot-303105nd",
+      "scenario": "normal-2",
+      "controller_exit_code": 0,
+      "console_findings": [
+        "2026-10-20T11:47:48.211882635 [anonymous-instance:fc_vcpu 0] vcpu: IO write @ 0xcf8:0x4 failed: Failed to find address range.",
+        "2026-10-20T11:47:48.211973135 [anonymous-instance:fc_vcpu 0] vcpu: IO read @ 0xcfc:0x2 failed: Failed to find address range.",
+        "2026-10-20T11:47:48.831302812 [anonymous-instance:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T11:47:48.831357612 [anonymous-instance:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T11:47:48.832360612 [anonymous-instance:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T11:47:48.832568312 [anonymous-instance:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T11:47:49.237460596 [anonymous-instance:fc_vcpu 0] vcpu: IO read @ 0x87:0x1 failed: Failed to find address range.",
+        "[    1.105210] check access for rdinit=/init failed: -2, ignoring",
+        "SELinux:  Could not open policy file <= /etc/selinux/targeted/policy/policy.35:  No such file or directory"
+      ],
+      "unexpected_root_command": false
+    },
+    {
+      "schema": 1,
+      "started_at": "2026-10-20T14:48:11.993635+00:00",
+      "status": "failed",
+      "failure": "TimeoutError: Timed out waiting for complete guest evidence",
+      "guest": null,
+      "forced_stop": false,
+      "shutdown_http_status": 204,
+      "exit_code": 0,
+      "network_interfaces": 0,
+      "original_sha256_before": {
+        "firecracker": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+        "kernel": "445b3d0ed9650869e854656308d60e6cca773190526b037b45941cbf61910f0d",
+        "rootfs": "48f95671ce1903228a347340cf747f5af9dcc9f665685bc35e5bd871b2b3c1d4",
+        "config": "87a3c0a9ee91020d7986ad908c1eb27475ed514f22b6778e8d8309261114a564"
+      },
+      "original_sha256_after": {
+        "firecracker": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+        "kernel": "445b3d0ed9650869e854656308d60e6cca773190526b037b45941cbf61910f0d",
+        "rootfs": "48f95671ce1903228a347340cf747f5af9dcc9f665685bc35e5bd871b2b3c1d4",
+        "config": "87a3c0a9ee91020d7986ad908c1eb27475ed514f22b6778e8d8309261114a564"
+      },
+      "clone_sha256_before": "48f95671ce1903228a347340cf747f5af9dcc9f665685bc35e5bd871b2b3c1d4",
+      "originals_unchanged": true,
+      "console_sha256": "ac433ede7ab6c29ace436009cf76828e57ad8db8cc72691ee7a6bf6f581cd34d",
+      "elapsed_seconds": 24.184,
+      "local_run_id": "boot-z48unzxh",
+      "scenario": "deadline-control-3s",
+      "controller_exit_code": 1,
+      "console_findings": [
+        "2026-10-20T11:48:29.395746702 [anonymous-instance:fc_vcpu 0] vcpu: IO write @ 0xcf8:0x4 failed: Failed to find address range.",
+        "2026-10-20T11:48:29.395802602 [anonymous-instance:fc_vcpu 0] vcpu: IO read @ 0xcfc:0x2 failed: Failed to find address range.",
+        "2026-10-20T11:48:30.054801496 [anonymous-instance:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T11:48:30.054860796 [anonymous-instance:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T11:48:30.055614196 [anonymous-instance:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T11:48:30.055670796 [anonymous-instance:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T11:48:30.485942593 [anonymous-instance:fc_vcpu 0] vcpu: IO read @ 0x87:0x1 failed: Failed to find address range.",
+        "[    1.205916] check access for rdinit=/init failed: -2, ignoring",
+        "SELinux:  Could not open policy file <= /etc/selinux/targeted/policy/policy.35:  No such file or directory"
+      ],
+      "unexpected_root_command": false
+    }
+  ]
+}

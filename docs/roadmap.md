@@ -1,12 +1,15 @@
-# Pr?ximas etapas
+# Próximos exercícios
 
-1. Corrigir a interpreta??o do console e registrar separadamente resultado da automa??o e evid?ncias do guest.
-2. Inspecionar `fcnet.service`, configura??o SSH e presen?a da chave p?blica no guest, sem divulgar chaves privadas.
-3. Escolher uma sub-rede sem conflito e criar TAP exclusiva, inicialmente sem encaminhamento externo.
-4. Configurar endere?os host/guest e validar somente a comunica??o entre eles.
-5. Validar SSH por chave, verificar a identidade do host e manter `known_hosts` exclusivo.
-6. Acrescentar encaminhamento e NAT com regras limitadas ao laborat?rio e rollback documentado.
-7. Aplicar bloqueio de egress por padr?o e libera??es espec?ficas; testar destinos permitidos e negados e conferir contadores no host.
-8. Evoluir para workloads de agentes com c?pias descart?veis, limites de CPU/mem?ria/tempo, jailer, credenciais tempor?rias, proxy de sa?da e coleta de resultados.
+[English](roadmap.en.md)
 
-As etapas de rede e firewall n?o foram implementadas. Cada mudan?a dever? ter autoriza??o, diagn?stico pr?vio, valida??o e revers?o. O boot validado isoladamente n?o comprova isolamento adequado para c?digo n?o confi?vel.
+O boot agora tem um controlador no repositório, regressões para a leitura do console e evidências de execuções locais. O resultado antigo continua registrado como falha da automação.
+
+1. Preparar kernel/rootfs a partir de fontes verificadas e versões fixadas, para reproduzir também a montagem do ambiente.
+2. Inspecionar `fcnet.service`, o login automático e a configuração SSH antes de acrescentar rede.
+3. Escolher uma sub-rede sem conflito e criar uma TAP exclusiva, inicialmente só para host/guest.
+4. Validar SSH por chave e a identidade do host, com `known_hosts` exclusivo.
+5. Implementar NAT e regras de saída limitadas ao lab, testando destinos permitidos e negados e a reversão.
+6. Executar uma tarefa conhecida em um disco descartável e recolher código de saída, logs e resultados.
+7. Validar `jailer`, limites de CPU/memória/tempo e o comportamento na falha antes de avançar para tarefas não confiáveis.
+
+Rede, SSH, firewall e `jailer` continuam pendentes. Esta etapa não altera esses componentes nem publica o repositório.

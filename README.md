@@ -1,52 +1,54 @@
-# Firecracker Lab
+# Firecracker na prática
 
-Laborat?rio local de microVMs com Firecracker v1.17.0, Ubuntu WSL2 e KVM, em arquitetura x86-64.
+Português · [English](README.en.md)
 
-## Estado verificado
+Este lab começou com uma microVM que já dava boot, mas cuja automação dizia que faltava evidência do guest. Agora temos um teste repetível: copiar o disco, subir a VM, ler respostas pelo console e encerrar pela API, conferindo os arquivos originais no final.
 
-- Artefatos existentes preservados; o projeto n?o foi recriado.
-- Acesso de leitura e escrita ao KVM validado ap?s associa??o do usu?rio ao grupo `kvm`.
-- Boot de uma ?nica microVM com c?pia do disco validado pelo console.
-- Guest Ubuntu 24.04.5 LTS, kernel `6.18.54+`, sess?o root por login autom?tico.
-- `/dev/vda` montado como ext4 grav?vel.
-- Encerramento controlado por Ctrl+Alt+Del via API; Firecracker terminou com c?digo 0.
-- Hash do disco original e conte?do da configura??o original preservados.
+O foco desta etapa é o boot local em Ubuntu WSL2 com KVM. Rede, SSH e execução de workloads ficam para os próximos exercícios.
 
-O controlador autom?tico de teste n?o reconheceu o marcador final devido ?s quebras de linha do console. Seu resultado registrou `Guest evidence incomplete`; as evid?ncias foram verificadas diretamente no console. A automa??o ainda precisa ser corrigida.
+## O que o teste confere
 
-TAP, conectividade host/guest, SSH, NAT e restri??es de egress permanecem pendentes. N?o h? teste funcional de rede conclu?do.
+- O disco usado pela VM é uma cópia com SHA256 igual ao original antes do boot.
+- O shell do guest responde com UID, kernel e montagem de `/dev/vda` como ext4 gravável.
+- Os marcadores pertencem à execução atual; o eco do comando não conta como resposta.
+- A API aceita `SendCtrlAltDel` com HTTP 204, e o Firecracker termina com código zero, sem encerramento forçado.
+- Disco, kernel, binário e configuração originais mantêm os hashes.
 
-## Arquitetura
+A leitura normaliza CR/LF e remove cores ANSI, preservando o console bruto no diretório local da execução. O script espera o prompt root que esta imagem oferece por login automático; não envia outro `root` nem tenta autenticar.
 
-```text
-Windows -> Ubuntu WSL2 -> KVM -> Firecracker -> kernel + disco ext4 clonado
+## Como repetir
+
+Você precisa de Linux x86-64, Python 3, acesso de leitura e escrita a `/dev/kvm`, Firecracker, kernel e rootfs compatíveis já preparados. O guest precisa de login automático root no console, `id`, `uname` e `findmnt`. O disco de origem deve estar offline, sem outra VM ou montagem usando-o. O lock do script é consultivo e só coordena ferramentas que respeitam esse lock.
+
+No ambiente existente, os artefatos ficam em `$HOME/fc-lab`. Ajuste os caminhos para o seu ambiente:
+
+```bash
+python3 -m unittest discover -s tests -v
+
+python3 scripts/boot_check.py \
+  --firecracker "$HOME/fc-lab/firecracker" \
+  --kernel "$HOME/fc-lab/vmlinux" \
+  --rootfs "$HOME/fc-lab/rootfs.ext4" \
+  --config "$HOME/fc-lab/vm-config.json" \
+  --output-parent "$HOME/fc-lab"
 ```
 
-A configura??o testada usa 2 vCPUs e 1024 MiB de mem?ria, sem interface de rede declarada. O bin?rio `jailer` existe no laborat?rio, mas seu uso n?o foi validado.
+Cada execução cria uma pasta `boot-*` exclusiva, com `rootfs.ext4`, `vm-config.json`, `console.log` e `result.json`. Use um caminho curto no filesystem Linux para o socket Unix. Reserve pelo menos o tamanho do disco por execução; as cópias são mantidas para inspeção e a limpeza é manual, com a VM parada.
 
-## Conte?do deste reposit?rio
+O tempo padrão para obter as respostas é 90 segundos, depois de copiar e conferir o disco. O encerramento tem mais 30 segundos. Código de saída `0` significa teste aprovado; `1`, falha registrada em `result.json`; `2`, erro de preparação/argumentos. Falhas de preparação podem acontecer antes de existir um relatório. O script não repete um teste que falhou.
 
-- `config/vm-config.example.json`: exemplo port?til baseado na configura??o testada.
-- `docs/validation.md`: evid?ncias, limita??es e procedimento de valida??o.
-- `docs/roadmap.md`: pr?ximos passos t?cnicos.
+Para exercitar uma falha real de prazo, repita o comando com `--boot-timeout 3`. Esse valor causou falha no ambiente documentado, mas não garante falha em toda máquina. O resultado deve continuar reprovado mesmo que a VM encerre corretamente depois. [Procedimento e resultados](docs/validation.md).
 
-Discos, kernels, bin?rios, credenciais, sockets e logs brutos n?o s?o distribu?dos. Este reposit?rio documenta o laborat?rio existente; n?o cont?m instalador ou provisionamento completo.
+## Evidências e próximos passos
 
-## Pr?-requisitos
+- [Validação do boot, repetição e controle de falha](docs/validation.md)
+- [Resultados revisados](evidence/boot-results.json)
+- [Falha anterior preservada](evidence/historical-failure.json)
+- [Próximos exercícios](docs/roadmap.md)
+- [Configuração de exemplo](config/vm-config.example.json)
 
-Linux x86-64 com KVM dispon?vel (no laborat?rio, Ubuntu WSL2), Firecracker compat?vel, kernel e rootfs preparados, Python 3 e ferramentas de inspe??o de arquivos e filesystems. O uso de WSL2 exige virtualiza??o disponibilizada ao Linux.
+A repetibilidade foi validada com os artefatos locais existentes. Os hashes identificam esses arquivos; não comprovam sua origem de forma independente. O repositório ainda não provisiona uma imagem do zero e não distribui kernel, disco, binários ou chaves. Não há teste de boot no GitHub Actions nesta etapa.
 
-O dispositivo `/dev/kvm` deve permitir leitura e escrita ao usu?rio executor. No Ubuntu deste laborat?rio, ele pertence a `root:kvm`, modo `0660`. A associa??o administrativa ao grupo ? persistente e exige uma nova sess?o para atualizar os grupos efetivos. N?o use permiss?es globais `0666`.
+O `jailer` ainda não foi validado. Este exercício não demonstra isolamento suficiente para código não confiável. A implementação e os testes tiveram ajuda do assistente; as evidências registram o que foi executado no ambiente local. O repositório permanece privado.
 
-## Configura??o
-
-O exemplo usa caminhos relativos ao diret?rio de execu??o. N?o execute diretamente contra o disco original: prepare um diret?rio exclusivo e uma c?pia validada, e ajuste os caminhos na configura??o de teste conforme `docs/validation.md`.
-
-O disco do exemplo ? grav?vel. Inicializar a VM altera a c?pia. Login autom?tico como root foi observado na imagem existente; antes de qualquer exposi??o de rede, revise esse comportamento e a configura??o SSH.
-
-## Refer?ncias
-
-- https://github.com/firecracker-microvm/firecracker
-- https://github.com/firecracker-microvm/firecracker/blob/v1.17.0/docs/getting-started.md
-
-N?o h? licen?a definida para o conte?do pr?prio deste reposit?rio. As licen?as dos componentes externos s?o independentes.
+Referência: [guia oficial do Firecracker v1.17.0](https://github.com/firecracker-microvm/firecracker/blob/v1.17.0/docs/getting-started.md). Não há licença definida para o conteúdo próprio; as licenças dos componentes externos são independentes.

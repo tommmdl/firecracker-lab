@@ -1,50 +1,56 @@
-# Valida??o funcional
+# Como validamos o boot
 
-## Evid?ncias observadas em 16/10/2026
+[English](validation.en.md) · [Voltar ao README](../README.md)
 
-O console do guest registrou:
+## O problema anterior
 
-```text
-Ubuntu 24.04.5 LTS ubuntu-fc-uvm ttyS0
-root (automatic login)
-uid=0(root) gid=0(root) groups=0(root)
-6.18.54+
-/dev/vda ext4 rw,relatime
-```
+Em 16/10/2026, o Firecracker encerrou com código zero e o console mostrou UID root, kernel `6.18.54+` e `/dev/vda` como ext4 gravável. Mesmo assim, o resultado do controlador foi `Guest evidence incomplete`.
 
-A API recebeu `SendCtrlAltDel` e respondeu HTTP 204. O guest executou a sequ?ncia de shutdown e o Firecracker registrou `exiting successfully. exit_code=0`.
+O console preservado contém os marcadores de início e fim, com `CR CR LF` nas linhas. Uma busca literal por `\nAUDIT_GUEST_END\n` não encontra esse trecho bruto. A normalização resolve essa diferença. Também havia um `root` enviado depois do login automático, causando `-bash: root: command not found`.
 
-N?o houve valida??o de senha: o login foi autom?tico. O marcador final n?o foi reconhecido pelo controlador, que registrou falha de automa??o apesar das evid?ncias presentes no console. N?o se deve declarar sucesso autom?tico at? corrigir esse reconhecimento.
+O código do controlador antigo não estava guardado no repositório. Não afirmamos ter reexecutado esse controlador: o teste de regressão usa um trecho real e revisado do console para reproduzir a diferença de enquadramento das linhas. O [resultado antigo](../evidence/historical-failure.json) continua registrado como falha da automação, mesmo com evidências manuais de boot.
 
-## Verifica??es estruturais anteriores
+## O controlador novo
 
-- `e2fsck -f -n` no ext4 terminou com c?digo 0, sem reparos.
-- `gzip -t` e listagem TAR terminaram com c?digo 0.
-- Os 23 arquivos presentes no manifesto SHA256 local da distribui??o conferiram.
-- Os bin?rios de trabalho coincidiram com os bin?rios da distribui??o.
-- O kernel possui cabe?alho ELF x86-64 leg?vel.
-- O SquashFS possui superbloco v?lido; seu conte?do integral n?o foi validado.
+O [script](../scripts/boot_check.py) usa somente a biblioteca padrão do Python. Ele cria um diretório exclusivo, calcula hashes dos quatro artefatos originais, copia o disco e confere a cópia antes de iniciar uma única VM. A configuração gerada aponta para a cópia; a original não é editada.
 
-O manifesto local comprova consist?ncia local, sem autentica??o independente da origem.
+Um pseudo-terminal recebe os bytes do console. A interpretação normaliza CR/LF e remove sequências ANSI; o log bruto permanece intacto. O controlador aguarda o prompt root e envia uma consulta com um identificador aleatório por execução. Só aceita marcadores completos em linhas próprias e respostas válidas entre eles. O eco do comando não passa nessa checagem.
 
-## Procedimento para um pr?ximo teste autorizado
+O guest precisa responder com UID `0`, um valor de kernel e montagem `/dev/vda ext4` contendo a opção `rw`. Em seguida, o controlador envia `SendCtrlAltDel` pela API no socket Unix e exige HTTP 204 e saída zero. Se o prazo de encerramento vencer, termina somente o processo que criou e reprova o teste. A preservação dos quatro hashes também é obrigatória.
 
-1. Confirmar acesso ao KVM, mem?ria, espa?o livre e aus?ncia de processos ou usu?rios do disco.
-2. Calcular SHA256 do disco e da configura??o originais.
-3. Criar diret?rio exclusivo sem sobrescrita; copiar o disco e comparar os hashes.
-4. Criar configura??o separada apontando para o kernel existente e o disco clonado.
-5. Iniciar uma ?nica VM, sem rede, com socket exclusivo e registro de console no diret?rio novo.
-6. Normalizar CR/LF ao interpretar o console e reconhecer login autom?tico sem enviar um nome de usu?rio desnecess?rio.
-7. Confirmar kernel, identidade do guest e montagem do rootfs por comandos no console.
-8. Solicitar reboot pelo guest ou Ctrl+Alt+Del pela API; confirmar a sa?da do processo.
-9. Recalcular os hashes originais e comparar com os valores anteriores.
+## Execuções reais desta etapa
 
-Forma do comando (substitua os caminhos):
+Os [resultados revisados](../evidence/boot-results.json) registram as duas execuções aprovadas e o controle com prazo reduzido, junto aos hashes e aos avisos extraídos dos consoles. Os tempos até a resposta do guest usam relógio monotônico do controlador, começando depois da cópia e dos hashes iniciais; não são um benchmark de inicialização do kernel. O tempo total inclui preparação e conferência final.
+
+As duas execuções normais começaram de cópias novas do mesmo disco original. Os testes usam Firecracker v1.17.0, 2 vCPUs, 1024 MiB e nenhuma interface de rede configurada. O guest é Ubuntu 24.04.5 LTS com kernel `6.18.54+`.
+
+O controle usa o mesmo comando do README com `--boot-timeout 3`. Esperamos saída `1` e ausência de evidência completa dentro do prazo. Um shutdown bem-sucedido depois do timeout não transforma o teste em sucesso. Esse prazo foi escolhido para este ambiente; uma máquina mais rápida pode exigir outro valor para reproduzir a falha.
+
+
+| Execução | Resultado do controlador | Resposta do guest | Tempo total | Shutdown |
+| --- | --- | --- | --- | --- |
+| Normal 1 | Aprovado, saída 0 | 6,183 s | 55,230 s | HTTP 204, Firecracker 0 |
+| Normal 2 | Aprovado, saída 0 | 4,610 s | 31,263 s | HTTP 204, Firecracker 0 |
+| Controle, prazo de 3 s | Reprovado, saída 1 | Prazo excedido | 24,184 s | HTTP 204, Firecracker 0 |
+
+Os quatro originais ficaram intactos e nenhum encerramento foi forçado nas três execuções.
+
+## Regressões da leitura
 
 ```bash
-/caminho/firecracker \
-  --api-sock /diretorio-exclusivo/api.socket \
-  --config-file /diretorio-exclusivo/vm-config.json
+python3 -m unittest discover -s tests -v
 ```
 
-A exist?ncia do processo ou do socket n?o comprova boot. Falhas exigem interrup??o, registro e diagn?stico; n?o repetir testes ou avan?ar para rede automaticamente.
+São sete testes: variações de CR/LF e ANSI; marcador recebido em partes; eco do comando; identificador de outra execução; ausência do marcador final; UID/kernel/filesystem inválidos; e o trecho histórico. Não exigem KVM e não substituem os boots reais.
+
+## O que ficou visível
+
+Os consoles registram falhas de acesso a faixas de portas de I/O, `check access for rdinit=/init failed: -2, ignoring` e ausência de arquivo de política SELinux. O guest prosseguiu pelo `/sbin/init` e respondeu aos comandos, mas essas mensagens não foram corrigidas nesta etapa. O teste valida boot e encerramento; não declara saúde de todos os serviços nem proteção SELinux ativa. Os trechos revisados constam na evidência JSON.
+
+As verificações estruturais de 16/10/2026 continuam sendo histórico, sem nova execução nesta etapa: `e2fsck -f -n`, `gzip -t`, listagem TAR e os 23 hashes do manifesto local passaram; binários coincidiam com a distribuição e o kernel tinha cabeçalho ELF x86-64. O superbloco SquashFS foi inspecionado, sem validar seu conteúdo integral. O manifesto local não autentica independentemente a origem.
+
+## Arquivos locais e limites
+
+`console.log`, discos, binários, configurações de execução e sockets ficam no diretório local indicado em cada resultado. O repositório recebe apenas resumos revisados, hashes e um trecho mínimo do console antigo. Nenhuma chave entra nas evidências. As cópias dos testes ficam preservadas para inspeção; remova-as manualmente apenas com os processos parados.
+
+Ainda não há provisionamento completo dos artefatos, teste de rede, SSH, `jailer` ou execução de código não confiável. A documentação descreve repetição com a imagem já preparada, com login automático root. O repositório permanece privado.

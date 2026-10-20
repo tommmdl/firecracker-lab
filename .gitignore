@@ -1,11 +1,19 @@
-# Lista de arquivos permitidos; artefatos locais ficam exclu?dos por padr?o.
+# Somente código, documentação e evidências revisadas entram no Git.
 /*
 !/.gitignore
+!/.gitattributes
 !/README.md
+!/README.en.md
 !/config/
 !/docs/
+!/scripts/
+!/tests/
+!/evidence/
 /config/*
 !/config/vm-config.example.json
-/docs/*
-!/docs/validation.md
-!/docs/roadmap.md
+__pycache__/
+*.pyc
+*.ext4
+*.squashfs
+*.socket
+*.log

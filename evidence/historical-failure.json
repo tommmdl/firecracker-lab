@@ -1,0 +1,19 @@
+{
+  "source": "Local audit from 2026-10-16; reviewed summary of the original result and console",
+  "original_result": {
+    "exit_code": 0,
+    "guest_evidence": false,
+    "failure": "Guest evidence incomplete",
+    "original_unchanged": true,
+    "original_config_unchanged": true
+  },
+  "console_observations": {
+    "automatic_root_login": true,
+    "unnecessary_root_command": "-bash: root: command not found",
+    "begin_and_end_markers_present": true,
+    "line_ending_before_final_newline": "CR CR LF",
+    "guest_kernel": "6.18.54+",
+    "rootfs": "/dev/vda ext4 rw,relatime"
+  },
+  "scope": "Old controller source was not retained in this repository. The new regression reproduces the exact-line framing mismatch using a reviewed excerpt; it does not rerun the old controller."
+}
