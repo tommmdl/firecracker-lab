@@ -2,6 +2,8 @@
 
 [English](shutdown-investigation.en.md) · [README](../README.md) · [Resultados revisados](../evidence/shutdown-investigation.json)
 
+A etapa seguinte usou tracefs sem pausas de depurador: [escalonamento e sinais sob carga](vcpu-scheduling.md). As duas campanhas finais registraram 24 encerramentos limpos e 12 capturas válidas, incluindo o teste de tarefas. A maior espera pronta foi 13,262 ms; nenhuma reproduziu o panic espontâneo. A investigação preserva uma captura vazia inicialmente aprovada por engano e uma sobreposição de campanhas excluída da comparação.
+
 O caso original teve boot válido, remount do disco como somente leitura e um panic ao esperar a saída da vCPU 0. Depois, o processo terminou com SIGSEGV. Investigamos essas duas etapas separadamente. A sequência do SIGSEGV foi reproduzida com instrumentação; o motivo exato do atraso **na execução histórica** continua em aberto.
 
 ## O que o código e os testes mostraram

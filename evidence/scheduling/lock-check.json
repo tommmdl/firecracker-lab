@@ -1,0 +1,7 @@
+{
+  "at": "2026-10-20T22:43:49.025240+00:00",
+  "test": "Concurrent host-load wrapper refuses before creating run directory or containers",
+  "exit_code": 2,
+  "stdout": "",
+  "stderr_last_line": "run_jailer_lab.py: error: Another host-load campaign from this wrapper is active"
+}

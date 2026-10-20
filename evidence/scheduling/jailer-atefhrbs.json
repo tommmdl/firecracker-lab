@@ -1,0 +1,26 @@
+{
+  "run": "jailer-atefhrbs",
+  "reviewed_status": "failed",
+  "reason": "Interrupted; no complete suite report. No latency conclusion.",
+  "launch_sha256": "f98f7db08baad3e58c81d65088a09393ed84e15601531be810aca7841a039415",
+  "source_sha256": {
+    "build_artifacts.py": "bd6334bea07a9d8ad0e4b79890d829e1e6092ae0c5046a0e709bd72a689d9660",
+    "jailer_checks.py": "288ddc08c838709a2b1d8bd7a3cb01edd0bc9f449bf07c60cef276116eaf517f",
+    "run_jailer_lab.py": "84f8020eb77c05004050f6755005206559b0d03c52c288372808c38db53d252a",
+    "jailer_runtime.py": "60bc5e8eb7ad3bfdf4aaf92152158c85543cb91c436810c0a7813a2abf83fe38",
+    "shutdown_investigation.py": "34c41230dc79c07d31264fa796b969debcf1dd5347bc68f32e6c45c2000c7c07",
+    "export_shutdown_evidence.py": "1d05c134a44572d24f23a77842e53ff4c3c1eba2dd654e61cf477bbc61369ce8",
+    "build_shutdown_candidate.py": "4ff3f2c2a659e4dccd3b1890b30a74e4b3eb686ba52cb0284848db60f92ae7a9",
+    "vcpu_scheduling.py": "e98d51a47e5dc6098a789411e794608c1724178cf4059bfa8a521d2149337b59",
+    "export_scheduling_evidence.py": "df63615c1b2fe9a55fbd0c61234c4546caf50563e40577bf9de94a975aa1c788",
+    "boot_check.py": "61bafa6a1154e7ac5f8352ac6af14323757b29360f15444db7ee61890cc9b631"
+  },
+  "exit_code": 137,
+  "console_sha256": {
+    "half-control-01/console.log": "5b419bdbedd5279f70ffcb16e7dc99ef2785c2dc4734ebaa74412455c8f1e043"
+  },
+  "operator_stop": {
+    "reason": "Scheduling campaign started before prior CPU campaign finished; stop this owned helper, retain outputs, rerun both without overlap."
+  },
+  "partial_cases": []
+}

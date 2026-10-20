@@ -2,6 +2,8 @@
 
 [Português](shutdown-investigation.md) · [README](../README.en.md) · [Reviewed results](../evidence/shutdown-investigation.json)
 
+The next step used tracefs without debugger pauses: [scheduling and signals under host load](vcpu-scheduling.en.md). Two final campaigns recorded 24 clean shutdowns and 12 valid captures, including the task-limit test. The longest runnable wait was 13.262 ms; none reproduced the spontaneous panic. The investigation retains an empty capture initially marked successful and overlapping campaigns excluded from the comparison.
+
 The original run booted successfully, remounted the disk read-only and panicked while waiting for vCPU 0 to exit. The process then ended with SIGSEGV. We investigated these as separate stages. The SIGSEGV sequence was reproduced with instrumentation; the exact reason for the delay **in the historical run** remains unresolved.
 
 ## What the source and tests showed

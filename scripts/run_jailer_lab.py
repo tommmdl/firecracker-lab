@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Run trusted jailer checks inside an explicitly privileged, capped helper."""
 import argparse
+import fcntl
 import hashlib
 import shutil
 import json
@@ -18,7 +19,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--host-load', action='store_true', help='Bounded CPU contention on the same two host CPUs')
     parser.add_argument('--profile', help='Explicit diagnostic profile; default is the approved jailer profile')
-    parser.add_argument('--suite', choices=['jailer_checks', 'shutdown_investigation'], default='jailer_checks')
+    parser.add_argument('--suite', choices=['jailer_checks', 'shutdown_investigation', 'vcpu_scheduling'], default='jailer_checks')
     parser.add_argument('--binary-dir',required=True)
     parser.add_argument('--artifacts',required=True)
     parser.add_argument('--output-parent',required=True)
@@ -40,6 +41,13 @@ def main():
         try:require_static(preflight[binary])
         except ValueError as exc:parser.error(binary+': '+str(exc))
         if preflight[binary]['sha256']!=profile[binary+'_sha256']:parser.error('Unreviewed '+binary+' hash')
+    load_lock = None
+    if args.host_load:
+        load_lock = open('/tmp/firecracker-lab-'+str(os.getuid())+'-host-load.lock', 'a')
+        try:
+            fcntl.flock(load_lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            parser.error('Another host-load campaign from this wrapper is active')
     out=Path(tempfile.mkdtemp(prefix='jailer-',dir=parent))
     (out/'binary-preflight.json').write_text(json.dumps(preflight,indent=2)+'\n')
     snapshot=out/'source';snapshot.mkdir()

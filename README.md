@@ -61,6 +61,8 @@ O [perfil final](config/jailer-profile.json) passou em duas execuções de seis 
 
 O panic antigo de shutdown continua preservado. A [investigação](docs/shutdown-investigation.md) localizou o SIGSEGV no caminho de aborto da musl em um controle, corrigiu a prontidão do teclado e a coleta do rastreador e comparou dois binários musl estáticos sob carga no host. Depois dessas correções, foram dez encerramentos limpos por variante. A candidata de cinco segundos tolerou uma pausa de 1,5 segundo na vCPU e ainda falhou no controle longo; continua experimental, com a causa do atraso histórico em aberto. [Resultados anteriores](evidence/jailer-results.json) · [Falhas preservadas](evidence/shutdown-investigation.json).
 
+A [captura de escalonamento e sinais](docs/vcpu-scheduling.md) acrescentou 24 encerramentos limpos sob carga, com 12 traces válidos, controles sem captura e um teste de limite de tarefas. A maior espera pronta observada foi 13,262 ms; o panic histórico não reapareceu e sua causa continua em aberto. Tentativas inválidas e interrompidas também estão publicadas.
+
 ## O que ainda falta de hardening
 
 Os [testes reais](evidence/source-build-results.json) incluem uma falha de shutdown preservada, dois boots aprovados depois da correção e dez testes de regressão. Também registram a rejeição de um fonte alterado. Foram executados localmente, sem boot no GitHub Actions.

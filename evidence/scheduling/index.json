@@ -1,0 +1,179 @@
+{
+  "schema": 1,
+  "method": "Per-instance tracefs, numeric vCPU filters after unique-name discovery; no ptrace or injected pause",
+  "limitations": [
+    "Local bounded sample, not a benchmark or proof of historical root cause",
+    "Runnable wait includes CPU contention and quota throttling; sampled cgroup counters cannot uniquely split their contribution",
+    "Signal generation and delivery are separate observations, not guaranteed one-to-one pairing",
+    "Initial/final censored runnable intervals are not counted; trace clock precision is one microsecond in text",
+    "Only vCPU events are captured; there is no full main-thread userspace protocol or kernel stack trace"
+  ],
+  "runs": [
+    {
+      "run": "jailer-twtd5stz",
+      "file": "jailer-twtd5stz.json",
+      "sha256": "ee54fff12f0d9b2c51177580b4c54a78d9f0c5bee5de92e6b2db7631d09e3b5e",
+      "reviewed_status": "failed",
+      "shutdown_seconds": {
+        "half-control": {
+          "count": 1,
+          "min": 0.092333,
+          "median": 0.092333,
+          "max": 0.092333
+        },
+        "half-trace": {
+          "count": 1,
+          "min": 0.131321,
+          "median": 0.131321,
+          "max": 0.131321
+        },
+        "boost-control": {
+          "count": 1,
+          "min": 0.265757,
+          "median": 0.265757,
+          "max": 0.265757
+        },
+        "boost-trace": {
+          "count": 1,
+          "min": 0.111741,
+          "median": 0.111741,
+          "max": 0.111741
+        }
+      }
+    },
+    {
+      "run": "jailer-_k0n5jq0",
+      "file": "jailer-_k0n5jq0.json",
+      "sha256": "58acfed80a69b641f76f3071a514564f47c2989bbdd848373464bd85b0ecf907",
+      "reviewed_status": "passed",
+      "shutdown_seconds": {
+        "half-control": {
+          "count": 1,
+          "min": 0.086761,
+          "median": 0.086761,
+          "max": 0.086761
+        },
+        "half-trace": {
+          "count": 1,
+          "min": 0.074232,
+          "median": 0.074232,
+          "max": 0.074232
+        },
+        "boost-control": {
+          "count": 1,
+          "min": 0.126434,
+          "median": 0.126434,
+          "max": 0.126434
+        },
+        "boost-trace": {
+          "count": 1,
+          "min": 0.131993,
+          "median": 0.131993,
+          "max": 0.131993
+        }
+      }
+    },
+    {
+      "run": "jailer-bhly3lu2",
+      "file": "jailer-bhly3lu2.json",
+      "sha256": "f47a705824b543531a82ea7ed13aff5ebdd31d79c4bec823c89347be383a87f2",
+      "reviewed_status": "excluded-load-overlap",
+      "shutdown_seconds": {
+        "half-control": {
+          "count": 5,
+          "min": 0.096175,
+          "median": 0.163835,
+          "max": 0.264164
+        },
+        "half-trace": {
+          "count": 5,
+          "min": 0.101566,
+          "median": 0.180245,
+          "max": 0.259731
+        },
+        "boost-control": {
+          "count": 5,
+          "min": 0.115642,
+          "median": 0.196815,
+          "max": 0.268836
+        },
+        "boost-trace": {
+          "count": 5,
+          "min": 0.093735,
+          "median": 0.137578,
+          "max": 0.599949
+        }
+      }
+    },
+    {
+      "run": "jailer-atefhrbs",
+      "file": "jailer-atefhrbs.json",
+      "sha256": "96f598a1768d8b6ea26ec5dac155cbbd1751cf8e0bf1e16ebab0ecb0983283a1",
+      "reviewed_status": "failed"
+    },
+    {
+      "run": "jailer-ivyhqnjk",
+      "file": "jailer-ivyhqnjk.json",
+      "sha256": "de8ddeff0d09a8c30447170289c9e99ecf3e205ccb0169e134a19fe509b6e9ff",
+      "reviewed_status": "passed",
+      "shutdown_seconds": {
+        "half-control": {
+          "count": 3,
+          "min": 0.081754,
+          "median": 0.119836,
+          "max": 0.159954
+        },
+        "half-trace": {
+          "count": 3,
+          "min": 0.087604,
+          "median": 0.106328,
+          "max": 0.107634
+        },
+        "boost-control": {
+          "count": 3,
+          "min": 0.104099,
+          "median": 0.23444,
+          "max": 0.295094
+        },
+        "boost-trace": {
+          "count": 3,
+          "min": 0.102303,
+          "median": 0.102462,
+          "max": 0.324398
+        }
+      }
+    },
+    {
+      "run": "jailer-phr137uc",
+      "file": "jailer-phr137uc.json",
+      "sha256": "1efaa0099ffea2c026a082c74fcc199b1de9cdaffbb912636cfd715b27d7bc9c",
+      "reviewed_status": "passed",
+      "shutdown_seconds": {
+        "half-control": {
+          "count": 3,
+          "min": 0.164818,
+          "median": 0.178952,
+          "max": 0.230041
+        },
+        "half-trace": {
+          "count": 3,
+          "min": 0.09954,
+          "median": 0.139246,
+          "max": 0.229271
+        },
+        "boost-control": {
+          "count": 3,
+          "min": 0.083005,
+          "median": 0.171738,
+          "max": 0.19403
+        },
+        "boost-trace": {
+          "count": 3,
+          "min": 0.127284,
+          "median": 0.151657,
+          "max": 0.188707
+        }
+      }
+    }
+  ]
+}
