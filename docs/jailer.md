@@ -88,3 +88,5 @@ As folhas de cgroup e o auxiliar são removidos após os processos terminarem, i
 Estes são ensaios locais com tarefas conhecidas. Não demonstram execução segura de código arbitrário não confiável e não foram executados no GitHub Actions. Implementação e validação tiveram ajuda do assistente.
 
 Referências: [jailer v1.17.0](https://github.com/firecracker-microvm/firecracker/blob/v1.17.0/docs/jailer.md), [preparo de host](https://github.com/firecracker-microvm/firecracker/blob/v1.17.0/docs/prod-host-setup.md) e [espera de saída da vCPU](https://github.com/firecracker-microvm/firecracker/blob/v1.17.0/src/vmm/src/vstate/vcpu.rs).
+
+A investigação seguinte separa o timeout da vCPU do SIGSEGV posterior, testa quota e compara uma candidata com prazo interno de cinco segundos. A falha histórica continua em aberto. [Análise e repetições sob carga](shutdown-investigation.md).

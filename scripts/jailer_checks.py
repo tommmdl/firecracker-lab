@@ -176,7 +176,26 @@ class VM:
             check(self.alive(),'VMM exited before guest response')
         raise TimeoutError('guest response deadline exceeded')
 
+    def wait_keyboard(self):
+        if self.report.get('keyboard_readiness',{}).get('confirmed'):return
+        program='/^N: Name="AT Raw Set 2 keyboard"/ {kbd=1} /^H: Handlers=/ {if(kbd && $0 ~ /[ =]kbd( |$)/)ready=1} /^$/ {kbd=0} END {exit !ready}'
+        command=("while ! awk '"+program+"' /proc/bus/input/devices; do sleep 0.1; done; printf '\\nKBD_BEGIN_%s\\n' "+self.token+"; cat /proc/bus/input/devices; printf '\\nKBD_READY_%s\\n' "+self.token+"\n")
+        os.write(self.master,command.encode())
+        started=time.monotonic();deadline=started+10
+        pattern=r'^KBD_BEGIN_'+self.token+r'\n(.*?)\nKBD_READY_'+self.token+r'$'
+        while time.monotonic()<deadline:
+            self.capture(.05)
+            found=re.search(pattern,normalize_console(self.raw),re.M|re.S)
+            if found:
+                self.report['keyboard_readiness']={'confirmed':True,'seconds':round(time.monotonic()-started,6),'input_devices':found.group(1)}
+                self.expect(True,'guest keyboard kbd handler confirmed before shutdown request')
+                return
+            check(self.alive(),'VMM exited during keyboard readiness check')
+        self.report['keyboard_readiness']={'confirmed':False,'timeout_seconds':10}
+        raise TimeoutError('guest keyboard kbd handler was not confirmed')
+
     def stop(self):
+        self.wait_keyboard()
         before=(self.cg/'cpu.max').read_text().strip()
         (self.cg/'cpu.max').write_text(PROFILE['shutdown_cpu_max'])
         after=(self.cg/'cpu.max').read_text().strip()

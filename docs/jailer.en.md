@@ -88,3 +88,5 @@ Cgroup leaves and the helper are removed after processes stop, including control
 These are local tests with known tasks. They do not establish safe execution of arbitrary untrusted code and did not run in GitHub Actions. Implementation and validation were assistant-assisted.
 
 References: [jailer v1.17.0](https://github.com/firecracker-microvm/firecracker/blob/v1.17.0/docs/jailer.md), [host preparation](https://github.com/firecracker-microvm/firecracker/blob/v1.17.0/docs/prod-host-setup.md) and [vCPU exit wait](https://github.com/firecracker-microvm/firecracker/blob/v1.17.0/src/vmm/src/vstate/vcpu.rs).
+
+The follow-up separates the vCPU timeout from the later SIGSEGV, tests CPU quota and compares a candidate with a five-second internal timeout. The historical trigger remains unresolved. [Analysis and repetitions under load](shutdown-investigation.en.md).

@@ -10,7 +10,7 @@ Boot now has a controller in the repository, console reader regressions and evid
 4. Validate key-based SSH and host identity with a dedicated `known_hosts` file.
 5. Implement lab-scoped NAT and outbound rules, testing allowed and denied destinations and rollback.
 6. Run a known task on a disposable disk and collect its exit code, logs and results.
-7. Initial [jailer exercises completed](jailer.en.md): observed isolation and CPU/memory/task/descriptor/deadline enforcement. Next: less privileged bootstrap, seccomp policy, `CapBnd` and investigation of the retained shutdown panic.
+7. Initial [jailer exercises completed](jailer.en.md): observed isolation and CPU/memory/task/descriptor/deadline enforcement. Next: less privileged bootstrap, seccomp policy, `CapBnd` and capture of the spontaneous vCPU delay. The [shutdown investigation](shutdown-investigation.en.md) separates the panic from SIGSEGV and compares a longer-timeout candidate.
 
 Guest networking, SSH and firewall remain pending. Jailer has local exercises with explicit scope limits. Publishing the code does not change those components or validate isolation for untrusted code.
 

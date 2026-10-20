@@ -59,7 +59,7 @@ The `jailer` now has local isolation and resource exercises in its [own guide](d
 
 The [final profile](config/jailer-profile.json) passed two runs of six scenarios. Tests observed UID/GID 65534, cleared execution capabilities, separate roots/namespaces and active seccomp on threads after boot. Real load exercised CPU, memory, tasks, descriptors and deadlines. Disabled-seccomp, OOM and deadline controls are not approved profiles or healthy guests.
 
-A shutdown panic is also preserved: under a fixed half-CPU quota, one run exited with SIGSEGV while waiting for a vCPU. The final profile waits for load workers and enlarges the CPU ceiling only for shutdown; both repeats passed, without establishing the panic's cause or elimination. [Results and limits](docs/jailer.en.md) · [Evidence](evidence/jailer-results.json) · [Earlier failures](evidence/jailer-investigation.json).
+The historical shutdown panic remains preserved. The [investigation](docs/shutdown-investigation.en.md) located SIGSEGV in musl’s abort path in a control, corrected keyboard readiness and tracer collection, and compared two static musl binaries under host load. After those corrections, each variant completed ten clean shutdowns. The five-second candidate tolerated a 1.5-second vCPU hold and still failed the long control; it remains experimental, with the historical delay’s cause unresolved. [Earlier results](evidence/jailer-results.json) · [Retained failures](evidence/shutdown-investigation.json).
 
 ## Hardening still to do
 

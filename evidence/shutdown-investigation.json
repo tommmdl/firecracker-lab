@@ -1,0 +1,1428 @@
+{
+  "schema": 1,
+  "scope": "Local WSL2/KVM investigation, not CI or production certification",
+  "historical_case": {
+    "run": "jailer-eajvuzjb",
+    "exit_code": -11,
+    "console_sha256": "5c37a9358663dc88eeaf2b4c4a52602761f5d01a641ebbb40102148cdd0fd3dc",
+    "cause_of_original_vcpu_delay": "unresolved; no historical per-thread capture"
+  },
+  "runs": [
+    {
+      "local_run": "jailer-3p70iuj6",
+      "status": "failed",
+      "failure": "AssertionError: diagnostic failed: trace-held-vcpu: AssertionError: trace exceeded shutdown deadline",
+      "findings": [],
+      "originals_unchanged": true,
+      "cgroups_cleaned": true,
+      "reviewed_details": "shutdown-runs/jailer-3p70iuj6.json",
+      "details_sha256": "2ac5d2c5076598e6d850fccb6314d833b3fb6c0420c8241c81a608bb2d31228d",
+      "scenarios": [
+        {
+          "scenario": "half-idle-1",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "half-load-1",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "half-load-2",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "boost-load",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "trace-clean",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "trace-held-vcpu",
+          "status": "failed",
+          "exit_code": -9,
+          "failure": "AssertionError: trace exceeded shutdown deadline",
+          "cleanup_forced_stop": true
+        }
+      ]
+    },
+    {
+      "local_run": "jailer-ld7qkmfr",
+      "status": "passed",
+      "findings": [],
+      "originals_unchanged": true,
+      "cgroups_cleaned": true,
+      "reviewed_details": "shutdown-runs/jailer-ld7qkmfr.json",
+      "details_sha256": "1574ba01e049e22a034bc8fdbf758b9483a97089d531c3e93a7bc745568e5d5c",
+      "scenarios": [
+        {
+          "scenario": "half-idle-1",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "half-load-1",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "half-load-2",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "boost-load",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "trace-clean",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "trace-held-vcpu",
+          "status": "observed",
+          "exit_code": -11,
+          "panic": true,
+          "cleanup_forced_stop": false
+        }
+      ]
+    },
+    {
+      "local_run": "jailer-yh1lgzw2",
+      "status": "passed",
+      "findings": [],
+      "originals_unchanged": true,
+      "cgroups_cleaned": true,
+      "reviewed_details": "shutdown-runs/jailer-yh1lgzw2.json",
+      "details_sha256": "cd52ae85b75c6cc600b9ed532ceb7e1f0f12653a44919b30318d72642633647e",
+      "scenarios": [
+        {
+          "scenario": "half-idle-1",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "half-load-1",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "half-load-2",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "boost-load",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "trace-clean",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "trace-held-vcpu",
+          "status": "observed",
+          "exit_code": -11,
+          "panic": true,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "quota-starved",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "quota-recovered",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        }
+      ]
+    },
+    {
+      "local_run": "jailer-w3_psdae",
+      "status": "failed",
+      "matrix": "host-load",
+      "findings": [
+        {
+          "scenario": "host-repeat-07",
+          "failure": "AssertionError: shutdown deadline exceeded"
+        },
+        {
+          "scenario": "host-short-hold",
+          "failure": "AssertionError: trace exceeded shutdown deadline"
+        },
+        {
+          "scenario": "host-long-hold",
+          "failure": "AssertionError: trace exceeded shutdown deadline"
+        }
+      ],
+      "diagnostic_join_timeout_seconds": 1,
+      "originals_unchanged": true,
+      "cgroups_cleaned": true,
+      "reviewed_details": "shutdown-runs/jailer-w3_psdae.json",
+      "details_sha256": "4b5ab85462ee3a61038c81666527b6aa18a907947dc9976a1fd3376f73b824c6",
+      "scenarios": [
+        {
+          "scenario": "host-repeat-01",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-02",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-03",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-04",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-05",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-06",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-07",
+          "status": "failed",
+          "exit_code": -9,
+          "failure": "AssertionError: shutdown deadline exceeded",
+          "cleanup_forced_stop": true
+        },
+        {
+          "scenario": "host-repeat-08",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-09",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-10",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-short-hold",
+          "status": "failed",
+          "exit_code": null,
+          "failure": "AssertionError: trace exceeded shutdown deadline",
+          "cleanup_forced_stop": true
+        },
+        {
+          "scenario": "host-long-hold",
+          "status": "failed",
+          "exit_code": null,
+          "failure": "AssertionError: trace exceeded shutdown deadline",
+          "cleanup_forced_stop": true
+        }
+      ]
+    },
+    {
+      "local_run": "jailer-z3dqb0mq",
+      "status": "failed",
+      "matrix": "host-load",
+      "findings": [
+        {
+          "scenario": "host-short-hold",
+          "failure": "AssertionError: trace exceeded shutdown deadline"
+        }
+      ],
+      "diagnostic_join_timeout_seconds": 5,
+      "originals_unchanged": true,
+      "cgroups_cleaned": true,
+      "reviewed_details": "shutdown-runs/jailer-z3dqb0mq.json",
+      "details_sha256": "f3962960be8ec8cc6e1ad50f1e3de38d6760b62ba4baa289157e972bfe82256f",
+      "scenarios": [
+        {
+          "scenario": "host-repeat-01",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-02",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-03",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-04",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-05",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-06",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-07",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-08",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-09",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-10",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-short-hold",
+          "status": "failed",
+          "exit_code": -9,
+          "failure": "AssertionError: trace exceeded shutdown deadline",
+          "cleanup_forced_stop": true
+        },
+        {
+          "scenario": "host-long-hold",
+          "status": "observed",
+          "exit_code": -11,
+          "panic": true,
+          "expected_result_matched": true,
+          "cleanup_forced_stop": false
+        }
+      ]
+    },
+    {
+      "local_run": "jailer-koveu1da",
+      "status": "passed",
+      "matrix": "host-load",
+      "findings": [],
+      "diagnostic_join_timeout_seconds": 1,
+      "originals_unchanged": true,
+      "cgroups_cleaned": true,
+      "reviewed_details": "shutdown-runs/jailer-koveu1da.json",
+      "details_sha256": "4a3c94185524311c0c4fbad52430fe40b5f3ddf74b081e0139951c673a0bc50a",
+      "scenarios": [
+        {
+          "scenario": "host-repeat-01",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-02",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-03",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-04",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-05",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-06",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-07",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-08",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-09",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-10",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-short-hold",
+          "status": "observed",
+          "exit_code": -11,
+          "panic": true,
+          "expected_result_matched": true,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-long-hold",
+          "status": "observed",
+          "exit_code": -11,
+          "panic": true,
+          "expected_result_matched": true,
+          "cleanup_forced_stop": false
+        }
+      ]
+    },
+    {
+      "local_run": "jailer-qc_wk0g4",
+      "status": "passed",
+      "matrix": "host-load",
+      "findings": [],
+      "diagnostic_join_timeout_seconds": 5,
+      "originals_unchanged": true,
+      "cgroups_cleaned": true,
+      "reviewed_details": "shutdown-runs/jailer-qc_wk0g4.json",
+      "details_sha256": "8372b14c00623534922113bd9888f2cca00d40fd67ea9130aca17a1892291b17",
+      "scenarios": [
+        {
+          "scenario": "host-repeat-01",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-02",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-03",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-04",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-05",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-06",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-07",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-08",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-09",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-repeat-10",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-short-hold",
+          "status": "observed",
+          "exit_code": 0,
+          "panic": false,
+          "expected_result_matched": true,
+          "cleanup_forced_stop": false
+        },
+        {
+          "scenario": "host-long-hold",
+          "status": "observed",
+          "exit_code": -11,
+          "panic": true,
+          "expected_result_matched": true,
+          "cleanup_forced_stop": false
+        }
+      ]
+    }
+  ],
+  "builds": [
+    {
+      "local_build": "fc-shutdown-build-01",
+      "report_sha256": "170bf190c4b1a1e8264439d6125c9fa3fb615afe138f648d71f1a85fbfe28a9b",
+      "result": {
+        "schema": 1,
+        "status": "failed",
+        "commit": "95f868c8e345b1cc8faccd1a3c910b4989dc3f58",
+        "source_url": "https://github.com/firecracker-microvm/firecracker/archive/95f868c8e345b1cc8faccd1a3c910b4989dc3f58.tar.gz",
+        "archive_sha256_expected": "27280787407229c412901dfcf74cd378f1336010e71050aba43ace51cd4a0f4f",
+        "builder_image": "rust@sha256:3e3d60d7d0927bc85af39c9a616b58af998cd83d3f061bb36ab96fe7a1646963",
+        "variants": {},
+        "archive_sha256_observed": "27280787407229c412901dfcf74cd378f1336010e71050aba43ace51cd4a0f4f",
+        "cargo_lock_sha256": "9adf369ea741a5c6deb229f9b9b17a1fb1962f594a5f9e15af8ff714980c933f",
+        "failure": "CalledProcessError: Command '['docker', 'run', '--rm', '--name', 'fc-build-fc-shutdown-build-01-stock', '--cap-drop', 'ALL', '--security-opt', 'no-new-privileges', '--memory', '3g', '--memory-swap', '3g', '--cpus', '2', '--pids-limit', '256', '--user', '1000:1000', '--mount', 'type=bind,src=/home/tommmdl/fc-shutdown-build-01,dst=/work', '--workdir', '/work/source', '--env', 'CARGO_HOME=/work/cargo-cache', '--env', 'RUSTUP_TOOLCHAIN=1.97.0-x86_64-unknown-linux-musl', 'rust@sha256:3e3d60d7d0927bc85af39c9a616b58af998cd83d3f061bb36ab96fe7a1646963', 'sh', '-c', 'rustc --version; cargo --version; gcc --version; cargo build --locked --release --target x86_64-unknown-linux-musl -p firecracker --jobs 2']' returned non-zero exit status 137."
+      },
+      "logs": {
+        "stock/build.log": {
+          "sha256": "600f1745a92f1282cd27145a2a6697fdf800c4c2204c69facaeacd9e9b0d2f29",
+          "first_lines": [
+            "rustc 1.97.0 (2d8144b78 2026-07-07)",
+            "cargo 1.97.0 (c980f4866 2026-06-30)",
+            "gcc (Alpine 15.2.0) 15.2.0",
+            "Copyright (C) 2025 Free Software Foundation, Inc.",
+            "This is free software; see the source for copying conditions.  There is NO",
+            "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+            "",
+            "    Updating crates.io index",
+            "    Updating git repository `https://github.com/firecracker-microvm/micro-http`",
+            "warning: spurious network error (10 tries remaining): No such file or directory (os error 2)",
+            "warning: spurious network error (9 tries remaining): No such file or directory (os error 2)",
+            "warning: spurious network error (8 tries remaining): No such file or directory (os error 2)",
+            "warning: spurious network error (7 tries remaining): No such file or directory (os error 2)",
+            "warning: spurious network error (6 tries remaining): No such file or directory (os error 2)",
+            "warning: spurious network error (5 tries remaining): No such file or directory (os error 2)",
+            "warning: spurious network error (4 tries remaining): No such file or directory (os error 2)"
+          ],
+          "last_lines": [
+            "rustc 1.97.0 (2d8144b78 2026-07-07)",
+            "cargo 1.97.0 (c980f4866 2026-06-30)",
+            "gcc (Alpine 15.2.0) 15.2.0",
+            "Copyright (C) 2025 Free Software Foundation, Inc.",
+            "This is free software; see the source for copying conditions.  There is NO",
+            "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+            "",
+            "    Updating crates.io index",
+            "    Updating git repository `https://github.com/firecracker-microvm/micro-http`",
+            "warning: spurious network error (10 tries remaining): No such file or directory (os error 2)",
+            "warning: spurious network error (9 tries remaining): No such file or directory (os error 2)",
+            "warning: spurious network error (8 tries remaining): No such file or directory (os error 2)",
+            "warning: spurious network error (7 tries remaining): No such file or directory (os error 2)",
+            "warning: spurious network error (6 tries remaining): No such file or directory (os error 2)",
+            "warning: spurious network error (5 tries remaining): No such file or directory (os error 2)",
+            "warning: spurious network error (4 tries remaining): No such file or directory (os error 2)"
+          ]
+        }
+      },
+      "acceptance": "failed"
+    },
+    {
+      "local_build": "fc-shutdown-build-02",
+      "report_sha256": "4505c258a398474e43f8cb6191c6896c4b1b20e705ff43f1f1844a2b8cc658cc",
+      "result": {
+        "schema": 1,
+        "status": "failed",
+        "commit": "95f868c8e345b1cc8faccd1a3c910b4989dc3f58",
+        "source_url": "https://github.com/firecracker-microvm/firecracker/archive/95f868c8e345b1cc8faccd1a3c910b4989dc3f58.tar.gz",
+        "archive_sha256_expected": "27280787407229c412901dfcf74cd378f1336010e71050aba43ace51cd4a0f4f",
+        "builder_image": "rust@sha256:3e3d60d7d0927bc85af39c9a616b58af998cd83d3f061bb36ab96fe7a1646963",
+        "variants": {},
+        "archive_sha256_observed": "27280787407229c412901dfcf74cd378f1336010e71050aba43ace51cd4a0f4f",
+        "cargo_lock_sha256": "9adf369ea741a5c6deb229f9b9b17a1fb1962f594a5f9e15af8ff714980c933f",
+        "failure": "CalledProcessError: Command '['docker', 'run', '--rm', '--name', 'fc-build-fc-shutdown-build-02-stock', '--cap-drop', 'ALL', '--security-opt', 'no-new-privileges', '--memory', '3g', '--memory-swap', '3g', '--cpus', '2', '--pids-limit', '256', '--user', '1000:1000', '--mount', 'type=bind,src=/home/tommmdl/fc-shutdown-build-02,dst=/work', '--workdir', '/work/source', '--env', 'CARGO_HOME=/work/cargo-cache', '--env', 'CARGO_NET_GIT_FETCH_WITH_CLI=false', '--env', 'RUSTUP_TOOLCHAIN=1.97.0-x86_64-unknown-linux-musl', 'rust@sha256:3e3d60d7d0927bc85af39c9a616b58af998cd83d3f061bb36ab96fe7a1646963', 'sh', '-c', 'rustc --version; cargo --version; gcc --version; cargo build --locked --release --target x86_64-unknown-linux-musl -p firecracker --jobs 2']' returned non-zero exit status 101."
+      },
+      "builder_script_sha256": "c31bfe0a5c6cfe76d5ba8efb7e847205feef39137f4dcafe9baff35837497bdd",
+      "logs": {
+        "stock/build.log": {
+          "sha256": "bc84cde23236c31a6d89bf5c723fe020003d7228a0849139b185a934e771b09e",
+          "first_lines": [
+            "rustc 1.97.0 (2d8144b78 2026-07-07)",
+            "cargo 1.97.0 (c980f4866 2026-06-30)",
+            "gcc (Alpine 15.2.0) 15.2.0",
+            "Copyright (C) 2025 Free Software Foundation, Inc.",
+            "This is free software; see the source for copying conditions.  There is NO",
+            "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+            "",
+            "    Updating crates.io index",
+            "    Updating git repository `https://github.com/firecracker-microvm/micro-http`",
+            "    Updating git submodule `https://github.com/rust-vmm/rust-vmm-ci.git`",
+            " Downloading crates ...",
+            "  Downloaded anstream v1.0.0",
+            "  Downloaded anstyle-query v1.1.5",
+            "  Downloaded anstyle-parse v1.0.0",
+            "  Downloaded rustc-hash v1.1.0",
+            "  Downloaded lazy_static v1.5.0",
+            "  Downloaded tap v1.0.1",
+            "  Downloaded anstyle v1.0.14"
+          ],
+          "last_lines": [
+            "   Compiling radium v0.7.0",
+            "   Compiling unicode-segmentation v1.13.3",
+            "   Compiling rustix v1.1.4",
+            "   Compiling thiserror v1.0.69",
+            "   Compiling convert_case v0.10.0",
+            "   Compiling bitcode v0.6.9",
+            "   Compiling rand v0.10.2",
+            "   Compiling clap v4.6.6",
+            "error: failed to run custom build command for `userfaultfd-sys v0.6.0`",
+            "",
+            "Caused by:",
+            "  process didn't exit successfully: `/work/source/build/cargo_target/release/build/userfaultfd-sys-0b67fe60d6402c29/build-script-build` (exit status: 101)",
+            "  --- stderr",
+            "",
+            "  thread 'main' (1689) panicked at /work/cargo-cache/registry/src/index.crates.io-1949cf8c6b5b557f/bindgen-0.69.5/lib.rs:622:31:",
+            "  Unable to find libclang: \"couldn't find any valid shared libraries matching: ['libclang.so', 'libclang-*.so', 'libclang.so.*', 'libclang-*.so.*'], set the `LIBCLANG_PATH` environment variable to a path where one of these files can be found (invalid: [])\"",
+            "  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace",
+            "warning: build failed, waiting for other jobs to finish..."
+          ]
+        }
+      },
+      "acceptance": "failed"
+    },
+    {
+      "local_build": "fc-shutdown-build-03",
+      "report_sha256": "44351154a49c5d0c0713af55ac10c44095c60dc6bbbf31389cd0fa6369008414",
+      "result": {
+        "schema": 1,
+        "status": "failed",
+        "commit": "95f868c8e345b1cc8faccd1a3c910b4989dc3f58",
+        "source_url": "https://github.com/firecracker-microvm/firecracker/archive/95f868c8e345b1cc8faccd1a3c910b4989dc3f58.tar.gz",
+        "archive_sha256_expected": "27280787407229c412901dfcf74cd378f1336010e71050aba43ace51cd4a0f4f",
+        "builder_image": "rust@sha256:3e3d60d7d0927bc85af39c9a616b58af998cd83d3f061bb36ab96fe7a1646963",
+        "variants": {},
+        "builder_dockerfile_sha256": "ef02877f5c5f2696cc943605e2f62907f3549d17c65e1765e6291ffff9db2734",
+        "builder_image_id": "sha256:ea3c0bab5d070d516b29ff3b0eb2e5535dfb5051405e7b63caae11b4b38f3b23",
+        "archive_sha256_observed": "27280787407229c412901dfcf74cd378f1336010e71050aba43ace51cd4a0f4f",
+        "reused_build_directory": "/home/tommmdl/fc-shutdown-build-02",
+        "cargo_lock_sha256": "9adf369ea741a5c6deb229f9b9b17a1fb1962f594a5f9e15af8ff714980c933f",
+        "failure": "CalledProcessError: Command '['docker', 'run', '--rm', '--name', 'fc-build-fc-shutdown-build-03-stock', '--cap-drop', 'ALL', '--security-opt', 'no-new-privileges', '--memory', '3g', '--memory-swap', '3g', '--cpus', '2', '--pids-limit', '256', '--user', '1000:1000', '--mount', 'type=bind,src=/home/tommmdl/fc-shutdown-build-03,dst=/work', '--workdir', '/work/source', '--env', 'CARGO_HOME=/work/cargo-cache', '--env', 'CARGO_NET_GIT_FETCH_WITH_CLI=false', '--env', 'RUSTUP_TOOLCHAIN=1.97.0-x86_64-unknown-linux-musl', 'sha256:ea3c0bab5d070d516b29ff3b0eb2e5535dfb5051405e7b63caae11b4b38f3b23', 'sh', '-c', 'rustc --version; cargo --version; gcc --version; cargo build --locked --release --target x86_64-unknown-linux-musl -p firecracker --jobs 2']' returned non-zero exit status 101."
+      },
+      "builder_script_sha256": "e948527d880c2d0f82b80b831c13cadd932c1951d7cfcdf738555aab05d8d7f2",
+      "logs": {
+        "stock/build.log": {
+          "sha256": "636346e2ad44bae075dffeab4149ed751025c69c67d1f0386465416f91d0b478",
+          "first_lines": [
+            "rustc 1.97.0 (2d8144b78 2026-07-07)",
+            "cargo 1.97.0 (c980f4866 2026-06-30)",
+            "gcc (Alpine 15.2.0) 15.2.0",
+            "Copyright (C) 2025 Free Software Foundation, Inc.",
+            "This is free software; see the source for copying conditions.  There is NO",
+            "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+            "",
+            "   Compiling bindgen v0.69.5",
+            "   Compiling zmij v1.0.23",
+            "   Compiling thiserror-impl v1.0.69",
+            "   Compiling kvm-ioctls v0.25.0",
+            "   Compiling unicode-xid v0.2.6",
+            "   Compiling micro_http v0.1.0 (https://github.com/firecracker-microvm/micro-http#7975fe0e)",
+            "   Compiling aws-lc-rs v1.18.0",
+            "   Compiling linux-raw-sys v0.12.1",
+            "   Compiling tap v1.0.1",
+            "   Compiling wyz v0.5.1",
+            "   Compiling rustix v1.1.4"
+          ],
+          "last_lines": [
+            "   Compiling micro_http v0.1.0 (https://github.com/firecracker-microvm/micro-http#7975fe0e)",
+            "   Compiling aws-lc-rs v1.18.0",
+            "   Compiling linux-raw-sys v0.12.1",
+            "   Compiling tap v1.0.1",
+            "   Compiling wyz v0.5.1",
+            "   Compiling rustix v1.1.4",
+            "   Compiling derive_more-impl v2.1.1",
+            "   Compiling userfaultfd-sys v0.6.0",
+            "error: failed to run custom build command for `userfaultfd-sys v0.6.0`",
+            "",
+            "Caused by:",
+            "  process didn't exit successfully: `/work/source/build/cargo_target/release/build/userfaultfd-sys-0b67fe60d6402c29/build-script-build` (exit status: 101)",
+            "  --- stderr",
+            "",
+            "  thread 'main' (167) panicked at /work/cargo-cache/registry/src/index.crates.io-1949cf8c6b5b557f/bindgen-0.69.5/lib.rs:622:31:",
+            "  Unable to find libclang: \"the `libclang` shared library at /usr/lib/llvm21/lib/libclang.so.21.1.2 could not be opened: Dynamic loading not supported\"",
+            "  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace",
+            "warning: build failed, waiting for other jobs to finish..."
+          ]
+        }
+      },
+      "acceptance": "failed"
+    },
+    {
+      "local_build": "fc-shutdown-build-04",
+      "report_sha256": "f58909c4b1b82aad73a7539428cdca4f9230d59024c88e7fc7e3f3525a9dc64f",
+      "result": {
+        "schema": 1,
+        "status": "failed",
+        "commit": "95f868c8e345b1cc8faccd1a3c910b4989dc3f58",
+        "source_url": "https://github.com/firecracker-microvm/firecracker/archive/95f868c8e345b1cc8faccd1a3c910b4989dc3f58.tar.gz",
+        "archive_sha256_expected": "27280787407229c412901dfcf74cd378f1336010e71050aba43ace51cd4a0f4f",
+        "builder_image": "rust@sha256:b5a086f64ffecaa4e283063184770107915756739598173e1f5712d6b34b84d0",
+        "variants": {},
+        "builder_dockerfile_sha256": "53a3f83b2dd7489bb6b97a693ff7f5213a8a884ad29b7697bb5a3e0d87fe7611",
+        "builder_image_id": "sha256:b8f943568174c4cf9587aded7c2bb89b6215d05134ad3e032595a7667440648f",
+        "archive_sha256_observed": "27280787407229c412901dfcf74cd378f1336010e71050aba43ace51cd4a0f4f",
+        "reused_build_directory": "/home/tommmdl/fc-shutdown-build-03",
+        "cargo_lock_sha256": "9adf369ea741a5c6deb229f9b9b17a1fb1962f594a5f9e15af8ff714980c933f",
+        "failure": "CalledProcessError: Command '['docker', 'run', '--rm', '--name', 'fc-build-fc-shutdown-build-04-stock', '--cap-drop', 'ALL', '--security-opt', 'no-new-privileges', '--memory', '3g', '--memory-swap', '3g', '--cpus', '2', '--pids-limit', '256', '--user', '1000:1000', '--mount', 'type=bind,src=/home/tommmdl/fc-shutdown-build-04,dst=/work', '--workdir', '/work/source', '--env', 'CARGO_HOME=/work/cargo-cache', '--env', 'CARGO_NET_GIT_FETCH_WITH_CLI=false', '--env', 'RUSTUP_TOOLCHAIN=1.97.0-x86_64-unknown-linux-gnu', 'sha256:b8f943568174c4cf9587aded7c2bb89b6215d05134ad3e032595a7667440648f', 'sh', '-c', 'rustc --version; cargo --version; gcc --version; dpkg-query -W libclang-dev libclang-14-dev musl-tools linux-libc-dev; cargo build --locked --release --target x86_64-unknown-linux-musl -p firecracker --jobs 2']' returned non-zero exit status 101."
+      },
+      "builder_script_sha256": "74f9fe301fa7bc366288d31cc0c913bfba3197e249081440a930e431d79255e0",
+      "logs": {
+        "stock/build.log": {
+          "sha256": "ea5c5f6551f828b70b84a892b45aaa5fb1d3e5b605008da0be560766c75882f3",
+          "first_lines": [
+            "rustc 1.97.0 (2d8144b78 2026-07-07)",
+            "cargo 1.97.0 (c980f4866 2026-06-30)",
+            "gcc (Debian 12.2.0-14+deb12u1) 12.2.0",
+            "Copyright (C) 2022 Free Software Foundation, Inc.",
+            "This is free software; see the source for copying conditions.  There is NO",
+            "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+            "",
+            "libclang-14-dev\t1:14.0.6-12",
+            "libclang-dev\t1:14.0-55.7~deb12u1",
+            "linux-libc-dev:amd64\t6.1.190-1",
+            "musl-tools\t1.2.3-1",
+            "   Compiling proc-macro2 v1.0.107",
+            "   Compiling quote v1.0.47",
+            "   Compiling unicode-ident v1.0.24",
+            "   Compiling libc v0.2.189",
+            "   Compiling syn v3.0.3",
+            "   Compiling syn v2.0.119",
+            "   Compiling serde_derive v1.0.229"
+          ],
+          "last_lines": [
+            "  CFLAGS_x86_64_unknown_linux_musl = None",
+            "  cargo:rerun-if-env-changed=CFLAGS_x86_64-unknown-linux-musl",
+            "  CFLAGS_x86_64-unknown-linux-musl = None",
+            "  cargo:warning=src/consts.c:1:10: fatal error: linux/types.h: No such file or directory",
+            "  cargo:warning=    1 | #include <linux/types.h>",
+            "  cargo:warning=      |          ^~~~~~~~~~~~~~~",
+            "  cargo:warning=compilation terminated.",
+            "",
+            "  --- stderr",
+            "  error: 'rustfmt' is not installed for the toolchain '1.97.0-x86_64-unknown-linux-gnu'.",
+            "  help: run `rustup component add rustfmt` to install it",
+            "  Failed to run rustfmt: Internal rustfmt error (non-fatal, continuing)",
+            "",
+            "",
+            "  error occurred in cc-rs: command did not execute successfully (status code exit status: 1): LC_ALL=\"C\" \"musl-gcc\" \"-O3\" \"-ffunction-sections\" \"-fdata-sections\" \"-fPIC\" \"-m64\" \"-Wall\" \"-Wextra\" \"-o\" \"/work/source/build/cargo_target/x86_64-unknown-linux-musl/release/build/userfaultfd-sys-c765021ffa6f2a88/out/ea708c7824d36062-consts.o\" \"-c\" \"src/consts.c\"",
+            "",
+            "",
+            "warning: build failed, waiting for other jobs to finish..."
+          ]
+        }
+      },
+      "acceptance": "failed"
+    },
+    {
+      "local_build": "fc-shutdown-build-05",
+      "report_sha256": "d6e787de8a95fd470ac876eba9dcfe0f66bf7334cb171c35ecd82ad06aad1aca",
+      "result": {
+        "schema": 1,
+        "status": "failed",
+        "commit": "95f868c8e345b1cc8faccd1a3c910b4989dc3f58",
+        "source_url": "https://github.com/firecracker-microvm/firecracker/archive/95f868c8e345b1cc8faccd1a3c910b4989dc3f58.tar.gz",
+        "archive_sha256_expected": "27280787407229c412901dfcf74cd378f1336010e71050aba43ace51cd4a0f4f",
+        "builder_image": "rust@sha256:b5a086f64ffecaa4e283063184770107915756739598173e1f5712d6b34b84d0",
+        "variants": {},
+        "builder_dockerfile_sha256": "22c024c007894dd175c57bf993318db680c88f636f167a483a2d0ced7b54a8cd",
+        "builder_image_id": "sha256:1aa17ea8d021f491cb5a8e6dbf88cf45ab5eebfd86ca57625221345911682aa9",
+        "archive_sha256_observed": "27280787407229c412901dfcf74cd378f1336010e71050aba43ace51cd4a0f4f",
+        "reused_build_directory": "/home/tommmdl/fc-shutdown-build-04",
+        "cargo_lock_sha256": "9adf369ea741a5c6deb229f9b9b17a1fb1962f594a5f9e15af8ff714980c933f",
+        "failure": "CalledProcessError: Command '['docker', 'run', '--rm', '--name', 'fc-build-fc-shutdown-build-05-stock', '--cap-drop', 'ALL', '--security-opt', 'no-new-privileges', '--memory', '3g', '--memory-swap', '3g', '--cpus', '2', '--pids-limit', '256', '--user', '1000:1000', '--mount', 'type=bind,src=/home/tommmdl/fc-shutdown-build-05,dst=/work', '--workdir', '/work/source', '--env', 'CARGO_HOME=/work/cargo-cache', '--env', 'CARGO_NET_GIT_FETCH_WITH_CLI=false', '--env', 'RUSTUP_TOOLCHAIN=1.97.0-x86_64-unknown-linux-gnu', 'sha256:1aa17ea8d021f491cb5a8e6dbf88cf45ab5eebfd86ca57625221345911682aa9', 'sh', '-c', 'rustc --version; cargo --version; gcc --version; dpkg-query -W libclang-dev libclang-14-dev musl-tools linux-libc-dev; cargo build --locked --release --target x86_64-unknown-linux-musl -p firecracker --jobs 2']' returned non-zero exit status 101."
+      },
+      "builder_script_sha256": "74f9fe301fa7bc366288d31cc0c913bfba3197e249081440a930e431d79255e0",
+      "logs": {
+        "stock/build.log": {
+          "sha256": "d2cbdfa43e133fa7c99971070fd9d19f0216e2683994768cb16796782c977ebf",
+          "first_lines": [
+            "rustc 1.97.0 (2d8144b78 2026-07-07)",
+            "cargo 1.97.0 (c980f4866 2026-06-30)",
+            "gcc (Debian 12.2.0-14+deb12u1) 12.2.0",
+            "Copyright (C) 2022 Free Software Foundation, Inc.",
+            "This is free software; see the source for copying conditions.  There is NO",
+            "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+            "",
+            "libclang-14-dev\t1:14.0.6-12",
+            "libclang-dev\t1:14.0-55.7~deb12u1",
+            "linux-libc-dev:amd64\t6.1.190-1",
+            "musl-tools\t1.2.3-1",
+            "   Compiling userfaultfd-sys v0.6.0",
+            "   Compiling zerocopy v0.8.56",
+            "   Compiling zmij v1.0.23",
+            "   Compiling thiserror-impl v1.0.69",
+            "   Compiling aws-lc-rs v1.18.0",
+            "   Compiling tap v1.0.1",
+            "   Compiling kvm-ioctls v0.25.0"
+          ],
+          "last_lines": [
+            "   Compiling memchr v2.8.3",
+            "   Compiling funty v2.0.0",
+            "   Compiling bitvec v1.1.1",
+            "   Compiling bitcode v0.6.9",
+            "   Compiling userfaultfd v0.9.0",
+            "   Compiling memfd v0.6.5",
+            "   Compiling vhost v0.17.0",
+            "   Compiling firecracker v1.17.0 (/work/source/src/firecracker)",
+            "error: linking with `cc` failed: exit status: 1",
+            "  |",
+            "  = note:  \"cc\" \"-m64\" \"/work/source/build/cargo_target/release/build/firecracker-523e62a86d5981dd/rustc2BePgy/symbols.o\" \"<2 object files omitted>\" \"-Wl,--as-needed\" \"-Wl,-Bstatic\" \"/work/source/build/cargo_target/release/deps/{libseccompiler-0651f38c34692b02,libbitcode-3404fdb52c10aad2,libbytemuck-5a7e882a8521c66d,libserde_json-756e74e882606113,libmemchr-32a6c324f2572bcd,libitoa-64385738970f6e2e,libzmij-8c6c40443ba25eff,liblibc-93af03491a324bf9,libthiserror-b168c03fa3288e33,libzerocopy-4253a1caed4e43fb,libserde-747c448edd94425c,libserde_core-b0adbfa347598ea9}.rlib\" \"<sysroot>/lib/rustlib/x86_64-unknown-linux-gnu/lib/{libstd-*,libpanic_unwind-*,libobject-*,libmemchr-*,libaddr2line-*,libgimli-*,libcfg_if-*,librustc_demangle-*,libstd_detect-*,libhashbrown-*,librustc_std_workspace_alloc-*,libminiz_oxide-*,libadler2-*,libunwind-*,liblibc-*,librustc_std_workspace_core-*,liballoc-*,libcore-*,libcompiler_builtins-*}.rlib\" \"-Wl,-Bdynamic\" \"-lseccomp\" \"-lgcc_s\" \"-lutil\" \"-lrt\" \"-lpthread\" \"-lm\" \"-ldl\" \"-lc\" \"-L\" \"/work/source/build/cargo_target/release/build/firecracker-523e62a86d5981dd/rustc2BePgy/raw-dylibs\" \"-B<sysroot>/lib/rustlib/x86_64-unknown-linux-gnu/bin/gcc-ld\" \"-fuse-ld=lld\" \"-Wl,--eh-frame-hdr\" \"-Wl,-z,noexecstack\" \"-L\" \"/usr/local/lib\" \"-L\" \"<sysroot>/lib/rustlib/x86_64-unknown-linux-gnu/lib\" \"-o\" \"/work/source/build/cargo_target/release/build/firecracker-523e62a86d5981dd/build_script_build-523e62a86d5981dd\" \"-Wl,--gc-sections\" \"-pie\" \"-Wl,-z,relro,-z,now\" \"-nodefaultlibs\"",
+            "  = note: some arguments are omitted. use `--verbose` to show all linker arguments",
+            "  = note: rust-lld: error: unable to find library -lseccomp",
+            "          collect2: error: ld returned 1 exit status",
+            "          ",
+            "",
+            "error: could not compile `firecracker` (build script) due to 1 previous error",
+            "warning: build failed, waiting for other jobs to finish..."
+          ]
+        }
+      },
+      "acceptance": "failed"
+    },
+    {
+      "local_build": "fc-shutdown-build-06",
+      "report_sha256": "bff0d42c87968716225eb0a1bfc4cfb369ae54d88dc8d2e12b1ecab3eb7ab61d",
+      "result": {
+        "schema": 1,
+        "status": "passed",
+        "commit": "95f868c8e345b1cc8faccd1a3c910b4989dc3f58",
+        "source_url": "https://github.com/firecracker-microvm/firecracker/archive/95f868c8e345b1cc8faccd1a3c910b4989dc3f58.tar.gz",
+        "archive_sha256_expected": "27280787407229c412901dfcf74cd378f1336010e71050aba43ace51cd4a0f4f",
+        "builder_image": "rust@sha256:b5a086f64ffecaa4e283063184770107915756739598173e1f5712d6b34b84d0",
+        "variants": {
+          "stock": {
+            "seccomp_filter_sha256": "bda11ead802f00241351a4de8f6bc880e1440884ec9050ff4dc9a90d21eece21",
+            "seccomp_source_sha256": "5974b9c5336be9daeb3b14fc8bfbb5d778a56f6e4e80f790a387bafc8a426608",
+            "profile_sha256": "3b43de901540dc49ccc2c23866162fe3ddb501d8a0bf0e1e930430c58af65ff9",
+            "firecracker_sha256": "2096385e81beac2160d88d27d84c73e7349330f82614c9ceb38aff52c8f4b6c4",
+            "jailer_sha256": "65ef226e96f0ceda55ba643f445801ef2cc0ea667ef67cad8ac4f406c9c8434f",
+            "vcpu_source_sha256": "b623b624b00d175f052c0540811683aad3a9e58c18896a50855feb6bf1839006",
+            "build_log_sha256": "18b02d89e978286e81979aececa4c3f10beb9cae5292bf565345f5d96078d966",
+            "join_timeout_seconds": 1,
+            "command": [
+              "docker",
+              "run",
+              "--rm",
+              "--name",
+              "fc-build-fc-shutdown-build-06-stock",
+              "--cap-drop",
+              "ALL",
+              "--security-opt",
+              "no-new-privileges",
+              "--memory",
+              "3g",
+              "--memory-swap",
+              "3g",
+              "--cpus",
+              "2",
+              "--pids-limit",
+              "256",
+              "--user",
+              "1000:1000",
+              "--mount",
+              "type=bind,src=/home/tommmdl/fc-shutdown-build-06,dst=/work",
+              "--workdir",
+              "/work/source",
+              "--env",
+              "CARGO_HOME=/work/cargo-cache",
+              "--env",
+              "CARGO_NET_GIT_FETCH_WITH_CLI=false",
+              "--env",
+              "RUSTUP_TOOLCHAIN=1.97.0-x86_64-unknown-linux-gnu",
+              "sha256:479dedf38b17aae419cc9fa34b06f257d43437338fe3f11d32596a32ce9e8f02",
+              "sh",
+              "-c",
+              "rustc --version; cargo --version; gcc --version; dpkg-query -W libclang-dev libclang-14-dev musl-tools linux-libc-dev libseccomp-dev; cargo build --locked --release --target x86_64-unknown-linux-musl -p firecracker --jobs 2"
+            ]
+          },
+          "candidate": {
+            "seccomp_filter_sha256": "bda11ead802f00241351a4de8f6bc880e1440884ec9050ff4dc9a90d21eece21",
+            "seccomp_source_sha256": "5974b9c5336be9daeb3b14fc8bfbb5d778a56f6e4e80f790a387bafc8a426608",
+            "profile_sha256": "618263432242b1eb321df8cf6d0d2bfec0d83d0f6b03bc2463415043226b1446",
+            "firecracker_sha256": "369ce66db4d9e8d44ca3f9d35e6c15b9ebb3b3c3b412746b7ca75c5c7536d19d",
+            "jailer_sha256": "65ef226e96f0ceda55ba643f445801ef2cc0ea667ef67cad8ac4f406c9c8434f",
+            "vcpu_source_sha256": "0123801f4a72e254d23606fdd84d68c63e5cb071acd701296b1d6bfa5e8077ce",
+            "build_log_sha256": "12e1c124b4ca1e8cabc912da86d2ab3715b7434755226e451701020dd2ac1ee6",
+            "join_timeout_seconds": 5,
+            "command": [
+              "docker",
+              "run",
+              "--rm",
+              "--name",
+              "fc-build-fc-shutdown-build-06-candidate",
+              "--cap-drop",
+              "ALL",
+              "--security-opt",
+              "no-new-privileges",
+              "--memory",
+              "3g",
+              "--memory-swap",
+              "3g",
+              "--cpus",
+              "2",
+              "--pids-limit",
+              "256",
+              "--user",
+              "1000:1000",
+              "--mount",
+              "type=bind,src=/home/tommmdl/fc-shutdown-build-06,dst=/work",
+              "--workdir",
+              "/work/source",
+              "--env",
+              "CARGO_HOME=/work/cargo-cache",
+              "--env",
+              "CARGO_NET_GIT_FETCH_WITH_CLI=false",
+              "--env",
+              "RUSTUP_TOOLCHAIN=1.97.0-x86_64-unknown-linux-gnu",
+              "sha256:479dedf38b17aae419cc9fa34b06f257d43437338fe3f11d32596a32ce9e8f02",
+              "sh",
+              "-c",
+              "rustc --version; cargo --version; gcc --version; dpkg-query -W libclang-dev libclang-14-dev musl-tools linux-libc-dev libseccomp-dev; cargo build --locked --release --target x86_64-unknown-linux-musl -p firecracker --jobs 2"
+            ]
+          }
+        },
+        "builder_dockerfile_sha256": "7bc14599692917ad37b50a8e1be1947699b4f277e893fd16770e90ecf028133f",
+        "builder_image_id": "sha256:479dedf38b17aae419cc9fa34b06f257d43437338fe3f11d32596a32ce9e8f02",
+        "archive_sha256_observed": "27280787407229c412901dfcf74cd378f1336010e71050aba43ace51cd4a0f4f",
+        "reused_build_directory": "/home/tommmdl/fc-shutdown-build-05",
+        "cargo_lock_sha256": "9adf369ea741a5c6deb229f9b9b17a1fb1962f594a5f9e15af8ff714980c933f",
+        "patch": {
+          "before": "const VCPU_JOIN_TIMEOUT: Duration = Duration::from_secs(1);",
+          "after": "const VCPU_JOIN_TIMEOUT: Duration = Duration::from_secs(5);",
+          "scope": "bounded timeout only; no changes to isolation or seccomp source"
+        }
+      },
+      "artifact_validation": {
+        "status": "failed",
+        "reason": "Compiler success did not imply a static executable; rejected before runtime",
+        "variants": {
+          "stock": {
+            "binary_sha256": "2096385e81beac2160d88d27d84c73e7349330f82614c9ceb38aff52c8f4b6c4",
+            "has_pt_interp": true,
+            "has_dt_needed": false,
+            "status": "failed"
+          },
+          "candidate": {
+            "binary_sha256": "369ce66db4d9e8d44ca3f9d35e6c15b9ebb3b3c3b412746b7ca75c5c7536d19d",
+            "has_pt_interp": true,
+            "has_dt_needed": false,
+            "status": "failed"
+          }
+        }
+      },
+      "builder_script_sha256": "1c32820879deb29fe35e476eb6a73bcecf6a2cf2e1fc09127d6c4e5863cb52b6",
+      "logs": {
+        "candidate/build.log": {
+          "sha256": "12e1c124b4ca1e8cabc912da86d2ab3715b7434755226e451701020dd2ac1ee6",
+          "first_lines": [
+            "rustc 1.97.0 (2d8144b78 2026-07-07)",
+            "cargo 1.97.0 (c980f4866 2026-06-30)",
+            "gcc (Debian 12.2.0-14+deb12u1) 12.2.0",
+            "Copyright (C) 2022 Free Software Foundation, Inc.",
+            "This is free software; see the source for copying conditions.  There is NO",
+            "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+            "",
+            "libclang-14-dev\t1:14.0.6-12",
+            "libclang-dev\t1:14.0-55.7~deb12u1",
+            "libseccomp-dev:amd64\t2.5.4-1+deb12u1",
+            "linux-libc-dev:amd64\t6.1.190-1",
+            "musl-tools\t1.2.3-1",
+            "   Compiling vmm v0.1.0 (/work/source/src/vmm)",
+            "   Compiling firecracker v1.17.0 (/work/source/src/firecracker)",
+            "    Finished `release` profile [optimized] target(s) in 1m 41s"
+          ],
+          "last_lines": [
+            "rustc 1.97.0 (2d8144b78 2026-07-07)",
+            "cargo 1.97.0 (c980f4866 2026-06-30)",
+            "gcc (Debian 12.2.0-14+deb12u1) 12.2.0",
+            "Copyright (C) 2022 Free Software Foundation, Inc.",
+            "This is free software; see the source for copying conditions.  There is NO",
+            "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+            "",
+            "libclang-14-dev\t1:14.0.6-12",
+            "libclang-dev\t1:14.0-55.7~deb12u1",
+            "libseccomp-dev:amd64\t2.5.4-1+deb12u1",
+            "linux-libc-dev:amd64\t6.1.190-1",
+            "musl-tools\t1.2.3-1",
+            "   Compiling vmm v0.1.0 (/work/source/src/vmm)",
+            "   Compiling firecracker v1.17.0 (/work/source/src/firecracker)",
+            "    Finished `release` profile [optimized] target(s) in 1m 41s"
+          ]
+        },
+        "stock/build.log": {
+          "sha256": "18b02d89e978286e81979aececa4c3f10beb9cae5292bf565345f5d96078d966",
+          "first_lines": [
+            "rustc 1.97.0 (2d8144b78 2026-07-07)",
+            "cargo 1.97.0 (c980f4866 2026-06-30)",
+            "gcc (Debian 12.2.0-14+deb12u1) 12.2.0",
+            "Copyright (C) 2022 Free Software Foundation, Inc.",
+            "This is free software; see the source for copying conditions.  There is NO",
+            "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+            "",
+            "libclang-14-dev\t1:14.0.6-12",
+            "libclang-dev\t1:14.0-55.7~deb12u1",
+            "libseccomp-dev:amd64\t2.5.4-1+deb12u1",
+            "linux-libc-dev:amd64\t6.1.190-1",
+            "musl-tools\t1.2.3-1",
+            "   Compiling firecracker v1.17.0 (/work/source/src/firecracker)",
+            "   Compiling micro_http v0.1.0 (https://github.com/firecracker-microvm/micro-http#7975fe0e)",
+            "   Compiling derive_more v2.1.1",
+            "   Compiling acpi_tables v0.1.0 (/work/source/src/acpi-tables)",
+            "   Compiling linux-loader v0.14.0",
+            "   Compiling utils v0.1.0 (/work/source/src/utils)"
+          ],
+          "last_lines": [
+            "musl-tools\t1.2.3-1",
+            "   Compiling firecracker v1.17.0 (/work/source/src/firecracker)",
+            "   Compiling micro_http v0.1.0 (https://github.com/firecracker-microvm/micro-http#7975fe0e)",
+            "   Compiling derive_more v2.1.1",
+            "   Compiling acpi_tables v0.1.0 (/work/source/src/acpi-tables)",
+            "   Compiling linux-loader v0.14.0",
+            "   Compiling utils v0.1.0 (/work/source/src/utils)",
+            "   Compiling event-manager v0.4.2",
+            "   Compiling vm-allocator v0.1.4",
+            "   Compiling semver v1.0.28",
+            "   Compiling log v0.4.33",
+            "   Compiling base64 v0.23.1",
+            "   Compiling byteorder v1.5.0",
+            "   Compiling crc64 v2.0.0",
+            "   Compiling slab v0.4.12",
+            "   Compiling vm-superio v0.8.1",
+            "   Compiling vmm v0.1.0 (/work/source/src/vmm)",
+            "    Finished `release` profile [optimized] target(s) in 2m 04s"
+          ]
+        }
+      },
+      "acceptance": "failed"
+    },
+    {
+      "local_build": "fc-shutdown-build-07",
+      "report_sha256": "e68ea953bbeec0d6ab22beadb872994c7e9f017654b49cfda6f4d55da03684bb",
+      "result": {
+        "schema": 1,
+        "status": "passed",
+        "commit": "95f868c8e345b1cc8faccd1a3c910b4989dc3f58",
+        "source_url": "https://github.com/firecracker-microvm/firecracker/archive/95f868c8e345b1cc8faccd1a3c910b4989dc3f58.tar.gz",
+        "archive_sha256_expected": "27280787407229c412901dfcf74cd378f1336010e71050aba43ace51cd4a0f4f",
+        "builder_image": "rust@sha256:b5a086f64ffecaa4e283063184770107915756739598173e1f5712d6b34b84d0",
+        "variants": {
+          "stock": {
+            "seccomp_filter_sha256": "bda11ead802f00241351a4de8f6bc880e1440884ec9050ff4dc9a90d21eece21",
+            "seccomp_source_sha256": "5974b9c5336be9daeb3b14fc8bfbb5d778a56f6e4e80f790a387bafc8a426608",
+            "profile_sha256": "3c3cbf14375728740d509363c0a33632b86be8d9b633b004d0e20a087a9fe4ab",
+            "firecracker_sha256": "a40df579f8484e33d42d466ea443d6adedff5f2a69c52219a2ef014cc731bdb4",
+            "jailer_sha256": "65ef226e96f0ceda55ba643f445801ef2cc0ea667ef67cad8ac4f406c9c8434f",
+            "vcpu_source_sha256": "b623b624b00d175f052c0540811683aad3a9e58c18896a50855feb6bf1839006",
+            "build_log_sha256": "3504cf2021b34a3510e70c0b1e0479c11dc55bca4c19abe31c14817c2ad7ffb0",
+            "join_timeout_seconds": 1,
+            "command": [
+              "docker",
+              "run",
+              "--rm",
+              "--name",
+              "fc-build-fc-shutdown-build-07-stock",
+              "--cap-drop",
+              "ALL",
+              "--security-opt",
+              "no-new-privileges",
+              "--memory",
+              "3g",
+              "--memory-swap",
+              "3g",
+              "--cpus",
+              "2",
+              "--pids-limit",
+              "256",
+              "--user",
+              "1000:1000",
+              "--mount",
+              "type=bind,src=/home/tommmdl/fc-shutdown-build-07,dst=/work",
+              "--workdir",
+              "/work/source",
+              "--env",
+              "CARGO_HOME=/work/cargo-cache",
+              "--env",
+              "CARGO_NET_GIT_FETCH_WITH_CLI=false",
+              "--env",
+              "RUSTUP_TOOLCHAIN=1.97.0-x86_64-unknown-linux-gnu",
+              "sha256:560bccee8322e0092aef6039c9b9ffdfa60302e2ebd9bc7ce99b22ae6cf5ca7d",
+              "sh",
+              "-c",
+              "rustc --version; cargo --version; gcc --version; dpkg-query -W libclang-dev libclang-14-dev musl-tools linux-libc-dev libseccomp-dev; cargo build --locked --release --target x86_64-unknown-linux-musl -p firecracker --jobs 2"
+            ]
+          },
+          "candidate": {
+            "seccomp_filter_sha256": "bda11ead802f00241351a4de8f6bc880e1440884ec9050ff4dc9a90d21eece21",
+            "seccomp_source_sha256": "5974b9c5336be9daeb3b14fc8bfbb5d778a56f6e4e80f790a387bafc8a426608",
+            "profile_sha256": "15bcf1f2bc5c2a9ac416274ecad61e1aab1766d42474a18fb5aabe6b08f8acbd",
+            "firecracker_sha256": "e609f4845edc6fc0261215fa3767a9d232fd632e28678f5397468c0de9086852",
+            "jailer_sha256": "65ef226e96f0ceda55ba643f445801ef2cc0ea667ef67cad8ac4f406c9c8434f",
+            "vcpu_source_sha256": "0123801f4a72e254d23606fdd84d68c63e5cb071acd701296b1d6bfa5e8077ce",
+            "build_log_sha256": "10b00dd343f1dc6a0ea641fb08633d4ea16f8141a812d6d3a02c4cb791e3ebdc",
+            "join_timeout_seconds": 5,
+            "command": [
+              "docker",
+              "run",
+              "--rm",
+              "--name",
+              "fc-build-fc-shutdown-build-07-candidate",
+              "--cap-drop",
+              "ALL",
+              "--security-opt",
+              "no-new-privileges",
+              "--memory",
+              "3g",
+              "--memory-swap",
+              "3g",
+              "--cpus",
+              "2",
+              "--pids-limit",
+              "256",
+              "--user",
+              "1000:1000",
+              "--mount",
+              "type=bind,src=/home/tommmdl/fc-shutdown-build-07,dst=/work",
+              "--workdir",
+              "/work/source",
+              "--env",
+              "CARGO_HOME=/work/cargo-cache",
+              "--env",
+              "CARGO_NET_GIT_FETCH_WITH_CLI=false",
+              "--env",
+              "RUSTUP_TOOLCHAIN=1.97.0-x86_64-unknown-linux-gnu",
+              "sha256:560bccee8322e0092aef6039c9b9ffdfa60302e2ebd9bc7ce99b22ae6cf5ca7d",
+              "sh",
+              "-c",
+              "rustc --version; cargo --version; gcc --version; dpkg-query -W libclang-dev libclang-14-dev musl-tools linux-libc-dev libseccomp-dev; cargo build --locked --release --target x86_64-unknown-linux-musl -p firecracker --jobs 2"
+            ]
+          }
+        },
+        "builder_dockerfile_sha256": "9bb98b751eab7e85780ba23eb60bdb6219f4d56e167b1bf2329dd3a927f8a5d9",
+        "builder_image_id": "sha256:560bccee8322e0092aef6039c9b9ffdfa60302e2ebd9bc7ce99b22ae6cf5ca7d",
+        "resolved_builder_image_id": "sha256:560bccee8322e0092aef6039c9b9ffdfa60302e2ebd9bc7ce99b22ae6cf5ca7d",
+        "static_link_probe": {
+          "has_pt_interp": false,
+          "has_dt_needed": false,
+          "file": "ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, BuildID[sha1]=555cd1bdcd2ac32785d16a8e8b3f3c2561fe644b, with debug_info, not stripped",
+          "sha256": "31765fb3bd20e7287c523b492188f4b5ca157b39f6b178587b0a7442a2395fb6",
+          "execution": "static probe ok"
+        },
+        "artifact_validation": {
+          "stock": {
+            "has_pt_interp": false,
+            "has_dt_needed": false,
+            "file": "ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, BuildID[sha1]=6b4ac603713142b9e59e8f52e6b3fb4533159cb1, with debug_info, not stripped",
+            "sha256": "a40df579f8484e33d42d466ea443d6adedff5f2a69c52219a2ef014cc731bdb4",
+            "version": "Firecracker v1.17.0\n\n2026-10-20T18:32:49.910968412 [anonymous-instance:main] Firecracker exiting successfully. exit_code=0",
+            "status": "passed"
+          },
+          "candidate": {
+            "has_pt_interp": false,
+            "has_dt_needed": false,
+            "file": "ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, BuildID[sha1]=0635f347e7f6ac91111c5e27b690d0a4bd0df5d3, with debug_info, not stripped",
+            "sha256": "e609f4845edc6fc0261215fa3767a9d232fd632e28678f5397468c0de9086852",
+            "version": "Firecracker v1.17.0\n\n2026-10-20T18:34:13.529129118 [anonymous-instance:main] Firecracker exiting successfully. exit_code=0",
+            "status": "passed"
+          }
+        },
+        "archive_sha256_observed": "27280787407229c412901dfcf74cd378f1336010e71050aba43ace51cd4a0f4f",
+        "reused_build_directory": "/home/tommmdl/fc-shutdown-build-06",
+        "cargo_lock_sha256": "9adf369ea741a5c6deb229f9b9b17a1fb1962f594a5f9e15af8ff714980c933f",
+        "patch": {
+          "before": "const VCPU_JOIN_TIMEOUT: Duration = Duration::from_secs(1);",
+          "after": "const VCPU_JOIN_TIMEOUT: Duration = Duration::from_secs(5);",
+          "scope": "bounded timeout only; no changes to isolation or seccomp source"
+        }
+      },
+      "artifact_validation": {
+        "stock": {
+          "has_pt_interp": false,
+          "has_dt_needed": false,
+          "file": "ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, BuildID[sha1]=6b4ac603713142b9e59e8f52e6b3fb4533159cb1, with debug_info, not stripped",
+          "sha256": "a40df579f8484e33d42d466ea443d6adedff5f2a69c52219a2ef014cc731bdb4",
+          "version": "Firecracker v1.17.0\n\n2026-10-20T18:32:49.910968412 [anonymous-instance:main] Firecracker exiting successfully. exit_code=0",
+          "status": "passed"
+        },
+        "candidate": {
+          "has_pt_interp": false,
+          "has_dt_needed": false,
+          "file": "ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), static-pie linked, BuildID[sha1]=0635f347e7f6ac91111c5e27b690d0a4bd0df5d3, with debug_info, not stripped",
+          "sha256": "e609f4845edc6fc0261215fa3767a9d232fd632e28678f5397468c0de9086852",
+          "version": "Firecracker v1.17.0\n\n2026-10-20T18:34:13.529129118 [anonymous-instance:main] Firecracker exiting successfully. exit_code=0",
+          "status": "passed"
+        }
+      },
+      "builder_script_sha256": "4ff3f2c2a659e4dccd3b1890b30a74e4b3eb686ba52cb0284848db60f92ae7a9",
+      "logs": {
+        "candidate/build.log": {
+          "sha256": "10b00dd343f1dc6a0ea641fb08633d4ea16f8141a812d6d3a02c4cb791e3ebdc",
+          "first_lines": [
+            "rustc 1.97.0 (2d8144b78 2026-07-07)",
+            "cargo 1.97.0 (c980f4866 2026-06-30)",
+            "gcc (Debian 12.2.0-14+deb12u1) 12.2.0",
+            "Copyright (C) 2022 Free Software Foundation, Inc.",
+            "This is free software; see the source for copying conditions.  There is NO",
+            "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+            "",
+            "libclang-14-dev\t1:14.0.6-12",
+            "libclang-dev\t1:14.0-55.7~deb12u1",
+            "libseccomp-dev:amd64\t2.5.4-1+deb12u1",
+            "linux-libc-dev:amd64\t6.1.190-1",
+            "musl-tools\t1.2.3-1",
+            "   Compiling vmm v0.1.0 (/work/source/src/vmm)",
+            "   Compiling firecracker v1.17.0 (/work/source/src/firecracker)",
+            "    Finished `release` profile [optimized] target(s) in 1m 22s"
+          ],
+          "last_lines": [
+            "rustc 1.97.0 (2d8144b78 2026-07-07)",
+            "cargo 1.97.0 (c980f4866 2026-06-30)",
+            "gcc (Debian 12.2.0-14+deb12u1) 12.2.0",
+            "Copyright (C) 2022 Free Software Foundation, Inc.",
+            "This is free software; see the source for copying conditions.  There is NO",
+            "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+            "",
+            "libclang-14-dev\t1:14.0.6-12",
+            "libclang-dev\t1:14.0-55.7~deb12u1",
+            "libseccomp-dev:amd64\t2.5.4-1+deb12u1",
+            "linux-libc-dev:amd64\t6.1.190-1",
+            "musl-tools\t1.2.3-1",
+            "   Compiling vmm v0.1.0 (/work/source/src/vmm)",
+            "   Compiling firecracker v1.17.0 (/work/source/src/firecracker)",
+            "    Finished `release` profile [optimized] target(s) in 1m 22s"
+          ]
+        },
+        "stock/build.log": {
+          "sha256": "3504cf2021b34a3510e70c0b1e0479c11dc55bca4c19abe31c14817c2ad7ffb0",
+          "first_lines": [
+            "rustc 1.97.0 (2d8144b78 2026-07-07)",
+            "cargo 1.97.0 (c980f4866 2026-06-30)",
+            "gcc (Debian 12.2.0-14+deb12u1) 12.2.0",
+            "Copyright (C) 2022 Free Software Foundation, Inc.",
+            "This is free software; see the source for copying conditions.  There is NO",
+            "warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
+            "",
+            "libclang-14-dev\t1:14.0.6-12",
+            "libclang-dev\t1:14.0-55.7~deb12u1",
+            "libseccomp-dev:amd64\t2.5.4-1+deb12u1",
+            "linux-libc-dev:amd64\t6.1.190-1",
+            "musl-tools\t1.2.3-1",
+            "   Compiling libc v0.2.189",
+            "   Compiling serde_core v1.0.229",
+            "   Compiling cfg-if v1.0.4",
+            "   Compiling thiserror v2.0.20",
+            "   Compiling bitflags v2.13.1",
+            "   Compiling bitflags v1.3.2"
+          ],
+          "last_lines": [
+            "   Compiling memfd v0.6.5",
+            "   Compiling acpi_tables v0.1.0 (/work/source/src/acpi-tables)",
+            "   Compiling derive_more v2.1.1",
+            "   Compiling micro_http v0.1.0 (https://github.com/firecracker-microvm/micro-http#7975fe0e)",
+            "   Compiling linux-loader v0.14.0",
+            "   Compiling event-manager v0.4.2",
+            "   Compiling vm-allocator v0.1.4",
+            "   Compiling log v0.4.33",
+            "   Compiling semver v1.0.28",
+            "   Compiling utils v0.1.0 (/work/source/src/utils)",
+            "   Compiling slab v0.4.12",
+            "   Compiling vm-superio v0.8.1",
+            "   Compiling byteorder v1.5.0",
+            "   Compiling base64 v0.23.1",
+            "   Compiling crc64 v2.0.0",
+            "   Compiling vmm v0.1.0 (/work/source/src/vmm)",
+            "   Compiling firecracker v1.17.0 (/work/source/src/firecracker)",
+            "    Finished `release` profile [optimized] target(s) in 1m 51s"
+          ]
+        }
+      },
+      "acceptance": "passed"
+    }
+  ],
+  "additional_checks": [
+    {
+      "file": "dynamic-preflight-rejection.json",
+      "sha256": "0dce4557bffa4ad5d8648664bfd3dccc4d58d29d2e5f3b1e3fc8899c49eba879",
+      "result": {
+        "status": "passed-negative-control",
+        "exit_code": 2,
+        "command": [
+          "python3",
+          "firecracker-lab/scripts/run_jailer_lab.py",
+          "--suite",
+          "shutdown_investigation",
+          "--host-load",
+          "--profile",
+          "/home/tommmdl/fc-shutdown-build-06/stock/profile.json",
+          "--binary-dir",
+          "/home/tommmdl/fc-shutdown-build-06/stock",
+          "--artifacts",
+          "/home/tommmdl/fc-build-20261020-b/artifacts",
+          "--output-parent",
+          "/home/tommmdl/fc-lab"
+        ],
+        "stderr": "usage: run_jailer_lab.py [-h] [--host-load] [--profile PROFILE]\n                         [--suite {jailer_checks,shutdown_investigation}]\n                         --binary-dir BINARY_DIR --artifacts ARTIFACTS\n                         --output-parent OUTPUT_PARENT\nrun_jailer_lab.py: error: firecracker: executable requires a dynamic interpreter or library\n",
+        "meaning": "Rejected the known PT_INTERP executable before starting host load or VMM helper"
+      }
+    },
+    {
+      "file": "image-reference-check.json",
+      "sha256": "9e18770b5babef3edc19c03ecf89fbf3f42aca326aa052a32101f78b60f22817",
+      "result": {
+        "status": "corrected",
+        "failed_attempt": {
+          "exit_code": 125,
+          "reason": "A manually expanded local image ID did not exist",
+          "wrong_reference": "sha256:479dedf38b1765a961b9444c271bb7b18a1ac4cf2ed11c21b9a20882b466459e"
+        },
+        "recorded_image_id": "sha256:479dedf38b17aae419cc9fa34b06f257d43437338fe3f11d32596a32ce9e8f02",
+        "resolved_image_id": "sha256:479dedf38b17aae419cc9fa34b06f257d43437338fe3f11d32596a32ce9e8f02",
+        "match": true,
+        "static_probe_with_cc": "target_feature=\"crt-static\"\ntarget_feature=\"fxsr\"\ntarget_feature=\"sse\"\ntarget_feature=\"sse2\"\nstatic probe ok\n"
+      }
+    }
+  ],
+  "official_release_symbolization": {
+    "binary_sha256": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+    "debug_sha256": "541cd21d0be873b47965fd0e39d10174a377d43ea5316b48edf5f657d57437b0",
+    "matching_build_id": "43fcf6af0eede7e885a4376d361962fe6d7bfb51",
+    "fault_relative_pc": "0x26cae6",
+    "addr2line": "a_crash\n/build/musl-cross-make/build/local/x86_64-linux-musl/obj_musl/../src_musl/arch/x86_64/atomic_arch.h:108",
+    "disassembly": "official-firecracker:     file format elf64-x86-64\n\n\nDisassembly of section .text:\n\n000000000026cae6 <abort+0x7d>:\n  26cae6:\tf4                   \thlt\n  26cae7:\tbf 09 00 00 00       \tmov    $0x9,%edi\n  26caec:\te8 9c 2b 00 00       \tcall   26f68d <raise>\n  26caf1:\tbf 7f 00 00 00       \tmov    $0x7f,%edi\n  26caf6:\te8 b1 7f 00 00       \tcall   274aac <_Exit>"
+  },
+  "layout": "Reviewed per-run details are linked from runs[].reviewed_details; raw logs and disks remain local."
+}

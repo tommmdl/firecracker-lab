@@ -14,6 +14,7 @@
 !/config/vm-config.example.json
 !/config/sources.lock.json
 !/config/jailer-profile.json
+!/config/shutdown-builder.Dockerfile
 !/config/kernel.fragment
 !/config/busybox.fragment
 !/config/keys/

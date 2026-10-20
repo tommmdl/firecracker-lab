@@ -1,0 +1,4612 @@
+{
+  "schema": 1,
+  "started_at": "2026-10-20T18:32:27.969925+00:00",
+  "status": "passed",
+  "findings": [],
+  "original_sha256_before": {
+    "firecracker": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+    "jailer": "65ef226e96f0ceda55ba643f445801ef2cc0ea667ef67cad8ac4f406c9c8434f",
+    "vmlinux": "e816c1aa5249d7a6e3cd937e312ec235f892af75c30ebe67e34e5a3aa55d78e8",
+    "rootfs.ext4": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52"
+  },
+  "original_sha256_after": {
+    "firecracker": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+    "jailer": "65ef226e96f0ceda55ba643f445801ef2cc0ea667ef67cad8ac4f406c9c8434f",
+    "vmlinux": "e816c1aa5249d7a6e3cd937e312ec235f892af75c30ebe67e34e5a3aa55d78e8",
+    "rootfs.ext4": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52"
+  },
+  "originals_unchanged": true,
+  "outer_memory_events_local": {
+    "low": 0,
+    "high": 0,
+    "max": 2418,
+    "oom": 0,
+    "oom_kill": 0,
+    "oom_group_kill": 0
+  },
+  "cgroups_cleaned": true,
+  "local_run": "jailer-yh1lgzw2",
+  "raw_report_sha256": "a89f78148c7d1bedf5ebde183d27dc6e220b28090ccdc6e77469367f4a3dd4cf",
+  "source_sha256": {
+    "build_artifacts.py": "bd6334bea07a9d8ad0e4b79890d829e1e6092ae0c5046a0e709bd72a689d9660",
+    "jailer_checks.py": "6f1bdd02cf2987fc6de5612c38dc7ffed02a2078f6db90d2f31836f833c28f82",
+    "run_jailer_lab.py": "9bed2c7f586100497c85923bfe4b34971da37fb24e6964ce648a251c9c004a0c",
+    "jailer_runtime.py": "60bc5e8eb7ad3bfdf4aaf92152158c85543cb91c436810c0a7813a2abf83fe38",
+    "shutdown_investigation.py": "53db7d0ddcb2ff882128b99ba8b47af1be4481ba0d783b1439459d386ff3b2cb",
+    "boot_check.py": "61bafa6a1154e7ac5f8352ac6af14323757b29360f15444db7ee61890cc9b631"
+  },
+  "profile": {
+    "schema": 1,
+    "helper_image": "python@sha256:70729b46c69b4f1e97c4822c1af3df53a1476cf5ddc6c087c0c10bc3a5678c2f",
+    "jailer_sha256": "65ef226e96f0ceda55ba643f445801ef2cc0ea667ef67cad8ac4f406c9c8434f",
+    "firecracker_sha256": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+    "uid": 65534,
+    "gid": 65534,
+    "cpu_max": "50000 100000",
+    "memory_max": 402653184,
+    "memory_swap_max": 0,
+    "pids_max": 32,
+    "no_file": 64,
+    "oom_memory_max": 100663296,
+    "boot_timeout": 60,
+    "shutdown_timeout": 15,
+    "shutdown_cpu_max": "200000 100000"
+  },
+  "scenarios": [
+    {
+      "scenario": "half-idle-1",
+      "status": "observed",
+      "checks": [
+        "API accepted /boot-source: 204",
+        "API accepted /drives/rootfs: 204",
+        "API accepted /machine-config: 204",
+        "API accepted /actions: 204",
+        "complete guest evidence",
+        "mnt namespace differs",
+        "pid namespace differs",
+        "net namespace differs",
+        "process root is jail root",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "inherited environment canary absent",
+        "inherited canary file descriptor closed",
+        "RLIMIT_NOFILE configured",
+        "VMM resides in its cgroup leaf",
+        "all cgroup limits match requested profile",
+        "VMM is PID 1 in its namespace",
+        "no_new_privs active before and after boot"
+      ],
+      "cleanup_forced_stop": false,
+      "exit_code": 0,
+      "console_sha256": "011e48ce12a849c0c7fb5c181f758d26fd7608970e49bce3bd301a75cacf6b53",
+      "panic": false,
+      "guest": {
+        "uid": "0",
+        "kernel": "6.12.113-fc-lab",
+        "rootfs": "/dev/root ext4 rw,relatime",
+        "root_device": "254:0",
+        "vda_device": "254:0"
+      },
+      "guest_load": false,
+      "worker_stop_ack": null,
+      "shutdown_quota": "50000 100000",
+      "shutdown_observation": {
+        "http": 204,
+        "seconds": 0.079821,
+        "cpu_before": {
+          "usage_usec": 1065330,
+          "user_usec": 774785,
+          "system_usec": 290544,
+          "nice_usec": 0,
+          "nr_periods": 27,
+          "nr_throttled": 18,
+          "throttled_usec": 1040849,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        },
+        "cpu_after": {
+          "usage_usec": 1096862,
+          "user_usec": 798515,
+          "system_usec": 298346,
+          "nice_usec": 0,
+          "nr_periods": 28,
+          "nr_throttled": 18,
+          "throttled_usec": 1040849,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "outside_canary_unchanged": true,
+      "final_cgroup_events": {
+        "memory.events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 0
+        },
+        "cpu.stat": {
+          "usage_usec": 1096862,
+          "user_usec": 798515,
+          "system_usec": 298346,
+          "nice_usec": 0,
+          "nr_periods": 28,
+          "nr_throttled": 18,
+          "throttled_usec": 1040849,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "console_findings": [
+        "2026-10-20T18:32:29.736333169 [half-idle-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:29.736412369 [half-idle-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:29.736442169 [half-idle-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:29.736462569 [half-idle-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:29.736485569 [half-idle-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:29.736529569 [half-idle-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:29.736572469 [half-idle-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:29.736613369 [half-idle-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:29.736654669 [half-idle-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:29.736672369 [half-idle-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:29.736688369 [half-idle-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:29.736728269 [half-idle-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:29.736770469 [half-idle-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:29.736812869 [half-idle-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:29.736856969 [half-idle-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:29.736901869 [half-idle-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:29.736923269 [half-idle-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:29.736944369 [half-idle-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:29.736986369 [half-idle-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:29.737007369 [half-idle-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "Spectre V2 : User space: Vulnerable",
+        "Speculative Store Bypass: Vulnerable",
+        "2026-10-20T18:32:30.890260988 [half-idle-1:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:30.890320088 [half-idle-1:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+        "2026-10-20T18:32:31.173624093 [half-idle-1:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "i8042: Failed to disable AUX port, but continuing anyway... Is this a SiS?",
+        "2026-10-20T18:32:31.202067894 [half-idle-1:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)"
+      ],
+      "raw_result_sha256": "69b33504f75cd1a6a2cf5aba2dc6da9bd99b6ad195d9f26a49007367aebcda35",
+      "isolation": {
+        "hardened_runtime": true,
+        "threads": {
+          "9": {
+            "Name": "firecracker",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "9\t1"
+          },
+          "10": {
+            "Name": "fc_api",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "10\t2"
+          },
+          "11": {
+            "Name": "fc_vcpu 0",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "11\t3"
+          },
+          "12": {
+            "Name": "fc_vcpu 1",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "12\t4"
+          },
+          "13": {
+            "Name": "kvm-nx-lpage-re",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "13\t5"
+          }
+        },
+        "resource_files": {
+          "cpu.max": "50000 100000",
+          "memory.max": "402653184",
+          "memory.swap.max": "0",
+          "pids.max": "32"
+        },
+        "network_devices": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n",
+        "namespaces": {
+          "mnt": {
+            "supervisor": "mnt:[4026537182]",
+            "vmm": "mnt:[4026537710]"
+          },
+          "pid": {
+            "supervisor": "pid:[4026537186]",
+            "vmm": "pid:[4026537711]"
+          },
+          "net": {
+            "supervisor": "net:[4026537192]",
+            "vmm": "net:[4026537515]"
+          },
+          "ipc": {
+            "supervisor": "ipc:[4026537184]",
+            "vmm": "ipc:[4026537184]"
+          },
+          "uts": {
+            "supervisor": "uts:[4026537183]",
+            "vmm": "uts:[4026537183]"
+          },
+          "user": {
+            "supervisor": "user:[4026531837]",
+            "vmm": "user:[4026531837]"
+          },
+          "cgroup": {
+            "supervisor": "cgroup:[4026537191]",
+            "vmm": "cgroup:[4026537191]"
+          }
+        }
+      },
+      "shutdown_excerpt": "reboot: Restarting system\nreboot: machine restart\n2026-10-20T18:32:32.348869813 [half-idle-1:main] Vmm is stopping.\n2026-10-20T18:32:32.349429913 [half-idle-1:main] Killing vCPU threads\n2026-10-20T18:32:32.392111814 [half-idle-1:main] Firecracker exiting successfully. exit_code=0\n"
+    },
+    {
+      "scenario": "half-load-1",
+      "status": "observed",
+      "checks": [
+        "API accepted /boot-source: 204",
+        "API accepted /drives/rootfs: 204",
+        "API accepted /machine-config: 204",
+        "API accepted /actions: 204",
+        "complete guest evidence",
+        "mnt namespace differs",
+        "pid namespace differs",
+        "net namespace differs",
+        "process root is jail root",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "inherited environment canary absent",
+        "inherited canary file descriptor closed",
+        "RLIMIT_NOFILE configured",
+        "VMM resides in its cgroup leaf",
+        "all cgroup limits match requested profile",
+        "VMM is PID 1 in its namespace",
+        "no_new_privs active before and after boot"
+      ],
+      "cleanup_forced_stop": false,
+      "exit_code": 0,
+      "console_sha256": "58849c00f4b04fe61444bf358e0f34b86586cb4318c84c129cbb67bef3bcce77",
+      "panic": false,
+      "guest": {
+        "uid": "0",
+        "kernel": "6.12.113-fc-lab",
+        "rootfs": "/dev/root ext4 rw,relatime",
+        "root_device": "254:0",
+        "vda_device": "254:0"
+      },
+      "guest_load": true,
+      "worker_stop_ack": false,
+      "shutdown_quota": "50000 100000",
+      "shutdown_observation": {
+        "http": 204,
+        "seconds": 0.075381,
+        "cpu_before": {
+          "usage_usec": 2622568,
+          "user_usec": 2134992,
+          "system_usec": 487576,
+          "nice_usec": 0,
+          "nr_periods": 57,
+          "nr_throttled": 49,
+          "throttled_usec": 5537965,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        },
+        "cpu_after": {
+          "usage_usec": 2655828,
+          "user_usec": 2153968,
+          "system_usec": 501859,
+          "nice_usec": 0,
+          "nr_periods": 58,
+          "nr_throttled": 49,
+          "throttled_usec": 5537965,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "outside_canary_unchanged": true,
+      "final_cgroup_events": {
+        "memory.events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 0
+        },
+        "cpu.stat": {
+          "usage_usec": 2655828,
+          "user_usec": 2153968,
+          "system_usec": 501859,
+          "nice_usec": 0,
+          "nr_periods": 58,
+          "nr_throttled": 49,
+          "throttled_usec": 5537965,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "console_findings": [
+        "2026-10-20T18:32:33.802596438 [half-load-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:33.802676338 [half-load-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:33.802727238 [half-load-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:33.802772638 [half-load-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:33.802818638 [half-load-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:33.802861238 [half-load-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:33.802903938 [half-load-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:33.802945638 [half-load-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:33.802987738 [half-load-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:33.803030338 [half-load-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:33.803072238 [half-load-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:33.803113538 [half-load-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:33.803141838 [half-load-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:33.803161138 [half-load-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:33.803177638 [half-load-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:33.803218038 [half-load-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:33.803259438 [half-load-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:33.803301438 [half-load-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:33.803344438 [half-load-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:33.803387238 [half-load-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "Spectre V2 : User space: Vulnerable",
+        "Speculative Store Bypass: Vulnerable",
+        "2026-10-20T18:32:34.796526055 [half-load-1:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+        "2026-10-20T18:32:34.820419156 [half-load-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:35.312114464 [half-load-1:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "i8042: Failed to disable AUX port, but continuing anyway... Is this a SiS?",
+        "2026-10-20T18:32:35.337633965 [half-load-1:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)"
+      ],
+      "raw_result_sha256": "bb601db1829976705094a943fe1a87bc33ae1ae0e31db05b635ac290ed75a4ec",
+      "isolation": {
+        "hardened_runtime": true,
+        "threads": {
+          "15": {
+            "Name": "firecracker",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "15\t1"
+          },
+          "16": {
+            "Name": "fc_api",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "16\t2"
+          },
+          "17": {
+            "Name": "fc_vcpu 0",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "17\t3"
+          },
+          "18": {
+            "Name": "fc_vcpu 1",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "18\t4"
+          },
+          "19": {
+            "Name": "kvm-nx-lpage-re",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "19\t5"
+          }
+        },
+        "resource_files": {
+          "cpu.max": "50000 100000",
+          "memory.max": "402653184",
+          "memory.swap.max": "0",
+          "pids.max": "32"
+        },
+        "network_devices": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n",
+        "namespaces": {
+          "mnt": {
+            "supervisor": "mnt:[4026537182]",
+            "vmm": "mnt:[4026537710]"
+          },
+          "pid": {
+            "supervisor": "pid:[4026537186]",
+            "vmm": "pid:[4026537711]"
+          },
+          "net": {
+            "supervisor": "net:[4026537192]",
+            "vmm": "net:[4026537515]"
+          },
+          "ipc": {
+            "supervisor": "ipc:[4026537184]",
+            "vmm": "ipc:[4026537184]"
+          },
+          "uts": {
+            "supervisor": "uts:[4026537183]",
+            "vmm": "uts:[4026537183]"
+          },
+          "user": {
+            "supervisor": "user:[4026531837]",
+            "vmm": "user:[4026531837]"
+          },
+          "cgroup": {
+            "supervisor": "cgroup:[4026537191]",
+            "vmm": "cgroup:[4026537191]"
+          }
+        }
+      },
+      "shutdown_excerpt": "reboot: Restarting system\nreboot: machine restart\n2026-10-20T18:32:39.398302215 [half-load-1:main] Vmm is stopping.\n2026-10-20T18:32:39.398539615 [half-load-1:main] Killing vCPU threads\n2026-10-20T18:32:39.431427208 [half-load-1:main] Firecracker exiting successfully. exit_code=0\n"
+    },
+    {
+      "scenario": "half-load-2",
+      "status": "observed",
+      "checks": [
+        "API accepted /boot-source: 204",
+        "API accepted /drives/rootfs: 204",
+        "API accepted /machine-config: 204",
+        "API accepted /actions: 204",
+        "complete guest evidence",
+        "mnt namespace differs",
+        "pid namespace differs",
+        "net namespace differs",
+        "process root is jail root",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "inherited environment canary absent",
+        "inherited canary file descriptor closed",
+        "RLIMIT_NOFILE configured",
+        "VMM resides in its cgroup leaf",
+        "all cgroup limits match requested profile",
+        "VMM is PID 1 in its namespace",
+        "no_new_privs active before and after boot"
+      ],
+      "cleanup_forced_stop": false,
+      "exit_code": 0,
+      "console_sha256": "7433c465a7fa08c4cb39f9f47908b4be7e23fe985da241afe057468fff919851",
+      "panic": false,
+      "guest": {
+        "uid": "0",
+        "kernel": "6.12.113-fc-lab",
+        "rootfs": "/dev/root ext4 rw,relatime",
+        "root_device": "254:0",
+        "vda_device": "254:0"
+      },
+      "guest_load": true,
+      "worker_stop_ack": false,
+      "shutdown_quota": "50000 100000",
+      "shutdown_observation": {
+        "http": 204,
+        "seconds": 0.095694,
+        "cpu_before": {
+          "usage_usec": 2608871,
+          "user_usec": 2204842,
+          "system_usec": 404028,
+          "nice_usec": 0,
+          "nr_periods": 57,
+          "nr_throttled": 48,
+          "throttled_usec": 5302905,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        },
+        "cpu_after": {
+          "usage_usec": 2655609,
+          "user_usec": 2235491,
+          "system_usec": 420118,
+          "nice_usec": 0,
+          "nr_periods": 58,
+          "nr_throttled": 48,
+          "throttled_usec": 5302905,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "outside_canary_unchanged": true,
+      "final_cgroup_events": {
+        "memory.events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 0
+        },
+        "cpu.stat": {
+          "usage_usec": 2655609,
+          "user_usec": 2235491,
+          "system_usec": 420118,
+          "nice_usec": 0,
+          "nr_periods": 58,
+          "nr_throttled": 48,
+          "throttled_usec": 5302905,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "console_findings": [
+        "2026-10-20T18:32:40.848686796 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:40.848769796 [half-load-2:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:40.848792496 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:40.848809996 [half-load-2:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:40.848827396 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:40.848844396 [half-load-2:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:40.848860996 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:40.848877296 [half-load-2:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:40.848895896 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:40.848912496 [half-load-2:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:40.848929596 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:40.848946796 [half-load-2:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:40.848965096 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:40.848982396 [half-load-2:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:40.848999496 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:40.849016196 [half-load-2:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:40.849033396 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:40.849050496 [half-load-2:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:40.849133596 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:40.849161196 [half-load-2:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "Spectre V2 : User space: Vulnerable",
+        "Speculative Store Bypass: Vulnerable",
+        "2026-10-20T18:32:41.907022863 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:41.907062463 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+        "2026-10-20T18:32:42.139001412 [half-load-2:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "i8042: Failed to disable AUX port, but continuing anyway... Is this a SiS?",
+        "2026-10-20T18:32:42.219102094 [half-load-2:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "2026-10-20T18:32:46.487196257 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:46.487616657 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range."
+      ],
+      "raw_result_sha256": "143c4341d32ea302302a72564490433f06f254f59ac5216fcd1402fd1c9fe294",
+      "isolation": {
+        "hardened_runtime": true,
+        "threads": {
+          "21": {
+            "Name": "firecracker",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "21\t1"
+          },
+          "22": {
+            "Name": "fc_api",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "22\t2"
+          },
+          "23": {
+            "Name": "fc_vcpu 0",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "23\t3"
+          },
+          "24": {
+            "Name": "fc_vcpu 1",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "24\t4"
+          },
+          "25": {
+            "Name": "kvm-nx-lpage-re",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "25\t5"
+          }
+        },
+        "resource_files": {
+          "cpu.max": "50000 100000",
+          "memory.max": "402653184",
+          "memory.swap.max": "0",
+          "pids.max": "32"
+        },
+        "network_devices": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n",
+        "namespaces": {
+          "mnt": {
+            "supervisor": "mnt:[4026537182]",
+            "vmm": "mnt:[4026537710]"
+          },
+          "pid": {
+            "supervisor": "pid:[4026537186]",
+            "vmm": "pid:[4026537711]"
+          },
+          "net": {
+            "supervisor": "net:[4026537192]",
+            "vmm": "net:[4026537515]"
+          },
+          "ipc": {
+            "supervisor": "ipc:[4026537184]",
+            "vmm": "ipc:[4026537184]"
+          },
+          "uts": {
+            "supervisor": "uts:[4026537183]",
+            "vmm": "uts:[4026537183]"
+          },
+          "user": {
+            "supervisor": "user:[4026531837]",
+            "vmm": "user:[4026531837]"
+          },
+          "cgroup": {
+            "supervisor": "cgroup:[4026537191]",
+            "vmm": "cgroup:[4026537191]"
+          }
+        }
+      },
+      "shutdown_excerpt": "reboot: Restarting system\nreboot: machine restart\n2026-10-20T18:32:46.484066857 [half-load-2:main] Vmm is stopping.\n2026-10-20T18:32:46.486873657 [half-load-2:fc_vcpu 0] 9 messages were suppressed due to rate limiting\n2026-10-20T18:32:46.487196257 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.\n2026-10-20T18:32:46.487616657 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range.\n2026-10-20T18:32:46.489845557 [half-load-2:main] Killing vCPU threads\n2026-10-20T18:32:46.532224358 [half-load-2:main] Firecracker exiting successfully. exit_code=0\n"
+    },
+    {
+      "scenario": "boost-load",
+      "status": "observed",
+      "checks": [
+        "API accepted /boot-source: 204",
+        "API accepted /drives/rootfs: 204",
+        "API accepted /machine-config: 204",
+        "API accepted /actions: 204",
+        "complete guest evidence",
+        "mnt namespace differs",
+        "pid namespace differs",
+        "net namespace differs",
+        "process root is jail root",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "inherited environment canary absent",
+        "inherited canary file descriptor closed",
+        "RLIMIT_NOFILE configured",
+        "VMM resides in its cgroup leaf",
+        "all cgroup limits match requested profile",
+        "VMM is PID 1 in its namespace",
+        "no_new_privs active before and after boot"
+      ],
+      "cleanup_forced_stop": false,
+      "exit_code": 0,
+      "console_sha256": "50b89081896ea967350e48bad8c820dff012665e77e5e59567fee2394c310eb8",
+      "panic": false,
+      "guest": {
+        "uid": "0",
+        "kernel": "6.12.113-fc-lab",
+        "rootfs": "/dev/root ext4 rw,relatime",
+        "root_device": "254:0",
+        "vda_device": "254:0"
+      },
+      "guest_load": true,
+      "worker_stop_ack": false,
+      "shutdown_quota": "200000 100000",
+      "shutdown_observation": {
+        "http": 204,
+        "seconds": 0.160101,
+        "cpu_before": {
+          "usage_usec": 2416517,
+          "user_usec": 2104954,
+          "system_usec": 311563,
+          "nice_usec": 0,
+          "nr_periods": 54,
+          "nr_throttled": 45,
+          "throttled_usec": 5310321,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        },
+        "cpu_after": {
+          "usage_usec": 2523542,
+          "user_usec": 2192897,
+          "system_usec": 330644,
+          "nice_usec": 0,
+          "nr_periods": 56,
+          "nr_throttled": 45,
+          "throttled_usec": 5310321,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "outside_canary_unchanged": true,
+      "final_cgroup_events": {
+        "memory.events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 0
+        },
+        "cpu.stat": {
+          "usage_usec": 2523542,
+          "user_usec": 2192897,
+          "system_usec": 330644,
+          "nice_usec": 0,
+          "nr_periods": 56,
+          "nr_throttled": 45,
+          "throttled_usec": 5310321,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "console_findings": [
+        "2026-10-20T18:32:48.156485117 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:48.156555117 [boost-load:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:48.156594817 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:48.156642917 [boost-load:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:48.156679217 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:48.156713717 [boost-load:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:48.156748517 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:48.156782917 [boost-load:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:48.156805117 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:48.156820017 [boost-load:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:48.156832317 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:48.156844017 [boost-load:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:48.156878017 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:48.156912317 [boost-load:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:48.156946517 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:48.156981617 [boost-load:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:48.157016817 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:48.157051517 [boost-load:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:48.157115017 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:48.157135817 [boost-load:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "Spectre V2 : User space: Vulnerable",
+        "Speculative Store Bypass: Vulnerable",
+        "2026-10-20T18:32:49.240918256 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:49.240942556 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+        "2026-10-20T18:32:49.438416163 [boost-load:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "i8042: Failed to disable AUX port, but continuing anyway... Is this a SiS?",
+        "2026-10-20T18:32:49.453207363 [boost-load:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "2026-10-20T18:32:53.624806616 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:53.624831116 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range."
+      ],
+      "raw_result_sha256": "a570212c18ab3118e58eea8ba3bdb92bfab3a4a7c7c9cad610d80ebd14819a35",
+      "isolation": {
+        "hardened_runtime": true,
+        "threads": {
+          "27": {
+            "Name": "firecracker",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "27\t1"
+          },
+          "28": {
+            "Name": "fc_api",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "28\t2"
+          },
+          "29": {
+            "Name": "fc_vcpu 0",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "29\t3"
+          },
+          "30": {
+            "Name": "fc_vcpu 1",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "30\t4"
+          },
+          "31": {
+            "Name": "kvm-nx-lpage-re",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "31\t5"
+          }
+        },
+        "resource_files": {
+          "cpu.max": "50000 100000",
+          "memory.max": "402653184",
+          "memory.swap.max": "0",
+          "pids.max": "32"
+        },
+        "network_devices": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n",
+        "namespaces": {
+          "mnt": {
+            "supervisor": "mnt:[4026537182]",
+            "vmm": "mnt:[4026537710]"
+          },
+          "pid": {
+            "supervisor": "pid:[4026537186]",
+            "vmm": "pid:[4026537711]"
+          },
+          "net": {
+            "supervisor": "net:[4026537192]",
+            "vmm": "net:[4026537515]"
+          },
+          "ipc": {
+            "supervisor": "ipc:[4026537184]",
+            "vmm": "ipc:[4026537184]"
+          },
+          "uts": {
+            "supervisor": "uts:[4026537183]",
+            "vmm": "uts:[4026537183]"
+          },
+          "user": {
+            "supervisor": "user:[4026531837]",
+            "vmm": "user:[4026531837]"
+          },
+          "cgroup": {
+            "supervisor": "cgroup:[4026537191]",
+            "vmm": "cgroup:[4026537191]"
+          }
+        }
+      },
+      "shutdown_excerpt": "reboot: Restarting system\nreboot: machine restart\n2026-10-20T18:32:53.624497016 [boost-load:main] Vmm is stopping.\n2026-10-20T18:32:53.624790616 [boost-load:fc_vcpu 0] 9 messages were suppressed due to rate limiting\n2026-10-20T18:32:53.624806616 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.\n2026-10-20T18:32:53.624831116 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range.\n2026-10-20T18:32:53.625361316 [boost-load:main] Killing vCPU threads\n2026-10-20T18:32:53.685519118 [boost-load:main] Firecracker exiting successfully. exit_code=0\n"
+    },
+    {
+      "scenario": "trace-clean",
+      "status": "observed",
+      "checks": [
+        "API accepted /boot-source: 204",
+        "API accepted /drives/rootfs: 204",
+        "API accepted /machine-config: 204",
+        "API accepted /actions: 204",
+        "complete guest evidence",
+        "mnt namespace differs",
+        "pid namespace differs",
+        "net namespace differs",
+        "process root is jail root",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "inherited environment canary absent",
+        "inherited canary file descriptor closed",
+        "RLIMIT_NOFILE configured",
+        "VMM resides in its cgroup leaf",
+        "all cgroup limits match requested profile",
+        "VMM is PID 1 in its namespace",
+        "no_new_privs active before and after boot"
+      ],
+      "cleanup_forced_stop": false,
+      "exit_code": 0,
+      "console_sha256": "61c62c469cc336fae5141034eee5bd24981ac38065a7bf548d4cfa0da47b4f15",
+      "panic": false,
+      "guest": {
+        "uid": "0",
+        "kernel": "6.12.113-fc-lab",
+        "rootfs": "/dev/root ext4 rw,relatime",
+        "root_device": "254:0",
+        "vda_device": "254:0"
+      },
+      "guest_load": false,
+      "worker_stop_ack": null,
+      "outside_canary_unchanged": true,
+      "final_cgroup_events": {
+        "memory.events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 0
+        },
+        "cpu.stat": {
+          "usage_usec": 1365793,
+          "user_usec": 959441,
+          "system_usec": 406351,
+          "nice_usec": 0,
+          "nr_periods": 37,
+          "nr_throttled": 25,
+          "throttled_usec": 1356480,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "console_findings": [
+        "2026-10-20T18:32:56.038559016 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:56.038634316 [trace-clean:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:56.038669216 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:56.038717816 [trace-clean:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:56.038763416 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:56.038807616 [trace-clean:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:56.038852716 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:56.038899416 [trace-clean:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:56.038943816 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:56.038964416 [trace-clean:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:56.038986216 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:56.039009916 [trace-clean:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:56.039038616 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:56.039081516 [trace-clean:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:56.039106816 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:56.039126016 [trace-clean:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:56.039143116 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:56.039185816 [trace-clean:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:56.039228216 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:56.039269916 [trace-clean:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "Spectre V2 : User space: Vulnerable",
+        "Speculative Store Bypass: Vulnerable",
+        "2026-10-20T18:32:57.139963261 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:57.139987361 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+        "2026-10-20T18:32:57.328267069 [trace-clean:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "i8042: Failed to disable AUX port, but continuing anyway... Is this a SiS?",
+        "2026-10-20T18:32:57.346311170 [trace-clean:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "2026-10-20T18:32:58.540894820 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:58.540932420 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range."
+      ],
+      "raw_result_sha256": "570cd433a39eb1b7a7223f122a518a9b7d8309dc944c1e1f8b4afceb5f88e53e",
+      "isolation": {
+        "hardened_runtime": true,
+        "threads": {
+          "33": {
+            "Name": "firecracker",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "33\t1"
+          },
+          "34": {
+            "Name": "fc_api",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "34\t2"
+          },
+          "35": {
+            "Name": "fc_vcpu 0",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "35\t3"
+          },
+          "36": {
+            "Name": "fc_vcpu 1",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "36\t4"
+          },
+          "37": {
+            "Name": "kvm-nx-lpage-re",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "37\t5"
+          }
+        },
+        "resource_files": {
+          "cpu.max": "50000 100000",
+          "memory.max": "402653184",
+          "memory.swap.max": "0",
+          "pids.max": "32"
+        },
+        "network_devices": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n",
+        "namespaces": {
+          "mnt": {
+            "supervisor": "mnt:[4026537182]",
+            "vmm": "mnt:[4026537710]"
+          },
+          "pid": {
+            "supervisor": "pid:[4026537186]",
+            "vmm": "pid:[4026537711]"
+          },
+          "net": {
+            "supervisor": "net:[4026537192]",
+            "vmm": "net:[4026537515]"
+          },
+          "ipc": {
+            "supervisor": "ipc:[4026537184]",
+            "vmm": "ipc:[4026537184]"
+          },
+          "uts": {
+            "supervisor": "uts:[4026537183]",
+            "vmm": "uts:[4026537183]"
+          },
+          "user": {
+            "supervisor": "user:[4026531837]",
+            "vmm": "user:[4026531837]"
+          },
+          "cgroup": {
+            "supervisor": "cgroup:[4026537191]",
+            "vmm": "cgroup:[4026537191]"
+          }
+        }
+      },
+      "trace": {
+        "injection_requested": false,
+        "http": {
+          "status": 204,
+          "body": ""
+        },
+        "event_count": 277,
+        "selected_events": [
+          {
+            "t": 0.206335,
+            "signal": 5,
+            "syscall": 1,
+            "rip": "0x74dd23e72a01",
+            "write": "2026-10-20T18:32:58.551916420 [trace-clean:main] Killing vCPU threads\n"
+          },
+          {
+            "t": 0.345641,
+            "signal": 5,
+            "syscall": 1,
+            "rip": "0x74dd23e72a01",
+            "write": "2026-10-20T18:32:58.692587526 [trace-clean:main] Firecracker exiting successfully. exit_code=0\n"
+          }
+        ],
+        "selected_samples": [
+          {
+            "t": 7.4e-05,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1295909,
+              "user_usec": 901502,
+              "system_usec": 394407,
+              "nice_usec": 0,
+              "nr_periods": 34,
+              "nr_throttled": 25,
+              "throttled_usec": 1356480,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "33": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "10970600 2256500 150",
+                "wchan": "ptrace_stop",
+                "syscall": "281 0x9 0x74dd23fe10c0 0x100 0xffffffffffffffff 0x0 0x8 0x7ffd3fe5c1a8 0x74dd23e72a01"
+              },
+              "34": {
+                "name": "fc_api",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1381000 0 15",
+                "wchan": "futex_do_wait",
+                "syscall": "202 0x74dd23fe7498 0x89 0xffffffff 0x0 0x0 0xffffffff 0x74dd23bfe270 0x74dd23e6f078"
+              },
+              "35": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1170584100 1328643900 951",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x15 0xae80 0x0 0x74dd23ff3000 0x83d80ec 0x5d86757d2460b 0x74dd137fd9c0 0x74dd23e6eb93"
+              },
+              "36": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "109332200 45774200 439",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x74dd23ff3000 0x83d80ec 0x5d86757d2460b 0x74dd135fa9c0 0x74dd23e6eb93"
+              },
+              "37": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "46800 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd3fe54b20 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.020777,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1300141,
+              "user_usec": 904446,
+              "system_usec": 395695,
+              "nice_usec": 0,
+              "nr_periods": 34,
+              "nr_throttled": 25,
+              "throttled_usec": 1356480,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "33": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "11302500 2275100 166",
+                "wchan": "ptrace_stop",
+                "syscall": "281 0x9 0x74dd23fe10c0 0x100 0xffffffffffffffff 0x0 0x8 0x7ffd3fe5c1a8 0x74dd23e72a01"
+              },
+              "34": {
+                "name": "fc_api",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1499200 0 17",
+                "wchan": "do_epoll_wait",
+                "syscall": "281 0x7 0x74dd23bff220 0xc 0xffffffffffffffff 0x0 0x8 0x74dd23bfe778 0x74dd23e72a01"
+              },
+              "35": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1172350700 1328657800 960",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x15 0xae80 0x0 0x74dd23ff3000 0x83d80f6 0x7099458a70c14 0x74dd137fd9c0 0x74dd23e6eb93"
+              },
+              "36": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "111536600 45946100 448",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x74dd23ff3000 0x83d80f6 0x7099458a70c14 0x74dd135fa9c0 0x74dd23e6eb93"
+              },
+              "37": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "46800 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd3fe54b20 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.040895,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1303311,
+              "user_usec": 906651,
+              "system_usec": 396660,
+              "nice_usec": 0,
+              "nr_periods": 34,
+              "nr_throttled": 25,
+              "throttled_usec": 1356480,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "33": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "11504700 2275100 183",
+                "wchan": "ptrace_stop",
+                "syscall": "1 0x1c 0x7ffd3fe5bd50 0x8 0x0 0x0 0x0 0x7ffd3fe5bd28 0x74dd23e72a01"
+              },
+              "34": {
+                "name": "fc_api",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1499200 0 17",
+                "wchan": "do_epoll_wait",
+                "syscall": "281 0x7 0x74dd23bff220 0xc 0xffffffffffffffff 0x0 0x8 0x74dd23bfe778 0x74dd23e72a01"
+              },
+              "35": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1173850400 1328657800 968",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x15 0xae80 0x0 0x74dd23ff3000 0x83d80f6 0x7099458a70c14 0x74dd137fd9c0 0x74dd23e6eb93"
+              },
+              "36": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "113005100 45948600 456",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x74dd23ff3000 0x83d80fc 0x7c0af5925b39c 0x74dd135fa9c0 0x74dd23e6eb93"
+              },
+              "37": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "46800 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd3fe54b20 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.0611,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1304795,
+              "user_usec": 907683,
+              "system_usec": 397111,
+              "nice_usec": 0,
+              "nr_periods": 34,
+              "nr_throttled": 25,
+              "throttled_usec": 1356480,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "33": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "11813800 2275100 200",
+                "wchan": "ptrace_stop",
+                "syscall": "1 0xd 0x74dd13b28000 0x1000 0x0 0x0 0x0 0x7ffd3fe5bde8 0x74dd23e72a01"
+              },
+              "34": {
+                "name": "fc_api",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1499200 0 17",
+                "wchan": "do_epoll_wait",
+                "syscall": "281 0x7 0x74dd23bff220 0xc 0xffffffffffffffff 0x0 0x8 0x74dd23bfe778 0x74dd23e72a01"
+              },
+              "35": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1174672700 1328657800 973",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x15 0xae80 0x0 0x74dd23ff3000 0x83d80f6 0x7099458a70c14 0x74dd137fd9c0 0x74dd23e6eb93"
+              },
+              "36": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "113357800 45952300 462",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x74dd23ff3000 0x83d8102 0x877ca59a58fef 0x74dd135fa9c0 0x74dd23e6eb93"
+              },
+              "37": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "46800 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd3fe54b20 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.0818,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1307255,
+              "user_usec": 909395,
+              "system_usec": 397860,
+              "nice_usec": 0,
+              "nr_periods": 35,
+              "nr_throttled": 25,
+              "throttled_usec": 1356480,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "33": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "12099600 2275100 218",
+                "wchan": "ptrace_stop",
+                "syscall": "1 0xd 0x74dd150ad000 0x1000 0x0 0x0 0x0 0x7ffd3fe5bde8 0x74dd23e72a01"
+              },
+              "34": {
+                "name": "fc_api",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1499200 0 17",
+                "wchan": "do_epoll_wait",
+                "syscall": "281 0x7 0x74dd23bff220 0xc 0xffffffffffffffff 0x0 0x8 0x74dd23bfe778 0x74dd23e72a01"
+              },
+              "35": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1175810600 1328657800 978",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x15 0xae80 0x0 0x74dd23ff3000 0x83d80f6 0x7099458a70c14 0x74dd137fd9c0 0x74dd23e6eb93"
+              },
+              "36": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "114394200 45952300 468",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x74dd23ff3000 0x83d8110 0xa23095ace8221 0x74dd135fa9c0 0x74dd23e6eb93"
+              },
+              "37": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "46800 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd3fe54b20 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.102621,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1309264,
+              "user_usec": 910792,
+              "system_usec": 398471,
+              "nice_usec": 0,
+              "nr_periods": 35,
+              "nr_throttled": 25,
+              "throttled_usec": 1356480,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "33": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "12337800 2275100 235",
+                "wchan": "ptrace_stop",
+                "syscall": "1 0xd 0x74dd13b31000 0x1000 0x0 0x0 0x0 0x7ffd3fe5bde8 0x74dd23e72a01"
+              },
+              "34": {
+                "name": "fc_api",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1499200 0 17",
+                "wchan": "do_epoll_wait",
+                "syscall": "281 0x7 0x74dd23bff220 0xc 0xffffffffffffffff 0x0 0x8 0x74dd23bfe778 0x74dd23e72a01"
+              },
+              "35": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1177087700 1328657800 984",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x15 0xae80 0x0 0x74dd23ff3000 0x83d80f6 0x7099458a70c14 0x74dd137fd9c0 0x74dd23e6eb93"
+              },
+              "36": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "114887800 45952300 473",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x74dd23ff3000 0x83d8116 0xada245b4d76b6 0x74dd135fa9c0 0x74dd23e6eb93"
+              },
+              "37": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "46800 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd3fe54b20 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.123213,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1311749,
+              "user_usec": 912521,
+              "system_usec": 399228,
+              "nice_usec": 0,
+              "nr_periods": 35,
+              "nr_throttled": 25,
+              "throttled_usec": 1356480,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "33": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "12529000 2275100 247",
+                "wchan": "ptrace_stop",
+                "syscall": "0 0xf 0x7ffd3fe5c0e8 0x8 0x0 0x0 0x0 0x7ffd3fe5c0b8 0x74dd23e72a01"
+              },
+              "34": {
+                "name": "fc_api",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1499200 0 17",
+                "wchan": "do_epoll_wait",
+                "syscall": "281 0x7 0x74dd23bff220 0xc 0xffffffffffffffff 0x0 0x8 0x74dd23bfe778 0x74dd23e72a01"
+              },
+              "35": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1178521600 1328657800 992",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x15 0xae80 0x0 0x74dd23ff3000 0x83d80f6 0x7099458a70c14 0x74dd137fd9c0 0x74dd23e6eb93"
+              },
+              "36": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "115590400 45952300 481",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x74dd23ff3000 0x83d8124 0xc85635c779d7b 0x74dd135fa9c0 0x74dd23e6eb93"
+              },
+              "37": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "46800 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd3fe54b20 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.143749,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1314890,
+              "user_usec": 914706,
+              "system_usec": 400184,
+              "nice_usec": 0,
+              "nr_periods": 35,
+              "nr_throttled": 25,
+              "throttled_usec": 1356480,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "33": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "12861800 2285800 263",
+                "wchan": "ptrace_stop",
+                "syscall": "8 0xd 0x20000 0x0 0x74dd23ff3000 0x83d8134 0xe6dab5dcaac85 0x7ffd3fe5be48 0x74dd23e746fb"
+              },
+              "34": {
+                "name": "fc_api",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1499200 0 17",
+                "wchan": "do_epoll_wait",
+                "syscall": "281 0x7 0x74dd23bff220 0xc 0xffffffffffffffff 0x0 0x8 0x74dd23bfe778 0x74dd23e72a01"
+              },
+              "35": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1180407500 1328657800 999",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x15 0xae80 0x0 0x74dd23ff3000 0x83d80f6 0x7099458a70c14 0x74dd137fd9c0 0x74dd23e6eb93"
+              },
+              "36": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "116669700 45973700 488",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x74dd23ff3000 0x83d8130 0xdf3995d753985 0x74dd135fa9c0 0x74dd23e6eb93"
+              },
+              "37": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "46800 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd3fe54b20 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.163934,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1319799,
+              "user_usec": 919615,
+              "system_usec": 400184,
+              "nice_usec": 0,
+              "nr_periods": 35,
+              "nr_throttled": 25,
+              "throttled_usec": 1356480,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "33": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "13269100 2480300 291",
+                "wchan": "ptrace_stop",
+                "syscall": "281 0x9 0x74dd23fe10c0 0x100 0xffffffffffffffff 0x0 0x8 0x7ffd3fe5c1a8 0x74dd23e72a01"
+              },
+              "34": {
+                "name": "fc_api",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1499200 0 17",
+                "wchan": "do_epoll_wait",
+                "syscall": "281 0x7 0x74dd23bff220 0xc 0xffffffffffffffff 0x0 0x8 0x74dd23bfe778 0x74dd23e72a01"
+              },
+              "35": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1183025600 1329465800 1007",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x15 0xae80 0x0 0x74dd23ff3000 0x83d80f6 0x7099458a70c14 0x74dd137fd9c0 0x74dd23e6eb93"
+              },
+              "36": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "118553200 46157000 496",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x74dd23ff3000 0x83d813e 0xf9ed85e9f601e 0x74dd135fa9c0 0x74dd23e6eb93"
+              },
+              "37": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "46800 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd3fe54b20 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.184346,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1332908,
+              "user_usec": 928479,
+              "system_usec": 404429,
+              "nice_usec": 0,
+              "nr_periods": 36,
+              "nr_throttled": 25,
+              "throttled_usec": 1356480,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "33": {
+                "name": "firecracker",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "13603100 2533500 323",
+                "wchan": "do_epoll_wait",
+                "syscall": "281 0x9 0x74dd23fe10c0 0x100 0xffffffffffffffff 0x0 0x8 0x7ffd3fe5c1a8 0x74dd23e72a01"
+              },
+              "34": {
+                "name": "fc_api",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1499200 0 17",
+                "wchan": "do_epoll_wait",
+                "syscall": "281 0x7 0x74dd23bff220 0xc 0xffffffffffffffff 0x0 0x8 0x74dd23bfe778 0x74dd23e72a01"
+              },
+              "35": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tR (running)",
+                "schedstat": "1191094100 1332976500 1017",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "36": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "122597000 49462400 507",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x74dd23ff3000 0x83d8142 0x1018ea5ef34e30 0x74dd135fa9c0 0x74dd23e6eb93"
+              },
+              "37": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "46800 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd3fe54b20 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.204943,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1352579,
+              "user_usec": 948150,
+              "system_usec": 404429,
+              "nice_usec": 0,
+              "nr_periods": 36,
+              "nr_throttled": 25,
+              "throttled_usec": 1356480,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "33": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "13917900 2555800 335",
+                "wchan": "ptrace_stop",
+                "syscall": "1 0x1 0x74dd23fd8760 0x46 0x0 0x0 0x0 0x7ffd3fe5bef8 0x74dd23e72a01"
+              },
+              "35": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tR (running)",
+                "schedstat": "1210531000 1333109000 1021",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "36": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "123020900 49462400 508",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x74dd23ff3000 0x83d8142 0x1018ea5ef34e30 0x74dd135fa9c0 0x74dd23e6eb93"
+              },
+              "37": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "46800 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd3fe54b20 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.225441,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1361379,
+              "user_usec": 956949,
+              "system_usec": 404429,
+              "nice_usec": 0,
+              "nr_periods": 36,
+              "nr_throttled": 25,
+              "throttled_usec": 1356480,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "33": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "14268000 3788900 349",
+                "wchan": "ptrace_stop",
+                "syscall": "202 0x74dd135fcbe8 0x81 0x1 0x8 0xca 0x0 0x7ffd3fe5bf38 0x74dd23e729d8"
+              },
+              "36": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "123104800 49462400 509",
+                "wchan": "futex_do_wait",
+                "syscall": "202 0x74dd135fcbe8 0x80 0xffffffff80000002 0x0 0x80000002 0xca 0x74dd135fc960 0x74dd23e7299a"
+              },
+              "37": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "46800 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd3fe54b20 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.246354,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1361826,
+              "user_usec": 957396,
+              "system_usec": 404429,
+              "nice_usec": 0,
+              "nr_periods": 36,
+              "nr_throttled": 25,
+              "throttled_usec": 1356480,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "33": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "14636200 3788900 367",
+                "wchan": "ptrace_stop",
+                "syscall": "16 0x0 0x5401 0x7ffd3fe5c150 0x0 0x1 0x0 0x7ffd3fe5c070 0x74dd23e6eb93"
+              },
+              "37": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "46800 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd3fe54b20 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.266483,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1362755,
+              "user_usec": 957396,
+              "system_usec": 405358,
+              "nice_usec": 0,
+              "nr_periods": 36,
+              "nr_throttled": 25,
+              "throttled_usec": 1356480,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "33": {
+                "name": "firecracker",
+                "state": "State:\tD (disk sleep)",
+                "schedstat": "15482800 3788900 381",
+                "wchan": "rcu_barrier",
+                "syscall": "3 0x12 0x0 0x0 0x0 0x0 0x0 0x7ffd3fe5c078 0x74dd23e72a01"
+              }
+            }
+          },
+          {
+            "t": 0.286515,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1363063,
+              "user_usec": 957523,
+              "system_usec": 405539,
+              "nice_usec": 0,
+              "nr_periods": 37,
+              "nr_throttled": 25,
+              "throttled_usec": 1356480,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "33": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "15790700 3938300 387",
+                "wchan": "ptrace_stop",
+                "syscall": "3 0x11 0x0 0x0 0x0 0x0 0x0 0x7ffd3fe5c078 0x74dd23e72a01"
+              }
+            }
+          },
+          {
+            "t": 0.307193,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1363382,
+              "user_usec": 957747,
+              "system_usec": 405634,
+              "nice_usec": 0,
+              "nr_periods": 37,
+              "nr_throttled": 25,
+              "throttled_usec": 1356480,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "33": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "16109500 4095500 404",
+                "wchan": "ptrace_stop",
+                "syscall": "3 0x18 0x0 0x0 0x0 0x0 0x0 0x7ffd3fe5c1d8 0x74dd23e72a01"
+              }
+            }
+          },
+          {
+            "t": 0.327532,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1365141,
+              "user_usec": 958983,
+              "system_usec": 406157,
+              "nice_usec": 0,
+              "nr_periods": 37,
+              "nr_throttled": 25,
+              "throttled_usec": 1356480,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "33": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "17868900 4095500 420",
+                "wchan": "ptrace_stop",
+                "syscall": "3 0xe 0x0 0x0 0x0 0x0 0x0 0x7ffd3fe5c128 0x74dd23e72a01"
+              }
+            }
+          },
+          {
+            "t": 0.347972,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1365538,
+              "user_usec": 959262,
+              "system_usec": 406275,
+              "nice_usec": 0,
+              "nr_periods": 37,
+              "nr_throttled": 25,
+              "throttled_usec": 1356480,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "33": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "18265200 4095500 437",
+                "wchan": "ptrace_stop",
+                "syscall": "11 0x74dd23fe4000 0x1000 0x0 0x3 0x74dd23ef9020 0x55556b6e61d0 0x7ffd3fe5d770 0x74dd23e6f1f8"
+              }
+            }
+          }
+        ],
+        "sample_count": 18
+      },
+      "shutdown_excerpt": "reboot: Restarting system\nreboot: machine restart\n2026-10-20T18:32:58.540859720 [trace-clean:fc_vcpu 0] 9 messages were suppressed due to rate limiting\n2026-10-20T18:32:58.540894820 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.\n2026-10-20T18:32:58.540932420 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range.\n2026-10-20T18:32:58.542104920 [trace-clean:main] Vmm is stopping.\n2026-10-20T18:32:58.551916420 [trace-clean:main] Killing vCPU threads\n2026-10-20T18:32:58.692587526 [trace-clean:main] Firecracker exiting successfully. exit_code=0\n"
+    },
+    {
+      "scenario": "trace-held-vcpu",
+      "status": "observed",
+      "checks": [
+        "API accepted /boot-source: 204",
+        "API accepted /drives/rootfs: 204",
+        "API accepted /machine-config: 204",
+        "API accepted /actions: 204",
+        "complete guest evidence",
+        "mnt namespace differs",
+        "pid namespace differs",
+        "net namespace differs",
+        "process root is jail root",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "inherited environment canary absent",
+        "inherited canary file descriptor closed",
+        "RLIMIT_NOFILE configured",
+        "VMM resides in its cgroup leaf",
+        "all cgroup limits match requested profile",
+        "VMM is PID 1 in its namespace",
+        "no_new_privs active before and after boot"
+      ],
+      "cleanup_forced_stop": false,
+      "exit_code": -11,
+      "console_sha256": "29b93a9f285bbbf1212443250404d7421a3d002c7758953aad5054b175fdbd5a",
+      "panic": true,
+      "guest": {
+        "uid": "0",
+        "kernel": "6.12.113-fc-lab",
+        "rootfs": "/dev/root ext4 rw,relatime",
+        "root_device": "254:0",
+        "vda_device": "254:0"
+      },
+      "guest_load": false,
+      "worker_stop_ack": null,
+      "injected_vcpu_tid": 42,
+      "outside_canary_unchanged": true,
+      "final_cgroup_events": {
+        "memory.events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 0
+        },
+        "cpu.stat": {
+          "usage_usec": 1362192,
+          "user_usec": 867073,
+          "system_usec": 495118,
+          "nice_usec": 0,
+          "nr_periods": 36,
+          "nr_throttled": 21,
+          "throttled_usec": 1195864,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "console_findings": [
+        "2026-10-20T18:33:00.918060518 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:00.918124818 [trace-held-vcpu:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:00.918170818 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:00.918207518 [trace-held-vcpu:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:00.918243818 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:00.918278718 [trace-held-vcpu:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:00.918313518 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:00.918372418 [trace-held-vcpu:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:00.918407418 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:00.918542218 [trace-held-vcpu:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:00.918592018 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:00.918631218 [trace-held-vcpu:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:00.918672118 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:00.918706818 [trace-held-vcpu:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:00.918777518 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:00.918826018 [trace-held-vcpu:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:00.918869818 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:00.918914118 [trace-held-vcpu:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:00.918948218 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:00.918985718 [trace-held-vcpu:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "Spectre V2 : User space: Vulnerable",
+        "Speculative Store Bypass: Vulnerable",
+        "2026-10-20T18:33:02.052666151 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:02.052711751 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+        "2026-10-20T18:33:02.521577361 [trace-held-vcpu:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "i8042: Failed to disable AUX port, but continuing anyway... Is this a SiS?",
+        "2026-10-20T18:33:02.546216862 [trace-held-vcpu:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "2026-10-20T18:33:04.055935497 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:04.055984797 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range."
+      ],
+      "raw_result_sha256": "f179d52f817cb782eda3e668152a83e430673f75b42b1b77fcd6aaa25b7cd30d",
+      "isolation": {
+        "hardened_runtime": true,
+        "threads": {
+          "40": {
+            "Name": "firecracker",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "40\t1"
+          },
+          "41": {
+            "Name": "fc_api",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "41\t2"
+          },
+          "42": {
+            "Name": "fc_vcpu 0",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "42\t3"
+          },
+          "43": {
+            "Name": "fc_vcpu 1",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "43\t4"
+          },
+          "44": {
+            "Name": "kvm-nx-lpage-re",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "44\t5"
+          }
+        },
+        "resource_files": {
+          "cpu.max": "50000 100000",
+          "memory.max": "402653184",
+          "memory.swap.max": "0",
+          "pids.max": "32"
+        },
+        "network_devices": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n",
+        "namespaces": {
+          "mnt": {
+            "supervisor": "mnt:[4026537182]",
+            "vmm": "mnt:[4026537710]"
+          },
+          "pid": {
+            "supervisor": "pid:[4026537186]",
+            "vmm": "pid:[4026537711]"
+          },
+          "net": {
+            "supervisor": "net:[4026537192]",
+            "vmm": "net:[4026537515]"
+          },
+          "ipc": {
+            "supervisor": "ipc:[4026537184]",
+            "vmm": "ipc:[4026537184]"
+          },
+          "uts": {
+            "supervisor": "uts:[4026537183]",
+            "vmm": "uts:[4026537183]"
+          },
+          "user": {
+            "supervisor": "user:[4026531837]",
+            "vmm": "user:[4026531837]"
+          },
+          "cgroup": {
+            "supervisor": "cgroup:[4026537191]",
+            "vmm": "cgroup:[4026537191]"
+          }
+        }
+      },
+      "trace": {
+        "injection_requested": true,
+        "http": {
+          "status": 204,
+          "body": ""
+        },
+        "event_count": 221,
+        "selected_events": [
+          {
+            "t": 0.25691,
+            "signal": 5,
+            "syscall": 1,
+            "rip": "0x77670de72a01",
+            "write": "2026-10-20T18:33:04.070374897 [trace-held-vcpu:main] Killing vCPU threads\n",
+            "held_vcpu": 42
+          },
+          {
+            "t": 1.277807,
+            "signal": 5,
+            "syscall": 1,
+            "rip": "0x77670de72a01",
+            "write": "2026-10-20T18:33:05.091272021 [trace-held-vcpu:main] Firecracker panicked at src/vmm/src/vstate/vcpu.rs:660:21:\nTimed out waiting for vCPU thread 'fc_vcpu 0' to exit\n"
+          },
+          {
+            "t": 1.293663,
+            "signal": 6,
+            "syscall": 14,
+            "rip": "0x77670de6f68c",
+            "instruction_hex": "c3555389fb4881ec880000004889e548",
+            "siginfo_hex": "0600000000000000faffffff0000000001000000feff00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          },
+          {
+            "t": 1.304435,
+            "signal": 6,
+            "syscall": 14,
+            "rip": "0x77670de6cae6",
+            "instruction_hex": "f4bf09000000e89c2b0000bf7f000000",
+            "siginfo_hex": "0600000000000000faffffff0000000001000000feff00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          },
+          {
+            "t": 1.304687,
+            "signal": 11,
+            "syscall": 18446744073709551615,
+            "rip": "0x77670de6cae6",
+            "instruction_hex": "f4bf09000000e89c2b0000bf7f000000",
+            "siginfo_hex": "0b00000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          }
+        ],
+        "selected_samples": [
+          {
+            "t": 3.8e-05,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1235225,
+              "user_usec": 822629,
+              "system_usec": 412596,
+              "nice_usec": 0,
+              "nr_periods": 30,
+              "nr_throttled": 21,
+              "throttled_usec": 1195864,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "40": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "12463600 43359000 169",
+                "wchan": "ptrace_stop",
+                "syscall": "281 0x9 0x77670e02b0c0 0x100 0xffffffffffffffff 0x0 0x8 0x7ffd0d70b768 0x77670de72a01"
+              },
+              "41": {
+                "name": "fc_api",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1322100 4564500 18",
+                "wchan": "futex_do_wait",
+                "syscall": "202 0x77670e031498 0x89 0xffffffff 0x0 0x0 0xffffffff 0x77670dbfe270 0x77670de6f078"
+              },
+              "42": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1031332300 1080383100 660",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x15 0xae80 0x0 0x77670e03d000 0x83d8b50 0x2143730b865d5d 0x7766fd7fd9c0 0x77670de6eb93"
+              },
+              "43": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "185433200 310030700 610",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x77670e03d000 0x83d8b52 0x21807c0b9d42a5 0x7766fd5fa9c0 0x77670de6eb93"
+              },
+              "44": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "30600 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd0d7040e0 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.10254,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1258684,
+              "user_usec": 836063,
+              "system_usec": 422620,
+              "nice_usec": 0,
+              "nr_periods": 31,
+              "nr_throttled": 21,
+              "throttled_usec": 1195864,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "40": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "14596100 54168500 246",
+                "wchan": "ptrace_stop",
+                "syscall": "8 0xd 0x0 0x0 0x77670e03d000 0x83d8b84 0x27765d0ded4e9b 0x7ffd0d70b408 0x77670de746fb"
+              },
+              "41": {
+                "name": "fc_api",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1482700 4652600 23",
+                "wchan": "do_epoll_wait",
+                "syscall": "281 0x7 0x77670dbff220 0xc 0xffffffffffffffff 0x0 0x8 0x77670dbfe778 0x77670de72a01"
+              },
+              "42": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1042595200 1082189400 697",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x15 0xae80 0x0 0x77670e03d000 0x83d8b5c 0x22b1a90c13aa04 0x7766fd7fd9c0 0x77670de6eb93"
+              },
+              "43": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "195335900 310572200 646",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x77670e03d000 0x83d8b82 0x2739540dd580db 0x7766fd5fa9c0 0x77670de6eb93"
+              },
+              "44": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "30600 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd0d7040e0 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.204519,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1272741,
+              "user_usec": 842087,
+              "system_usec": 430654,
+              "nice_usec": 0,
+              "nr_periods": 32,
+              "nr_throttled": 21,
+              "throttled_usec": 1195864,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "40": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "15862500 54227900 317",
+                "wchan": "ptrace_stop",
+                "syscall": "1 0x1c 0x7ffd0d70b310 0x8 0x0 0x0 0x0 0x7ffd0d70b2e8 0x77670de72a01"
+              },
+              "41": {
+                "name": "fc_api",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1482700 4652600 23",
+                "wchan": "do_epoll_wait",
+                "syscall": "281 0x7 0x77670dbff220 0xc 0xffffffffffffffff 0x0 0x8 0x77670dbfe778 0x77670de72a01"
+              },
+              "42": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1051111500 1082507600 730",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x15 0xae80 0x0 0x77670e03d000 0x83d8b5c 0x22b1a90c13aa04 0x7766fd7fd9c0 0x77670de6eb93"
+              },
+              "43": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "199610900 310744700 681",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x77670e03d000 0x83d8bba 0x2de650106c5d10 0x7766fd5fa9c0 0x77670de6eb93"
+              },
+              "44": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "30600 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd0d7040e0 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.30632,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1305850,
+              "user_usec": 852800,
+              "system_usec": 453050,
+              "nice_usec": 0,
+              "nr_periods": 33,
+              "nr_throttled": 21,
+              "throttled_usec": 1195864,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "40": {
+                "name": "firecracker",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "17083400 54306200 368",
+                "wchan": "futex_do_wait",
+                "syscall": "202 0x77670e031458 0x89 0xffffffff 0x7ffd0d70b438 0x0 0x7767ffffffff 0x7ffd0d70b3c0 0x77670de6f078"
+              },
+              "42": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "1080104500 1082511700 742",
+                "wchan": "ptrace_stop",
+                "syscall": "16 0x15 0xae80 0x0 0x77670e03d000 0x83d8bcc 0x300ba1114161a9 0x7766fd7fd9c0 0x77670de6eb93"
+              },
+              "44": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "30600 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd0d7040e0 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.408956,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1305850,
+              "user_usec": 852800,
+              "system_usec": 453050,
+              "nice_usec": 0,
+              "nr_periods": 34,
+              "nr_throttled": 21,
+              "throttled_usec": 1195864,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "40": {
+                "name": "firecracker",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "17083400 54306200 368",
+                "wchan": "futex_do_wait",
+                "syscall": "202 0x77670e031458 0x89 0xffffffff 0x7ffd0d70b438 0x0 0x7767ffffffff 0x7ffd0d70b3c0 0x77670de6f078"
+              },
+              "42": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "1080104500 1082511700 742",
+                "wchan": "ptrace_stop",
+                "syscall": "16 0x15 0xae80 0x0 0x77670e03d000 0x83d8bcc 0x300ba1114161a9 0x7766fd7fd9c0 0x77670de6eb93"
+              },
+              "44": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "30600 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd0d7040e0 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.512359,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1305850,
+              "user_usec": 852800,
+              "system_usec": 453050,
+              "nice_usec": 0,
+              "nr_periods": 34,
+              "nr_throttled": 21,
+              "throttled_usec": 1195864,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "40": {
+                "name": "firecracker",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "17083400 54306200 368",
+                "wchan": "futex_do_wait",
+                "syscall": "202 0x77670e031458 0x89 0xffffffff 0x7ffd0d70b438 0x0 0x7767ffffffff 0x7ffd0d70b3c0 0x77670de6f078"
+              },
+              "42": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "1080104500 1082511700 742",
+                "wchan": "ptrace_stop",
+                "syscall": "16 0x15 0xae80 0x0 0x77670e03d000 0x83d8bcc 0x300ba1114161a9 0x7766fd7fd9c0 0x77670de6eb93"
+              },
+              "44": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "30600 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd0d7040e0 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.61557,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1305850,
+              "user_usec": 852800,
+              "system_usec": 453050,
+              "nice_usec": 0,
+              "nr_periods": 34,
+              "nr_throttled": 21,
+              "throttled_usec": 1195864,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "40": {
+                "name": "firecracker",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "17083400 54306200 368",
+                "wchan": "futex_do_wait",
+                "syscall": "202 0x77670e031458 0x89 0xffffffff 0x7ffd0d70b438 0x0 0x7767ffffffff 0x7ffd0d70b3c0 0x77670de6f078"
+              },
+              "42": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "1080104500 1082511700 742",
+                "wchan": "ptrace_stop",
+                "syscall": "16 0x15 0xae80 0x0 0x77670e03d000 0x83d8bcc 0x300ba1114161a9 0x7766fd7fd9c0 0x77670de6eb93"
+              },
+              "44": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "30600 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd0d7040e0 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.718567,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1305850,
+              "user_usec": 852800,
+              "system_usec": 453050,
+              "nice_usec": 0,
+              "nr_periods": 34,
+              "nr_throttled": 21,
+              "throttled_usec": 1195864,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "40": {
+                "name": "firecracker",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "17083400 54306200 368",
+                "wchan": "futex_do_wait",
+                "syscall": "202 0x77670e031458 0x89 0xffffffff 0x7ffd0d70b438 0x0 0x7767ffffffff 0x7ffd0d70b3c0 0x77670de6f078"
+              },
+              "42": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "1080104500 1082511700 742",
+                "wchan": "ptrace_stop",
+                "syscall": "16 0x15 0xae80 0x0 0x77670e03d000 0x83d8bcc 0x300ba1114161a9 0x7766fd7fd9c0 0x77670de6eb93"
+              },
+              "44": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "30600 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd0d7040e0 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.820979,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1305850,
+              "user_usec": 852800,
+              "system_usec": 453050,
+              "nice_usec": 0,
+              "nr_periods": 34,
+              "nr_throttled": 21,
+              "throttled_usec": 1195864,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "40": {
+                "name": "firecracker",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "17083400 54306200 368",
+                "wchan": "futex_do_wait",
+                "syscall": "202 0x77670e031458 0x89 0xffffffff 0x7ffd0d70b438 0x0 0x7767ffffffff 0x7ffd0d70b3c0 0x77670de6f078"
+              },
+              "42": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "1080104500 1082511700 742",
+                "wchan": "ptrace_stop",
+                "syscall": "16 0x15 0xae80 0x0 0x77670e03d000 0x83d8bcc 0x300ba1114161a9 0x7766fd7fd9c0 0x77670de6eb93"
+              },
+              "44": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "30600 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd0d7040e0 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.924936,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1305850,
+              "user_usec": 852800,
+              "system_usec": 453050,
+              "nice_usec": 0,
+              "nr_periods": 34,
+              "nr_throttled": 21,
+              "throttled_usec": 1195864,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "40": {
+                "name": "firecracker",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "17083400 54306200 368",
+                "wchan": "futex_do_wait",
+                "syscall": "202 0x77670e031458 0x89 0xffffffff 0x7ffd0d70b438 0x0 0x7767ffffffff 0x7ffd0d70b3c0 0x77670de6f078"
+              },
+              "42": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "1080104500 1082511700 742",
+                "wchan": "ptrace_stop",
+                "syscall": "16 0x15 0xae80 0x0 0x77670e03d000 0x83d8bcc 0x300ba1114161a9 0x7766fd7fd9c0 0x77670de6eb93"
+              },
+              "44": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "30600 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd0d7040e0 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 1.02924,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1305850,
+              "user_usec": 852800,
+              "system_usec": 453050,
+              "nice_usec": 0,
+              "nr_periods": 34,
+              "nr_throttled": 21,
+              "throttled_usec": 1195864,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "40": {
+                "name": "firecracker",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "17083400 54306200 368",
+                "wchan": "futex_do_wait",
+                "syscall": "202 0x77670e031458 0x89 0xffffffff 0x7ffd0d70b438 0x0 0x7767ffffffff 0x7ffd0d70b3c0 0x77670de6f078"
+              },
+              "42": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "1080104500 1082511700 742",
+                "wchan": "ptrace_stop",
+                "syscall": "16 0x15 0xae80 0x0 0x77670e03d000 0x83d8bcc 0x300ba1114161a9 0x7766fd7fd9c0 0x77670de6eb93"
+              },
+              "44": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "30600 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd0d7040e0 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 1.132169,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1305850,
+              "user_usec": 852800,
+              "system_usec": 453050,
+              "nice_usec": 0,
+              "nr_periods": 34,
+              "nr_throttled": 21,
+              "throttled_usec": 1195864,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "40": {
+                "name": "firecracker",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "17083400 54306200 368",
+                "wchan": "futex_do_wait",
+                "syscall": "202 0x77670e031458 0x89 0xffffffff 0x7ffd0d70b438 0x0 0x7767ffffffff 0x7ffd0d70b3c0 0x77670de6f078"
+              },
+              "42": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "1080104500 1082511700 742",
+                "wchan": "ptrace_stop",
+                "syscall": "16 0x15 0xae80 0x0 0x77670e03d000 0x83d8bcc 0x300ba1114161a9 0x7766fd7fd9c0 0x77670de6eb93"
+              },
+              "44": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "30600 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd0d7040e0 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 1.234127,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1305850,
+              "user_usec": 852800,
+              "system_usec": 453050,
+              "nice_usec": 0,
+              "nr_periods": 34,
+              "nr_throttled": 21,
+              "throttled_usec": 1195864,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "40": {
+                "name": "firecracker",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "17083400 54306200 368",
+                "wchan": "futex_do_wait",
+                "syscall": "202 0x77670e031458 0x89 0xffffffff 0x7ffd0d70b438 0x0 0x7767ffffffff 0x7ffd0d70b3c0 0x77670de6f078"
+              },
+              "42": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "1080104500 1082511700 742",
+                "wchan": "ptrace_stop",
+                "syscall": "16 0x15 0xae80 0x0 0x77670e03d000 0x83d8bcc 0x300ba1114161a9 0x7766fd7fd9c0 0x77670de6eb93"
+              },
+              "44": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "30600 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd0d7040e0 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 1.29495,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 1306195,
+              "user_usec": 853025,
+              "system_usec": 453169,
+              "nice_usec": 0,
+              "nr_periods": 35,
+              "nr_throttled": 21,
+              "throttled_usec": 1195864,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "40": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "17427700 54331300 385",
+                "wchan": "ptrace_stop",
+                "syscall": "14 0x0 0x77670deb2e88 0x0 0x8 0x1 0x0 0x7ffd0d70b378 0x77670de6f65a"
+              },
+              "42": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "1080104500 1082511700 742",
+                "wchan": "ptrace_stop",
+                "syscall": "16 0x15 0xae80 0x0 0x77670e03d000 0x83d8bcc 0x300ba1114161a9 0x7766fd7fd9c0 0x77670de6eb93"
+              },
+              "44": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "30600 0 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd0d7040e0 0x4 0x0 0x0 0x0"
+              }
+            }
+          }
+        ],
+        "sample_count": 64
+      },
+      "shutdown_excerpt": "reboot: Restarting system\nreboot: machine restart\n2026-10-20T18:33:04.055900797 [trace-held-vcpu:fc_vcpu 0] 9 messages were suppressed due to rate limiting\n2026-10-20T18:33:04.055935497 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.\n2026-10-20T18:33:04.055984797 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range.\n2026-10-20T18:33:04.058071197 [trace-held-vcpu:main] Vmm is stopping.\n2026-10-20T18:33:04.070374897 [trace-held-vcpu:main] Killing vCPU threads\n2026-10-20T18:33:05.091272021 [trace-held-vcpu:main] Firecracker panicked at src/vmm/src/vstate/vcpu.rs:660:21:\nTimed out waiting for vCPU thread 'fc_vcpu 0' to exit\n"
+    },
+    {
+      "scenario": "quota-starved",
+      "status": "observed",
+      "checks": [
+        "API accepted /boot-source: 204",
+        "API accepted /drives/rootfs: 204",
+        "API accepted /machine-config: 204",
+        "API accepted /actions: 204",
+        "complete guest evidence",
+        "mnt namespace differs",
+        "pid namespace differs",
+        "net namespace differs",
+        "process root is jail root",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "inherited environment canary absent",
+        "inherited canary file descriptor closed",
+        "RLIMIT_NOFILE configured",
+        "VMM resides in its cgroup leaf",
+        "all cgroup limits match requested profile",
+        "VMM is PID 1 in its namespace",
+        "no_new_privs active before and after boot"
+      ],
+      "cleanup_forced_stop": false,
+      "exit_code": 0,
+      "console_sha256": "5448970699edafd07a77212dc82304afd0e3e7667c0095124f8ee62beb1d41c7",
+      "panic": false,
+      "guest": {
+        "uid": "0",
+        "kernel": "6.12.113-fc-lab",
+        "rootfs": "/dev/root ext4 rw,relatime",
+        "root_device": "254:0",
+        "vda_device": "254:0"
+      },
+      "guest_load": false,
+      "worker_stop_ack": null,
+      "outside_canary_unchanged": true,
+      "final_cgroup_events": {
+        "memory.events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 0
+        },
+        "cpu.stat": {
+          "usage_usec": 976392,
+          "user_usec": 621531,
+          "system_usec": 354861,
+          "nice_usec": 0,
+          "nr_periods": 38,
+          "nr_throttled": 27,
+          "throttled_usec": 14853956,
+          "nr_bursts": 1,
+          "burst_usec": 33122
+        }
+      },
+      "console_findings": [
+        "2026-10-20T18:33:06.131331545 [quota-starved:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:06.131411445 [quota-starved:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:06.131439745 [quota-starved:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:06.131483345 [quota-starved:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:06.131526645 [quota-starved:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:06.131567645 [quota-starved:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:06.131609645 [quota-starved:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:06.131650745 [quota-starved:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:06.131693345 [quota-starved:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:06.131734945 [quota-starved:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:06.131777445 [quota-starved:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:06.131818445 [quota-starved:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:06.131840345 [quota-starved:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:06.131860445 [quota-starved:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:06.131881545 [quota-starved:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:06.131921045 [quota-starved:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:06.131962745 [quota-starved:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:06.132001045 [quota-starved:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:06.132042745 [quota-starved:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:06.132083345 [quota-starved:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "Spectre V2 : User space: Vulnerable",
+        "Speculative Store Bypass: Vulnerable",
+        "2026-10-20T18:33:07.287856672 [quota-starved:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:07.287948472 [quota-starved:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+        "2026-10-20T18:33:07.486619976 [quota-starved:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "i8042: Failed to disable AUX port, but continuing anyway... Is this a SiS?",
+        "2026-10-20T18:33:07.507198177 [quota-starved:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "2026-10-20T18:33:08.732680105 [quota-starved:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:08.732706905 [quota-starved:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range."
+      ],
+      "raw_result_sha256": "bbb360675ab2626357a9d7016b2db1674dbe912711757b56c5716eed2b7abd8f",
+      "isolation": {
+        "hardened_runtime": true,
+        "threads": {
+          "47": {
+            "Name": "firecracker",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "47\t1"
+          },
+          "48": {
+            "Name": "fc_api",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "48\t2"
+          },
+          "49": {
+            "Name": "fc_vcpu 0",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "49\t3"
+          },
+          "50": {
+            "Name": "fc_vcpu 1",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "50\t4"
+          },
+          "51": {
+            "Name": "kvm-nx-lpage-re",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "51\t5"
+          }
+        },
+        "resource_files": {
+          "cpu.max": "50000 100000",
+          "memory.max": "402653184",
+          "memory.swap.max": "0",
+          "pids.max": "32"
+        },
+        "network_devices": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n",
+        "namespaces": {
+          "mnt": {
+            "supervisor": "mnt:[4026537182]",
+            "vmm": "mnt:[4026537710]"
+          },
+          "pid": {
+            "supervisor": "pid:[4026537186]",
+            "vmm": "pid:[4026537711]"
+          },
+          "net": {
+            "supervisor": "net:[4026537192]",
+            "vmm": "net:[4026537515]"
+          },
+          "ipc": {
+            "supervisor": "ipc:[4026537184]",
+            "vmm": "ipc:[4026537184]"
+          },
+          "uts": {
+            "supervisor": "uts:[4026537183]",
+            "vmm": "uts:[4026537183]"
+          },
+          "user": {
+            "supervisor": "user:[4026531837]",
+            "vmm": "user:[4026531837]"
+          },
+          "cgroup": {
+            "supervisor": "cgroup:[4026537191]",
+            "vmm": "cgroup:[4026537191]"
+          }
+        }
+      },
+      "trace": {
+        "injection_requested": "quota",
+        "http": {
+          "status": 204,
+          "body": ""
+        },
+        "event_count": 275,
+        "selected_events": [
+          {
+            "t": 0.234912,
+            "signal": 5,
+            "syscall": 1,
+            "rip": "0x7d2c17872a01",
+            "write": "2026-10-20T18:33:08.746078105 [quota-starved:main] Killing vCPU threads\n",
+            "injected_quota": "1000 1000000"
+          },
+          {
+            "t": 9.282334,
+            "signal": 5,
+            "syscall": 1,
+            "rip": "0x7d2c17872a01",
+            "write": "2026-10-20T18:33:17.793505459 [quota-starved:main] Firecracker exiting successfully. exit_code=0\n"
+          }
+        ],
+        "selected_samples": [
+          {
+            "t": 7.4e-05,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 917487,
+              "user_usec": 573429,
+              "system_usec": 344057,
+              "nice_usec": 0,
+              "nr_periods": 25,
+              "nr_throttled": 16,
+              "throttled_usec": 919711,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "47": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "11048800 1807500 124",
+                "wchan": "ptrace_stop",
+                "syscall": "281 0x9 0x7d2c17abc0c0 0x100 0xffffffffffffffff 0x0 0x8 0x7ffea4abb508 0x7d2c17872a01"
+              },
+              "48": {
+                "name": "fc_api",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "1341900 168300 14",
+                "wchan": "futex_do_wait",
+                "syscall": "202 0x7d2c17ac2498 0x89 0xffffffff 0x0 0x0 0xffffffff 0x7d2c175fe270 0x7d2c1786f078"
+              },
+              "49": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "809186500 761870400 469",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x15 0xae80 0x0 0x7d2c17ace000 0x83d9470 0xf9ed97843d8fb 0x7d2c071fd9c0 0x7d2c1786eb93"
+              },
+              "50": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "92001900 163307700 400",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x7d2c17ace000 0x83d9470 0xf9ed97843d8fb 0x7d2c06ffa9c0 0x7d2c1786eb93"
+              },
+              "51": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "7300 63400 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x17 0xae80 0x0 0x4 0x7d2c17abfaa0 0x4 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.848743,
+            "cpu_max": "1000 1000000",
+            "cpu_stat": {
+              "usage_usec": 971448,
+              "user_usec": 619989,
+              "system_usec": 351459,
+              "nice_usec": 0,
+              "nr_periods": 28,
+              "nr_throttled": 17,
+              "throttled_usec": 919711,
+              "nr_bursts": 1,
+              "burst_usec": 33122
+            },
+            "threads": {
+              "47": {
+                "name": "firecracker",
+                "state": "State:\tR (running)",
+                "schedstat": "14665300 2538100 321",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "49": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tR (running)",
+                "schedstat": "848384800 762044300 544",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "50": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tR (running)",
+                "schedstat": "102871900 163382500 481",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "51": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "7300 63400 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x17 0xae80 0x0 0x4 0x7d2c17abfaa0 0x4 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 1.698077,
+            "cpu_max": "1000 1000000",
+            "cpu_stat": {
+              "usage_usec": 971448,
+              "user_usec": 619989,
+              "system_usec": 351459,
+              "nice_usec": 0,
+              "nr_periods": 29,
+              "nr_throttled": 18,
+              "throttled_usec": 919711,
+              "nr_bursts": 1,
+              "burst_usec": 33122
+            },
+            "threads": {
+              "47": {
+                "name": "firecracker",
+                "state": "State:\tR (running)",
+                "schedstat": "14665300 2538100 321",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "49": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tR (running)",
+                "schedstat": "848384800 762044300 544",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "50": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tR (running)",
+                "schedstat": "102871900 163382500 481",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "51": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "7300 63400 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x17 0xae80 0x0 0x4 0x7d2c17abfaa0 0x4 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 2.545397,
+            "cpu_max": "1000 1000000",
+            "cpu_stat": {
+              "usage_usec": 971448,
+              "user_usec": 619989,
+              "system_usec": 351459,
+              "nice_usec": 0,
+              "nr_periods": 30,
+              "nr_throttled": 19,
+              "throttled_usec": 919711,
+              "nr_bursts": 1,
+              "burst_usec": 33122
+            },
+            "threads": {
+              "47": {
+                "name": "firecracker",
+                "state": "State:\tR (running)",
+                "schedstat": "14665300 2538100 321",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "49": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tR (running)",
+                "schedstat": "848384800 762044300 544",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "50": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tR (running)",
+                "schedstat": "102871900 163382500 481",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "51": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "7300 63400 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x17 0xae80 0x0 0x4 0x7d2c17abfaa0 0x4 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 3.391284,
+            "cpu_max": "1000 1000000",
+            "cpu_stat": {
+              "usage_usec": 971448,
+              "user_usec": 619989,
+              "system_usec": 351459,
+              "nice_usec": 0,
+              "nr_periods": 31,
+              "nr_throttled": 20,
+              "throttled_usec": 919711,
+              "nr_bursts": 1,
+              "burst_usec": 33122
+            },
+            "threads": {
+              "47": {
+                "name": "firecracker",
+                "state": "State:\tR (running)",
+                "schedstat": "14665300 2538100 321",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "49": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tR (running)",
+                "schedstat": "848384800 762044300 544",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "50": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tR (running)",
+                "schedstat": "102871900 163382500 481",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "51": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "7300 63400 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x17 0xae80 0x0 0x4 0x7d2c17abfaa0 0x4 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 4.238737,
+            "cpu_max": "1000 1000000",
+            "cpu_stat": {
+              "usage_usec": 971448,
+              "user_usec": 619989,
+              "system_usec": 351459,
+              "nice_usec": 0,
+              "nr_periods": 31,
+              "nr_throttled": 20,
+              "throttled_usec": 919711,
+              "nr_bursts": 1,
+              "burst_usec": 33122
+            },
+            "threads": {
+              "47": {
+                "name": "firecracker",
+                "state": "State:\tR (running)",
+                "schedstat": "14665300 2538100 321",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "49": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tR (running)",
+                "schedstat": "848384800 762044300 544",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "50": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tR (running)",
+                "schedstat": "102871900 163382500 481",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "51": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "7300 63400 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x17 0xae80 0x0 0x4 0x7d2c17abfaa0 0x4 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 5.081705,
+            "cpu_max": "1000 1000000",
+            "cpu_stat": {
+              "usage_usec": 971848,
+              "user_usec": 620244,
+              "system_usec": 351603,
+              "nice_usec": 0,
+              "nr_periods": 32,
+              "nr_throttled": 21,
+              "throttled_usec": 8976019,
+              "nr_bursts": 1,
+              "burst_usec": 33122
+            },
+            "threads": {
+              "47": {
+                "name": "firecracker",
+                "state": "State:\tR (running)",
+                "schedstat": "14884600 4021320600 330",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "51": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "7300 63400 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x17 0xae80 0x0 0x4 0x7d2c17abfaa0 0x4 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 5.920982,
+            "cpu_max": "1000 1000000",
+            "cpu_stat": {
+              "usage_usec": 973494,
+              "user_usec": 621295,
+              "system_usec": 352199,
+              "nice_usec": 0,
+              "nr_periods": 33,
+              "nr_throttled": 22,
+              "throttled_usec": 9965624,
+              "nr_bursts": 1,
+              "burst_usec": 33122
+            },
+            "threads": {
+              "47": {
+                "name": "firecracker",
+                "state": "State:\tR (running)",
+                "schedstat": "16461500 5011162900 370",
+                "wchan": "0",
+                "syscall": "running"
+              }
+            }
+          },
+          {
+            "t": 6.76317,
+            "cpu_max": "1000 1000000",
+            "cpu_stat": {
+              "usage_usec": 973854,
+              "user_usec": 621524,
+              "system_usec": 352329,
+              "nice_usec": 0,
+              "nr_periods": 34,
+              "nr_throttled": 23,
+              "throttled_usec": 10901200,
+              "nr_bursts": 1,
+              "burst_usec": 33122
+            },
+            "threads": {
+              "47": {
+                "name": "firecracker",
+                "state": "State:\tR (running)",
+                "schedstat": "16821800 5946744000 383",
+                "wchan": "0",
+                "syscall": "running"
+              }
+            }
+          },
+          {
+            "t": 7.599135,
+            "cpu_max": "1000 1000000",
+            "cpu_stat": {
+              "usage_usec": 975526,
+              "user_usec": 621531,
+              "system_usec": 353995,
+              "nice_usec": 0,
+              "nr_periods": 35,
+              "nr_throttled": 24,
+              "throttled_usec": 11886451,
+              "nr_bursts": 1,
+              "burst_usec": 33122
+            },
+            "threads": {
+              "47": {
+                "name": "firecracker",
+                "state": "State:\tR (running)",
+                "schedstat": "18494200 6931996600 388",
+                "wchan": "0",
+                "syscall": "running"
+              }
+            }
+          },
+          {
+            "t": 8.43633,
+            "cpu_max": "1000 1000000",
+            "cpu_stat": {
+              "usage_usec": 975771,
+              "user_usec": 621531,
+              "system_usec": 354239,
+              "nice_usec": 0,
+              "nr_periods": 36,
+              "nr_throttled": 25,
+              "throttled_usec": 12880222,
+              "nr_bursts": 1,
+              "burst_usec": 33122
+            },
+            "threads": {
+              "47": {
+                "name": "firecracker",
+                "state": "State:\tR (running)",
+                "schedstat": "18738400 7925796000 399",
+                "wchan": "0",
+                "syscall": "running"
+              }
+            }
+          },
+          {
+            "t": 9.273852,
+            "cpu_max": "1000 1000000",
+            "cpu_stat": {
+              "usage_usec": 975802,
+              "user_usec": 621531,
+              "system_usec": 354271,
+              "nice_usec": 0,
+              "nr_periods": 37,
+              "nr_throttled": 26,
+              "throttled_usec": 13869036,
+              "nr_bursts": 1,
+              "burst_usec": 33122
+            },
+            "threads": {
+              "47": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "18770100 8914613100 401",
+                "wchan": "ptrace_stop",
+                "syscall": "3 0x4 0x0 0x0 0x0 0x0 0x0 0x7ffea4abb5b8 0x7d2c17872a01"
+              }
+            }
+          },
+          {
+            "t": 10.108038,
+            "cpu_max": "1000 1000000",
+            "cpu_stat": {
+              "usage_usec": 976103,
+              "user_usec": 621531,
+              "system_usec": 354572,
+              "nice_usec": 0,
+              "nr_periods": 37,
+              "nr_throttled": 26,
+              "throttled_usec": 13869036,
+              "nr_bursts": 1,
+              "burst_usec": 33122
+            },
+            "threads": {
+              "47": {
+                "name": "firecracker",
+                "state": "State:\tR (running)",
+                "schedstat": "19070600 8914613100 414",
+                "wchan": "0",
+                "syscall": "running"
+              }
+            }
+          },
+          {
+            "t": 10.272564,
+            "cpu_max": "1000 1000000",
+            "cpu_stat": {
+              "usage_usec": 976114,
+              "user_usec": 621531,
+              "system_usec": 354583,
+              "nice_usec": 0,
+              "nr_periods": 38,
+              "nr_throttled": 27,
+              "throttled_usec": 14853956,
+              "nr_bursts": 1,
+              "burst_usec": 33122
+            },
+            "threads": {
+              "47": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "19081700 9899536400 415",
+                "wchan": "ptrace_stop",
+                "syscall": "11 0x7d2c17aca000 0x3000 0x0 0x3 0x7d2c178f9020 0x55556ea391d0 0x7ffea4abca30 0x7d2c1786f1f8"
+              }
+            }
+          }
+        ],
+        "sample_count": 501
+      },
+      "shutdown_excerpt": "reboot: Restarting system\nreboot: machine restart\n2026-10-20T18:33:08.732632005 [quota-starved:fc_vcpu 0] 9 messages were suppressed due to rate limiting\n2026-10-20T18:33:08.732680105 [quota-starved:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.\n2026-10-20T18:33:08.732706905 [quota-starved:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range.\n2026-10-20T18:33:08.732913005 [quota-starved:main] Vmm is stopping.\n2026-10-20T18:33:08.746078105 [quota-starved:main] Killing vCPU threads\n2026-10-20T18:33:17.793505459 [quota-starved:main] Firecracker exiting successfully. exit_code=0\n"
+    },
+    {
+      "scenario": "quota-recovered",
+      "status": "observed",
+      "checks": [
+        "API accepted /boot-source: 204",
+        "API accepted /drives/rootfs: 204",
+        "API accepted /machine-config: 204",
+        "API accepted /actions: 204",
+        "complete guest evidence",
+        "mnt namespace differs",
+        "pid namespace differs",
+        "net namespace differs",
+        "process root is jail root",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "inherited environment canary absent",
+        "inherited canary file descriptor closed",
+        "RLIMIT_NOFILE configured",
+        "VMM resides in its cgroup leaf",
+        "all cgroup limits match requested profile",
+        "VMM is PID 1 in its namespace",
+        "no_new_privs active before and after boot"
+      ],
+      "cleanup_forced_stop": false,
+      "exit_code": 0,
+      "console_sha256": "99b0ec37003d33908027e2cf72380048253262307096722d6714679be29d1baf",
+      "panic": false,
+      "guest": {
+        "uid": "0",
+        "kernel": "6.12.113-fc-lab",
+        "rootfs": "/dev/root ext4 rw,relatime",
+        "root_device": "254:0",
+        "vda_device": "254:0"
+      },
+      "guest_load": false,
+      "worker_stop_ack": null,
+      "outside_canary_unchanged": true,
+      "final_cgroup_events": {
+        "memory.events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 0
+        },
+        "cpu.stat": {
+          "usage_usec": 992018,
+          "user_usec": 712879,
+          "system_usec": 279139,
+          "nice_usec": 0,
+          "nr_periods": 28,
+          "nr_throttled": 18,
+          "throttled_usec": 1339916,
+          "nr_bursts": 1,
+          "burst_usec": 29674
+        }
+      },
+      "console_findings": [
+        "2026-10-20T18:33:19.651070208 [quota-recovered:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:19.651141808 [quota-recovered:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:19.651187108 [quota-recovered:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:19.651229708 [quota-recovered:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:19.651275308 [quota-recovered:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:19.651318408 [quota-recovered:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:19.651364508 [quota-recovered:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:19.651406808 [quota-recovered:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:19.651449708 [quota-recovered:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:19.651492608 [quota-recovered:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:19.651534208 [quota-recovered:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:19.651576008 [quota-recovered:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:19.651617708 [quota-recovered:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:19.651659408 [quota-recovered:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:19.651701308 [quota-recovered:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:19.651745908 [quota-recovered:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:19.651789408 [quota-recovered:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:19.651832208 [quota-recovered:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:19.651876908 [quota-recovered:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:19.651918608 [quota-recovered:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "Spectre V2 : User space: Vulnerable",
+        "Speculative Store Bypass: Vulnerable",
+        "2026-10-20T18:33:20.725627521 [quota-recovered:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:20.725651021 [quota-recovered:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+        "2026-10-20T18:33:20.925544005 [quota-recovered:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "i8042: Failed to disable AUX port, but continuing anyway... Is this a SiS?",
+        "2026-10-20T18:33:20.939012104 [quota-recovered:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "2026-10-20T18:33:22.235056798 [quota-recovered:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:33:22.235075498 [quota-recovered:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range."
+      ],
+      "raw_result_sha256": "c214a49b054e9be277c2484ccbfd9edb7448bcb428313798751644d1ecfb986e",
+      "isolation": {
+        "hardened_runtime": true,
+        "threads": {
+          "54": {
+            "Name": "firecracker",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "54\t1"
+          },
+          "55": {
+            "Name": "fc_api",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "55\t2"
+          },
+          "56": {
+            "Name": "fc_vcpu 0",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "56\t3"
+          },
+          "57": {
+            "Name": "fc_vcpu 1",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "57\t4"
+          },
+          "58": {
+            "Name": "kvm-nx-lpage-re",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "58\t5"
+          }
+        },
+        "resource_files": {
+          "cpu.max": "50000 100000",
+          "memory.max": "402653184",
+          "memory.swap.max": "0",
+          "pids.max": "32"
+        },
+        "network_devices": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n",
+        "namespaces": {
+          "mnt": {
+            "supervisor": "mnt:[4026537182]",
+            "vmm": "mnt:[4026537710]"
+          },
+          "pid": {
+            "supervisor": "pid:[4026537186]",
+            "vmm": "pid:[4026537711]"
+          },
+          "net": {
+            "supervisor": "net:[4026537192]",
+            "vmm": "net:[4026537515]"
+          },
+          "ipc": {
+            "supervisor": "ipc:[4026537184]",
+            "vmm": "ipc:[4026537184]"
+          },
+          "uts": {
+            "supervisor": "uts:[4026537183]",
+            "vmm": "uts:[4026537183]"
+          },
+          "user": {
+            "supervisor": "user:[4026531837]",
+            "vmm": "user:[4026531837]"
+          },
+          "cgroup": {
+            "supervisor": "cgroup:[4026537191]",
+            "vmm": "cgroup:[4026537191]"
+          }
+        }
+      },
+      "trace": {
+        "injection_requested": "quota-recover",
+        "http": {
+          "status": 204,
+          "body": ""
+        },
+        "event_count": 276,
+        "selected_events": [
+          {
+            "t": 0.244283,
+            "signal": 5,
+            "syscall": 1,
+            "rip": "0x7a30f5272a01",
+            "write": "2026-10-20T18:33:22.253211797 [quota-recovered:main] Killing vCPU threads\n",
+            "injected_quota": "1000 1000000"
+          },
+          {
+            "t": 0.49558,
+            "action": "restore-bounded-shutdown-quota"
+          },
+          {
+            "t": 0.625214,
+            "signal": 5,
+            "syscall": 1,
+            "rip": "0x7a30f5272a01",
+            "write": "2026-10-20T18:33:22.635255966 [quota-recovered:main] Firecracker exiting successfully. exit_code=0\n"
+          }
+        ],
+        "selected_samples": [
+          {
+            "t": 6.9e-05,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 905092,
+              "user_usec": 647680,
+              "system_usec": 257411,
+              "nice_usec": 0,
+              "nr_periods": 25,
+              "nr_throttled": 17,
+              "throttled_usec": 844431,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "54": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "12048000 3246500 148",
+                "wchan": "ptrace_stop",
+                "syscall": "281 0x9 0x7a30f53120c0 0x100 0xffffffffffffffff 0x0 0x8 0x7ffd46b758c8 0x7a30f5272a01"
+              },
+              "55": {
+                "name": "fc_api",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "2159100 365400 12",
+                "wchan": "futex_do_wait",
+                "syscall": "202 0x7a30f5318498 0x89 0xffffffff 0x0 0x0 0xffffffff 0x7a30f4ffe270 0x7a30f526f078"
+              },
+              "56": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "756215900 707315400 620",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x15 0xae80 0x0 0x7a30f5324000 0x83daec0 0x2cf22775f73f92 0x7a30e4bfd9c0 0x7a30f526eb93"
+              },
+              "57": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "131110500 214672800 684",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x7a30f5324000 0x83daec0 0x2cf22775f73f92 0x7a30e49fa9c0 0x7a30f526eb93"
+              },
+              "58": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "7200 30800 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd46b6e240 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.040284,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 917432,
+              "user_usec": 658883,
+              "system_usec": 258549,
+              "nice_usec": 0,
+              "nr_periods": 25,
+              "nr_throttled": 17,
+              "throttled_usec": 844431,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "54": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "12965700 3397800 189",
+                "wchan": "ptrace_stop",
+                "syscall": "8 0xb 0x18000 0x0 0x7a30f5324000 0x83daed8 0x2fce9372110c0f 0x7ffd46b75568 0x7a30f52746fb"
+              },
+              "55": {
+                "name": "fc_api",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "2330900 365400 15",
+                "wchan": "do_epoll_wait",
+                "syscall": "281 0x7 0x7a30f4fff220 0xc 0xffffffffffffffff 0x0 0x8 0x7a30f4ffe778 0x7a30f5272a01"
+              },
+              "56": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "761335200 707337500 634",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x15 0xae80 0x0 0x7a30f5324000 0x83daeca 0x2e235474574cea 0x7a30e4bfd9c0 0x7a30f526eb93"
+              },
+              "57": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "137241600 214704200 704",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x7a30f5324000 0x83daed4 0x2f548172b7aa78 0x7a30e49fa9c0 0x7a30f526eb93"
+              },
+              "58": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "7200 30800 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd46b6e240 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.082503,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 928063,
+              "user_usec": 666518,
+              "system_usec": 261545,
+              "nice_usec": 0,
+              "nr_periods": 25,
+              "nr_throttled": 17,
+              "throttled_usec": 844431,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "54": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "15818600 5890500 223",
+                "wchan": "ptrace_stop",
+                "syscall": "0 0xf 0x7ffd46b75808 0x8 0x0 0x0 0x0 0x7ffd46b757d8 0x7a30f5272a01"
+              },
+              "55": {
+                "name": "fc_api",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "2330900 365400 15",
+                "wchan": "do_epoll_wait",
+                "syscall": "281 0x7 0x7a30f4fff220 0xc 0xffffffffffffffff 0x0 0x8 0x7a30f4ffe778 0x7a30f5272a01"
+              },
+              "56": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "765553000 707683300 647",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x15 0xae80 0x0 0x7a30f5324000 0x83daeca 0x2e235474574cea 0x7a30e4bfd9c0 0x7a30f526eb93"
+              },
+              "57": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "140031400 216025800 714",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x7a30f5324000 0x83daeea 0x31f3e46f25690d 0x7a30e49fa9c0 0x7a30f526eb93"
+              },
+              "58": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "7200 30800 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd46b6e240 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.124039,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 936591,
+              "user_usec": 672642,
+              "system_usec": 263948,
+              "nice_usec": 0,
+              "nr_periods": 26,
+              "nr_throttled": 17,
+              "throttled_usec": 844431,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "54": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "16591600 6724200 247",
+                "wchan": "ptrace_stop",
+                "syscall": "0 0xf 0x7ffd46b75808 0x8 0x0 0x0 0x0 0x7ffd46b757d8 0x7a30f5272a01"
+              },
+              "55": {
+                "name": "fc_api",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "2330900 365400 15",
+                "wchan": "do_epoll_wait",
+                "syscall": "281 0x7 0x7a30f4fff220 0xc 0xffffffffffffffff 0x0 0x8 0x7a30f4ffe778 0x7a30f5272a01"
+              },
+              "56": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "770940100 708315700 661",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x15 0xae80 0x0 0x7a30f5324000 0x83daeca 0x2e235474574cea 0x7a30e4bfd9c0 0x7a30f526eb93"
+              },
+              "57": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "143169700 217701900 729",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x7a30f5324000 0x83daef8 0x339f236cdfc026 0x7a30e49fa9c0 0x7a30f526eb93"
+              },
+              "58": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "7200 30800 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd46b6e240 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.165165,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 947989,
+              "user_usec": 678965,
+              "system_usec": 269024,
+              "nice_usec": 0,
+              "nr_periods": 26,
+              "nr_throttled": 17,
+              "throttled_usec": 844431,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "54": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "19000100 7813100 274",
+                "wchan": "ptrace_stop",
+                "syscall": "1 0xb 0x7a30e654d000 0x1000 0x0 0x0 0x0 0x7ffd46b75508 0x7a30f5272a01"
+              },
+              "55": {
+                "name": "fc_api",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "2330900 365400 15",
+                "wchan": "do_epoll_wait",
+                "syscall": "281 0x7 0x7a30f4fff220 0xc 0xffffffffffffffff 0x0 0x8 0x7a30f4ffe778 0x7a30f5272a01"
+              },
+              "56": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "775947000 709341600 674",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x15 0xae80 0x0 0x7a30f5324000 0x83daeca 0x2e235474574cea 0x7a30e4bfd9c0 0x7a30f526eb93"
+              },
+              "57": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "147152700 218427900 740",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x7a30f5324000 0x83daf12 0x36b89868a6fdcd 0x7a30e49fa9c0 0x7a30f526eb93"
+              },
+              "58": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "7200 30800 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd46b6e240 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.206657,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 951953,
+              "user_usec": 681804,
+              "system_usec": 270148,
+              "nice_usec": 0,
+              "nr_periods": 27,
+              "nr_throttled": 17,
+              "throttled_usec": 844431,
+              "nr_bursts": 0,
+              "burst_usec": 0
+            },
+            "threads": {
+              "54": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "19592700 7813100 306",
+                "wchan": "ptrace_stop",
+                "syscall": "1 0x1c 0x7ffd46b75470 0x8 0x0 0x0 0x0 0x7ffd46b75448 0x7a30f5272a01"
+              },
+              "55": {
+                "name": "fc_api",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "2330900 365400 15",
+                "wchan": "do_epoll_wait",
+                "syscall": "281 0x7 0x7a30f4fff220 0xc 0xffffffffffffffff 0x0 0x8 0x7a30f4ffe778 0x7a30f5272a01"
+              },
+              "56": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "778087300 709395800 688",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x15 0xae80 0x0 0x7a30f5324000 0x83daeca 0x2e235474574cea 0x7a30e4bfd9c0 0x7a30f526eb93"
+              },
+              "57": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "148208000 218427900 753",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x7a30f5324000 0x83daf24 0x38dde965bb5085 0x7a30e49fa9c0 0x7a30f526eb93"
+              },
+              "58": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "7200 30800 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd46b6e240 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.248706,
+            "cpu_max": "1000 1000000",
+            "cpu_stat": {
+              "usage_usec": 985052,
+              "user_usec": 710951,
+              "system_usec": 274101,
+              "nice_usec": 0,
+              "nr_periods": 27,
+              "nr_throttled": 17,
+              "throttled_usec": 844431,
+              "nr_bursts": 1,
+              "burst_usec": 29674
+            },
+            "threads": {
+              "54": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "20473800 7851300 336",
+                "wchan": "ptrace_stop",
+                "syscall": "14 0x0 0x7a30f52b2e88 0x7ffd46b75660 0x8 0x3fffffff 0x0 0x7ffd46b75658 0x7a30f526f65a"
+              },
+              "56": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tR (running)",
+                "schedstat": "808957200 709469200 698",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "57": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "149525500 218427900 763",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x7a30f5324000 0x83daf30 0x3a4c1f63c8a8b4 0x7a30e49fa9c0 0x7a30f526eb93"
+              },
+              "58": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "7200 30800 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd46b6e240 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.289512,
+            "cpu_max": "1000 1000000",
+            "cpu_stat": {
+              "usage_usec": 985082,
+              "user_usec": 710972,
+              "system_usec": 274109,
+              "nice_usec": 0,
+              "nr_periods": 28,
+              "nr_throttled": 18,
+              "throttled_usec": 844431,
+              "nr_bursts": 1,
+              "burst_usec": 29674
+            },
+            "threads": {
+              "54": {
+                "name": "firecracker",
+                "state": "State:\tR (running)",
+                "schedstat": "20503700 7995600 338",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "56": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tR (running)",
+                "schedstat": "808957200 709469200 698",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "57": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "149525500 218427900 763",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x7a30f5324000 0x83daf30 0x3a4c1f63c8a8b4 0x7a30e49fa9c0 0x7a30f526eb93"
+              },
+              "58": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "7200 30800 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd46b6e240 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.331211,
+            "cpu_max": "1000 1000000",
+            "cpu_stat": {
+              "usage_usec": 985082,
+              "user_usec": 710972,
+              "system_usec": 274109,
+              "nice_usec": 0,
+              "nr_periods": 28,
+              "nr_throttled": 18,
+              "throttled_usec": 844431,
+              "nr_bursts": 1,
+              "burst_usec": 29674
+            },
+            "threads": {
+              "54": {
+                "name": "firecracker",
+                "state": "State:\tR (running)",
+                "schedstat": "20503700 7995600 338",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "56": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tR (running)",
+                "schedstat": "808957200 709469200 698",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "57": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "149525500 218427900 763",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x7a30f5324000 0x83daf30 0x3a4c1f63c8a8b4 0x7a30e49fa9c0 0x7a30f526eb93"
+              },
+              "58": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "7200 30800 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd46b6e240 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.37168,
+            "cpu_max": "1000 1000000",
+            "cpu_stat": {
+              "usage_usec": 985082,
+              "user_usec": 710972,
+              "system_usec": 274109,
+              "nice_usec": 0,
+              "nr_periods": 28,
+              "nr_throttled": 18,
+              "throttled_usec": 844431,
+              "nr_bursts": 1,
+              "burst_usec": 29674
+            },
+            "threads": {
+              "54": {
+                "name": "firecracker",
+                "state": "State:\tR (running)",
+                "schedstat": "20503700 7995600 338",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "56": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tR (running)",
+                "schedstat": "808957200 709469200 698",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "57": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "149525500 218427900 763",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x7a30f5324000 0x83daf30 0x3a4c1f63c8a8b4 0x7a30e49fa9c0 0x7a30f526eb93"
+              },
+              "58": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "7200 30800 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd46b6e240 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.412581,
+            "cpu_max": "1000 1000000",
+            "cpu_stat": {
+              "usage_usec": 985082,
+              "user_usec": 710972,
+              "system_usec": 274109,
+              "nice_usec": 0,
+              "nr_periods": 28,
+              "nr_throttled": 18,
+              "throttled_usec": 844431,
+              "nr_bursts": 1,
+              "burst_usec": 29674
+            },
+            "threads": {
+              "54": {
+                "name": "firecracker",
+                "state": "State:\tR (running)",
+                "schedstat": "20503700 7995600 338",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "56": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tR (running)",
+                "schedstat": "808957200 709469200 698",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "57": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "149525500 218427900 763",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x7a30f5324000 0x83daf30 0x3a4c1f63c8a8b4 0x7a30e49fa9c0 0x7a30f526eb93"
+              },
+              "58": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "7200 30800 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd46b6e240 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.454023,
+            "cpu_max": "1000 1000000",
+            "cpu_stat": {
+              "usage_usec": 985082,
+              "user_usec": 710972,
+              "system_usec": 274109,
+              "nice_usec": 0,
+              "nr_periods": 28,
+              "nr_throttled": 18,
+              "throttled_usec": 844431,
+              "nr_bursts": 1,
+              "burst_usec": 29674
+            },
+            "threads": {
+              "54": {
+                "name": "firecracker",
+                "state": "State:\tR (running)",
+                "schedstat": "20503700 7995600 338",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "56": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tR (running)",
+                "schedstat": "808957200 709469200 698",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "57": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "149525500 218427900 763",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x7a30f5324000 0x83daf30 0x3a4c1f63c8a8b4 0x7a30e49fa9c0 0x7a30f526eb93"
+              },
+              "58": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "7200 30800 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd46b6e240 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.49558,
+            "cpu_max": "1000 1000000",
+            "cpu_stat": {
+              "usage_usec": 985082,
+              "user_usec": 710972,
+              "system_usec": 274109,
+              "nice_usec": 0,
+              "nr_periods": 28,
+              "nr_throttled": 18,
+              "throttled_usec": 844431,
+              "nr_bursts": 1,
+              "burst_usec": 29674
+            },
+            "threads": {
+              "54": {
+                "name": "firecracker",
+                "state": "State:\tR (running)",
+                "schedstat": "20503700 7995600 338",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "56": {
+                "name": "fc_vcpu 0",
+                "state": "State:\tR (running)",
+                "schedstat": "808957200 709469200 698",
+                "wchan": "0",
+                "syscall": "running"
+              },
+              "57": {
+                "name": "fc_vcpu 1",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "149525500 218427900 763",
+                "wchan": "kvm_vcpu_block",
+                "syscall": "16 0x17 0xae80 0x0 0x7a30f5324000 0x83daf30 0x3a4c1f63c8a8b4 0x7a30e49fa9c0 0x7a30f526eb93"
+              },
+              "58": {
+                "name": "kvm-nx-lpage-re",
+                "state": "State:\tS (sleeping)",
+                "schedstat": "7200 30800 1",
+                "wchan": "kvm_mmu_reset_context",
+                "syscall": "16 0x15 0xae80 0x0 0x7ffd46b6e240 0x4 0x0 0x0 0x0"
+              }
+            }
+          },
+          {
+            "t": 0.538296,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 986846,
+              "user_usec": 712245,
+              "system_usec": 274600,
+              "nice_usec": 0,
+              "nr_periods": 28,
+              "nr_throttled": 18,
+              "throttled_usec": 1339916,
+              "nr_bursts": 1,
+              "burst_usec": 29674
+            },
+            "threads": {
+              "54": {
+                "name": "firecracker",
+                "state": "State:\tD (disk sleep)",
+                "schedstat": "21909700 253515000 378",
+                "wchan": "rcu_barrier",
+                "syscall": "3 0x12 0x0 0x0 0x0 0x0 0x0 0x7ffd46b75798 0x7a30f5272a01"
+              }
+            }
+          },
+          {
+            "t": 0.579176,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 987564,
+              "user_usec": 712763,
+              "system_usec": 274800,
+              "nice_usec": 0,
+              "nr_periods": 28,
+              "nr_throttled": 18,
+              "throttled_usec": 1339916,
+              "nr_bursts": 1,
+              "burst_usec": 29674
+            },
+            "threads": {
+              "54": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "22627500 253659100 400",
+                "wchan": "ptrace_stop",
+                "syscall": "3 0xf 0x0 0x0 0x0 0x0 0x0 0x7ffd46b75788 0x7a30f5272a01"
+              }
+            }
+          },
+          {
+            "t": 0.619565,
+            "cpu_max": "200000 100000",
+            "cpu_stat": {
+              "usage_usec": 991202,
+              "user_usec": 712763,
+              "system_usec": 278438,
+              "nice_usec": 0,
+              "nr_periods": 28,
+              "nr_throttled": 18,
+              "throttled_usec": 1339916,
+              "nr_bursts": 1,
+              "burst_usec": 29674
+            },
+            "threads": {
+              "54": {
+                "name": "firecracker",
+                "state": "State:\tt (tracing stop)",
+                "schedstat": "26265500 254668000 427",
+                "wchan": "ptrace_stop",
+                "syscall": "11 0x7a30f5316000 0x1000 0x0 0x2 0x7a30f52f9020 0x555583ead5b8 0x7ffd46b75cb0 0x7a30f526f1f8"
+              }
+            }
+          }
+        ],
+        "sample_count": 31
+      },
+      "shutdown_excerpt": "reboot: Restarting system\nreboot: machine restart\n2026-10-20T18:33:22.235028098 [quota-recovered:fc_vcpu 0] 9 messages were suppressed due to rate limiting\n2026-10-20T18:33:22.235056798 [quota-recovered:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.\n2026-10-20T18:33:22.235075498 [quota-recovered:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range.\n2026-10-20T18:33:22.240303198 [quota-recovered:main] Vmm is stopping.\n2026-10-20T18:33:22.253211797 [quota-recovered:main] Killing vCPU threads\n2026-10-20T18:33:22.635255966 [quota-recovered:main] Firecracker exiting successfully. exit_code=0\n"
+    }
+  ]
+}

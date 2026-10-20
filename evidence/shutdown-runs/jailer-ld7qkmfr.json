@@ -1,0 +1,1586 @@
+{
+  "schema": 1,
+  "started_at": "2026-10-20T18:31:44.772119+00:00",
+  "status": "passed",
+  "findings": [],
+  "original_sha256_before": {
+    "firecracker": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+    "jailer": "65ef226e96f0ceda55ba643f445801ef2cc0ea667ef67cad8ac4f406c9c8434f",
+    "vmlinux": "e816c1aa5249d7a6e3cd937e312ec235f892af75c30ebe67e34e5a3aa55d78e8",
+    "rootfs.ext4": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52"
+  },
+  "original_sha256_after": {
+    "firecracker": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+    "jailer": "65ef226e96f0ceda55ba643f445801ef2cc0ea667ef67cad8ac4f406c9c8434f",
+    "vmlinux": "e816c1aa5249d7a6e3cd937e312ec235f892af75c30ebe67e34e5a3aa55d78e8",
+    "rootfs.ext4": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52"
+  },
+  "originals_unchanged": true,
+  "outer_memory_events_local": {
+    "low": 0,
+    "high": 0,
+    "max": 275,
+    "oom": 0,
+    "oom_kill": 0,
+    "oom_group_kill": 0
+  },
+  "cgroups_cleaned": true,
+  "local_run": "jailer-ld7qkmfr",
+  "raw_report_sha256": "19f46cd76742d981c582aa60f5fdc4a1f9cbec6e450f0a573aec3b010c795277",
+  "source_sha256": {
+    "build_artifacts.py": "bd6334bea07a9d8ad0e4b79890d829e1e6092ae0c5046a0e709bd72a689d9660",
+    "jailer_checks.py": "6f1bdd02cf2987fc6de5612c38dc7ffed02a2078f6db90d2f31836f833c28f82",
+    "run_jailer_lab.py": "9bed2c7f586100497c85923bfe4b34971da37fb24e6964ce648a251c9c004a0c",
+    "jailer_runtime.py": "60bc5e8eb7ad3bfdf4aaf92152158c85543cb91c436810c0a7813a2abf83fe38",
+    "shutdown_investigation.py": "ac60a6204f5b529fcfef0eeaf7dad0c392316eb356acf8a0e7fdcf4c8a005cfe",
+    "boot_check.py": "61bafa6a1154e7ac5f8352ac6af14323757b29360f15444db7ee61890cc9b631"
+  },
+  "profile": {
+    "schema": 1,
+    "helper_image": "python@sha256:70729b46c69b4f1e97c4822c1af3df53a1476cf5ddc6c087c0c10bc3a5678c2f",
+    "jailer_sha256": "65ef226e96f0ceda55ba643f445801ef2cc0ea667ef67cad8ac4f406c9c8434f",
+    "firecracker_sha256": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+    "uid": 65534,
+    "gid": 65534,
+    "cpu_max": "50000 100000",
+    "memory_max": 402653184,
+    "memory_swap_max": 0,
+    "pids_max": 32,
+    "no_file": 64,
+    "oom_memory_max": 100663296,
+    "boot_timeout": 60,
+    "shutdown_timeout": 15,
+    "shutdown_cpu_max": "200000 100000"
+  },
+  "scenarios": [
+    {
+      "scenario": "half-idle-1",
+      "status": "observed",
+      "checks": [
+        "API accepted /boot-source: 204",
+        "API accepted /drives/rootfs: 204",
+        "API accepted /machine-config: 204",
+        "API accepted /actions: 204",
+        "complete guest evidence",
+        "mnt namespace differs",
+        "pid namespace differs",
+        "net namespace differs",
+        "process root is jail root",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "inherited environment canary absent",
+        "inherited canary file descriptor closed",
+        "RLIMIT_NOFILE configured",
+        "VMM resides in its cgroup leaf",
+        "all cgroup limits match requested profile",
+        "VMM is PID 1 in its namespace",
+        "no_new_privs active before and after boot"
+      ],
+      "cleanup_forced_stop": false,
+      "exit_code": 0,
+      "console_sha256": "35aa01a9162bb99a8514f27292d02d7712cc53c58b0211e9ff45169d01c53fdd",
+      "panic": false,
+      "guest": {
+        "uid": "0",
+        "kernel": "6.12.113-fc-lab",
+        "rootfs": "/dev/root ext4 rw,relatime",
+        "root_device": "254:0",
+        "vda_device": "254:0"
+      },
+      "guest_load": false,
+      "worker_stop_ack": null,
+      "shutdown_quota": "50000 100000",
+      "shutdown_observation": {
+        "http": 204,
+        "seconds": 0.065584,
+        "cpu_before": {
+          "usage_usec": 964670,
+          "user_usec": 656432,
+          "system_usec": 308237,
+          "nice_usec": 0,
+          "nr_periods": 25,
+          "nr_throttled": 16,
+          "throttled_usec": 837357,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        },
+        "cpu_after": {
+          "usage_usec": 993320,
+          "user_usec": 671701,
+          "system_usec": 321619,
+          "nice_usec": 0,
+          "nr_periods": 25,
+          "nr_throttled": 16,
+          "throttled_usec": 837357,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "outside_canary_unchanged": true,
+      "final_cgroup_events": {
+        "memory.events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 0
+        },
+        "cpu.stat": {
+          "usage_usec": 993320,
+          "user_usec": 671701,
+          "system_usec": 321619,
+          "nice_usec": 0,
+          "nr_periods": 25,
+          "nr_throttled": 16,
+          "throttled_usec": 837357,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "console_findings": [
+        "2026-10-20T18:31:47.060171587 [half-idle-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:47.060235587 [half-idle-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:47.060291987 [half-idle-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:47.060333487 [half-idle-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:47.060352187 [half-idle-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:47.060416787 [half-idle-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:47.060477687 [half-idle-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:47.060522287 [half-idle-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:47.060566987 [half-idle-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:47.060713887 [half-idle-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:47.060832887 [half-idle-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:47.061108587 [half-idle-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:47.061151887 [half-idle-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:47.061200387 [half-idle-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:47.061247387 [half-idle-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:47.061290587 [half-idle-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:47.061312087 [half-idle-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:47.061356787 [half-idle-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:47.061402287 [half-idle-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:47.061428287 [half-idle-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "Spectre V2 : User space: Vulnerable",
+        "Speculative Store Bypass: Vulnerable",
+        "2026-10-20T18:31:48.048412641 [half-idle-1:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+        "2026-10-20T18:31:48.065690442 [half-idle-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:48.272842353 [half-idle-1:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "i8042: Failed to disable AUX port, but continuing anyway... Is this a SiS?",
+        "2026-10-20T18:31:48.347857957 [half-idle-1:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)"
+      ],
+      "raw_result_sha256": "8bb493928c96143f705cdfda1358e114beaee4337c46ddcab9e30d96b271eb23",
+      "isolation": {
+        "hardened_runtime": true,
+        "threads": {
+          "9": {
+            "Name": "firecracker",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "9\t1"
+          },
+          "10": {
+            "Name": "fc_api",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "10\t2"
+          },
+          "11": {
+            "Name": "fc_vcpu 0",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "11\t3"
+          },
+          "12": {
+            "Name": "fc_vcpu 1",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "12\t4"
+          },
+          "13": {
+            "Name": "kvm-nx-lpage-re",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "13\t5"
+          }
+        },
+        "resource_files": {
+          "cpu.max": "50000 100000",
+          "memory.max": "402653184",
+          "memory.swap.max": "0",
+          "pids.max": "32"
+        },
+        "network_devices": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n",
+        "namespaces": {
+          "mnt": {
+            "supervisor": "mnt:[4026537182]",
+            "vmm": "mnt:[4026537710]"
+          },
+          "pid": {
+            "supervisor": "pid:[4026537186]",
+            "vmm": "pid:[4026537711]"
+          },
+          "net": {
+            "supervisor": "net:[4026537192]",
+            "vmm": "net:[4026537515]"
+          },
+          "ipc": {
+            "supervisor": "ipc:[4026537184]",
+            "vmm": "ipc:[4026537184]"
+          },
+          "uts": {
+            "supervisor": "uts:[4026537183]",
+            "vmm": "uts:[4026537183]"
+          },
+          "user": {
+            "supervisor": "user:[4026531837]",
+            "vmm": "user:[4026531837]"
+          },
+          "cgroup": {
+            "supervisor": "cgroup:[4026537191]",
+            "vmm": "cgroup:[4026537191]"
+          }
+        }
+      },
+      "shutdown_excerpt": "reboot: Restarting system\nreboot: machine restart\n2026-10-20T18:31:49.408819725 [half-idle-1:main] Vmm is stopping.\n2026-10-20T18:31:49.409105625 [half-idle-1:main] Killing vCPU threads\n2026-10-20T18:31:49.436556127 [half-idle-1:main] Firecracker exiting successfully. exit_code=0\n"
+    },
+    {
+      "scenario": "half-load-1",
+      "status": "observed",
+      "checks": [
+        "API accepted /boot-source: 204",
+        "API accepted /drives/rootfs: 204",
+        "API accepted /machine-config: 204",
+        "API accepted /actions: 204",
+        "complete guest evidence",
+        "mnt namespace differs",
+        "pid namespace differs",
+        "net namespace differs",
+        "process root is jail root",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "inherited environment canary absent",
+        "inherited canary file descriptor closed",
+        "RLIMIT_NOFILE configured",
+        "VMM resides in its cgroup leaf",
+        "all cgroup limits match requested profile",
+        "VMM is PID 1 in its namespace",
+        "no_new_privs active before and after boot"
+      ],
+      "cleanup_forced_stop": false,
+      "exit_code": 0,
+      "console_sha256": "1f17441ea3bcdff7b8d6ba9b46971f35fb58b60ad191bf4bfc040dca26eb01d2",
+      "panic": false,
+      "guest": {
+        "uid": "0",
+        "kernel": "6.12.113-fc-lab",
+        "rootfs": "/dev/root ext4 rw,relatime",
+        "root_device": "254:0",
+        "vda_device": "254:0"
+      },
+      "guest_load": true,
+      "worker_stop_ack": false,
+      "shutdown_quota": "50000 100000",
+      "shutdown_observation": {
+        "http": 204,
+        "seconds": 0.071063,
+        "cpu_before": {
+          "usage_usec": 2523684,
+          "user_usec": 2115663,
+          "system_usec": 408020,
+          "nice_usec": 0,
+          "nr_periods": 52,
+          "nr_throttled": 48,
+          "throttled_usec": 5358296,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        },
+        "cpu_after": {
+          "usage_usec": 2551219,
+          "user_usec": 2130438,
+          "system_usec": 420780,
+          "nice_usec": 0,
+          "nr_periods": 53,
+          "nr_throttled": 48,
+          "throttled_usec": 5358296,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "outside_canary_unchanged": true,
+      "final_cgroup_events": {
+        "memory.events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 0
+        },
+        "cpu.stat": {
+          "usage_usec": 2551219,
+          "user_usec": 2130438,
+          "system_usec": 420780,
+          "nice_usec": 0,
+          "nr_periods": 53,
+          "nr_throttled": 48,
+          "throttled_usec": 5358296,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "console_findings": [
+        "2026-10-20T18:31:50.947183563 [half-load-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:50.947272663 [half-load-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:50.947325663 [half-load-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:50.947369863 [half-load-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:50.947414363 [half-load-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:50.947456563 [half-load-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:50.947477763 [half-load-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:50.947496563 [half-load-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:50.947520063 [half-load-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:50.947556363 [half-load-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:50.947576863 [half-load-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:50.947595263 [half-load-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:50.947619663 [half-load-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:50.947719463 [half-load-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:50.947762763 [half-load-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:50.947806563 [half-load-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:50.947849663 [half-load-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:50.947872263 [half-load-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:50.947891163 [half-load-1:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:50.947909363 [half-load-1:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "Spectre V2 : User space: Vulnerable",
+        "Speculative Store Bypass: Vulnerable",
+        "2026-10-20T18:31:52.055067863 [half-load-1:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:52.055100263 [half-load-1:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+        "2026-10-20T18:31:52.258742581 [half-load-1:fc_vcpu 1] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "i8042: Failed to disable AUX port, but continuing anyway... Is this a SiS?",
+        "2026-10-20T18:31:52.326906987 [half-load-1:fc_vcpu 1] Failed to trigger i8042 kbd interrupt (disabled by guest OS)"
+      ],
+      "raw_result_sha256": "c70e611b3aa876497216f84babe6bb6a3371ed12e95eb6e5b6f43d82c48cb16a",
+      "isolation": {
+        "hardened_runtime": true,
+        "threads": {
+          "15": {
+            "Name": "firecracker",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "15\t1"
+          },
+          "16": {
+            "Name": "fc_api",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "16\t2"
+          },
+          "17": {
+            "Name": "fc_vcpu 0",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "17\t3"
+          },
+          "18": {
+            "Name": "fc_vcpu 1",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "18\t4"
+          },
+          "19": {
+            "Name": "kvm-nx-lpage-re",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "19\t5"
+          }
+        },
+        "resource_files": {
+          "cpu.max": "50000 100000",
+          "memory.max": "402653184",
+          "memory.swap.max": "0",
+          "pids.max": "32"
+        },
+        "network_devices": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n",
+        "namespaces": {
+          "mnt": {
+            "supervisor": "mnt:[4026537182]",
+            "vmm": "mnt:[4026537710]"
+          },
+          "pid": {
+            "supervisor": "pid:[4026537186]",
+            "vmm": "pid:[4026537711]"
+          },
+          "net": {
+            "supervisor": "net:[4026537192]",
+            "vmm": "net:[4026537515]"
+          },
+          "ipc": {
+            "supervisor": "ipc:[4026537184]",
+            "vmm": "ipc:[4026537184]"
+          },
+          "uts": {
+            "supervisor": "uts:[4026537183]",
+            "vmm": "uts:[4026537183]"
+          },
+          "user": {
+            "supervisor": "user:[4026531837]",
+            "vmm": "user:[4026531837]"
+          },
+          "cgroup": {
+            "supervisor": "cgroup:[4026537191]",
+            "vmm": "cgroup:[4026537191]"
+          }
+        }
+      },
+      "shutdown_excerpt": "reboot: Restarting system\nreboot: machine restart\n2026-10-20T18:31:55.993050216 [half-load-1:main] Vmm is stopping.\n2026-10-20T18:31:55.993420616 [half-load-1:main] Killing vCPU threads\n2026-10-20T18:31:56.027933219 [half-load-1:main] Firecracker exiting successfully. exit_code=0\n"
+    },
+    {
+      "scenario": "half-load-2",
+      "status": "observed",
+      "checks": [
+        "API accepted /boot-source: 204",
+        "API accepted /drives/rootfs: 204",
+        "API accepted /machine-config: 204",
+        "API accepted /actions: 204",
+        "complete guest evidence",
+        "mnt namespace differs",
+        "pid namespace differs",
+        "net namespace differs",
+        "process root is jail root",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "inherited environment canary absent",
+        "inherited canary file descriptor closed",
+        "RLIMIT_NOFILE configured",
+        "VMM resides in its cgroup leaf",
+        "all cgroup limits match requested profile",
+        "VMM is PID 1 in its namespace",
+        "no_new_privs active before and after boot"
+      ],
+      "cleanup_forced_stop": false,
+      "exit_code": 0,
+      "console_sha256": "9ebdfca7dfee53269fb8178ff19a3cb6925c400f02155e558a0812c23ef6832f",
+      "panic": false,
+      "guest": {
+        "uid": "0",
+        "kernel": "6.12.113-fc-lab",
+        "rootfs": "/dev/root ext4 rw,relatime",
+        "root_device": "254:0",
+        "vda_device": "254:0"
+      },
+      "guest_load": true,
+      "worker_stop_ack": false,
+      "shutdown_quota": "50000 100000",
+      "shutdown_observation": {
+        "http": 204,
+        "seconds": 0.072895,
+        "cpu_before": {
+          "usage_usec": 2525968,
+          "user_usec": 2138952,
+          "system_usec": 387015,
+          "nice_usec": 0,
+          "nr_periods": 55,
+          "nr_throttled": 47,
+          "throttled_usec": 5361721,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        },
+        "cpu_after": {
+          "usage_usec": 2560103,
+          "user_usec": 2154610,
+          "system_usec": 405492,
+          "nice_usec": 0,
+          "nr_periods": 56,
+          "nr_throttled": 47,
+          "throttled_usec": 5361721,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "outside_canary_unchanged": true,
+      "final_cgroup_events": {
+        "memory.events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 0
+        },
+        "cpu.stat": {
+          "usage_usec": 2560103,
+          "user_usec": 2154610,
+          "system_usec": 405492,
+          "nice_usec": 0,
+          "nr_periods": 56,
+          "nr_throttled": 47,
+          "throttled_usec": 5361721,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "console_findings": [
+        "2026-10-20T18:31:57.981767832 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:57.981831732 [half-load-2:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:57.981870232 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:57.981905432 [half-load-2:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:57.981941232 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:57.981975932 [half-load-2:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:57.982010732 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:57.982045232 [half-load-2:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:57.982080132 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:57.982115732 [half-load-2:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:57.982160532 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:57.982195332 [half-load-2:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:57.982230132 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:57.982264432 [half-load-2:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:57.982298832 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:57.982332832 [half-load-2:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:57.982367232 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:57.982401432 [half-load-2:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:57.982435532 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:57.982469832 [half-load-2:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "Spectre V2 : User space: Vulnerable",
+        "Speculative Store Bypass: Vulnerable",
+        "2026-10-20T18:31:59.156312751 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:31:59.156355051 [half-load-2:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+        "2026-10-20T18:31:59.294363753 [half-load-2:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "i8042: Failed to disable AUX port, but continuing anyway... Is this a SiS?",
+        "2026-10-20T18:31:59.370129354 [half-load-2:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)"
+      ],
+      "raw_result_sha256": "3d60f26d5e56d4f8de1d7bc1cc617269824ed9e342b0fd9bc86454a78a7409de",
+      "isolation": {
+        "hardened_runtime": true,
+        "threads": {
+          "21": {
+            "Name": "firecracker",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "21\t1"
+          },
+          "22": {
+            "Name": "fc_api",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "22\t2"
+          },
+          "23": {
+            "Name": "fc_vcpu 0",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "23\t3"
+          },
+          "24": {
+            "Name": "fc_vcpu 1",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "24\t4"
+          },
+          "25": {
+            "Name": "kvm-nx-lpage-re",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "25\t5"
+          }
+        },
+        "resource_files": {
+          "cpu.max": "50000 100000",
+          "memory.max": "402653184",
+          "memory.swap.max": "0",
+          "pids.max": "32"
+        },
+        "network_devices": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n",
+        "namespaces": {
+          "mnt": {
+            "supervisor": "mnt:[4026537182]",
+            "vmm": "mnt:[4026537710]"
+          },
+          "pid": {
+            "supervisor": "pid:[4026537186]",
+            "vmm": "pid:[4026537711]"
+          },
+          "net": {
+            "supervisor": "net:[4026537192]",
+            "vmm": "net:[4026537515]"
+          },
+          "ipc": {
+            "supervisor": "ipc:[4026537184]",
+            "vmm": "ipc:[4026537184]"
+          },
+          "uts": {
+            "supervisor": "uts:[4026537183]",
+            "vmm": "uts:[4026537183]"
+          },
+          "user": {
+            "supervisor": "user:[4026531837]",
+            "vmm": "user:[4026531837]"
+          },
+          "cgroup": {
+            "supervisor": "cgroup:[4026537191]",
+            "vmm": "cgroup:[4026537191]"
+          }
+        }
+      },
+      "shutdown_excerpt": "reboot: Restarting system\nreboot: machine restart\n2026-10-20T18:32:03.461051920 [half-load-2:main] Vmm is stopping.\n2026-10-20T18:32:03.461399020 [half-load-2:main] Killing vCPU threads\n2026-10-20T18:32:03.461442020 [half-load-2:fc_vcpu 0] Requested a vCPU run with immediate_exit enabled. The operation was skipped\n2026-10-20T18:32:03.495847620 [half-load-2:main] Firecracker exiting successfully. exit_code=0\n"
+    },
+    {
+      "scenario": "boost-load",
+      "status": "observed",
+      "checks": [
+        "API accepted /boot-source: 204",
+        "API accepted /drives/rootfs: 204",
+        "API accepted /machine-config: 204",
+        "API accepted /actions: 204",
+        "complete guest evidence",
+        "mnt namespace differs",
+        "pid namespace differs",
+        "net namespace differs",
+        "process root is jail root",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "inherited environment canary absent",
+        "inherited canary file descriptor closed",
+        "RLIMIT_NOFILE configured",
+        "VMM resides in its cgroup leaf",
+        "all cgroup limits match requested profile",
+        "VMM is PID 1 in its namespace",
+        "no_new_privs active before and after boot"
+      ],
+      "cleanup_forced_stop": false,
+      "exit_code": 0,
+      "console_sha256": "9acf32046f543a29934b2c45fe37812fcc7218b9b51d0625a654d8b178544f3d",
+      "panic": false,
+      "guest": {
+        "uid": "0",
+        "kernel": "6.12.113-fc-lab",
+        "rootfs": "/dev/root ext4 rw,relatime",
+        "root_device": "254:0",
+        "vda_device": "254:0"
+      },
+      "guest_load": true,
+      "worker_stop_ack": false,
+      "shutdown_quota": "200000 100000",
+      "shutdown_observation": {
+        "http": 204,
+        "seconds": 0.062942,
+        "cpu_before": {
+          "usage_usec": 2382754,
+          "user_usec": 2104046,
+          "system_usec": 278707,
+          "nice_usec": 0,
+          "nr_periods": 53,
+          "nr_throttled": 44,
+          "throttled_usec": 5231274,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        },
+        "cpu_after": {
+          "usage_usec": 2413973,
+          "user_usec": 2118626,
+          "system_usec": 295347,
+          "nice_usec": 0,
+          "nr_periods": 54,
+          "nr_throttled": 44,
+          "throttled_usec": 5231274,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "outside_canary_unchanged": true,
+      "final_cgroup_events": {
+        "memory.events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 0
+        },
+        "cpu.stat": {
+          "usage_usec": 2413973,
+          "user_usec": 2118626,
+          "system_usec": 295347,
+          "nice_usec": 0,
+          "nr_periods": 54,
+          "nr_throttled": 44,
+          "throttled_usec": 5231274,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "console_findings": [
+        "2026-10-20T18:32:04.739832140 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:04.739916340 [boost-load:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:04.739949940 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:04.739997340 [boost-load:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:04.740037840 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:04.740067140 [boost-load:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:04.740114040 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:04.740133240 [boost-load:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:04.740183340 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:04.740232040 [boost-load:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:04.740280340 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:04.740307140 [boost-load:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:04.740353040 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:04.740376340 [boost-load:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:04.740412240 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:04.740451840 [boost-load:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:04.740497740 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:04.740543840 [boost-load:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:04.740569740 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:04.740596240 [boost-load:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "Spectre V2 : User space: Vulnerable",
+        "Speculative Store Bypass: Vulnerable",
+        "2026-10-20T18:32:05.629763594 [boost-load:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+        "2026-10-20T18:32:05.913432121 [boost-load:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "i8042: Failed to disable AUX port, but continuing anyway... Is this a SiS?",
+        "2026-10-20T18:32:05.929587923 [boost-load:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)"
+      ],
+      "raw_result_sha256": "ba2844be2dd8ab0cb0ab144b6e9625f9b4efb0d1c87c188bf40cd75a0777d561",
+      "isolation": {
+        "hardened_runtime": true,
+        "threads": {
+          "27": {
+            "Name": "firecracker",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "27\t1"
+          },
+          "28": {
+            "Name": "fc_api",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "28\t2"
+          },
+          "29": {
+            "Name": "fc_vcpu 0",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "29\t3"
+          },
+          "30": {
+            "Name": "fc_vcpu 1",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "30\t4"
+          },
+          "31": {
+            "Name": "kvm-nx-lpage-re",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "31\t5"
+          }
+        },
+        "resource_files": {
+          "cpu.max": "50000 100000",
+          "memory.max": "402653184",
+          "memory.swap.max": "0",
+          "pids.max": "32"
+        },
+        "network_devices": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n",
+        "namespaces": {
+          "mnt": {
+            "supervisor": "mnt:[4026537182]",
+            "vmm": "mnt:[4026537710]"
+          },
+          "pid": {
+            "supervisor": "pid:[4026537186]",
+            "vmm": "pid:[4026537711]"
+          },
+          "net": {
+            "supervisor": "net:[4026537192]",
+            "vmm": "net:[4026537515]"
+          },
+          "ipc": {
+            "supervisor": "ipc:[4026537184]",
+            "vmm": "ipc:[4026537184]"
+          },
+          "uts": {
+            "supervisor": "uts:[4026537183]",
+            "vmm": "uts:[4026537183]"
+          },
+          "user": {
+            "supervisor": "user:[4026531837]",
+            "vmm": "user:[4026531837]"
+          },
+          "cgroup": {
+            "supervisor": "cgroup:[4026537191]",
+            "vmm": "cgroup:[4026537191]"
+          }
+        }
+      },
+      "shutdown_excerpt": "reboot: Restarting system\nreboot: machine restart\n2026-10-20T18:32:09.980499311 [boost-load:main] Vmm is stopping.\n2026-10-20T18:32:09.980761011 [boost-load:main] Killing vCPU threads\n2026-10-20T18:32:10.011117414 [boost-load:main] Firecracker exiting successfully. exit_code=0\n"
+    },
+    {
+      "scenario": "trace-clean",
+      "status": "observed",
+      "checks": [
+        "API accepted /boot-source: 204",
+        "API accepted /drives/rootfs: 204",
+        "API accepted /machine-config: 204",
+        "API accepted /actions: 204",
+        "complete guest evidence",
+        "mnt namespace differs",
+        "pid namespace differs",
+        "net namespace differs",
+        "process root is jail root",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "inherited environment canary absent",
+        "inherited canary file descriptor closed",
+        "RLIMIT_NOFILE configured",
+        "VMM resides in its cgroup leaf",
+        "all cgroup limits match requested profile",
+        "VMM is PID 1 in its namespace",
+        "no_new_privs active before and after boot"
+      ],
+      "cleanup_forced_stop": false,
+      "exit_code": 0,
+      "console_sha256": "247adaca1993cb136f57af311ad46d32e1b64ac7930f3c103f8ae858a2517913",
+      "panic": false,
+      "guest": {
+        "uid": "0",
+        "kernel": "6.12.113-fc-lab",
+        "rootfs": "/dev/root ext4 rw,relatime",
+        "root_device": "254:0",
+        "vda_device": "254:0"
+      },
+      "guest_load": false,
+      "worker_stop_ack": null,
+      "outside_canary_unchanged": true,
+      "final_cgroup_events": {
+        "memory.events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 0
+        },
+        "cpu.stat": {
+          "usage_usec": 1096512,
+          "user_usec": 720218,
+          "system_usec": 376293,
+          "nice_usec": 0,
+          "nr_periods": 30,
+          "nr_throttled": 18,
+          "throttled_usec": 955535,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "console_findings": [
+        "2026-10-20T18:32:11.557742763 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:11.557820863 [trace-clean:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:11.557895463 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:11.557956963 [trace-clean:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:11.558004463 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:11.558047763 [trace-clean:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:11.558287363 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:11.558333863 [trace-clean:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:11.558377863 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:11.558397663 [trace-clean:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:11.558439763 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:11.558481463 [trace-clean:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:11.558501163 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:11.558543263 [trace-clean:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:11.558584363 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:11.558627563 [trace-clean:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:11.558669863 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:11.558689163 [trace-clean:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:11.558731063 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:11.558772163 [trace-clean:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "Spectre V2 : User space: Vulnerable",
+        "Speculative Store Bypass: Vulnerable",
+        "2026-10-20T18:32:12.751366077 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:12.751389277 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+        "2026-10-20T18:32:12.945991596 [trace-clean:fc_vcpu 1] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "i8042: Failed to disable AUX port, but continuing anyway... Is this a SiS?",
+        "2026-10-20T18:32:13.020779903 [trace-clean:fc_vcpu 1] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "2026-10-20T18:32:14.234627753 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:14.234647053 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range."
+      ],
+      "raw_result_sha256": "74255e63eee8ea87c6ae67a378559d63e733985699c2960297bbd86fd2f994a7",
+      "isolation": {
+        "hardened_runtime": true,
+        "threads": {
+          "33": {
+            "Name": "firecracker",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "33\t1"
+          },
+          "34": {
+            "Name": "fc_api",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "34\t2"
+          },
+          "35": {
+            "Name": "fc_vcpu 0",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "35\t3"
+          },
+          "36": {
+            "Name": "fc_vcpu 1",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "36\t4"
+          },
+          "37": {
+            "Name": "kvm-nx-lpage-re",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "37\t5"
+          }
+        },
+        "resource_files": {
+          "cpu.max": "50000 100000",
+          "memory.max": "402653184",
+          "memory.swap.max": "0",
+          "pids.max": "32"
+        },
+        "network_devices": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n",
+        "namespaces": {
+          "mnt": {
+            "supervisor": "mnt:[4026537182]",
+            "vmm": "mnt:[4026537710]"
+          },
+          "pid": {
+            "supervisor": "pid:[4026537186]",
+            "vmm": "pid:[4026537711]"
+          },
+          "net": {
+            "supervisor": "net:[4026537192]",
+            "vmm": "net:[4026537515]"
+          },
+          "ipc": {
+            "supervisor": "ipc:[4026537184]",
+            "vmm": "ipc:[4026537184]"
+          },
+          "uts": {
+            "supervisor": "uts:[4026537183]",
+            "vmm": "uts:[4026537183]"
+          },
+          "user": {
+            "supervisor": "user:[4026531837]",
+            "vmm": "user:[4026531837]"
+          },
+          "cgroup": {
+            "supervisor": "cgroup:[4026537191]",
+            "vmm": "cgroup:[4026537191]"
+          }
+        }
+      },
+      "trace": {
+        "injection_requested": false,
+        "http": {
+          "status": 204,
+          "body": ""
+        },
+        "event_count": 277,
+        "selected_events": [
+          {
+            "t": 0.225762,
+            "signal": 5,
+            "syscall": 1,
+            "rip": "0x740495472a01",
+            "write": "2026-10-20T18:32:14.245434461 [trace-clean:main] Killing vCPU threads\n"
+          },
+          {
+            "t": 0.365703,
+            "signal": 5,
+            "syscall": 1,
+            "rip": "0x740495472a01",
+            "write": "2026-10-20T18:32:14.386398657 [trace-clean:main] Firecracker exiting successfully. exit_code=0\n"
+          }
+        ]
+      },
+      "shutdown_excerpt": "reboot: Restarting system\nreboot: machine restart\n2026-10-20T18:32:14.234592753 [trace-clean:fc_vcpu 0] 9 messages were suppressed due to rate limiting\n2026-10-20T18:32:14.234627753 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.\n2026-10-20T18:32:14.234647053 [trace-clean:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range.\n2026-10-20T18:32:14.235839954 [trace-clean:main] Vmm is stopping.\n2026-10-20T18:32:14.245434461 [trace-clean:main] Killing vCPU threads\n2026-10-20T18:32:14.386398657 [trace-clean:main] Firecracker exiting successfully. exit_code=0\n"
+    },
+    {
+      "scenario": "trace-held-vcpu",
+      "status": "observed",
+      "checks": [
+        "API accepted /boot-source: 204",
+        "API accepted /drives/rootfs: 204",
+        "API accepted /machine-config: 204",
+        "API accepted /actions: 204",
+        "complete guest evidence",
+        "mnt namespace differs",
+        "pid namespace differs",
+        "net namespace differs",
+        "process root is jail root",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "inherited environment canary absent",
+        "inherited canary file descriptor closed",
+        "RLIMIT_NOFILE configured",
+        "VMM resides in its cgroup leaf",
+        "all cgroup limits match requested profile",
+        "VMM is PID 1 in its namespace",
+        "no_new_privs active before and after boot"
+      ],
+      "cleanup_forced_stop": false,
+      "exit_code": -11,
+      "console_sha256": "4ad233de8792f844a3234654d1f379d00c4bb428cd457983338315442fa1f8f7",
+      "panic": true,
+      "guest": {
+        "uid": "0",
+        "kernel": "6.12.113-fc-lab",
+        "rootfs": "/dev/root ext4 rw,relatime",
+        "root_device": "254:0",
+        "vda_device": "254:0"
+      },
+      "guest_load": false,
+      "worker_stop_ack": null,
+      "injected_vcpu_tid": 42,
+      "outside_canary_unchanged": true,
+      "final_cgroup_events": {
+        "memory.events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 0
+        },
+        "cpu.stat": {
+          "usage_usec": 1255330,
+          "user_usec": 838319,
+          "system_usec": 417010,
+          "nice_usec": 0,
+          "nr_periods": 34,
+          "nr_throttled": 18,
+          "throttled_usec": 907585,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "console_findings": [
+        "2026-10-20T18:32:16.649627810 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:16.649709110 [trace-held-vcpu:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:16.649801710 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:16.649829410 [trace-held-vcpu:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:16.649875710 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:16.649894510 [trace-held-vcpu:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:16.649943610 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:16.649962310 [trace-held-vcpu:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:16.649977310 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:16.649991110 [trace-held-vcpu:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:16.650033810 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:16.650070710 [trace-held-vcpu:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:16.650110010 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:16.650150910 [trace-held-vcpu:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:16.650185810 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:16.650228210 [trace-held-vcpu:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:16.650265010 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:16.650303111 [trace-held-vcpu:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:16.650344711 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:16.650379311 [trace-held-vcpu:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "Spectre V2 : User space: Vulnerable",
+        "Speculative Store Bypass: Vulnerable",
+        "2026-10-20T18:32:17.633002864 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+        "2026-10-20T18:32:17.668061666 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:17.915913079 [trace-held-vcpu:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "i8042: Failed to disable AUX port, but continuing anyway... Is this a SiS?",
+        "2026-10-20T18:32:17.929485480 [trace-held-vcpu:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "2026-10-20T18:32:19.483814265 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-20T18:32:19.483841165 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range."
+      ],
+      "raw_result_sha256": "a4ff91a617631ab93786e49df60f5f64d892467e9f91cabfaf943148ab32f1db",
+      "isolation": {
+        "hardened_runtime": true,
+        "threads": {
+          "40": {
+            "Name": "firecracker",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "40\t1"
+          },
+          "41": {
+            "Name": "fc_api",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "41\t2"
+          },
+          "42": {
+            "Name": "fc_vcpu 0",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "42\t3"
+          },
+          "43": {
+            "Name": "fc_vcpu 1",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "43\t4"
+          },
+          "44": {
+            "Name": "kvm-nx-lpage-re",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "44\t5"
+          }
+        },
+        "resource_files": {
+          "cpu.max": "50000 100000",
+          "memory.max": "402653184",
+          "memory.swap.max": "0",
+          "pids.max": "32"
+        },
+        "network_devices": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n",
+        "namespaces": {
+          "mnt": {
+            "supervisor": "mnt:[4026537182]",
+            "vmm": "mnt:[4026537710]"
+          },
+          "pid": {
+            "supervisor": "pid:[4026537186]",
+            "vmm": "pid:[4026537711]"
+          },
+          "net": {
+            "supervisor": "net:[4026537192]",
+            "vmm": "net:[4026537515]"
+          },
+          "ipc": {
+            "supervisor": "ipc:[4026537184]",
+            "vmm": "ipc:[4026537184]"
+          },
+          "uts": {
+            "supervisor": "uts:[4026537183]",
+            "vmm": "uts:[4026537183]"
+          },
+          "user": {
+            "supervisor": "user:[4026531837]",
+            "vmm": "user:[4026531837]"
+          },
+          "cgroup": {
+            "supervisor": "cgroup:[4026537191]",
+            "vmm": "cgroup:[4026537191]"
+          }
+        }
+      },
+      "trace": {
+        "injection_requested": true,
+        "http": {
+          "status": 204,
+          "body": ""
+        },
+        "event_count": 223,
+        "selected_events": [
+          {
+            "t": 0.284273,
+            "signal": 5,
+            "syscall": 1,
+            "rip": "0x75f61f672a01",
+            "write": "2026-10-20T18:32:19.528904668 [trace-held-vcpu:main] Killing vCPU threads\n",
+            "held_vcpu": 42
+          },
+          {
+            "t": 1.336097,
+            "signal": 5,
+            "syscall": 1,
+            "rip": "0x75f61f672a01",
+            "write": "2026-10-20T18:32:20.583093626 [trace-held-vcpu:main] Firecracker panicked at src/vmm/src/vstate/vcpu.rs:660:21:\nTimed out waiting for vCPU thread 'fc_vcpu 0' to exit\n"
+          },
+          {
+            "t": 1.353415,
+            "signal": 6,
+            "syscall": 14,
+            "rip": "0x75f61f66f68c",
+            "instruction_hex": "c3555389fb4881ec880000004889e548",
+            "siginfo_hex": "0600000000000000faffffff0000000001000000feff00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          },
+          {
+            "t": 1.363963,
+            "signal": 6,
+            "syscall": 14,
+            "rip": "0x75f61f66cae6",
+            "instruction_hex": "f4bf09000000e89c2b0000bf7f000000",
+            "siginfo_hex": "0600000000000000faffffff0000000001000000feff00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          },
+          {
+            "t": 1.365253,
+            "signal": 11,
+            "syscall": 18446744073709551615,
+            "rip": "0x75f61f66cae6",
+            "instruction_hex": "f4bf09000000e89c2b0000bf7f000000",
+            "siginfo_hex": "0b00000000000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+          }
+        ]
+      },
+      "shutdown_excerpt": "reboot: Restarting system\nreboot: machine restart\n2026-10-20T18:32:19.483763365 [trace-held-vcpu:fc_vcpu 0] 3 messages were suppressed due to rate limiting\n2026-10-20T18:32:19.483814265 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.\n2026-10-20T18:32:19.483841165 [trace-held-vcpu:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range.\n2026-10-20T18:32:19.487651266 [trace-held-vcpu:main] Vmm is stopping.\n2026-10-20T18:32:19.528904668 [trace-held-vcpu:main] Killing vCPU threads\n2026-10-20T18:32:20.583093626 [trace-held-vcpu:main] Firecracker panicked at src/vmm/src/vstate/vcpu.rs:660:21:\nTimed out waiting for vCPU thread 'fc_vcpu 0' to exit\n"
+    }
+  ]
+}

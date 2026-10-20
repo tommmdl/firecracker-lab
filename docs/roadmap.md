@@ -10,7 +10,7 @@ O boot agora tem um controlador no repositório, regressões para a leitura do c
 4. Validar SSH por chave e a identidade do host, com `known_hosts` exclusivo.
 5. Implementar NAT e regras de saída limitadas ao lab, testando destinos permitidos e negados e a reversão.
 6. Executar uma tarefa conhecida em um disco descartável e recolher código de saída, logs e resultados.
-7. Primeiros [ensaios do jailer concluídos](jailer.md): isolamento observado e limites de CPU/memória/tarefas/descritores/prazo exercitados. Próximo aprofundamento: bootstrap menos privilegiado, política de seccomp, `CapBnd` e investigação do panic de shutdown preservado.
+7. Primeiros [ensaios do jailer concluídos](jailer.md): isolamento observado e limites de CPU/memória/tarefas/descritores/prazo exercitados. Próximo aprofundamento: bootstrap menos privilegiado, política de seccomp, `CapBnd` e captura do atraso espontâneo da vCPU. A [investigação do shutdown](shutdown-investigation.md) separa o panic do SIGSEGV e compara uma candidata com prazo maior.
 
 Rede do guest, SSH e firewall continuam pendentes. O jailer tem ensaios locais, com limites explícitos de alcance. A publicação do código não altera esses componentes nem valida isolamento para código não confiável.
 
