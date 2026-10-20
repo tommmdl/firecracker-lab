@@ -54,3 +54,5 @@ The structural checks from 2026-10-16 remain historical, without rerunning them 
 `console.log`, disks, binaries, run configurations and sockets stay in the local directory recorded for each result. The repository receives only reviewed summaries, hashes and a minimal excerpt of the earlier console. No keys are included in the evidence. Test copies remain available for inspection; remove them manually only after the processes have stopped.
 
 This stage has since been followed by the [source build recipe](build-from-source.en.md), with a minimal guest and ten reader/input tests. Networking, SSH, `jailer` and untrusted code execution remain untested. These instructions describe repeat runs with the existing prepared image and automatic root login. Code and reviewed evidence are publicly available.
+
+Next stage: [first jailer tests](jailer.en.md), with isolation/resource controls and a retained panic. Results above belong to the original boot/build stage.

@@ -103,3 +103,5 @@ O console da primeira imagem também reportou `Spectre V2 : User space: Vulnerab
 O guest mínimo não é uma distribuição pronta para produção, nem uma atualização do antigo Ubuntu. O kernel 6.12.113 é uma escolha deste exercício, validada localmente; não declaramos certificação pela matriz de suporte do Firecracker. Rede, SSH e `jailer` continuam fora desta etapa.
 
 Os resultados reais e os problemas encontrados durante a preparação ficam no [registro desta construção](../evidence/source-build-results.json). O repositório recebe código, configurações e evidências revisadas; fontes baixados, kernels compilados, imagens, chaves privadas e consoles brutos ficam fora do Git.
+
+Etapa seguinte: [primeiros testes do jailer](jailer.md), com controles de isolamento/recursos e um panic preservado. Os resultados acima pertencem à etapa original de boot/construção.

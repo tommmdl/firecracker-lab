@@ -1,0 +1,1659 @@
+{
+  "direct_unprivileged_attempt": {
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "Failed to change owner for <local-run>/firecracker/probe/root/firecracker: Operation not permitted (os error 1)\nError: ChangeFileOwner(\"<local-run>/firecracker/probe/root/firecracker\", Os { code: 1, kind: PermissionDenied, message: \"Operation not permitted\" })\n"
+  },
+  "intermediate_runs": [
+    {
+      "local_run_id": "jailer-ppn74tys",
+      "interpretation": "Failed: premature preboot seccomp assertion; main had Seccomp 0 before InstanceStart.",
+      "raw_report_sha256": "ef895e0744d1e16767fc88bb4e26c4f33c1c48536b2d2f2f6711c86902209961",
+      "report": {
+        "schema": 1,
+        "started_at": "2026-10-20T15:21:20.056421+00:00",
+        "status": "failed",
+        "scenarios": [
+          {
+            "scenario": "baseline",
+            "status": "failed",
+            "checks": [
+              "mnt namespace differs",
+              "pid namespace differs",
+              "net namespace differs",
+              "process root is jail root",
+              "thread UIDs dropped",
+              "thread GIDs dropped",
+              "no supplementary root group",
+              "no effective/permitted/inherited/ambient capabilities",
+              "inherited environment canary absent",
+              "inherited canary file descriptor closed",
+              "RLIMIT_NOFILE configured",
+              "VMM resides in its cgroup leaf"
+            ],
+            "forced_stop": true,
+            "clone_sha256_before": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52",
+            "failure": "AssertionError: seccomp filter and no_new_privs active on all threads",
+            "exit_code": -9,
+            "console_sha256": "8a487b79727f0cfe94aaad7460e86bc598a964165d98773e2cc7800e6fd30f57",
+            "console_findings": [],
+            "outside_canary_unchanged": true,
+            "final_cgroup_events": {
+              "memory.events": {
+                "low": 0,
+                "high": 0,
+                "max": 0,
+                "oom": 0,
+                "oom_kill": 0,
+                "oom_group_kill": 0
+              },
+              "pids.events": {
+                "max": 0
+              },
+              "cpu.stat": {
+                "usage_usec": 4991,
+                "user_usec": 0,
+                "system_usec": 4991,
+                "nice_usec": 0,
+                "nr_periods": 1,
+                "nr_throttled": 0,
+                "throttled_usec": 0,
+                "nr_bursts": 0,
+                "burst_usec": 0
+              }
+            },
+            "assertion_count": 16
+          }
+        ],
+        "findings": [],
+        "outer_limits_before": {
+          "memory.max": "805306368",
+          "pids.max": "256",
+          "cpu.max": "200000 100000"
+        },
+        "outer_memory_events_before": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "failure": "AssertionError: seccomp filter and no_new_privs active on all threads",
+        "cgroups_cleaned": true
+      }
+    },
+    {
+      "local_run_id": "jailer-euq0t2zi",
+      "interpretation": "Failed: HTTP reader waited for EOF although API already sent 400 on a persistent connection.",
+      "raw_report_sha256": "4eac5d85f9bfa17614c4e331e25dc2d1f7bb67d1d7a19de40f65a283754ed677",
+      "report": {
+        "schema": 1,
+        "started_at": "2026-10-20T15:22:23.173764+00:00",
+        "status": "failed",
+        "scenarios": [
+          {
+            "scenario": "baseline",
+            "status": "failed",
+            "checks": [
+              "mnt namespace differs",
+              "pid namespace differs",
+              "net namespace differs",
+              "process root is jail root",
+              "thread UIDs dropped",
+              "thread GIDs dropped",
+              "no supplementary root group",
+              "no effective/permitted/inherited/ambient capabilities",
+              "inherited environment canary absent",
+              "inherited canary file descriptor closed",
+              "RLIMIT_NOFILE configured",
+              "VMM resides in its cgroup leaf",
+              "VMM is PID 1 in its namespace",
+              "no_new_privs active before and after boot",
+              "preboot API thread has seccomp filter"
+            ],
+            "forced_stop": true,
+            "clone_sha256_before": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52",
+            "runtime_snapshots": {
+              "preboot": {
+                "namespaces": {
+                  "mnt": {
+                    "supervisor": "mnt:[4026537182]",
+                    "vmm": "mnt:[4026537710]"
+                  },
+                  "pid": {
+                    "supervisor": "pid:[4026537186]",
+                    "vmm": "pid:[4026537711]"
+                  },
+                  "net": {
+                    "supervisor": "net:[4026537192]",
+                    "vmm": "net:[4026537515]"
+                  },
+                  "ipc": {
+                    "supervisor": "ipc:[4026537184]",
+                    "vmm": "ipc:[4026537184]"
+                  },
+                  "uts": {
+                    "supervisor": "uts:[4026537183]",
+                    "vmm": "uts:[4026537183]"
+                  },
+                  "user": {
+                    "supervisor": "user:[4026531837]",
+                    "vmm": "user:[4026531837]"
+                  },
+                  "cgroup": {
+                    "supervisor": "cgroup:[4026537191]",
+                    "vmm": "cgroup:[4026537191]"
+                  }
+                },
+                "threads": {
+                  "9": {
+                    "Name": "firecracker",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "0",
+                    "NSpid": "9\t1"
+                  },
+                  "10": {
+                    "Name": "fc_api",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "2",
+                    "NSpid": "10\t2"
+                  }
+                },
+                "hardened_runtime": false,
+                "environment_keys": [],
+                "open_fd_count": 11,
+                "limits": "Limit                     Soft Limit           Hard Limit           Units     \nMax cpu time              unlimited            unlimited            seconds   \nMax file size             unlimited            unlimited            bytes     \nMax data size             unlimited            unlimited            bytes     \nMax stack size            8388608              unlimited            bytes     \nMax core file size        unlimited            unlimited            bytes     \nMax resident set          unlimited            unlimited            bytes     \nMax processes             unlimited            unlimited            processes \nMax open files            64                   64                   files     \nMax locked memory         67108864             67108864             bytes     \nMax address space         unlimited            unlimited            bytes     \nMax file locks            unlimited            unlimited            locks     \nMax pending signals       63800                63800                signals   \nMax msgqueue size         819200               819200               bytes     \nMax nice priority         0                    0                    \nMax realtime priority     0                    0                    \nMax realtime timeout      unlimited            unlimited            us        \n",
+                "cgroup": "0::/vms/baseline",
+                "resource_files": {
+                  "cpu.max": "50000 100000",
+                  "memory.max": "402653184",
+                  "memory.swap.max": "0",
+                  "pids.max": "32"
+                },
+                "network_devices": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n"
+              }
+            },
+            "preboot_filter_note": "VMM main seccomp is installed during InstanceStart; API thread is filtered before boot",
+            "failure": "TimeoutError: timed out",
+            "exit_code": -9,
+            "console_sha256": "71f4bee86eb4a66ac95aaa1e87ecc7701afb80dd31a21a9fb64c066cef7b155a",
+            "console_findings": [
+              {
+                "message": "Received Error. Status code: 400 Bad Request. Message: Boot source error: The kernel file cannot be opened: No such file or directory (os error 2)",
+                "occurrences": 1
+              }
+            ],
+            "outside_canary_unchanged": true,
+            "final_cgroup_events": {
+              "memory.events": {
+                "low": 0,
+                "high": 0,
+                "max": 0,
+                "oom": 0,
+                "oom_kill": 0,
+                "oom_group_kill": 0
+              },
+              "pids.events": {
+                "max": 0
+              },
+              "cpu.stat": {
+                "usage_usec": 7891,
+                "user_usec": 0,
+                "system_usec": 7891,
+                "nice_usec": 0,
+                "nr_periods": 2,
+                "nr_throttled": 0,
+                "throttled_usec": 0,
+                "nr_bursts": 0,
+                "burst_usec": 0
+              }
+            },
+            "assertion_count": 19
+          }
+        ],
+        "findings": [],
+        "outer_limits_before": {
+          "memory.max": "805306368",
+          "pids.max": "256",
+          "cpu.max": "200000 100000"
+        },
+        "outer_memory_events_before": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "failure": "TimeoutError: timed out",
+        "cgroups_cleaned": true
+      }
+    },
+    {
+      "local_run_id": "jailer-h8mfik1x",
+      "interpretation": "Intermediate five-scenario pass with fixed half-CPU quota; this is not the final profile.",
+      "raw_report_sha256": "f093b74e9ec62d2519eb664e97b839b2e4ea23ac2e94cae5d1abb8dcdc74478c",
+      "report": {
+        "schema": 1,
+        "started_at": "2026-10-20T15:23:23.113702+00:00",
+        "status": "passed",
+        "scenarios": [
+          {
+            "scenario": "baseline",
+            "status": "passed",
+            "checks": [
+              "mnt namespace differs",
+              "pid namespace differs",
+              "net namespace differs",
+              "process root is jail root",
+              "thread UIDs dropped",
+              "thread GIDs dropped",
+              "no supplementary root group",
+              "no effective/permitted/inherited/ambient capabilities",
+              "inherited environment canary absent",
+              "inherited canary file descriptor closed",
+              "RLIMIT_NOFILE configured",
+              "VMM resides in its cgroup leaf",
+              "VMM is PID 1 in its namespace",
+              "no_new_privs active before and after boot",
+              "preboot API thread has seccomp filter",
+              "outside-jail path denied with ENOENT",
+              "API accepted /boot-source: 204",
+              "API accepted /drives/rootfs: 204",
+              "API accepted /machine-config: 204",
+              "API accepted /actions: 204",
+              "complete guest evidence",
+              "all running VM threads retain seccomp and no_new_privs",
+              "CPU contention produced cgroup throttling",
+              "trusted helper encountered pids ceiling in VM cgroup",
+              "pids.events records rejected thread creation",
+              "shutdown API returned 204",
+              "VMM exited within shutdown deadline",
+              "VMM exited with zero",
+              "root remounted read-only before exit"
+            ],
+            "forced_stop": false,
+            "clone_sha256_before": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52",
+            "runtime_snapshots": {
+              "preboot": {
+                "namespaces": {
+                  "mnt": {
+                    "supervisor": "mnt:[4026537182]",
+                    "vmm": "mnt:[4026537710]"
+                  },
+                  "pid": {
+                    "supervisor": "pid:[4026537186]",
+                    "vmm": "pid:[4026537711]"
+                  },
+                  "net": {
+                    "supervisor": "net:[4026537192]",
+                    "vmm": "net:[4026537515]"
+                  },
+                  "ipc": {
+                    "supervisor": "ipc:[4026537184]",
+                    "vmm": "ipc:[4026537184]"
+                  },
+                  "uts": {
+                    "supervisor": "uts:[4026537183]",
+                    "vmm": "uts:[4026537183]"
+                  },
+                  "user": {
+                    "supervisor": "user:[4026531837]",
+                    "vmm": "user:[4026531837]"
+                  },
+                  "cgroup": {
+                    "supervisor": "cgroup:[4026537191]",
+                    "vmm": "cgroup:[4026537191]"
+                  }
+                },
+                "threads": {
+                  "8": {
+                    "Name": "firecracker",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "0",
+                    "NSpid": "8\t1"
+                  },
+                  "9": {
+                    "Name": "fc_api",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "2",
+                    "NSpid": "9\t2"
+                  }
+                },
+                "hardened_runtime": false,
+                "environment_keys": [],
+                "open_fd_count": 11,
+                "limits": "Limit                     Soft Limit           Hard Limit           Units     \nMax cpu time              unlimited            unlimited            seconds   \nMax file size             unlimited            unlimited            bytes     \nMax data size             unlimited            unlimited            bytes     \nMax stack size            8388608              unlimited            bytes     \nMax core file size        unlimited            unlimited            bytes     \nMax resident set          unlimited            unlimited            bytes     \nMax processes             unlimited            unlimited            processes \nMax open files            64                   64                   files     \nMax locked memory         67108864             67108864             bytes     \nMax address space         unlimited            unlimited            bytes     \nMax file locks            unlimited            unlimited            locks     \nMax pending signals       63800                63800                signals   \nMax msgqueue size         819200               819200               bytes     \nMax nice priority         0                    0                    \nMax realtime priority     0                    0                    \nMax realtime timeout      unlimited            unlimited            us        \n",
+                "cgroup": "0::/vms/baseline",
+                "resource_files": {
+                  "cpu.max": "50000 100000",
+                  "memory.max": "402653184",
+                  "memory.swap.max": "0",
+                  "pids.max": "32"
+                },
+                "network_devices": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n"
+              },
+              "running": {
+                "namespaces": {
+                  "mnt": {
+                    "supervisor": "mnt:[4026537182]",
+                    "vmm": "mnt:[4026537710]"
+                  },
+                  "pid": {
+                    "supervisor": "pid:[4026537186]",
+                    "vmm": "pid:[4026537711]"
+                  },
+                  "net": {
+                    "supervisor": "net:[4026537192]",
+                    "vmm": "net:[4026537515]"
+                  },
+                  "ipc": {
+                    "supervisor": "ipc:[4026537184]",
+                    "vmm": "ipc:[4026537184]"
+                  },
+                  "uts": {
+                    "supervisor": "uts:[4026537183]",
+                    "vmm": "uts:[4026537183]"
+                  },
+                  "user": {
+                    "supervisor": "user:[4026531837]",
+                    "vmm": "user:[4026531837]"
+                  },
+                  "cgroup": {
+                    "supervisor": "cgroup:[4026537191]",
+                    "vmm": "cgroup:[4026537191]"
+                  }
+                },
+                "threads": {
+                  "8": {
+                    "Name": "firecracker",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "2",
+                    "NSpid": "8\t1"
+                  },
+                  "9": {
+                    "Name": "fc_api",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "2",
+                    "NSpid": "9\t2"
+                  },
+                  "10": {
+                    "Name": "fc_vcpu 0",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "2",
+                    "NSpid": "10\t3"
+                  },
+                  "11": {
+                    "Name": "fc_vcpu 1",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "2",
+                    "NSpid": "11\t4"
+                  },
+                  "12": {
+                    "Name": "kvm-nx-lpage-re",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "2",
+                    "NSpid": "12\t5"
+                  }
+                },
+                "hardened_runtime": true,
+                "environment_keys": [],
+                "open_fd_count": 31,
+                "limits": "Limit                     Soft Limit           Hard Limit           Units     \nMax cpu time              unlimited            unlimited            seconds   \nMax file size             unlimited            unlimited            bytes     \nMax data size             unlimited            unlimited            bytes     \nMax stack size            8388608              unlimited            bytes     \nMax core file size        unlimited            unlimited            bytes     \nMax resident set          unlimited            unlimited            bytes     \nMax processes             unlimited            unlimited            processes \nMax open files            64                   64                   files     \nMax locked memory         67108864             67108864             bytes     \nMax address space         unlimited            unlimited            bytes     \nMax file locks            unlimited            unlimited            locks     \nMax pending signals       63800                63800                signals   \nMax msgqueue size         819200               819200               bytes     \nMax nice priority         0                    0                    \nMax realtime priority     0                    0                    \nMax realtime timeout      unlimited            unlimited            us        \n",
+                "cgroup": "0::/vms/baseline",
+                "resource_files": {
+                  "cpu.max": "50000 100000",
+                  "memory.max": "402653184",
+                  "memory.swap.max": "0",
+                  "pids.max": "32"
+                },
+                "network_devices": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n"
+              }
+            },
+            "preboot_filter_note": "VMM main seccomp is installed during InstanceStart; API thread is filtered before boot",
+            "path_denials": [
+              {
+                "endpoint": "/boot-source",
+                "status": 400,
+                "message": "{\"fault_message\":\"Boot source error: The kernel file cannot be opened: No such file or directory (os error 2)\"}"
+              },
+              {
+                "endpoint": "/boot-source",
+                "status": 400,
+                "message": "{\"fault_message\":\"Boot source error: The kernel file cannot be opened: No such file or directory (os error 2)\"}"
+              },
+              {
+                "endpoint": "/logger",
+                "status": 400,
+                "message": "{\"fault_message\":\"Logger error: Failed to open target file: No such file or directory (os error 2)\"}"
+              }
+            ],
+            "guest": {
+              "uid": "0",
+              "kernel": "6.12.113-fc-lab",
+              "rootfs": "/dev/root ext4 rw,relatime",
+              "root_device": "254:0",
+              "vda_device": "254:0"
+            },
+            "cpu_stress": {
+              "before": {
+                "usage_usec": 1150573,
+                "user_usec": 556039,
+                "system_usec": 594534,
+                "nice_usec": 0,
+                "nr_periods": 29,
+                "nr_throttled": 20,
+                "throttled_usec": 1106639,
+                "nr_bursts": 0,
+                "burst_usec": 0
+              },
+              "after": {
+                "usage_usec": 2691712,
+                "user_usec": 2097178,
+                "system_usec": 594534,
+                "nice_usec": 0,
+                "nr_periods": 60,
+                "nr_throttled": 51,
+                "throttled_usec": 5580064,
+                "nr_bursts": 0,
+                "burst_usec": 0
+              },
+              "elapsed_seconds": 3.072
+            },
+            "pids_probe": {
+              "created_threads": 25,
+              "blocked": true
+            },
+            "shutdown_http_status": 204,
+            "exit_code": 0,
+            "console_sha256": "7dfddb9be3b65d7e363a18539e408ada6d52f175823e0379466d4e439e39b94e",
+            "console_findings": [
+              {
+                "message": "Received Error. Status code: 400 Bad Request. Message: Boot source error: The kernel file cannot be opened: No such file or directory (os error 2)",
+                "occurrences": 2
+              },
+              {
+                "message": "Received Error. Status code: 400 Bad Request. Message: Logger error: Failed to open target file: No such file or directory (os error 2)",
+                "occurrences": 1
+              },
+              {
+                "message": "vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+                "occurrences": 11
+              },
+              {
+                "message": "vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+                "occurrences": 10
+              },
+              {
+                "message": "Spectre V2 : User space: Vulnerable",
+                "occurrences": 1
+              },
+              {
+                "message": "Speculative Store Bypass: Vulnerable",
+                "occurrences": 1
+              },
+              {
+                "message": "vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+                "occurrences": 1
+              },
+              {
+                "message": "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+                "occurrences": 1
+              },
+              {
+                "message": "Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+                "occurrences": 2
+              },
+              {
+                "message": "i8042: Failed to disable AUX port, but continuing anyway... Is this a SiS?",
+                "occurrences": 1
+              }
+            ],
+            "outside_canary_unchanged": true,
+            "final_cgroup_events": {
+              "memory.events": {
+                "low": 0,
+                "high": 0,
+                "max": 0,
+                "oom": 0,
+                "oom_kill": 0,
+                "oom_group_kill": 0
+              },
+              "pids.events": {
+                "max": 1
+              },
+              "cpu.stat": {
+                "usage_usec": 2782715,
+                "user_usec": 2173605,
+                "system_usec": 609110,
+                "nice_usec": 0,
+                "nr_periods": 62,
+                "nr_throttled": 53,
+                "throttled_usec": 5822078,
+                "nr_bursts": 0,
+                "burst_usec": 0
+              }
+            },
+            "assertion_count": 65
+          },
+          {
+            "scenario": "repeat",
+            "status": "passed",
+            "checks": [
+              "API accepted /boot-source: 204",
+              "API accepted /drives/rootfs: 204",
+              "API accepted /machine-config: 204",
+              "API accepted /actions: 204",
+              "complete guest evidence",
+              "mnt namespace differs",
+              "pid namespace differs",
+              "net namespace differs",
+              "process root is jail root",
+              "thread UIDs dropped",
+              "thread GIDs dropped",
+              "no supplementary root group",
+              "no effective/permitted/inherited/ambient capabilities",
+              "inherited environment canary absent",
+              "inherited canary file descriptor closed",
+              "RLIMIT_NOFILE configured",
+              "VMM resides in its cgroup leaf",
+              "VMM is PID 1 in its namespace",
+              "no_new_privs active before and after boot",
+              "repeat retains runtime protection",
+              "shutdown API returned 204",
+              "VMM exited within shutdown deadline",
+              "VMM exited with zero",
+              "root remounted read-only before exit"
+            ],
+            "forced_stop": false,
+            "clone_sha256_before": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52",
+            "guest": {
+              "uid": "0",
+              "kernel": "6.12.113-fc-lab",
+              "rootfs": "/dev/root ext4 rw,relatime",
+              "root_device": "254:0",
+              "vda_device": "254:0"
+            },
+            "runtime_snapshots": {
+              "running": {
+                "namespaces": {
+                  "mnt": {
+                    "supervisor": "mnt:[4026537182]",
+                    "vmm": "mnt:[4026537710]"
+                  },
+                  "pid": {
+                    "supervisor": "pid:[4026537186]",
+                    "vmm": "pid:[4026537711]"
+                  },
+                  "net": {
+                    "supervisor": "net:[4026537192]",
+                    "vmm": "net:[4026537515]"
+                  },
+                  "ipc": {
+                    "supervisor": "ipc:[4026537184]",
+                    "vmm": "ipc:[4026537184]"
+                  },
+                  "uts": {
+                    "supervisor": "uts:[4026537183]",
+                    "vmm": "uts:[4026537183]"
+                  },
+                  "user": {
+                    "supervisor": "user:[4026531837]",
+                    "vmm": "user:[4026531837]"
+                  },
+                  "cgroup": {
+                    "supervisor": "cgroup:[4026537191]",
+                    "vmm": "cgroup:[4026537191]"
+                  }
+                },
+                "threads": {
+                  "41": {
+                    "Name": "firecracker",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "2",
+                    "NSpid": "41\t1"
+                  },
+                  "42": {
+                    "Name": "fc_api",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "2",
+                    "NSpid": "42\t2"
+                  },
+                  "43": {
+                    "Name": "fc_vcpu 0",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "2",
+                    "NSpid": "43\t3"
+                  },
+                  "44": {
+                    "Name": "fc_vcpu 1",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "2",
+                    "NSpid": "44\t4"
+                  },
+                  "45": {
+                    "Name": "kvm-nx-lpage-re",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "2",
+                    "NSpid": "45\t5"
+                  }
+                },
+                "hardened_runtime": true,
+                "environment_keys": [],
+                "open_fd_count": 31,
+                "limits": "Limit                     Soft Limit           Hard Limit           Units     \nMax cpu time              unlimited            unlimited            seconds   \nMax file size             unlimited            unlimited            bytes     \nMax data size             unlimited            unlimited            bytes     \nMax stack size            8388608              unlimited            bytes     \nMax core file size        unlimited            unlimited            bytes     \nMax resident set          unlimited            unlimited            bytes     \nMax processes             unlimited            unlimited            processes \nMax open files            64                   64                   files     \nMax locked memory         67108864             67108864             bytes     \nMax address space         unlimited            unlimited            bytes     \nMax file locks            unlimited            unlimited            locks     \nMax pending signals       63800                63800                signals   \nMax msgqueue size         819200               819200               bytes     \nMax nice priority         0                    0                    \nMax realtime priority     0                    0                    \nMax realtime timeout      unlimited            unlimited            us        \n",
+                "cgroup": "0::/vms/repeat",
+                "resource_files": {
+                  "cpu.max": "50000 100000",
+                  "memory.max": "402653184",
+                  "memory.swap.max": "0",
+                  "pids.max": "32"
+                },
+                "network_devices": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n"
+              }
+            },
+            "shutdown_http_status": 204,
+            "exit_code": 0,
+            "console_sha256": "4bd79f73904bbf0bcbe0472ae29e09bae3c6ce506446e9343858908d904ab440",
+            "console_findings": [
+              {
+                "message": "vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+                "occurrences": 10
+              },
+              {
+                "message": "vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+                "occurrences": 10
+              },
+              {
+                "message": "Spectre V2 : User space: Vulnerable",
+                "occurrences": 1
+              },
+              {
+                "message": "Speculative Store Bypass: Vulnerable",
+                "occurrences": 1
+              },
+              {
+                "message": "vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+                "occurrences": 2
+              },
+              {
+                "message": "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+                "occurrences": 1
+              },
+              {
+                "message": "Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+                "occurrences": 2
+              },
+              {
+                "message": "i8042: Failed to disable AUX port, but continuing anyway... Is this a SiS?",
+                "occurrences": 1
+              }
+            ],
+            "outside_canary_unchanged": true,
+            "final_cgroup_events": {
+              "memory.events": {
+                "low": 0,
+                "high": 0,
+                "max": 0,
+                "oom": 0,
+                "oom_kill": 0,
+                "oom_group_kill": 0
+              },
+              "pids.events": {
+                "max": 0
+              },
+              "cpu.stat": {
+                "usage_usec": 1010903,
+                "user_usec": 689046,
+                "system_usec": 321857,
+                "nice_usec": 0,
+                "nr_periods": 26,
+                "nr_throttled": 17,
+                "throttled_usec": 757636,
+                "nr_bursts": 0,
+                "burst_usec": 0
+              }
+            },
+            "assertion_count": 40
+          },
+          {
+            "scenario": "seccomp-disabled-control",
+            "status": "passed",
+            "checks": [
+              "API accepted /boot-source: 204",
+              "API accepted /drives/rootfs: 204",
+              "API accepted /machine-config: 204",
+              "API accepted /actions: 204",
+              "complete guest evidence",
+              "mnt namespace differs",
+              "pid namespace differs",
+              "net namespace differs",
+              "process root is jail root",
+              "thread UIDs dropped",
+              "thread GIDs dropped",
+              "no supplementary root group",
+              "no effective/permitted/inherited/ambient capabilities",
+              "inherited environment canary absent",
+              "inherited canary file descriptor closed",
+              "RLIMIT_NOFILE configured",
+              "VMM resides in its cgroup leaf",
+              "VMM is PID 1 in its namespace",
+              "no_new_privs active before and after boot",
+              "negative control detects disabled seccomp",
+              "shutdown API returned 204",
+              "VMM exited within shutdown deadline",
+              "VMM exited with zero",
+              "root remounted read-only before exit"
+            ],
+            "forced_stop": false,
+            "clone_sha256_before": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52",
+            "guest": {
+              "uid": "0",
+              "kernel": "6.12.113-fc-lab",
+              "rootfs": "/dev/root ext4 rw,relatime",
+              "root_device": "254:0",
+              "vda_device": "254:0"
+            },
+            "runtime_snapshots": {
+              "running": {
+                "namespaces": {
+                  "mnt": {
+                    "supervisor": "mnt:[4026537182]",
+                    "vmm": "mnt:[4026537710]"
+                  },
+                  "pid": {
+                    "supervisor": "pid:[4026537186]",
+                    "vmm": "pid:[4026537711]"
+                  },
+                  "net": {
+                    "supervisor": "net:[4026537192]",
+                    "vmm": "net:[4026537515]"
+                  },
+                  "ipc": {
+                    "supervisor": "ipc:[4026537184]",
+                    "vmm": "ipc:[4026537184]"
+                  },
+                  "uts": {
+                    "supervisor": "uts:[4026537183]",
+                    "vmm": "uts:[4026537183]"
+                  },
+                  "user": {
+                    "supervisor": "user:[4026531837]",
+                    "vmm": "user:[4026531837]"
+                  },
+                  "cgroup": {
+                    "supervisor": "cgroup:[4026537191]",
+                    "vmm": "cgroup:[4026537191]"
+                  }
+                },
+                "threads": {
+                  "47": {
+                    "Name": "firecracker",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "0",
+                    "NSpid": "47\t1"
+                  },
+                  "48": {
+                    "Name": "fc_api",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "0",
+                    "NSpid": "48\t2"
+                  },
+                  "49": {
+                    "Name": "fc_vcpu 0",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "0",
+                    "NSpid": "49\t3"
+                  },
+                  "50": {
+                    "Name": "fc_vcpu 1",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "0",
+                    "NSpid": "50\t4"
+                  },
+                  "51": {
+                    "Name": "kvm-nx-lpage-re",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "0",
+                    "NSpid": "51\t5"
+                  }
+                },
+                "hardened_runtime": false,
+                "environment_keys": [],
+                "open_fd_count": 31,
+                "limits": "Limit                     Soft Limit           Hard Limit           Units     \nMax cpu time              unlimited            unlimited            seconds   \nMax file size             unlimited            unlimited            bytes     \nMax data size             unlimited            unlimited            bytes     \nMax stack size            8388608              unlimited            bytes     \nMax core file size        unlimited            unlimited            bytes     \nMax resident set          unlimited            unlimited            bytes     \nMax processes             unlimited            unlimited            processes \nMax open files            64                   64                   files     \nMax locked memory         67108864             67108864             bytes     \nMax address space         unlimited            unlimited            bytes     \nMax file locks            unlimited            unlimited            locks     \nMax pending signals       63800                63800                signals   \nMax msgqueue size         819200               819200               bytes     \nMax nice priority         0                    0                    \nMax realtime priority     0                    0                    \nMax realtime timeout      unlimited            unlimited            us        \n",
+                "cgroup": "0::/vms/seccomp-disabled-control",
+                "resource_files": {
+                  "cpu.max": "50000 100000",
+                  "memory.max": "402653184",
+                  "memory.swap.max": "0",
+                  "pids.max": "32"
+                },
+                "network_devices": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n"
+              }
+            },
+            "classification": "expected policy rejection; trusted guest booted only to validate the detector, not an approved profile",
+            "shutdown_http_status": 204,
+            "exit_code": 0,
+            "console_sha256": "bc4a33b16416caf3842f6c5190a78876cb835a613ff164077d7ac05c7a4fe0df",
+            "console_findings": [
+              {
+                "message": "vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+                "occurrences": 10
+              },
+              {
+                "message": "vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+                "occurrences": 10
+              },
+              {
+                "message": "Spectre V2 : User space: Vulnerable",
+                "occurrences": 1
+              },
+              {
+                "message": "Speculative Store Bypass: Vulnerable",
+                "occurrences": 1
+              },
+              {
+                "message": "vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+                "occurrences": 2
+              },
+              {
+                "message": "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+                "occurrences": 1
+              },
+              {
+                "message": "Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+                "occurrences": 2
+              },
+              {
+                "message": "i8042: Failed to disable AUX port, but continuing anyway... Is this a SiS?",
+                "occurrences": 1
+              }
+            ],
+            "outside_canary_unchanged": true,
+            "final_cgroup_events": {
+              "memory.events": {
+                "low": 0,
+                "high": 0,
+                "max": 0,
+                "oom": 0,
+                "oom_kill": 0,
+                "oom_group_kill": 0
+              },
+              "pids.events": {
+                "max": 0
+              },
+              "cpu.stat": {
+                "usage_usec": 1341789,
+                "user_usec": 848886,
+                "system_usec": 492902,
+                "nice_usec": 0,
+                "nr_periods": 31,
+                "nr_throttled": 23,
+                "throttled_usec": 1262329,
+                "nr_bursts": 0,
+                "burst_usec": 0
+              }
+            },
+            "assertion_count": 40
+          },
+          {
+            "scenario": "fd-exhaustion-control",
+            "status": "passed",
+            "checks": [
+              "real API file opens hit RLIMIT_NOFILE"
+            ],
+            "forced_stop": true,
+            "clone_sha256_before": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52",
+            "fd_limit_errors": [
+              {
+                "index": 1,
+                "status": 400,
+                "message": "{\"fault_message\":\"Drive config error: Unable to create the virtio block device: Virtio backend error: Error manipulating the backing file: No file descriptors available (os error 24) /probe.ext4\"}"
+              }
+            ],
+            "classification": "expected resource rejection; no guest started",
+            "exit_code": -9,
+            "console_sha256": "b9b0824d5c6b12a153f9f0227c899558e19e069552b5dafb59cff590da1f17a6",
+            "console_findings": [
+              {
+                "message": "Received Error. Status code: 400 Bad Request. Message: Drive config error: Unable to create the virtio block device: Virtio backend error: Error manipulating the backing file: No file descriptors available (os error 24) /probe.ext4",
+                "occurrences": 1
+              }
+            ],
+            "outside_canary_unchanged": true,
+            "final_cgroup_events": {
+              "memory.events": {
+                "low": 0,
+                "high": 0,
+                "max": 0,
+                "oom": 0,
+                "oom_kill": 0,
+                "oom_group_kill": 0
+              },
+              "pids.events": {
+                "max": 0
+              },
+              "cpu.stat": {
+                "usage_usec": 4371,
+                "user_usec": 4371,
+                "system_usec": 0,
+                "nice_usec": 0,
+                "nr_periods": 0,
+                "nr_throttled": 0,
+                "throttled_usec": 0,
+                "nr_bursts": 0,
+                "burst_usec": 0
+              }
+            },
+            "assertion_count": 1
+          },
+          {
+            "scenario": "memory-oom-control",
+            "status": "passed",
+            "checks": [
+              "API accepted /boot-source: 204",
+              "API accepted /drives/rootfs: 204",
+              "API accepted /machine-config: 204",
+              "API accepted /actions: 204",
+              "complete guest evidence",
+              "guest allocation triggered cgroup OOM kill",
+              "limited VMM was killed by SIGKILL"
+            ],
+            "forced_stop": false,
+            "clone_sha256_before": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52",
+            "guest": {
+              "uid": "0",
+              "kernel": "6.12.113-fc-lab",
+              "rootfs": "/dev/root ext4 rw,relatime",
+              "root_device": "254:0",
+              "vda_device": "254:0"
+            },
+            "memory_stress": {
+              "before": {
+                "low": 0,
+                "high": 0,
+                "max": 0,
+                "oom": 0,
+                "oom_kill": 0,
+                "oom_group_kill": 0
+              },
+              "after": {
+                "low": 0,
+                "high": 0,
+                "max": 19,
+                "oom": 1,
+                "oom_kill": 1,
+                "oom_group_kill": 0
+              },
+              "memory_peak": "100663296"
+            },
+            "classification": "expected OOM failure; guest is not claimed healthy or gracefully stopped",
+            "exit_code": -9,
+            "console_sha256": "721e22cbc3eb967963ea31b5cb15e8451f98cb2ceee9692bc6dc9f5c15eb2088",
+            "console_findings": [
+              {
+                "message": "vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+                "occurrences": 10
+              },
+              {
+                "message": "vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+                "occurrences": 10
+              },
+              {
+                "message": "Spectre V2 : User space: Vulnerable",
+                "occurrences": 1
+              },
+              {
+                "message": "Speculative Store Bypass: Vulnerable",
+                "occurrences": 1
+              },
+              {
+                "message": "vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+                "occurrences": 2
+              },
+              {
+                "message": "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+                "occurrences": 1
+              },
+              {
+                "message": "Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+                "occurrences": 2
+              },
+              {
+                "message": "i8042: Failed to disable AUX port, but continuing anyway... Is this a SiS?",
+                "occurrences": 1
+              }
+            ],
+            "outside_canary_unchanged": true,
+            "final_cgroup_events": {
+              "memory.events": {
+                "low": 0,
+                "high": 0,
+                "max": 19,
+                "oom": 1,
+                "oom_kill": 1,
+                "oom_group_kill": 0
+              },
+              "pids.events": {
+                "max": 0
+              },
+              "cpu.stat": {
+                "usage_usec": 2396926,
+                "user_usec": 1411713,
+                "system_usec": 985213,
+                "nice_usec": 0,
+                "nr_periods": 53,
+                "nr_throttled": 44,
+                "throttled_usec": 2919133,
+                "nr_bursts": 0,
+                "burst_usec": 0
+              }
+            },
+            "assertion_count": 7
+          }
+        ],
+        "findings": [],
+        "original_sha256_before": {
+          "firecracker": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+          "jailer": "65ef226e96f0ceda55ba643f445801ef2cc0ea667ef67cad8ac4f406c9c8434f",
+          "vmlinux": "e816c1aa5249d7a6e3cd937e312ec235f892af75c30ebe67e34e5a3aa55d78e8",
+          "rootfs.ext4": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52"
+        },
+        "outer_limits_before": {
+          "memory.max": "805306368",
+          "pids.max": "256",
+          "cpu.max": "200000 100000"
+        },
+        "outer_memory_events_before": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "original_sha256_after": {
+          "firecracker": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+          "jailer": "65ef226e96f0ceda55ba643f445801ef2cc0ea667ef67cad8ac4f406c9c8434f",
+          "vmlinux": "e816c1aa5249d7a6e3cd937e312ec235f892af75c30ebe67e34e5a3aa55d78e8",
+          "rootfs.ext4": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52"
+        },
+        "outer_memory_events_after": {
+          "low": 0,
+          "high": 0,
+          "max": 19,
+          "oom": 1,
+          "oom_kill": 1,
+          "oom_group_kill": 0
+        },
+        "outer_memory_events_local": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "cgroups_cleaned": true,
+        "originals_unchanged": true
+      }
+    },
+    {
+      "local_run_id": "jailer-eajvuzjb",
+      "interpretation": "Failed: vCPU exit timeout panic during shutdown and SIGSEGV; no OOM. Precise cause not proven.",
+      "raw_report_sha256": "6294c5e01df50827073c155557684802b41b33233c7df4409b64fa91c08138bf",
+      "report": {
+        "schema": 1,
+        "started_at": "2026-10-20T15:25:07.703314+00:00",
+        "status": "failed",
+        "scenarios": [
+          {
+            "scenario": "baseline",
+            "status": "failed",
+            "checks": [
+              "mnt namespace differs",
+              "pid namespace differs",
+              "net namespace differs",
+              "process root is jail root",
+              "thread UIDs dropped",
+              "thread GIDs dropped",
+              "no supplementary root group",
+              "no effective/permitted/inherited/ambient capabilities",
+              "inherited environment canary absent",
+              "inherited canary file descriptor closed",
+              "RLIMIT_NOFILE configured",
+              "VMM resides in its cgroup leaf",
+              "all cgroup limits match requested profile",
+              "VMM is PID 1 in its namespace",
+              "no_new_privs active before and after boot",
+              "preboot API thread has seccomp filter",
+              "outside-jail path denied with ENOENT",
+              "API accepted /boot-source: 204",
+              "API accepted /drives/rootfs: 204",
+              "API accepted /machine-config: 204",
+              "API accepted /actions: 204",
+              "complete guest evidence",
+              "all running VM threads retain seccomp and no_new_privs",
+              "CPU contention produced cgroup throttling",
+              "trusted helper encountered pids ceiling in VM cgroup",
+              "pids.events records rejected thread creation",
+              "shutdown API returned 204",
+              "VMM exited within shutdown deadline"
+            ],
+            "forced_stop": false,
+            "clone_sha256_before": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52",
+            "runtime_snapshots": {
+              "preboot": {
+                "namespaces": {
+                  "mnt": {
+                    "supervisor": "mnt:[4026537182]",
+                    "vmm": "mnt:[4026537710]"
+                  },
+                  "pid": {
+                    "supervisor": "pid:[4026537186]",
+                    "vmm": "pid:[4026537711]"
+                  },
+                  "net": {
+                    "supervisor": "net:[4026537192]",
+                    "vmm": "net:[4026537515]"
+                  },
+                  "ipc": {
+                    "supervisor": "ipc:[4026537184]",
+                    "vmm": "ipc:[4026537184]"
+                  },
+                  "uts": {
+                    "supervisor": "uts:[4026537183]",
+                    "vmm": "uts:[4026537183]"
+                  },
+                  "user": {
+                    "supervisor": "user:[4026531837]",
+                    "vmm": "user:[4026531837]"
+                  },
+                  "cgroup": {
+                    "supervisor": "cgroup:[4026537191]",
+                    "vmm": "cgroup:[4026537191]"
+                  }
+                },
+                "threads": {
+                  "9": {
+                    "Name": "firecracker",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "0",
+                    "NSpid": "9\t1"
+                  },
+                  "10": {
+                    "Name": "fc_api",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "2",
+                    "NSpid": "10\t2"
+                  }
+                },
+                "hardened_runtime": false,
+                "environment_keys": [],
+                "open_fd_count": 11,
+                "limits": "Limit                     Soft Limit           Hard Limit           Units     \nMax cpu time              unlimited            unlimited            seconds   \nMax file size             unlimited            unlimited            bytes     \nMax data size             unlimited            unlimited            bytes     \nMax stack size            8388608              unlimited            bytes     \nMax core file size        unlimited            unlimited            bytes     \nMax resident set          unlimited            unlimited            bytes     \nMax processes             unlimited            unlimited            processes \nMax open files            64                   64                   files     \nMax locked memory         67108864             67108864             bytes     \nMax address space         unlimited            unlimited            bytes     \nMax file locks            unlimited            unlimited            locks     \nMax pending signals       63800                63800                signals   \nMax msgqueue size         819200               819200               bytes     \nMax nice priority         0                    0                    \nMax realtime priority     0                    0                    \nMax realtime timeout      unlimited            unlimited            us        \n",
+                "cgroup": "0::/vms/baseline",
+                "resource_files": {
+                  "cpu.max": "50000 100000",
+                  "memory.max": "402653184",
+                  "memory.swap.max": "0",
+                  "pids.max": "32"
+                },
+                "network_devices": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n"
+              },
+              "running": {
+                "namespaces": {
+                  "mnt": {
+                    "supervisor": "mnt:[4026537182]",
+                    "vmm": "mnt:[4026537710]"
+                  },
+                  "pid": {
+                    "supervisor": "pid:[4026537186]",
+                    "vmm": "pid:[4026537711]"
+                  },
+                  "net": {
+                    "supervisor": "net:[4026537192]",
+                    "vmm": "net:[4026537515]"
+                  },
+                  "ipc": {
+                    "supervisor": "ipc:[4026537184]",
+                    "vmm": "ipc:[4026537184]"
+                  },
+                  "uts": {
+                    "supervisor": "uts:[4026537183]",
+                    "vmm": "uts:[4026537183]"
+                  },
+                  "user": {
+                    "supervisor": "user:[4026531837]",
+                    "vmm": "user:[4026531837]"
+                  },
+                  "cgroup": {
+                    "supervisor": "cgroup:[4026537191]",
+                    "vmm": "cgroup:[4026537191]"
+                  }
+                },
+                "threads": {
+                  "9": {
+                    "Name": "firecracker",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "2",
+                    "NSpid": "9\t1"
+                  },
+                  "10": {
+                    "Name": "fc_api",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "2",
+                    "NSpid": "10\t2"
+                  },
+                  "11": {
+                    "Name": "fc_vcpu 0",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "2",
+                    "NSpid": "11\t3"
+                  },
+                  "12": {
+                    "Name": "fc_vcpu 1",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "2",
+                    "NSpid": "12\t4"
+                  },
+                  "13": {
+                    "Name": "kvm-nx-lpage-re",
+                    "Uid": "65534\t65534\t65534\t65534",
+                    "Gid": "65534\t65534\t65534\t65534",
+                    "Groups": "",
+                    "CapEff": "0000000000000000",
+                    "CapPrm": "0000000000000000",
+                    "CapInh": "0000000000000000",
+                    "CapAmb": "0000000000000000",
+                    "CapBnd": "000001ffffffffff",
+                    "NoNewPrivs": "1",
+                    "Seccomp": "2",
+                    "NSpid": "13\t5"
+                  }
+                },
+                "hardened_runtime": true,
+                "environment_keys": [],
+                "open_fd_count": 31,
+                "limits": "Limit                     Soft Limit           Hard Limit           Units     \nMax cpu time              unlimited            unlimited            seconds   \nMax file size             unlimited            unlimited            bytes     \nMax data size             unlimited            unlimited            bytes     \nMax stack size            8388608              unlimited            bytes     \nMax core file size        unlimited            unlimited            bytes     \nMax resident set          unlimited            unlimited            bytes     \nMax processes             unlimited            unlimited            processes \nMax open files            64                   64                   files     \nMax locked memory         67108864             67108864             bytes     \nMax address space         unlimited            unlimited            bytes     \nMax file locks            unlimited            unlimited            locks     \nMax pending signals       63800                63800                signals   \nMax msgqueue size         819200               819200               bytes     \nMax nice priority         0                    0                    \nMax realtime priority     0                    0                    \nMax realtime timeout      unlimited            unlimited            us        \n",
+                "cgroup": "0::/vms/baseline",
+                "resource_files": {
+                  "cpu.max": "50000 100000",
+                  "memory.max": "402653184",
+                  "memory.swap.max": "0",
+                  "pids.max": "32"
+                },
+                "network_devices": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n"
+              }
+            },
+            "preboot_filter_note": "VMM main seccomp is installed during InstanceStart; API thread is filtered before boot",
+            "path_denials": [
+              {
+                "endpoint": "/boot-source",
+                "status": 400,
+                "message": "{\"fault_message\":\"Boot source error: The kernel file cannot be opened: No such file or directory (os error 2)\"}"
+              },
+              {
+                "endpoint": "/boot-source",
+                "status": 400,
+                "message": "{\"fault_message\":\"Boot source error: The kernel file cannot be opened: No such file or directory (os error 2)\"}"
+              },
+              {
+                "endpoint": "/logger",
+                "status": 400,
+                "message": "{\"fault_message\":\"Logger error: Failed to open target file: No such file or directory (os error 2)\"}"
+              }
+            ],
+            "guest": {
+              "uid": "0",
+              "kernel": "6.12.113-fc-lab",
+              "rootfs": "/dev/root ext4 rw,relatime",
+              "root_device": "254:0",
+              "vda_device": "254:0"
+            },
+            "cpu_stress": {
+              "before": {
+                "usage_usec": 892555,
+                "user_usec": 598632,
+                "system_usec": 293923,
+                "nice_usec": 0,
+                "nr_periods": 23,
+                "nr_throttled": 14,
+                "throttled_usec": 716612,
+                "nr_bursts": 0,
+                "burst_usec": 0
+              },
+              "after": {
+                "usage_usec": 2414499,
+                "user_usec": 1976972,
+                "system_usec": 437526,
+                "nice_usec": 0,
+                "nr_periods": 53,
+                "nr_throttled": 44,
+                "throttled_usec": 5157240,
+                "nr_bursts": 0,
+                "burst_usec": 0
+              },
+              "elapsed_seconds": 3.014
+            },
+            "pids_probe": {
+              "created_threads": 25,
+              "blocked": true
+            },
+            "shutdown_http_status": 204,
+            "failure": "AssertionError: VMM exited with zero",
+            "exit_code": -11,
+            "console_sha256": "5c37a9358663dc88eeaf2b4c4a52602761f5d01a641ebbb40102148cdd0fd3dc",
+            "console_findings": [
+              {
+                "message": "Received Error. Status code: 400 Bad Request. Message: Boot source error: The kernel file cannot be opened: No such file or directory (os error 2)",
+                "occurrences": 2
+              },
+              {
+                "message": "Received Error. Status code: 400 Bad Request. Message: Logger error: Failed to open target file: No such file or directory (os error 2)",
+                "occurrences": 1
+              },
+              {
+                "message": "vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+                "occurrences": 12
+              },
+              {
+                "message": "vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+                "occurrences": 10
+              },
+              {
+                "message": "Spectre V2 : User space: Vulnerable",
+                "occurrences": 1
+              },
+              {
+                "message": "Speculative Store Bypass: Vulnerable",
+                "occurrences": 1
+              },
+              {
+                "message": "vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+                "occurrences": 1
+              },
+              {
+                "message": "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+                "occurrences": 1
+              },
+              {
+                "message": "Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+                "occurrences": 2
+              },
+              {
+                "message": "i8042: Failed to disable AUX port, but continuing anyway... Is this a SiS?",
+                "occurrences": 1
+              },
+              {
+                "message": "vcpu: IO write @ 0x71:0x1 failed: Failed to find address range.",
+                "occurrences": 1
+              }
+            ],
+            "outside_canary_unchanged": true,
+            "final_cgroup_events": {
+              "memory.events": {
+                "low": 0,
+                "high": 0,
+                "max": 0,
+                "oom": 0,
+                "oom_kill": 0,
+                "oom_group_kill": 0
+              },
+              "pids.events": {
+                "max": 1
+              },
+              "cpu.stat": {
+                "usage_usec": 4448251,
+                "user_usec": 3129422,
+                "system_usec": 1318828,
+                "nice_usec": 0,
+                "nr_periods": 112,
+                "nr_throttled": 82,
+                "throttled_usec": 9193185,
+                "nr_bursts": 0,
+                "burst_usec": 0
+              }
+            },
+            "assertion_count": 65
+          }
+        ],
+        "findings": [],
+        "original_sha256_before": {
+          "firecracker": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+          "jailer": "65ef226e96f0ceda55ba643f445801ef2cc0ea667ef67cad8ac4f406c9c8434f",
+          "vmlinux": "e816c1aa5249d7a6e3cd937e312ec235f892af75c30ebe67e34e5a3aa55d78e8",
+          "rootfs.ext4": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52"
+        },
+        "outer_limits_before": {
+          "memory.max": "805306368",
+          "pids.max": "256",
+          "cpu.max": "200000 100000"
+        },
+        "outer_memory_events_before": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "failure": "AssertionError: VMM exited with zero",
+        "cgroups_cleaned": true,
+        "original_sha256_after": {
+          "firecracker": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+          "jailer": "65ef226e96f0ceda55ba643f445801ef2cc0ea667ef67cad8ac4f406c9c8434f",
+          "vmlinux": "e816c1aa5249d7a6e3cd937e312ec235f892af75c30ebe67e34e5a3aa55d78e8",
+          "rootfs.ext4": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52"
+        },
+        "originals_unchanged": true
+      }
+    }
+  ],
+  "panic_console_excerpt": "reboot: Restarting system\nreboot: machine restart\n2026-10-20T15:25:17.644639427 [baseline:fc_vcpu 0] 3 messages were suppressed due to rate limiting\n2026-10-20T15:25:17.644672627 [baseline:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.\n2026-10-20T15:25:17.644693627 [baseline:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range.\n2026-10-20T15:25:17.644639727 [baseline:main] Vmm is stopping.\n2026-10-20T15:25:18.964892925 [baseline:main] Killing vCPU threads\n2026-10-20T15:25:20.063362723 [baseline:main] Firecracker panicked at src/vmm/src/vstate/vcpu.rs:660:21:\nTimed out waiting for vCPU thread 'fc_vcpu 0' to exit\n",
+  "panic_console_sha256": "5c37a9358663dc88eeaf2b4c4a52602761f5d01a641ebbb40102148cdd0fd3dc",
+  "interpretation": "A vCPU teardown timeout and SIGSEGV were observed at fixed half-CPU quota; another earlier run at that quota passed. Final profile waits for guest workers and enlarges shutdown quota to 2 CPUs; two full runs passed. This is a bounded mitigation, not proof of the panic cause or elimination.",
+  "provenance_note": "Raw failed reports remain failed. Early harness versions did not snapshot source; later runs include source snapshots locally. No retroactive source hashes or missing integrity measurements are invented."
+}

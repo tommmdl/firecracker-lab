@@ -43,6 +43,7 @@ To exercise a real deadline failure, repeat the command with `--boot-timeout 3`.
 
 ## Evidence and next steps
 
+- [Jailer: isolation, resources and real failures](docs/jailer.en.md)
 - [Source build and verification](docs/build-from-source.en.md)
 - [Boot validation, repeat run and failure control](docs/validation.en.md)
 - [Reviewed results](evidence/boot-results.json)
@@ -52,7 +53,13 @@ To exercise a real deadline failure, repeat the command with `--boot-timeout 3`.
 
 The first stage used the existing Ubuntu artifacts; their hashes identify the files without authenticating their origin. The new recipe verifies Linux and BusyBox sources and builds a separate minimal image. The repository does not distribute kernels, disks, binaries or private keys. There is no GitHub Actions boot test at this stage.
 
-The `jailer` has not been validated. This exercise does not establish sufficient isolation for untrusted code. Implementation and tests had assistance from the assistant; the evidence records what ran in the local environment. The code and reviewed evidence in this lab are public.
+The `jailer` now has local isolation and resource exercises in its [own guide](docs/jailer.en.md). Evaluation of isolation for untrusted code remains incomplete. Implementation and tests had assistance from the assistant; the evidence records what ran in the local environment. The code and reviewed evidence in this lab are public.
+
+## What we have exercised with the jailer
+
+The [final profile](config/jailer-profile.json) passed two runs of six scenarios. Tests observed UID/GID 65534, cleared execution capabilities, separate roots/namespaces and active seccomp on threads after boot. Real load exercised CPU, memory, tasks, descriptors and deadlines. Disabled-seccomp, OOM and deadline controls are not approved profiles or healthy guests.
+
+A shutdown panic is also preserved: under a fixed half-CPU quota, one run exited with SIGSEGV while waiting for a vCPU. The final profile waits for load workers and enlarges the CPU ceiling only for shutdown; both repeats passed, without establishing the panic's cause or elimination. [Results and limits](docs/jailer.en.md) · [Evidence](evidence/jailer-results.json) · [Earlier failures](evidence/jailer-investigation.json).
 
 ## Hardening still to do
 
@@ -60,11 +67,11 @@ The [real test records](evidence/source-build-results.json) include a retained s
 
 Before running third-party workloads, the remaining work includes:
 
-- Validate `jailer`, namespaces, cgroups and resource/time limits under failure. The VM already has configured vCPUs and memory, but that does not establish all those protections.
+- Reduce bootstrap privileges used in the `jailer` exercises, review `CapBnd` and seccomp policy, and extend validation to a dedicated environment. The current helper is privileged; UTS, IPC, user and cgroup namespaces remain shared with it.
 - Review the minimal kernel's CPU mitigations. Its console reported `Spectre V2 : User space: Vulnerable` and `Speculative Store Bypass: Vulnerable`; findings remain visible.
 - Review the direct root shell before adding networking. TAP, key-based SSH and outbound rules with allow/deny tests have not been validated.
 - Package the host toolchain and strengthen BusyBox origin verification. The kernel currently has a verified OpenPGP signature; BusyBox has a pinned SHA256 from official HTTPS.
 
-The exercise demonstrates boot and shutdown in the recorded environment. Isolation for untrusted code remains unvalidated. [Build and limits](docs/build-from-source.en.md) · [Next exercises](docs/roadmap.en.md).
+The exercise demonstrates boot and shutdown in the recorded environment. Complete isolation for untrusted code remains unproven. [Build and limits](docs/build-from-source.en.md) · [Next exercises](docs/roadmap.en.md).
 
 Reference: [official Firecracker v1.17.0 guide](https://github.com/firecracker-microvm/firecracker/blob/v1.17.0/docs/getting-started.md). No license has been defined for this repository's own content; external components have separate licenses.

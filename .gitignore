@@ -13,6 +13,7 @@
 /config/*
 !/config/vm-config.example.json
 !/config/sources.lock.json
+!/config/jailer-profile.json
 !/config/kernel.fragment
 !/config/busybox.fragment
 !/config/keys/

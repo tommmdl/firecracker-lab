@@ -103,3 +103,5 @@ The first image's console also reported `Spectre V2 : User space: Vulnerable`, `
 The minimal guest is not a production distribution or an update of the old Ubuntu image. Kernel 6.12.113 is this exercise's locally validated choice; we do not claim certification by Firecracker's support matrix. Networking, SSH and `jailer` remain outside this stage.
 
 Real results and preparation issues are recorded in the [build evidence](../evidence/source-build-results.json). The repository contains code, configuration and reviewed evidence; downloaded sources, compiled kernels, images, private keys and raw consoles remain outside Git.
+
+Next stage: [first jailer tests](jailer.en.md), with isolation/resource controls and a retained panic. Results above belong to the original boot/build stage.

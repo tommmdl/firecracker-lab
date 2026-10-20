@@ -43,6 +43,7 @@ Para exercitar uma falha real de prazo, repita o comando com `--boot-timeout 3`.
 
 ## Evidências e próximos passos
 
+- [Jailer: isolamento, recursos e falhas reais](docs/jailer.md)
 - [Construção a partir dos fontes e verificações](docs/build-from-source.md)
 - [Validação do boot, repetição e controle de falha](docs/validation.md)
 - [Resultados revisados](evidence/boot-results.json)
@@ -52,7 +53,13 @@ Para exercitar uma falha real de prazo, repita o comando com `--boot-timeout 3`.
 
 Os resultados da primeira etapa usam os artefatos Ubuntu existentes; seus hashes identificam os arquivos, sem autenticar a origem. A nova receita verifica os fontes do kernel e do BusyBox e constrói uma imagem mínima separada. O repositório não distribui kernel, disco, binários ou chaves privadas. Não há teste de boot no GitHub Actions nesta etapa.
 
-O `jailer` ainda não foi validado. Este exercício não demonstra isolamento suficiente para código não confiável. A implementação e os testes tiveram ajuda do assistente; as evidências registram o que foi executado no ambiente local. O código e as evidências revisadas deste lab são públicos.
+O `jailer` agora tem ensaios locais de isolamento e recursos descritos no [guia próprio](docs/jailer.md). A avaliação de isolamento para código não confiável continua incompleta. A implementação e os testes tiveram ajuda do assistente; as evidências registram o que foi executado no ambiente local. O código e as evidências revisadas deste lab são públicos.
+
+## O que já foi exercitado com o jailer
+
+O [perfil final](config/jailer-profile.json) passou em duas execuções de seis cenários. Os testes observaram UID/GID 65534, capacidades de execução zeradas, raiz e namespaces separados e seccomp ativo nas threads após o boot. Carga real conferiu CPU, memória, tarefas, descritores e prazo. Os controles com seccomp desligado, OOM e prazo não são perfis ou guests aprovados.
+
+Há também um panic de shutdown preservado: sob quota fixa de meia CPU, uma execução saiu com SIGSEGV ao esperar uma vCPU. O perfil final espera a carga terminar e amplia o teto de CPU só no encerramento; as duas repetições passaram, sem demonstrar eliminação ou causa definitiva do panic. [Resultados e limites](docs/jailer.md) · [Evidências](evidence/jailer-results.json) · [Falhas anteriores](evidence/jailer-investigation.json).
 
 ## O que ainda falta de hardening
 
@@ -60,11 +67,11 @@ Os [testes reais](evidence/source-build-results.json) incluem uma falha de shutd
 
 Antes de executar workloads de terceiros, ainda falta:
 
-- Validar `jailer`, namespaces, cgroups e os limites de recursos e tempo em cenários de falha. A VM já tem vCPUs e memória configuradas, mas isso não comprova todas essas proteções.
+- Reduzir os privilégios do bootstrap usado nos ensaios do `jailer`, revisar `CapBnd` e a política de seccomp e ampliar a validação em ambiente dedicado. O auxiliar atual é privilegiado; UTS, IPC, user e cgroup namespaces continuam compartilhados com ele.
 - Revisar as mitigações de CPU do kernel mínimo. O console reportou `Spectre V2 : User space: Vulnerable` e `Speculative Store Bypass: Vulnerable`; os achados continuam visíveis.
 - Rever o shell root direto antes de acrescentar rede. TAP, SSH por chave e regras de saída com testes de permitido/negado ainda não foram validados.
 - Encapsular o toolchain do host e fortalecer a verificação de origem do BusyBox. Hoje o kernel tem assinatura OpenPGP validada; o BusyBox tem SHA256 fixado a partir do HTTPS oficial.
 
-O exercício comprova boot e encerramento no ambiente registrado. O isolamento para código não confiável continua sem validação. [Construção e limites](docs/build-from-source.md) · [Próximos exercícios](docs/roadmap.md).
+O exercício comprova boot e encerramento no ambiente registrado. O isolamento completo para código não confiável continua sem comprovação. [Construção e limites](docs/build-from-source.md) · [Próximos exercícios](docs/roadmap.md).
 
 Referência: [guia oficial do Firecracker v1.17.0](https://github.com/firecracker-microvm/firecracker/blob/v1.17.0/docs/getting-started.md). Não há licença definida para o conteúdo próprio; as licenças dos componentes externos são independentes.
