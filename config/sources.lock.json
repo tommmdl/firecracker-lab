@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "architecture": "x86_64",
+  "kernel": {
+    "version": "6.12.113",
+    "archive": "linux-6.12.113.tar.xz",
+    "urls": [
+      "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.113.tar.xz"
+    ],
+    "sha256": "e09b6727e5c521253f0d41694900b9c38fb7604db7d35238a8197aa9f7de2428",
+    "signature": {
+      "archive": "linux-6.12.113.tar.sign",
+      "urls": [
+        "https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.113.tar.sign"
+      ],
+      "sha256": "68c1a168f7cd07b162652558cf46fb09da28a3cddf7c3c91cfa154a1f7cc1ac9"
+    },
+    "signer_fingerprint": "647F28654894E3BD457199BE38DBBDC86092693E",
+    "key_file": "config/keys/greg-kroah-hartman.asc",
+    "key_sha256": "65142ac9e4c26d84b87b02f88b990c0d3013d4a1e0d7f656ad552a25c1c7167d",
+    "fingerprint_reference": "https://www.kernel.org/signature.html"
+  },
+  "busybox": {
+    "version": "1.38.0",
+    "archive": "busybox-1.38.0.tar.bz2",
+    "urls": [
+      "https://busybox.net/downloads/busybox-1.38.0.tar.bz2",
+      "https://sources.buildroot.net/busybox/busybox-1.38.0.tar.bz2"
+    ],
+    "sha256": "34f9ea6ff8636f2c9241153b9114eefa9e65674a45318ae1ef95bb5f31c53bb2",
+    "checksum_reference": "https://busybox.net/downloads/busybox-1.38.0.tar.bz2.sha256",
+    "verification": "SHA256 pinned from official HTTPS checksum; no OpenPGP authenticity claim"
+  },
+  "rootfs": {
+    "size_mib": 128,
+    "uuid": "6fcb0000-0000-4000-8000-000000000001",
+    "label": "fc-lab-root"
+  }
+}

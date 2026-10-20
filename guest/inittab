@@ -1,0 +1,4 @@
+::sysinit:/etc/init.d/rcS
+ttyS0::respawn:/bin/sh -l
+::ctrlaltdel:/sbin/reboot-clean
+::shutdown:/bin/sync

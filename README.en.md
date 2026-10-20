@@ -4,7 +4,7 @@
 
 This lab started with a microVM that booted successfully while its controller reported missing guest evidence. We now have a repeatable test: copy the disk, start the VM, read responses through the console and stop it through the API, checking the original files afterwards.
 
-This stage focuses on local boot on Ubuntu WSL2 with KVM. Networking, SSH and workloads belong to later exercises.
+The next stage adds a recipe to compile Linux 6.12.113 and BusyBox 1.38.0 from pinned sources and create a fresh disk. [Build the kernel and image from scratch](docs/build-from-source.en.md). The focus remains local boot on Ubuntu WSL2 with KVM; networking, SSH and workloads belong to later exercises.
 
 ## What the test checks
 
@@ -18,7 +18,7 @@ The reader normalizes CR/LF and removes ANSI colors, keeping the raw console in 
 
 ## Run it again
 
-You need Linux x86-64, Python 3, read/write access to `/dev/kvm`, and an existing compatible Firecracker binary, kernel and rootfs. The guest needs automatic root login on the console, `id`, `uname` and `findmnt`. The source disk must be offline, with no other VM or mount using it. The script's lock is advisory and only coordinates tools that respect that lock.
+You need Linux x86-64, Python 3, read/write access to `/dev/kvm`, and an existing compatible Firecracker binary, kernel and rootfs. The guest needs automatic root login on the console, `id`, `uname`, and either `findmnt` or the procfs/sysfs queries used by the minimal image. The source disk must be offline, with no other VM or mount using it. The script's lock is advisory and only coordinates tools that respect that lock.
 
 The existing environment stores its artifacts under `$HOME/fc-lab`. Adjust these paths to your environment:
 
@@ -33,21 +33,24 @@ python3 scripts/boot_check.py \
   --output-parent "$HOME/fc-lab"
 ```
 
+The example under `config/` matches the new minimal image; the original Ubuntu configuration remains preserved in the local directory.
+
 Each run creates a unique `boot-*` directory containing `rootfs.ext4`, `vm-config.json`, `console.log` and `result.json`. Use a short path on the Linux filesystem for the Unix socket. Allow at least the disk size per run; copies remain available for inspection and cleanup is manual, with the VM stopped.
 
 The default deadline for guest responses is 90 seconds, after copying and checking the disk. Shutdown gets another 30 seconds. Exit code `0` means the test passed; `1` means a failure recorded in `result.json`; `2` means a preparation/argument error. Preparation can fail before a report exists. The script does not retry failed tests.
 
-To exercise a real deadline failure, repeat the command with `--boot-timeout 3`. This caused a failure in the documented environment but does not guarantee failure on every machine. The outcome must remain failed even if the VM shuts down correctly afterwards. [Procedure and results](docs/validation.en.md).
+To exercise a real deadline failure, repeat the command with `--boot-timeout 3`. This caused a failure with the first stage's Ubuntu guest but does not guarantee failure with the new minimal image or on another machine. The outcome must remain failed even if the VM shuts down correctly afterwards. [Procedure and results](docs/validation.en.md).
 
 ## Evidence and next steps
 
+- [Source build and verification](docs/build-from-source.en.md)
 - [Boot validation, repeat run and failure control](docs/validation.en.md)
 - [Reviewed results](evidence/boot-results.json)
 - [Preserved earlier failure](evidence/historical-failure.json)
 - [Next exercises](docs/roadmap.en.md)
 - [Example configuration](config/vm-config.example.json)
 
-Repeatability was validated using the existing local artifacts. Hashes identify those files; they do not independently authenticate their origin. The repository does not yet provision an image from scratch or distribute kernels, disks, binaries or keys. There is no GitHub Actions boot test at this stage.
+The first stage used the existing Ubuntu artifacts; their hashes identify the files without authenticating their origin. The new recipe verifies Linux and BusyBox sources and builds a separate minimal image. The repository does not distribute kernels, disks, binaries or private keys. There is no GitHub Actions boot test at this stage.
 
 The `jailer` has not been validated. This exercise does not establish sufficient isolation for untrusted code. Implementation and tests had assistance from the assistant; the evidence records what ran in the local environment. The repository remains private.
 

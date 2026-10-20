@@ -41,7 +41,7 @@ All four originals remained unchanged and no forced stop was needed in any of th
 python3 -m unittest discover -s tests -v
 ```
 
-Seven tests cover CR/LF variants and ANSI; a marker received in fragments; command echo; another run's identifier; a missing end marker; invalid UID/kernel/filesystem; and the historical excerpt. They do not require KVM and do not replace real boots.
+In that stage, seven tests covered CR/LF variants and ANSI; a marker received in fragments; command echo; another run's identifier; a missing end marker; invalid UID/kernel/filesystem; and the historical excerpt. They do not require KVM and do not replace real boots.
 
 ## Findings kept visible
 
@@ -53,4 +53,4 @@ The structural checks from 2026-10-16 remain historical, without rerunning them 
 
 `console.log`, disks, binaries, run configurations and sockets stay in the local directory recorded for each result. The repository receives only reviewed summaries, hashes and a minimal excerpt of the earlier console. No keys are included in the evidence. Test copies remain available for inspection; remove them manually only after the processes have stopped.
 
-Full artifact provisioning, networking, SSH, `jailer` and untrusted code execution remain untested. These instructions describe repeat runs with the existing prepared image and automatic root login. The repository remains private.
+This stage has since been followed by the [source build recipe](build-from-source.en.md), with a minimal guest and ten reader/input tests. Networking, SSH, `jailer` and untrusted code execution remain untested. These instructions describe repeat runs with the existing prepared image and automatic root login. The repository remains private.

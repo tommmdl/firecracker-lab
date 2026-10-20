@@ -41,7 +41,7 @@ Os quatro originais ficaram intactos e nenhum encerramento foi forçado nas trê
 python3 -m unittest discover -s tests -v
 ```
 
-São sete testes: variações de CR/LF e ANSI; marcador recebido em partes; eco do comando; identificador de outra execução; ausência do marcador final; UID/kernel/filesystem inválidos; e o trecho histórico. Não exigem KVM e não substituem os boots reais.
+Naquela etapa foram sete testes: variações de CR/LF e ANSI; marcador recebido em partes; eco do comando; identificador de outra execução; ausência do marcador final; UID/kernel/filesystem inválidos; e o trecho histórico. Não exigem KVM e não substituem os boots reais.
 
 ## O que ficou visível
 
@@ -53,4 +53,4 @@ As verificações estruturais de 16/10/2026 continuam sendo histórico, sem nova
 
 `console.log`, discos, binários, configurações de execução e sockets ficam no diretório local indicado em cada resultado. O repositório recebe apenas resumos revisados, hashes e um trecho mínimo do console antigo. Nenhuma chave entra nas evidências. As cópias dos testes ficam preservadas para inspeção; remova-as manualmente apenas com os processos parados.
 
-Ainda não há provisionamento completo dos artefatos, teste de rede, SSH, `jailer` ou execução de código não confiável. A documentação descreve repetição com a imagem já preparada, com login automático root. O repositório permanece privado.
+Esta etapa foi seguida pela [receita de construção a partir dos fontes](build-from-source.md), com guest mínimo e dez testes de leitura/entradas. Rede, SSH, `jailer` e execução de código não confiável continuam sem validação. A documentação descreve repetição com a imagem já preparada, com login automático root. O repositório permanece privado.

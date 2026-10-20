@@ -1,0 +1,500 @@
+{
+  "executed_on": "2026-10-20",
+  "environment": {
+    "host": "Ubuntu 26.04.1 on WSL2 x86-64 with KVM",
+    "firecracker": "1.17.0, existing binary retained",
+    "glibc": "glibc 2.43",
+    "e2fsprogs": "1.47.2",
+    "vcpu_count": 2,
+    "mem_size_mib": 256,
+    "rootfs_size_mib": 128,
+    "network_interfaces": 0
+  },
+  "code_sha256": {
+    "scripts/build_artifacts.py": "bd6334bea07a9d8ad0e4b79890d829e1e6092ae0c5046a0e709bd72a689d9660",
+    "scripts/boot_check.py": "61bafa6a1154e7ac5f8352ac6af14323757b29360f15444db7ee61890cc9b631",
+    "config/sources.lock.json": "2b430bc7f95e23bdbbf5171e844bb975c5e01c40146ce8d2bc6b5da9ca040cf9"
+  },
+  "source_verification": {
+    "kernel": "Pinned SHA256 plus OpenPGP VALIDSIG for fingerprint 647F28654894E3BD457199BE38DBBDC86092693E, before extraction",
+    "busybox": "Pinned SHA256 from official HTTPS checksum; no OpenPGP authenticity claim"
+  },
+  "builds": {
+    "a": {
+      "schema": 1,
+      "started_at": "2026-10-20T14:57:20.947021+00:00",
+      "status": "built",
+      "stage": "complete",
+      "lock_sha256": "2b430bc7f95e23bdbbf5171e844bb975c5e01c40146ce8d2bc6b5da9ca040cf9",
+      "sources": {
+        "kernel": {
+          "sha256": "e09b6727e5c521253f0d41694900b9c38fb7604db7d35238a8197aa9f7de2428",
+          "signer_fingerprint": "647F28654894E3BD457199BE38DBBDC86092693E",
+          "signature": "verified"
+        },
+        "busybox": {
+          "sha256": "34f9ea6ff8636f2c9241153b9114eefa9e65674a45318ae1ef95bb5f31c53bb2",
+          "verification": "official HTTPS checksum, pinned SHA256"
+        }
+      },
+      "artifacts": {
+        "vm-config.json": {
+          "sha256": "b408526af6b61fe9591b49521ebbd58270790d5720a66bc756490d8fc70ec8b9",
+          "bytes": 384
+        },
+        "busybox.config": {
+          "sha256": "efb4a4c520b25cc7ca5ce52d62c73a71398416d95b39c0abb6439104b1c82c21",
+          "bytes": 38661
+        },
+        "vmlinux": {
+          "sha256": "776cd90aa2ea2be0006004582fbee73b6e735d3df391ac306d77d0b9be2494b4",
+          "bytes": 12679256
+        },
+        "kernel.config": {
+          "sha256": "8956529a61631067db327ddfcc6e0c43fcb4e5cca4936205cfda86205fe3a7f0",
+          "bytes": 44058
+        },
+        "rootfs.ext4": {
+          "sha256": "7efb7d07e9486f1a94cd33cb8d996fa7457e3751c62ea65a66b30d0d72c33aaf",
+          "bytes": 134217728
+        }
+      },
+      "recipe_inputs": {
+        "config/kernel.fragment": "42bc37e961ce1afaa25ca13414639bea421cd5c8ee678afb4449c35dc2c349d3",
+        "config/busybox.fragment": "b293742bdfe17f8dc3c8865afbed6a1f7960add73bc620ea32a0b566b62bbb51",
+        "guest/inittab": "3e16e0b6e484a44fb470574b109929b8ee1c2e09c51181e30233cc24bcb2a329",
+        "guest/profile": "6420c1c077df68352e0e97502b353b6984464b0cd06fcd8659776cfff11c8958",
+        "guest/rcS": "a0449944eb50e3c9f68fbed94a50f99e30a58be4e6ca44395488a41e1e99b168",
+        "guest/sbin/reboot-clean": "bdfee1d40cb9a84a2836758304910962e9a7a76a836d516535700cd9564507c0"
+      },
+      "toolchain": {
+        "gcc": "gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "ld": "GNU ld (GNU Binutils for Ubuntu) 2.46",
+        "make": "GNU Make 4.4.1",
+        "bison": "bison (GNU Bison) 3.8.2",
+        "flex": "flex 2.6.4",
+        "m4": "m4 (GNU M4) 1.4.21",
+        "fakeroot": "fakeroot version 1.37.2"
+      },
+      "build_log_sha256": "2fdd868b2946c0a59a3af8f94d70ed163d3c6d6b13a47df17cc1df5fc5d89280",
+      "build_log_findings": [
+        {
+          "message": "gpg: WARNING: This key is not certified with a trusted signature!",
+          "occurrences": 1
+        },
+        {
+          "message": "applets/usage.c:52:17: warning: ignoring return value of 'write' declared with attribute 'warn_unused_result' [-Wunused-result]",
+          "occurrences": 1
+        },
+        {
+          "message": "archival/libarchive/data_extract_all.c:246:25: warning: ignoring return value of 'chown' declared with attribute 'warn_unused_result' [-Wunused-result]",
+          "occurrences": 1
+        },
+        {
+          "message": "shell/ash.c:2464:9: warning: this 'if' clause does not guard... [-Wmisleading-indentation]",
+          "occurrences": 1
+        },
+        {
+          "message": "Static linking against glibc, can't use --gc-sections",
+          "occurrences": 1
+        }
+      ],
+      "boot_outcome": "failed shutdown; missing AT/i8042 input support"
+    },
+    "b": {
+      "schema": 1,
+      "started_at": "2026-10-20T15:02:29.252375+00:00",
+      "status": "built",
+      "stage": "complete",
+      "lock_sha256": "2b430bc7f95e23bdbbf5171e844bb975c5e01c40146ce8d2bc6b5da9ca040cf9",
+      "sources": {
+        "kernel": {
+          "sha256": "e09b6727e5c521253f0d41694900b9c38fb7604db7d35238a8197aa9f7de2428",
+          "signer_fingerprint": "647F28654894E3BD457199BE38DBBDC86092693E",
+          "signature": "verified"
+        },
+        "busybox": {
+          "sha256": "34f9ea6ff8636f2c9241153b9114eefa9e65674a45318ae1ef95bb5f31c53bb2",
+          "verification": "official HTTPS checksum, pinned SHA256"
+        }
+      },
+      "artifacts": {
+        "vm-config.json": {
+          "sha256": "b408526af6b61fe9591b49521ebbd58270790d5720a66bc756490d8fc70ec8b9",
+          "bytes": 384
+        },
+        "busybox.config": {
+          "sha256": "efb4a4c520b25cc7ca5ce52d62c73a71398416d95b39c0abb6439104b1c82c21",
+          "bytes": 38661
+        },
+        "vmlinux": {
+          "sha256": "e816c1aa5249d7a6e3cd937e312ec235f892af75c30ebe67e34e5a3aa55d78e8",
+          "bytes": 14828896
+        },
+        "kernel.config": {
+          "sha256": "ce8d8331333fc874af442273a0739667611bd15152037fb7670ce23f784232f8",
+          "bytes": 45480
+        },
+        "rootfs.ext4": {
+          "sha256": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52",
+          "bytes": 134217728
+        }
+      },
+      "recipe_inputs": {
+        "config/kernel.fragment": "a189b992b0031c13f88f731d8d427ffe2d94a86563f39f711050baad36b9ec7a",
+        "config/busybox.fragment": "b293742bdfe17f8dc3c8865afbed6a1f7960add73bc620ea32a0b566b62bbb51",
+        "guest/inittab": "3e16e0b6e484a44fb470574b109929b8ee1c2e09c51181e30233cc24bcb2a329",
+        "guest/profile": "6420c1c077df68352e0e97502b353b6984464b0cd06fcd8659776cfff11c8958",
+        "guest/rcS": "a0449944eb50e3c9f68fbed94a50f99e30a58be4e6ca44395488a41e1e99b168",
+        "guest/sbin/reboot-clean": "bdfee1d40cb9a84a2836758304910962e9a7a76a836d516535700cd9564507c0"
+      },
+      "toolchain": {
+        "gcc": "gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "ld": "GNU ld (GNU Binutils for Ubuntu) 2.46",
+        "make": "GNU Make 4.4.1",
+        "bison": "bison (GNU Bison) 3.8.2",
+        "flex": "flex 2.6.4",
+        "m4": "m4 (GNU M4) 1.4.21",
+        "fakeroot": "fakeroot version 1.37.2"
+      },
+      "build_log_sha256": "63fdec6f168d6d7d017d822570c4b8ce4d66e3f035288bb9534d6a077e136831",
+      "build_log_findings": [
+        {
+          "message": "gpg: WARNING: This key is not certified with a trusted signature!",
+          "occurrences": 1
+        },
+        {
+          "message": "applets/usage.c:52:17: warning: ignoring return value of 'write' declared with attribute 'warn_unused_result' [-Wunused-result]",
+          "occurrences": 1
+        },
+        {
+          "message": "archival/libarchive/data_extract_all.c:246:25: warning: ignoring return value of 'chown' declared with attribute 'warn_unused_result' [-Wunused-result]",
+          "occurrences": 1
+        },
+        {
+          "message": "shell/ash.c:2464:9: warning: this 'if' clause does not guard... [-Wmisleading-indentation]",
+          "occurrences": 1
+        },
+        {
+          "message": "Static linking against glibc, can't use --gc-sections",
+          "occurrences": 1
+        }
+      ],
+      "boot_outcome": "two passing boot/shutdown runs"
+    }
+  },
+  "runs": [
+    {
+      "schema": 1,
+      "started_at": "2026-10-20T15:01:52.775433+00:00",
+      "status": "failed",
+      "failure": "RuntimeError: Guest evidence exists but shutdown was not clean",
+      "guest": {
+        "uid": "0",
+        "kernel": "6.12.113-fc-lab",
+        "rootfs": "/dev/root ext4 rw,relatime",
+        "root_device": "254:0",
+        "vda_device": "254:0"
+      },
+      "forced_stop": true,
+      "shutdown_http_status": 204,
+      "exit_code": -15,
+      "network_interfaces": 0,
+      "original_sha256_before": {
+        "firecracker": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+        "kernel": "776cd90aa2ea2be0006004582fbee73b6e735d3df391ac306d77d0b9be2494b4",
+        "rootfs": "7efb7d07e9486f1a94cd33cb8d996fa7457e3751c62ea65a66b30d0d72c33aaf",
+        "config": "b408526af6b61fe9591b49521ebbd58270790d5720a66bc756490d8fc70ec8b9"
+      },
+      "original_sha256_after": {
+        "firecracker": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+        "kernel": "776cd90aa2ea2be0006004582fbee73b6e735d3df391ac306d77d0b9be2494b4",
+        "rootfs": "7efb7d07e9486f1a94cd33cb8d996fa7457e3751c62ea65a66b30d0d72c33aaf",
+        "config": "b408526af6b61fe9591b49521ebbd58270790d5720a66bc756490d8fc70ec8b9"
+      },
+      "clone_sha256_before": "7efb7d07e9486f1a94cd33cb8d996fa7457e3751c62ea65a66b30d0d72c33aaf",
+      "boot_evidence_seconds": 0.856,
+      "originals_unchanged": true,
+      "console_sha256": "0740e61fad7270c2db6f2201ed6c8c21a55a67281757ee4534ed267c2d56df22",
+      "elapsed_seconds": 32.217,
+      "local_run_id": "boot-8aa331dv",
+      "build": "a",
+      "controller_exit_code": 1,
+      "console_findings": [
+        {
+          "message": "vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+          "occurrences": 10
+        },
+        {
+          "message": "vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+          "occurrences": 10
+        },
+        {
+          "message": "Spectre V2 : User space: Vulnerable",
+          "occurrences": 1
+        },
+        {
+          "message": "Speculative Store Bypass: Vulnerable",
+          "occurrences": 1
+        },
+        {
+          "message": "vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+          "occurrences": 1
+        },
+        {
+          "message": "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+          "occurrences": 1
+        }
+      ],
+      "shutdown_evidence": {
+        "reboot_clean_script_seen": false,
+        "root_remounted_readonly": false,
+        "firecracker_success_line_seen": false
+      }
+    },
+    {
+      "schema": 1,
+      "started_at": "2026-10-20T15:07:24.956921+00:00",
+      "status": "passed",
+      "failure": null,
+      "guest": {
+        "uid": "0",
+        "kernel": "6.12.113-fc-lab",
+        "rootfs": "/dev/root ext4 rw,relatime",
+        "root_device": "254:0",
+        "vda_device": "254:0"
+      },
+      "forced_stop": false,
+      "shutdown_http_status": 204,
+      "exit_code": 0,
+      "network_interfaces": 0,
+      "original_sha256_before": {
+        "firecracker": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+        "kernel": "e816c1aa5249d7a6e3cd937e312ec235f892af75c30ebe67e34e5a3aa55d78e8",
+        "rootfs": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52",
+        "config": "b408526af6b61fe9591b49521ebbd58270790d5720a66bc756490d8fc70ec8b9"
+      },
+      "original_sha256_after": {
+        "firecracker": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+        "kernel": "e816c1aa5249d7a6e3cd937e312ec235f892af75c30ebe67e34e5a3aa55d78e8",
+        "rootfs": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52",
+        "config": "b408526af6b61fe9591b49521ebbd58270790d5720a66bc756490d8fc70ec8b9"
+      },
+      "clone_sha256_before": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52",
+      "boot_evidence_seconds": 1.764,
+      "originals_unchanged": true,
+      "console_sha256": "c6d0af73f667ecca55828d8a15eb6b07e9f79cb8b3aa7999ab96919429539941",
+      "elapsed_seconds": 3.333,
+      "local_run_id": "boot-shgfg4q8",
+      "build": "b",
+      "controller_exit_code": 0,
+      "console_findings": [
+        {
+          "message": "vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+          "occurrences": 10
+        },
+        {
+          "message": "vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+          "occurrences": 10
+        },
+        {
+          "message": "Spectre V2 : User space: Vulnerable",
+          "occurrences": 1
+        },
+        {
+          "message": "Speculative Store Bypass: Vulnerable",
+          "occurrences": 1
+        },
+        {
+          "message": "vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+          "occurrences": 1
+        },
+        {
+          "message": "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+          "occurrences": 1
+        },
+        {
+          "message": "Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+          "occurrences": 2
+        },
+        {
+          "message": "i8042: Failed to disable AUX port, but continuing anyway... Is this a SiS?",
+          "occurrences": 1
+        }
+      ],
+      "shutdown_evidence": {
+        "reboot_clean_script_seen": true,
+        "root_remounted_readonly": true,
+        "firecracker_success_line_seen": true
+      }
+    },
+    {
+      "schema": 1,
+      "started_at": "2026-10-20T15:07:38.449676+00:00",
+      "status": "passed",
+      "failure": null,
+      "guest": {
+        "uid": "0",
+        "kernel": "6.12.113-fc-lab",
+        "rootfs": "/dev/root ext4 rw,relatime",
+        "root_device": "254:0",
+        "vda_device": "254:0"
+      },
+      "forced_stop": false,
+      "shutdown_http_status": 204,
+      "exit_code": 0,
+      "network_interfaces": 0,
+      "original_sha256_before": {
+        "firecracker": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+        "kernel": "e816c1aa5249d7a6e3cd937e312ec235f892af75c30ebe67e34e5a3aa55d78e8",
+        "rootfs": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52",
+        "config": "b408526af6b61fe9591b49521ebbd58270790d5720a66bc756490d8fc70ec8b9"
+      },
+      "original_sha256_after": {
+        "firecracker": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+        "kernel": "e816c1aa5249d7a6e3cd937e312ec235f892af75c30ebe67e34e5a3aa55d78e8",
+        "rootfs": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52",
+        "config": "b408526af6b61fe9591b49521ebbd58270790d5720a66bc756490d8fc70ec8b9"
+      },
+      "clone_sha256_before": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52",
+      "boot_evidence_seconds": 1.831,
+      "originals_unchanged": true,
+      "console_sha256": "78e21d526ae833a364c20681b82011dda2fac81238429caa997878f164d088fc",
+      "elapsed_seconds": 4.242,
+      "local_run_id": "boot-vtvgu2wc",
+      "build": "b",
+      "controller_exit_code": 0,
+      "console_findings": [
+        {
+          "message": "vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+          "occurrences": 10
+        },
+        {
+          "message": "vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+          "occurrences": 10
+        },
+        {
+          "message": "Spectre V2 : User space: Vulnerable",
+          "occurrences": 1
+        },
+        {
+          "message": "Speculative Store Bypass: Vulnerable",
+          "occurrences": 1
+        },
+        {
+          "message": "vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+          "occurrences": 1
+        },
+        {
+          "message": "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+          "occurrences": 1
+        },
+        {
+          "message": "Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+          "occurrences": 2
+        },
+        {
+          "message": "i8042: Failed to disable AUX port, but continuing anyway... Is this a SiS?",
+          "occurrences": 1
+        }
+      ],
+      "shutdown_evidence": {
+        "reboot_clean_script_seen": true,
+        "root_remounted_readonly": true,
+        "firecracker_success_line_seen": true
+      }
+    }
+  ],
+  "tampered_source_control": {
+    "controller_exit": 1,
+    "report": {
+      "schema": 1,
+      "started_at": "2026-10-20T14:57:43.454457+00:00",
+      "status": "failed",
+      "stage": "source-verification",
+      "lock_sha256": "2b430bc7f95e23bdbbf5171e844bb975c5e01c40146ce8d2bc6b5da9ca040cf9",
+      "sources": {},
+      "artifacts": {},
+      "failure": "ValueError: SHA256 mismatch: linux-6.12.113.tar.xz; expected e09b6727e5c521253f0d41694900b9c38fb7604db7d35238a8197aa9f7de2428, got 63874368d1d9fbf7820c5a85391b94fb1a37124f3e6275dec7e165ec04938fb8"
+    }
+  },
+  "regression_tests": {
+    "count": 10,
+    "failures": 0
+  },
+  "previous_ubuntu_artifacts": {
+    "sha256_after": {
+      "rootfs": "48f95671ce1903228a347340cf747f5af9dcc9f665685bc35e5bd871b2b3c1d4",
+      "kernel": "445b3d0ed9650869e854656308d60e6cca773190526b037b45941cbf61910f0d",
+      "firecracker": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+      "config": "87a3c0a9ee91020d7986ad908c1eb27475ed514f22b6778e8d8309261114a564"
+    },
+    "unchanged": true
+  },
+  "rootless_host_tools": [
+    {
+      "file": "bison_2%3a3.8.2+dfsg-1ubuntu0.26.04.1_amd64.deb",
+      "metadata": [
+        "Package: bison",
+        "Version: 2:3.8.2+dfsg-1ubuntu0.26.04.1",
+        "Architecture: amd64"
+      ],
+      "sha256": "df3c66f15d5736094da21d45506c81027091c5a28f7b8f358bbef616a261a530"
+    },
+    {
+      "file": "flex_2.6.4-8.2build2_amd64.deb",
+      "metadata": [
+        "Package: flex",
+        "Version: 2.6.4-8.2build2",
+        "Architecture: amd64"
+      ],
+      "sha256": "622d3959e0424ca276a01946a44a30c327d4bd6963f96b070b94e9b80b541bb8"
+    },
+    {
+      "file": "libelf-dev_0.194-4_amd64.deb",
+      "metadata": [
+        "Package: libelf-dev",
+        "Version: 0.194-4",
+        "Architecture: amd64"
+      ],
+      "sha256": "5a67bec4ff050ae031206f05e4d6ea79aa15b1d1dbd503bdac955966aa7a8699"
+    },
+    {
+      "file": "libelf1t64_0.194-4_amd64.deb",
+      "metadata": [
+        "Package: libelf1t64",
+        "Version: 0.194-4",
+        "Architecture: amd64"
+      ],
+      "sha256": "c2feae172b14d2a8317348023c5e0b6572314c097a9f7b8225c62b0988cc8d92"
+    },
+    {
+      "file": "m4_1.4.21-1_amd64.deb",
+      "metadata": [
+        "Package: m4",
+        "Version: 1.4.21-1",
+        "Architecture: amd64"
+      ],
+      "sha256": "1890e37e38fd64bc10630e508f4a013a76bddbe05be2ed89e68df28463712b55"
+    }
+  ],
+  "preparation_notes": [
+    "Missing flex, bison, m4 and libelf headers were downloaded with APT and extracted under the user directory, without global installation.",
+    "BusyBox allnoconfig does not honor the kernel KCONFIG_ALLCONFIG workflow; the recipe edits known options, runs oldconfig and verifies every requested option.",
+    "VIRTIO_MENU is required to apply the virtio driver options; the recipe rejects missing requested settings.",
+    "The first kernel booted but lacked AT/i8042/VT support. HTTP 204 did not imply guest shutdown; the failed run and forced-stop outcome are retained."
+  ],
+  "limits": [
+    "Host toolchain is recorded, not hermetically pinned; output hashes are not promised identical across hosts.",
+    "The minimal profile reports CPU mitigation findings preserved in the console summaries; no untrusted workload isolation or production readiness claim.",
+    "Raw logs, downloaded sources, compiled artifacts and disk copies remain outside Git. No GitHub Actions KVM run."
+  ],
+  "rootfs_checks": {
+    "embedded_busybox_matches_compiled_binary": true,
+    "busybox_sha256": "62f1b6f911d21972696b3e55414765f31b36d4d001948bfbaaacb3cd29ab0632",
+    "busybox_static_no_elf_interpreter": true,
+    "busybox_uid": 0,
+    "busybox_gid": 0,
+    "filesystem_check": "e2fsck -fn returned 0 during build"
+  }
+}

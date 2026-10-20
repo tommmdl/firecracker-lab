@@ -41,6 +41,15 @@ class ConsoleTests(unittest.TestCase):
             with self.subTest(new=new), self.assertRaises(ValueError):
                 boot.guest_evidence(self.sample('\n').replace(old.encode(), new.encode()), self.token)
 
+    def test_dev_root_requires_matching_device_identity(self):
+        data = self.sample('\n').replace(b'/dev/vda', b'/dev/root')
+        with self.assertRaises(ValueError):
+            boot.guest_evidence(data, self.token)
+        valid = data.replace(b'FC_END_', b'root_device=254:0\nvda_device=254:0\nFC_END_')
+        self.assertEqual(boot.guest_evidence(valid, self.token)['root_device'], '254:0')
+        with self.assertRaises(ValueError):
+            boot.guest_evidence(valid.replace(b'vda_device=254:0', b'vda_device=254:16'), self.token)
+
     def test_historical_framing(self):
         raw = (Path(__file__).parent / 'fixtures/historical-framing.txt').read_bytes()
         normalized = boot.normalize_console(raw)

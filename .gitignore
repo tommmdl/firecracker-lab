@@ -7,10 +7,17 @@
 !/config/
 !/docs/
 !/scripts/
+!/guest/
 !/tests/
 !/evidence/
 /config/*
 !/config/vm-config.example.json
+!/config/sources.lock.json
+!/config/kernel.fragment
+!/config/busybox.fragment
+!/config/keys/
+/config/keys/*
+!/config/keys/greg-kroah-hartman.asc
 __pycache__/
 *.pyc
 *.ext4

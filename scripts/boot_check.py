@@ -32,12 +32,18 @@ def guest_evidence(raw, token):
     match = re.search(r'^FC_BEGIN_' + re.escape(token) + r'\n(.*?)^FC_END_' + re.escape(token) + r'$', text, re.M | re.S)
     if not match:
         return None
-    fields = dict(re.findall(r'^(uid|kernel|rootfs)=(.*)$', match[1], re.M))
+    fields = dict(re.findall(r'^(uid|kernel|rootfs|root_device|vda_device)=(.*)$', match[1], re.M))
     mount = fields.get('rootfs', '').split()
     if fields.get('uid') != '0' or not re.fullmatch(r'[0-9]+\.[0-9]+\.[0-9]+[^\s]*', fields.get('kernel', '')):
         raise ValueError('Guest identity or kernel evidence is invalid')
-    if len(mount) != 3 or mount[:2] != ['/dev/vda', 'ext4'] or 'rw' not in mount[2].split(','):
-        raise ValueError('Guest root filesystem is not /dev/vda ext4 rw')
+    if len(mount) != 3 or mount[1] != 'ext4' or 'rw' not in mount[2].split(','):
+        raise ValueError('Guest root filesystem is not ext4 rw')
+    if mount[0] == '/dev/root':
+        device = fields.get('root_device', '')
+        if not re.fullmatch(r'[1-9][0-9]*:[0-9]+', device) or device != fields.get('vda_device'):
+            raise ValueError('Root mount does not match the vda device')
+    elif mount[0] != '/dev/vda':
+        raise ValueError('Guest root filesystem is not /dev/vda')
     return fields
 
 
@@ -108,7 +114,7 @@ def run(args):
             os.set_blocking(master, False)
             selector.register(master, selectors.EVENT_READ)
             token = uuid.uuid4().hex
-            command = ("printf '\\nFC_BEGIN_%s\\n' " + token + "; printf 'uid='; id -u; printf 'kernel='; uname -r; printf 'rootfs='; findmnt -n -o SOURCE,FSTYPE,OPTIONS /; printf 'FC_END_%s\\n' " + token + "\n").encode()
+            command = ("printf '\\nFC_BEGIN_%s\\n' " + token + "; printf 'uid='; id -u; printf 'kernel='; uname -r; printf 'rootfs='; if command -v findmnt >/dev/null 2>&1; then findmnt -n -o SOURCE,FSTYPE,OPTIONS /; else awk '$2==\"/\" {print $1,$3,$4}' /proc/mounts; printf 'root_device='; awk '$5==\"/\" {print $3}' /proc/self/mountinfo; printf 'vda_device='; cat /sys/class/block/vda/dev; fi; printf 'FC_END_%s\\n' " + token + "\n").encode()
             sent = False
 
             def capture(wait):

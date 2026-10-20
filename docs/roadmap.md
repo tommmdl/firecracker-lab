@@ -4,7 +4,7 @@
 
 O boot agora tem um controlador no repositório, regressões para a leitura do console e evidências de execuções locais. O resultado antigo continua registrado como falha da automação.
 
-1. Preparar kernel/rootfs a partir de fontes verificadas e versões fixadas, para reproduzir também a montagem do ambiente.
+1. Concluído: [construir kernel/rootfs a partir de fontes fixados](build-from-source.md), verificando a assinatura do kernel e o checksum fixado do BusyBox. Próximo aprofundamento: encapsular o toolchain do host para fortalecer a reprodução do build.
 2. Inspecionar `fcnet.service`, o login automático e a configuração SSH antes de acrescentar rede.
 3. Escolher uma sub-rede sem conflito e criar uma TAP exclusiva, inicialmente só para host/guest.
 4. Validar SSH por chave e a identidade do host, com `known_hosts` exclusivo.
