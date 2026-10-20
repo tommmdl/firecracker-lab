@@ -12,4 +12,6 @@ O boot agora tem um controlador no repositório, regressões para a leitura do c
 6. Executar uma tarefa conhecida em um disco descartável e recolher código de saída, logs e resultados.
 7. Validar `jailer`, limites de CPU/memória/tempo e o comportamento na falha antes de avançar para tarefas não confiáveis.
 
-Rede, SSH, firewall e `jailer` continuam pendentes. Esta etapa não altera esses componentes nem publica o repositório.
+Rede, SSH, firewall e `jailer` continuam pendentes. A publicação do código não altera esses componentes nem valida isolamento para código não confiável.
+
+Além dessa trilha, precisamos revisar as mitigações de CPU reportadas como vulneráveis no guest mínimo. O [resumo de hardening](../README.md#o-que-ainda-falta-de-hardening) reúne os limites atuais.

@@ -12,4 +12,6 @@ Boot now has a controller in the repository, console reader regressions and evid
 6. Run a known task on a disposable disk and collect its exit code, logs and results.
 7. Validate `jailer`, CPU/memory/time limits and failure behavior before moving to untrusted tasks.
 
-Networking, SSH, firewall and `jailer` remain pending. This stage does not change those components or make the repository public.
+Networking, SSH, firewall and `jailer` remain pending. Publishing the code does not change those components or validate isolation for untrusted code.
+
+Alongside this route, we need to review CPU mitigations reported as vulnerable in the minimal guest. The [hardening summary](../README.en.md#hardening-still-to-do) collects the current limits.

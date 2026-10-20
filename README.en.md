@@ -52,6 +52,19 @@ To exercise a real deadline failure, repeat the command with `--boot-timeout 3`.
 
 The first stage used the existing Ubuntu artifacts; their hashes identify the files without authenticating their origin. The new recipe verifies Linux and BusyBox sources and builds a separate minimal image. The repository does not distribute kernels, disks, binaries or private keys. There is no GitHub Actions boot test at this stage.
 
-The `jailer` has not been validated. This exercise does not establish sufficient isolation for untrusted code. Implementation and tests had assistance from the assistant; the evidence records what ran in the local environment. The repository remains private.
+The `jailer` has not been validated. This exercise does not establish sufficient isolation for untrusted code. Implementation and tests had assistance from the assistant; the evidence records what ran in the local environment. The code and reviewed evidence in this lab are public.
+
+## Hardening still to do
+
+The [real test records](evidence/source-build-results.json) include a retained shutdown failure, two passing boots after the correction and ten regression tests. They also record rejection of a modified source archive. These ran locally, without a GitHub Actions boot run.
+
+Before running third-party workloads, the remaining work includes:
+
+- Validate `jailer`, namespaces, cgroups and resource/time limits under failure. The VM already has configured vCPUs and memory, but that does not establish all those protections.
+- Review the minimal kernel's CPU mitigations. Its console reported `Spectre V2 : User space: Vulnerable` and `Speculative Store Bypass: Vulnerable`; findings remain visible.
+- Review the direct root shell before adding networking. TAP, key-based SSH and outbound rules with allow/deny tests have not been validated.
+- Package the host toolchain and strengthen BusyBox origin verification. The kernel currently has a verified OpenPGP signature; BusyBox has a pinned SHA256 from official HTTPS.
+
+The exercise demonstrates boot and shutdown in the recorded environment. Isolation for untrusted code remains unvalidated. [Build and limits](docs/build-from-source.en.md) · [Next exercises](docs/roadmap.en.md).
 
 Reference: [official Firecracker v1.17.0 guide](https://github.com/firecracker-microvm/firecracker/blob/v1.17.0/docs/getting-started.md). No license has been defined for this repository's own content; external components have separate licenses.
