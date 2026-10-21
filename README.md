@@ -69,6 +69,8 @@ A [investigação de memória do auxiliar](docs/helper-memory.md) identificou ca
 
 A [amostra ampliada sob carga](docs/shutdown-repetitions.md) acrescentou 72 encerramentos limpos e 36 capturas válidas com o cache corrigido. Os picos ficaram entre 322,23 e 326,75 MiB, sem OOM nem eventos no teto; leituras vazias, erros de coleta e pequenos incrementos de PSI continuam publicados. O panic histórico segue sem causa esclarecida.
 
+A [investigação das esperas de memória](docs/memory-stalls.md) capturou caminhos de readahead e alocação lenta, diferenciando PSI de memória e I/O. Foram 50 encerramentos limpos; uma campanha falhou na preparação por leitura de PID vazio e ficou preservada. A correção passou na repetição sob carga e nos seis controles originais, com 39 testes automatizados aprovados.
+
 ## O que ainda falta de hardening
 
 Os [testes reais](evidence/source-build-results.json) incluem uma falha de shutdown preservada, dois boots aprovados depois da correção e dez testes de regressão. Também registram a rejeição de um fonte alterado. Foram executados localmente, sem boot no GitHub Actions.

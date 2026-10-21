@@ -69,6 +69,8 @@ The [helper memory investigation](docs/helper-memory.en.md) identified accumulat
 
 The [expanded loaded sample](docs/shutdown-repetitions.en.md) added 72 clean shutdowns and 36 valid captures with corrected cache handling. Peaks ranged from 322.23 to 326.75 MiB, with no OOM or limit events; empty reads, collection errors and small PSI increments remain published. The historical panic remains unexplained.
 
+The [memory-stall investigation](docs/memory-stalls.en.md) captured readahead and allocation slowpaths, distinguishing memory and I/O PSI. There were 50 clean shutdowns; one campaign failed during startup on an empty PID read and remains preserved. The correction passed a repeat under load and all six original controls, with 39 automated tests passing.
+
 ## Hardening still to do
 
 The [real test records](evidence/source-build-results.json) include a retained shutdown failure, two passing boots after the correction and ten regression tests. They also record rejection of a modified source archive. These ran locally, without a GitHub Actions boot run.

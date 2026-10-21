@@ -80,3 +80,5 @@ python3 -m unittest discover -s tests -v
 ```
 
 O exportador de memória também atende ao A/B anterior; seu texto genérico menciona reter versus liberar cache. Aqui os três perfis usam a política corrigida, sem novo braço `retain`. O campo histórico `primary` do exportador de protocolo foi criado para campanhas de cinco repetições; a seleção desta amostra está em `campaigns.json` e no resumo de 72 casos. Se um executor for interrompido sem relatório final, preserve os arquivos e use a exportação parcial de protocolo; não apresente uma campanha incompleta como aprovada.
+
+Continuação: [investigação das pequenas esperas de memória](memory-stalls.md), com novas capturas e uma falha de preparação preservada.

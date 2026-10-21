@@ -1,0 +1,67 @@
+"""Owned trace instance, restricted to this helper and future descendants."""
+import hashlib
+import json
+import os
+from pathlib import Path
+import re
+import subprocess
+import time
+import uuid
+
+
+class PressureTrace:
+    def __init__(self, output):
+        self.output=Path(output);self.mount=Path('/pressure-trace')
+        self.instance=None;self.definitions=[];self.mounted=False
+        self.group='fcmem_'+uuid.uuid4().hex
+        self.meta={'status':'starting','cleanup':False,'scope':'helper main thread and future descendants via event-fork','probes':[]}
+
+    def command(self, text):
+        fd=os.open(self.mount/'kprobe_events',os.O_WRONLY)
+        try:os.write(fd,(text+'\n').encode())
+        finally:os.close(fd)
+
+    def start(self):
+        self.mount.mkdir()
+        subprocess.run(['mount','-t','tracefs','tracefs',str(self.mount)],check=True)
+        self.mounted=True
+        self.instance=self.mount/'instances'/('fc-mem-'+uuid.uuid4().hex)
+        self.instance.mkdir()
+        def write(name,value):(self.instance/name).write_text(value)
+        write('tracing_on','0');write('trace_clock','mono');write('buffer_size_kb','1024')
+        token='fc-pressure-'+uuid.uuid4().hex
+        write('tracing_on','1');write('trace_marker',token);write('tracing_on','0')
+        line=next(line for line in (self.instance/'trace').read_text().splitlines() if token in line)
+        match=re.search(r'-(\d+)\s+(?:\(\s*\d+\)\s+)?\[',line)
+        if not match:raise ValueError('Cannot identify helper trace PID')
+        tid=int(match[1]);self.meta['helper_trace_pid']=tid
+        write('set_event_pid',str(tid));write('options/event-fork','1')
+        if str(tid) not in (self.instance/'set_event_pid').read_text().split():raise ValueError('PID filter readback mismatch')
+        write('options/stacktrace','1')
+        self.meta['filter_readback']=(self.instance/'set_event_pid').read_text()
+        self.meta['event_fork_readback']=(self.instance/'options/event-fork').read_text().strip()
+        self.meta['stacktrace_readback']=(self.instance/'options/stacktrace').read_text().strip()
+        if self.meta['event_fork_readback']!='1' or self.meta['stacktrace_readback']!='1':raise ValueError('Trace options readback mismatch')
+        for name, symbol in [('enter','psi_memstall_enter'),('leave','psi_memstall_leave')]:
+            self.command(f'p:{self.group}/{name} {symbol}');self.definitions.append(name)
+            path=self.instance/'events'/self.group/name
+            (path/'enable').write_text('1')
+            self.meta['probes'].append({'name':name,'symbol':symbol,'format':(path/'format').read_text()})
+        write('trace','');write('tracing_on','1');self.meta['status']='capturing';self.meta['started_monotonic']=time.monotonic()
+
+    def close(self):
+        try:
+            if self.instance and self.instance.exists():
+                (self.instance/'tracing_on').write_text('0')
+                self.meta['stopped_monotonic']=time.monotonic()
+                raw=(self.instance/'trace').read_text();target=self.output/'memory-stalls.trace';target.write_text(raw)
+                stats={p.parent.name:p.read_text() for p in (self.instance/'per_cpu').glob('cpu*/stats')}
+                self.meta.update(raw_sha256=hashlib.sha256(target.read_bytes()).hexdigest(),buffer_stats=stats,final_event_pids=(self.instance/'set_event_pid').read_text(),status='collected')
+                (self.instance/'events/enable').write_text('0')
+                (self.instance/'options/event-fork').write_text('0')
+                self.instance.rmdir()
+            for name in reversed(self.definitions):self.command(f'-:{self.group}/{name}')
+            self.meta['cleanup']=True
+        finally:
+            if self.mounted:subprocess.run(['umount',str(self.mount)],check=True)
+            (self.output/'memory-stalls-meta.json').write_text(json.dumps(self.meta,indent=2)+'\n')

@@ -16,9 +16,11 @@ def pressure(path):
     return {parts[0]:{key:float(value) if key!='total' else int(value) for field in parts[1:] for key,value in [field.split('=')]} for line in path.read_text().splitlines() if (parts:=line.split())}
 
 
-def snapshot(cgroup,phase):
+def snapshot(cgroup,phase,diagnostics=False):
     row={'monotonic':time.monotonic(),'phase':phase}
-    for scope,root in [('outer',cgroup),('supervisor',cgroup/'supervisor')]:
+    scopes=[('outer',cgroup),('supervisor',cgroup/'supervisor')]
+    if diagnostics:scopes.append(('vms',cgroup/'vms'))
+    for scope,root in scopes:
         if not root.exists():continue
         data={}
         for name in ('memory.current','memory.peak','memory.max','memory.swap.current'):
@@ -29,16 +31,35 @@ def snapshot(cgroup,phase):
             except OSError:pass
         try:data['memory.pressure']=pressure(root/'memory.pressure')
         except OSError:pass
+        if diagnostics:
+            data['read_errors']={}
+            for name in ('io.pressure','cpu.pressure'):
+                try:data[name]=pressure(root/name)
+                except OSError as exc:data['read_errors'][name]=repr(exc)
+            for name in ('cpu.stat',):
+                try:data[name]=numbers(root/name)
+                except OSError as exc:data['read_errors'][name]=repr(exc)
+            try:data['io.stat']=(root/'io.stat').read_text()
+            except OSError as exc:data['read_errors']['io.stat']=repr(exc)
         row[scope]=data
+    if diagnostics:
+        row['host']={}
+        try:
+            row['host']['vmstat']={k:v for k,v in numbers(Path('/proc/vmstat')).items() if k.startswith(('allocstall','pgscan','pgsteal','compact','pgmajfault','pswp','oom_kill','thp_fault_fallback'))}
+            row['host']['memory_pressure']=pressure(Path('/proc/pressure/memory'))
+            row['host']['meminfo_kib']={p[0].rstrip(':'):int(p[1]) for line in Path('/proc/meminfo').read_text().splitlines() if (p:=line.split()) and p[0] in ('MemTotal:','MemFree:','MemAvailable:','SwapTotal:','SwapFree:')}
+        except OSError as exc:row['host']['read_error']=repr(exc)
+        row['read_end_monotonic']=time.monotonic()
     return row
 
 
 class MemoryObserver:
-    def __init__(self,cgroup,output):
+    def __init__(self,cgroup,output,diagnostics=False):
         self.cgroup=cgroup;self.output=output;self.rows=[];self.lock=threading.Lock();self.stop_event=threading.Event()
+        self.diagnostics=diagnostics
         self.worker=threading.Thread(target=self.loop,daemon=True)
     def mark(self,phase):
-        row=snapshot(self.cgroup,phase)
+        row=snapshot(self.cgroup,phase,self.diagnostics)
         with self.lock:self.rows.append(row)
     def loop(self):
         while not self.stop_event.wait(.1):self.mark('periodic')

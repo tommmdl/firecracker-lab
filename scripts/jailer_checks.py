@@ -24,6 +24,7 @@ from datetime import datetime, timezone
 from boot_check import guest_evidence, normalize_console, digest
 from jailer_runtime import request, runtime_is_hardened, api_filter_ready
 from helper_memory import release_stopped_clones
+from startup_pid import read_startup_pid
 
 CG = Path('/sys/fs/cgroup')
 INPUT = Path('/inputs')
@@ -98,10 +99,13 @@ class VM:
         self.launch=subprocess.Popen(args,stdin=slave,stdout=slave,stderr=slave,env=env,pass_fds=(self.canary_fd,),start_new_session=True,preexec_fn=no_new_privileges)
         os.close(slave)
         deadline=time.monotonic()+10
+        self.report['pidfile_readiness']={'pending_reads':0}
         while time.monotonic()<deadline:
             self.capture(.05)
             pidfile=self.root/'firecracker.pid'
-            if pidfile.exists():self.pid=int(pidfile.read_text())
+            published_pid=read_startup_pid(pidfile)
+            if published_pid is None:self.report['pidfile_readiness']['pending_reads']+=1
+            else:self.pid=published_pid
             if self.pid and self.socket.exists():break
             if self.launch.poll() not in (None,0):raise RuntimeError('Jailer startup failed: '+normalize_console(self.raw)[-1500:])
         check(self.pid and self.socket.exists(),'jailed API did not start')

@@ -1,0 +1,100 @@
+[
+  {
+    "name": "retry",
+    "wrapper_exit": 0,
+    "report": {
+      "run_directory": "/home/tommmdl/fc-lab/jailer-0d2gc21s",
+      "status": "passed",
+      "scenarios": [
+        [
+          "half-control-01",
+          "observed"
+        ],
+        [
+          "half-trace-01",
+          "observed"
+        ],
+        [
+          "boost-control-01",
+          "observed"
+        ],
+        [
+          "boost-trace-01",
+          "observed"
+        ],
+        [
+          "boost-trace-02",
+          "observed"
+        ],
+        [
+          "boost-control-02",
+          "observed"
+        ],
+        [
+          "half-trace-02",
+          "observed"
+        ],
+        [
+          "half-control-02",
+          "observed"
+        ],
+        [
+          "half-control-03",
+          "observed"
+        ],
+        [
+          "half-trace-03",
+          "observed"
+        ],
+        [
+          "boost-control-03",
+          "observed"
+        ],
+        [
+          "boost-trace-03",
+          "observed"
+        ]
+      ],
+      "failure": null,
+      "findings": [],
+      "exit_code": 0
+    }
+  },
+  {
+    "name": "regression",
+    "wrapper_exit": 0,
+    "report": {
+      "run_directory": "/home/tommmdl/fc-lab/jailer-quppavgn",
+      "status": "passed",
+      "scenarios": [
+        [
+          "baseline",
+          "passed"
+        ],
+        [
+          "repeat",
+          "passed"
+        ],
+        [
+          "seccomp-disabled-control",
+          "passed"
+        ],
+        [
+          "fd-exhaustion-control",
+          "passed"
+        ],
+        [
+          "memory-oom-control",
+          "passed"
+        ],
+        [
+          "deadline-control",
+          "passed"
+        ]
+      ],
+      "failure": null,
+      "findings": [],
+      "exit_code": 0
+    }
+  }
+]

@@ -1,0 +1,185 @@
+{
+  "planned": 36,
+  "design": "Sequential trace-on / trace-off / trace-on; all use stopped-clone cache release",
+  "pilot_run": "/home/tommmdl/fc-lab/jailer-qcvjl_tt",
+  "results": [
+    {
+      "campaign": 1,
+      "memory_stall_trace": true,
+      "wrapper_exit": 0,
+      "report": {
+        "run_directory": "/home/tommmdl/fc-lab/jailer-1zzwgi68",
+        "status": "passed",
+        "scenarios": [
+          [
+            "half-control-01",
+            "observed"
+          ],
+          [
+            "half-trace-01",
+            "observed"
+          ],
+          [
+            "boost-control-01",
+            "observed"
+          ],
+          [
+            "boost-trace-01",
+            "observed"
+          ],
+          [
+            "boost-trace-02",
+            "observed"
+          ],
+          [
+            "boost-control-02",
+            "observed"
+          ],
+          [
+            "half-trace-02",
+            "observed"
+          ],
+          [
+            "half-control-02",
+            "observed"
+          ],
+          [
+            "half-control-03",
+            "observed"
+          ],
+          [
+            "half-trace-03",
+            "observed"
+          ],
+          [
+            "boost-control-03",
+            "observed"
+          ],
+          [
+            "boost-trace-03",
+            "observed"
+          ]
+        ],
+        "failure": null,
+        "findings": [],
+        "exit_code": 0
+      }
+    },
+    {
+      "campaign": 2,
+      "memory_stall_trace": false,
+      "wrapper_exit": 1,
+      "report": {
+        "run_directory": "/home/tommmdl/fc-lab/jailer-c1sxrbwi",
+        "status": "failed",
+        "scenarios": [
+          [
+            "half-control-01",
+            "observed"
+          ],
+          [
+            "half-trace-01",
+            "observed"
+          ],
+          [
+            "boost-control-01",
+            "observed"
+          ],
+          [
+            "boost-trace-01",
+            "observed"
+          ],
+          [
+            "boost-trace-02",
+            "observed"
+          ],
+          [
+            "boost-control-02",
+            "observed"
+          ],
+          [
+            "half-trace-02",
+            "observed"
+          ],
+          [
+            "half-control-02",
+            "observed"
+          ],
+          [
+            "half-control-03",
+            "observed"
+          ],
+          [
+            "half-trace-03",
+            "observed"
+          ]
+        ],
+        "failure": "ValueError: invalid literal for int() with base 10: ''",
+        "findings": [],
+        "exit_code": 1
+      }
+    },
+    {
+      "campaign": 3,
+      "memory_stall_trace": true,
+      "wrapper_exit": 0,
+      "report": {
+        "run_directory": "/home/tommmdl/fc-lab/jailer-e5829fe6",
+        "status": "passed",
+        "scenarios": [
+          [
+            "half-control-01",
+            "observed"
+          ],
+          [
+            "half-trace-01",
+            "observed"
+          ],
+          [
+            "boost-control-01",
+            "observed"
+          ],
+          [
+            "boost-trace-01",
+            "observed"
+          ],
+          [
+            "boost-trace-02",
+            "observed"
+          ],
+          [
+            "boost-control-02",
+            "observed"
+          ],
+          [
+            "half-trace-02",
+            "observed"
+          ],
+          [
+            "half-control-02",
+            "observed"
+          ],
+          [
+            "half-control-03",
+            "observed"
+          ],
+          [
+            "half-trace-03",
+            "observed"
+          ],
+          [
+            "boost-control-03",
+            "observed"
+          ],
+          [
+            "boost-trace-03",
+            "observed"
+          ]
+        ],
+        "failure": null,
+        "findings": [],
+        "exit_code": 0
+      }
+    }
+  ]
+}

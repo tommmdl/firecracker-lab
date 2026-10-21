@@ -80,3 +80,5 @@ python3 -m unittest discover -s tests -v
 ```
 
 The memory exporter also serves the earlier A/B; its generic method text mentions retaining versus releasing cache. Here all three profiles use the corrected policy, with no new `retain` arm. The protocol exporter's historical `primary` flag targets five-repeat campaigns; this sample is selected in `campaigns.json` and the 72-case summary. If an executor is interrupted without a final report, preserve its files and use partial protocol export; do not label an incomplete campaign as passed.
+
+Follow-up: [investigation of the small memory stalls](memory-stalls.en.md), with new captures and a retained startup failure.

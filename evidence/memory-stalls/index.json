@@ -1,0 +1,202 @@
+{
+  "schema": 1,
+  "method": "Same capped protocol matrix; retain clone cache versus fsync + DONTNEED on two stopped clone files only",
+  "limits": {
+    "outer_memory_bytes": 805306368,
+    "outer_swap_bytes": 0,
+    "outer_cpus": 2,
+    "outer_pids": 256,
+    "vm_memory_bytes": 402653184,
+    "vm_swap_bytes": 0,
+    "vm_pids": 32
+  },
+  "limitations": [
+    "Cgroup counters/stat fields are read sequentially; samples are not atomic.",
+    "memory.peak covers unsampled peaks; 100ms polling and phase markers do not capture every transient.",
+    "DONTNEED is advisory, not a guaranteed eviction or a resident-memory cap.",
+    "Page-cache charges depend on first touch and shared input history; cohorts are local observations, not a universal benchmark.",
+    "fsync/advice and optional cache-integrity checks run after VM exit, outside measured shutdown."
+  ],
+  "runs": [
+    {
+      "run": "jailer-qcvjl_tt",
+      "policy": "release-stopped-clones",
+      "raw_status": "passed",
+      "case_count": 4,
+      "trace_count": 2,
+      "observer_seconds": 33.982327,
+      "outer_memory_peak_bytes": 267444224,
+      "sampled_current_max_bytes": 265609216,
+      "end_current_bytes": 78901248,
+      "end_file_bytes": 49496064,
+      "end_anon_bytes": 27254784,
+      "event_delta": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "pressure_total_delta_us": {
+        "some": 189970,
+        "full": 167363
+      },
+      "pressure_wall_fraction": {
+        "some": 0.00559,
+        "full": 0.004925
+      },
+      "pgscan_delta": 2466,
+      "pgscan_direct_delta": 0,
+      "originals_unchanged": true,
+      "raw_observations_sha256": "88420c700c7ceafb00048f382f96288e2dd274c28a6f07c898cd5e54d4c2af61",
+      "raw_result_sha256": "4b94966b3f94d2494917c21bc57914038c320b5ce6681670a71b83271aa3c941",
+      "file": "jailer-qcvjl_tt.json",
+      "sha256": "d0ab8a98d4118627cbd614101f1894f432ba8f593ad6b4f7230cae47af803317"
+    },
+    {
+      "run": "jailer-1zzwgi68",
+      "policy": "release-stopped-clones",
+      "raw_status": "passed",
+      "case_count": 12,
+      "trace_count": 6,
+      "observer_seconds": 89.623125,
+      "outer_memory_peak_bytes": 299556864,
+      "sampled_current_max_bytes": 298246144,
+      "end_current_bytes": 111427584,
+      "end_file_bytes": 51847168,
+      "end_anon_bytes": 55943168,
+      "event_delta": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "pressure_total_delta_us": {
+        "some": 0,
+        "full": 0
+      },
+      "pressure_wall_fraction": {
+        "some": 0.0,
+        "full": 0.0
+      },
+      "pgscan_delta": 0,
+      "pgscan_direct_delta": 0,
+      "originals_unchanged": true,
+      "raw_observations_sha256": "b8154bf7b11c421a89ac6c829dd55c43d62efbc01612f6754b008a58016e56f5",
+      "raw_result_sha256": "10fc32e39d48714ad56a7880bec3a5dfaeaa2c44788b5198b271b6200a0800da",
+      "file": "jailer-1zzwgi68.json",
+      "sha256": "2904981a4d96913d13e9f125c0c0a145c309e4122e8bd98eb3997bf35bc57297"
+    },
+    {
+      "run": "jailer-c1sxrbwi",
+      "policy": "release-stopped-clones",
+      "raw_status": "failed",
+      "case_count": 10,
+      "trace_count": 5,
+      "observer_seconds": 76.293464,
+      "outer_memory_peak_bytes": 282927104,
+      "sampled_current_max_bytes": 282402816,
+      "end_current_bytes": 252874752,
+      "end_file_bytes": 195751936,
+      "end_anon_bytes": 49442816,
+      "event_delta": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "pressure_total_delta_us": {
+        "some": 127092,
+        "full": 127092
+      },
+      "pressure_wall_fraction": {
+        "some": 0.001666,
+        "full": 0.001666
+      },
+      "pgscan_delta": 953,
+      "pgscan_direct_delta": 0,
+      "originals_unchanged": true,
+      "raw_observations_sha256": "01e06a42725c28c1000a97ae1d319ef0e001f784b45d44e682c0a199d932bd67",
+      "raw_result_sha256": "f15d294ae33e7ee01c4e05606fe1d2c7721f3a1fc65b20e3c6d495402d44a5db",
+      "file": "jailer-c1sxrbwi.json",
+      "sha256": "111f85e3fafdd352e314455cfe25f226c4da955b8ff0a7c2ee9ccadcf2b8b82c"
+    },
+    {
+      "run": "jailer-e5829fe6",
+      "policy": "release-stopped-clones",
+      "raw_status": "passed",
+      "case_count": 12,
+      "trace_count": 6,
+      "observer_seconds": 90.615403,
+      "outer_memory_peak_bytes": 302768128,
+      "sampled_current_max_bytes": 300670976,
+      "end_current_bytes": 115585024,
+      "end_file_bytes": 55271424,
+      "end_anon_bytes": 57171968,
+      "event_delta": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "pressure_total_delta_us": {
+        "some": 58791,
+        "full": 58104
+      },
+      "pressure_wall_fraction": {
+        "some": 0.000649,
+        "full": 0.000641
+      },
+      "pgscan_delta": 2496,
+      "pgscan_direct_delta": 0,
+      "originals_unchanged": true,
+      "raw_observations_sha256": "7821e8e72501b86330dc62c8fbb8b60cf7bd074249c96b2a3e90d2d01a350e07",
+      "raw_result_sha256": "3983c3c0b20903fe86df11586f83e6778d6465aa414d91cc7cec04a63c8c01e9",
+      "file": "jailer-e5829fe6.json",
+      "sha256": "1efd0d427724afc927e1f85b3f0664b65128e6134cc427ec2ade5a21a4c063b8"
+    },
+    {
+      "run": "jailer-0d2gc21s",
+      "policy": "release-stopped-clones",
+      "raw_status": "passed",
+      "case_count": 12,
+      "trace_count": 6,
+      "observer_seconds": 90.162371,
+      "outer_memory_peak_bytes": 300371968,
+      "sampled_current_max_bytes": 299851776,
+      "end_current_bytes": 112742400,
+      "end_file_bytes": 53313536,
+      "end_anon_bytes": 56463360,
+      "event_delta": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "pressure_total_delta_us": {
+        "some": 2871,
+        "full": 2871
+      },
+      "pressure_wall_fraction": {
+        "some": 3.2e-05,
+        "full": 3.2e-05
+      },
+      "pgscan_delta": 114,
+      "pgscan_direct_delta": 0,
+      "originals_unchanged": true,
+      "raw_observations_sha256": "79fb53545ae55b878bee6f76f3ac16414b01e02d8e316c1a5b446cdf22255bd8",
+      "raw_result_sha256": "739fc78f6a8a50ce409f01c709992f2136bb4fd6e2247ddf616e0da0f674b549",
+      "file": "jailer-0d2gc21s.json",
+      "sha256": "2b983cb163be5a2db940d8aab611f0a416975182f9bcdf3aa92c9df13d6843fc"
+    }
+  ]
+}
