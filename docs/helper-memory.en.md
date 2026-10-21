@@ -10,6 +10,8 @@ The new `vcpu_memory` executor uses the same protocol matrix: real boot, keyboar
 
 At phase boundaries and a target 100 ms interval, we collect helper/supervisor `memory.current`, `memory.peak`, `memory.stat`, local/hierarchical events, and PSI. The cgroup peak also covers peaks between samples. Different fields are sequential reads, not atomic snapshots; raw evidence retains timestamps and actual cadence. `memory.events.local:max` counts limit occurrences, not bytes or process deaths. PSI and reclaim counters help establish whether stalls and page recovery occurred.
 
+The measurement window ends after the scenarios and input-hash checks, before serializing the observer's own output file. Writing that file and subsequent export are outside the table's figures.
+
 The helper retained its **768 MiB** ceiling, zero swap, two CPUs, and 256 tasks. Each VM retained **384 MiB** of allowed memory, zero swap, 32 tasks, and 64 descriptors; guest configuration remains 256 MiB. UID/GID, zero effective capabilities, `NoNewPrivs`, seccomp, and jailer namespaces remain checked across all observed runtime threads.
 
 ## What stayed resident

@@ -10,6 +10,8 @@ O novo executor, `vcpu_memory`, usa a mesma matriz do protocolo: boot real, pron
 
 A cada etapa e com intervalo alvo de 100 ms, coletamos `memory.current`, `memory.peak`, `memory.stat`, eventos locais/hierárquicos e PSI do auxiliar e do supervisor. O pico do cgroup também cobre picos entre amostras. As leituras de campos diferentes não são atômicas; os timestamps e a cadência real ficam no arquivo bruto. `memory.events.local:max` conta ocorrências no limite, não bytes nem mortes de processo. PSI e contadores de reclaim ajudam a verificar se houve esperas e recuperação de páginas.
 
+A janela termina depois dos cenários e da conferência dos hashes de entrada, antes de serializar o arquivo do próprio observador. A escrita desse arquivo e a exportação posterior ficam fora dos números da tabela.
+
 O teto do auxiliar permaneceu em **768 MiB**, sem swap, com duas CPUs e 256 tarefas. O teto de memória de cada VM continuou em **384 MiB**, com zero swap, 32 tarefas e 64 descritores; o guest continua configurado com 256 MiB. UID/GID, capacidades de execução zeradas, `NoNewPrivs`, seccomp e namespaces do jailer seguem conferidos em todas as threads observadas.
 
 ## O que ficou retido
