@@ -63,6 +63,8 @@ O panic antigo de shutdown continua preservado. A [investigação](docs/shutdown
 
 A [captura de escalonamento e sinais](docs/vcpu-scheduling.md) acrescentou 24 encerramentos limpos sob carga, com 12 traces válidos, controles sem captura e um teste de limite de tarefas. A maior espera pronta observada foi 13,262 ms; o panic histórico não reapareceu e sua causa continua em aberto. Tentativas inválidas e interrompidas também estão publicadas.
 
+A [investigação do protocolo e das stacks do kernel](docs/vcpu-protocol.md) acompanha o envio, a espera do canal e o `join` no binário oficial. A rodada final teve 20 encerramentos limpos, dez capturas instrumentadas e stacks reais em futex/KVM. A espera pelo canal chegou a 5,867 ms, e o `join`, a 83 µs; a causa do panic antigo continua aberta. Falhas de preparação, do validador e de leitura também estão publicadas.
+
 ## O que ainda falta de hardening
 
 Os [testes reais](evidence/source-build-results.json) incluem uma falha de shutdown preservada, dois boots aprovados depois da correção e dez testes de regressão. Também registram a rejeição de um fonte alterado. Foram executados localmente, sem boot no GitHub Actions.

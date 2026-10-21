@@ -91,7 +91,8 @@ class Capture:
         if self.path is None:
             return
         try:
-            self.write('trace_marker', 'shutdown-observation-end')
+            if (self.path/'tracing_on').read_text().strip()=='1':
+                self.write('trace_marker', 'shutdown-observation-end')
             self.write('tracing_on', '0')
             raw = (self.path/'trace').read_bytes()
             (self.directory/'events.trace').write_bytes(raw)

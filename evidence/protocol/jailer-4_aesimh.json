@@ -1,0 +1,1526 @@
+{
+  "run": "jailer-4_aesimh",
+  "complete": true,
+  "raw_status": "passed",
+  "raw_result_sha256": "affdbe87832dcd8ecf51acb61f02028017f33c9d22f1cd14013fcbc58259398b",
+  "profile": {
+    "schema": 1,
+    "helper_image": "python@sha256:70729b46c69b4f1e97c4822c1af3df53a1476cf5ddc6c087c0c10bc3a5678c2f",
+    "jailer_sha256": "65ef226e96f0ceda55ba643f445801ef2cc0ea667ef67cad8ac4f406c9c8434f",
+    "firecracker_sha256": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+    "uid": 65534,
+    "gid": 65534,
+    "cpu_max": "50000 100000",
+    "memory_max": 402653184,
+    "memory_swap_max": 0,
+    "pids_max": 32,
+    "no_file": 64,
+    "oom_memory_max": 100663296,
+    "boot_timeout": 60,
+    "shutdown_timeout": 15,
+    "shutdown_cpu_max": "200000 100000",
+    "investigation_matrix": "host-load",
+    "diagnostic_repetitions": 1,
+    "diagnostic_pid_probe": true,
+    "suite_timeout": 600
+  },
+  "source_sha256": {
+    "build_artifacts.py": "bd6334bea07a9d8ad0e4b79890d829e1e6092ae0c5046a0e709bd72a689d9660",
+    "jailer_checks.py": "288ddc08c838709a2b1d8bd7a3cb01edd0bc9f449bf07c60cef276116eaf517f",
+    "run_jailer_lab.py": "43fc3116bc06facbdd2c264a53e317bd06f69dd3d745c3088287f8c5ddc5bb2a",
+    "protocol_points.py": "d0e3becfdc29a3521a317c6a6f5ea64b91aa849b39cb3fd5a3bc3e175dd05db2",
+    "jailer_runtime.py": "60bc5e8eb7ad3bfdf4aaf92152158c85543cb91c436810c0a7813a2abf83fe38",
+    "shutdown_investigation.py": "34c41230dc79c07d31264fa796b969debcf1dd5347bc68f32e6c45c2000c7c07",
+    "export_shutdown_evidence.py": "1d05c134a44572d24f23a77842e53ff4c3c1eba2dd654e61cf477bbc61369ce8",
+    "build_shutdown_candidate.py": "4ff3f2c2a659e4dccd3b1890b30a74e4b3eb686ba52cb0284848db60f92ae7a9",
+    "vcpu_scheduling.py": "bff7e9fe16b7eebfa984d5e197547a6bcc8a6bb9971846717503f0beb1da8351",
+    "export_scheduling_evidence.py": "3a7026fe2d6e93ac22cf0b1d85d2e6cf4eec2eb892643573d80d35c2e2345d14",
+    "vcpu_protocol.py": "b2be8994558e0cef94da05cc6c3a4ff15f7d2143c139b77cfa6f632c9b788950",
+    "boot_check.py": "61bafa6a1154e7ac5f8352ac6af14323757b29360f15444db7ee61890cc9b631"
+  },
+  "started_at": "2026-10-21T09:42:33.333294+00:00",
+  "host_kernel": "6.18.54.1-microsoft-standard-WSL2",
+  "originals_unchanged": true,
+  "cgroups_cleaned": true,
+  "outer_memory_events_local": {
+    "low": 0,
+    "high": 0,
+    "max": 0,
+    "oom": 0,
+    "oom_kill": 0,
+    "oom_group_kill": 0
+  },
+  "findings": [],
+  "scenarios": [
+    {
+      "scenario": "half-control-01",
+      "status": "observed",
+      "failure": null,
+      "capture_failure": null,
+      "exit_code": 0,
+      "panic": false,
+      "cleanup_forced_stop": false,
+      "traced": false,
+      "pids_probe": {
+        "created_threads": 25,
+        "blocked": true
+      },
+      "keyboard_readiness": {
+        "confirmed": true,
+        "seconds": 0.108837,
+        "input_devices": "I: Bus=0011 Vendor=0001 Product=0002 Version=abba\nN: Name=\"AT Raw Set 2 keyboard\"\nP: Phys=isa0060/serio0/input0\nS: Sysfs=/devices/platform/i8042/serio0/input/input0\nU: Uniq=\nH: Handlers=kbd \nB: PROP=0\nB: EV=120013\nB: KEY=402000002 3803078f800d001 feffffdfffefffff fffffffffffffffe\nB: MSC=10\nB: LED=7\n\n"
+      },
+      "runtime": {
+        "namespaces": {
+          "mnt": {
+            "supervisor": "mnt:[4026537517]",
+            "vmm": "mnt:[4026537777]"
+          },
+          "pid": {
+            "supervisor": "pid:[4026537655]",
+            "vmm": "pid:[4026537778]"
+          },
+          "net": {
+            "supervisor": "net:[4026537657]",
+            "vmm": "net:[4026537717]"
+          },
+          "ipc": {
+            "supervisor": "ipc:[4026537654]",
+            "vmm": "ipc:[4026537654]"
+          },
+          "uts": {
+            "supervisor": "uts:[4026537518]",
+            "vmm": "uts:[4026537518]"
+          },
+          "user": {
+            "supervisor": "user:[4026531837]",
+            "vmm": "user:[4026531837]"
+          },
+          "cgroup": {
+            "supervisor": "cgroup:[4026537656]",
+            "vmm": "cgroup:[4026537656]"
+          }
+        },
+        "threads": {
+          "9": {
+            "Name": "firecracker",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "9\t1"
+          },
+          "10": {
+            "Name": "fc_api",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "10\t2"
+          },
+          "11": {
+            "Name": "fc_vcpu 0",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "11\t3"
+          },
+          "12": {
+            "Name": "fc_vcpu 1",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "12\t4"
+          },
+          "13": {
+            "Name": "kvm-nx-lpage-re",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "13\t5"
+          }
+        },
+        "hardened_runtime": true,
+        "environment_keys": [],
+        "open_fd_count": 31,
+        "limits": "Limit                     Soft Limit           Hard Limit           Units     \nMax cpu time              unlimited            unlimited            seconds   \nMax file size             unlimited            unlimited            bytes     \nMax data size             unlimited            unlimited            bytes     \nMax stack size            8388608              unlimited            bytes     \nMax core file size        unlimited            unlimited            bytes     \nMax resident set          unlimited            unlimited            bytes     \nMax processes             unlimited            unlimited            processes \nMax open files            64                   64                   files     \nMax locked memory         67108864             67108864             bytes     \nMax address space         unlimited            unlimited            bytes     \nMax file locks            unlimited            unlimited            locks     \nMax pending signals       63800                63800                signals   \nMax msgqueue size         819200               819200               bytes     \nMax nice priority         0                    0                    \nMax realtime priority     0                    0                    \nMax realtime timeout      unlimited            unlimited            us        \n",
+        "cgroup": "0::/vms/half-control-01",
+        "resource_files": {
+          "cpu.max": "50000 100000",
+          "memory.max": "402653184",
+          "memory.swap.max": "0",
+          "pids.max": "32"
+        },
+        "network_devices": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n"
+      },
+      "checks": [
+        "API accepted /boot-source: 204",
+        "API accepted /drives/rootfs: 204",
+        "API accepted /machine-config: 204",
+        "API accepted /actions: 204",
+        "complete guest evidence",
+        "mnt namespace differs",
+        "pid namespace differs",
+        "net namespace differs",
+        "process root is jail root",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "inherited environment canary absent",
+        "inherited canary file descriptor closed",
+        "RLIMIT_NOFILE configured",
+        "VMM resides in its cgroup leaf",
+        "all cgroup limits match requested profile",
+        "VMM is PID 1 in its namespace",
+        "no_new_privs active before and after boot",
+        "all runtime threads hardened",
+        "guest keyboard kbd handler confirmed before shutdown request",
+        "PID ceiling encountered",
+        "mnt namespace differs",
+        "pid namespace differs",
+        "net namespace differs",
+        "process root is jail root",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "inherited environment canary absent",
+        "inherited canary file descriptor closed",
+        "RLIMIT_NOFILE configured",
+        "VMM resides in its cgroup leaf",
+        "all cgroup limits match requested profile",
+        "VMM is PID 1 in its namespace",
+        "no_new_privs active before and after boot",
+        "runtime hardened after PID probe"
+      ],
+      "console_sha256": "ba3ebf16839160c2582be96b54d92884bc58161edc2ad139f5ec68f6e649f1a2",
+      "console_findings": [
+        "2026-10-21T09:42:35.058056847 [half-control-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:35.058121047 [half-control-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:35.058170147 [half-control-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:35.058212247 [half-control-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:35.058259647 [half-control-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:35.058304147 [half-control-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:35.058349247 [half-control-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:35.058391747 [half-control-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:35.058434447 [half-control-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:35.058477647 [half-control-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:35.058522447 [half-control-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:35.058558247 [half-control-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:35.058600947 [half-control-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:35.058638247 [half-control-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:35.058673247 [half-control-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:35.058715247 [half-control-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:35.058754847 [half-control-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:35.058789447 [half-control-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:35.058830847 [half-control-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:35.058874147 [half-control-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "Spectre V2 : User space: Vulnerable",
+        "Speculative Store Bypass: Vulnerable",
+        "2026-10-21T09:42:36.112274019 [half-control-01:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:36.112308419 [half-control-01:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+        "2026-10-21T09:42:36.520783208 [half-control-01:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "i8042: Failed to disable AUX port, but continuing anyway... Is this a SiS?",
+        "2026-10-21T09:42:36.561465507 [half-control-01:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "2026-10-21T09:42:40.422349703 [half-control-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:40.422374003 [half-control-01:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range."
+      ],
+      "outside_canary_unchanged": true,
+      "final_cgroup_events": {
+        "memory.events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 1
+        },
+        "cpu.stat": {
+          "usage_usec": 2332005,
+          "user_usec": 1775655,
+          "system_usec": 556349,
+          "nice_usec": 0,
+          "nr_periods": 55,
+          "nr_throttled": 37,
+          "throttled_usec": 2421190,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "shutdown_quota": "50000 100000",
+      "kernel_stack_samples": null,
+      "shutdown": {
+        "http": 204,
+        "seconds": 0.188258,
+        "cpu_before": {
+          "usage_usec": 2247247,
+          "user_usec": 1701156,
+          "system_usec": 546091,
+          "nice_usec": 0,
+          "nr_periods": 52,
+          "nr_throttled": 36,
+          "throttled_usec": 2414583,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        },
+        "cpu_after": {
+          "usage_usec": 2332005,
+          "user_usec": 1775655,
+          "system_usec": 556349,
+          "nice_usec": 0,
+          "nr_periods": 55,
+          "nr_throttled": 37,
+          "throttled_usec": 2421190,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      }
+    },
+    {
+      "scenario": "half-trace-01",
+      "status": "observed",
+      "failure": null,
+      "capture_failure": null,
+      "exit_code": 0,
+      "panic": false,
+      "cleanup_forced_stop": false,
+      "traced": true,
+      "pids_probe": {
+        "created_threads": 25,
+        "blocked": true
+      },
+      "keyboard_readiness": {
+        "confirmed": true,
+        "seconds": 0.214971,
+        "input_devices": "I: Bus=0011 Vendor=0001 Product=0002 Version=abba\nN: Name=\"AT Raw Set 2 keyboard\"\nP: Phys=isa0060/serio0/input0\nS: Sysfs=/devices/platform/i8042/serio0/input/input0\nU: Uniq=\nH: Handlers=kbd \nB: PROP=0\nB: EV=120013\nB: KEY=402000002 3803078f800d001 feffffdfffefffff fffffffffffffffe\nB: MSC=10\nB: LED=7\n\n"
+      },
+      "runtime": {
+        "namespaces": {
+          "mnt": {
+            "supervisor": "mnt:[4026537517]",
+            "vmm": "mnt:[4026537777]"
+          },
+          "pid": {
+            "supervisor": "pid:[4026537655]",
+            "vmm": "pid:[4026537778]"
+          },
+          "net": {
+            "supervisor": "net:[4026537657]",
+            "vmm": "net:[4026537717]"
+          },
+          "ipc": {
+            "supervisor": "ipc:[4026537654]",
+            "vmm": "ipc:[4026537654]"
+          },
+          "uts": {
+            "supervisor": "uts:[4026537518]",
+            "vmm": "uts:[4026537518]"
+          },
+          "user": {
+            "supervisor": "user:[4026531837]",
+            "vmm": "user:[4026531837]"
+          },
+          "cgroup": {
+            "supervisor": "cgroup:[4026537656]",
+            "vmm": "cgroup:[4026537656]"
+          }
+        },
+        "threads": {
+          "42": {
+            "Name": "firecracker",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "42\t1"
+          },
+          "43": {
+            "Name": "fc_api",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "43\t2"
+          },
+          "44": {
+            "Name": "fc_vcpu 0",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "44\t3"
+          },
+          "45": {
+            "Name": "fc_vcpu 1",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "45\t4"
+          },
+          "46": {
+            "Name": "kvm-nx-lpage-re",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "46\t5"
+          }
+        },
+        "hardened_runtime": true,
+        "environment_keys": [],
+        "open_fd_count": 31,
+        "limits": "Limit                     Soft Limit           Hard Limit           Units     \nMax cpu time              unlimited            unlimited            seconds   \nMax file size             unlimited            unlimited            bytes     \nMax data size             unlimited            unlimited            bytes     \nMax stack size            8388608              unlimited            bytes     \nMax core file size        unlimited            unlimited            bytes     \nMax resident set          unlimited            unlimited            bytes     \nMax processes             unlimited            unlimited            processes \nMax open files            64                   64                   files     \nMax locked memory         67108864             67108864             bytes     \nMax address space         unlimited            unlimited            bytes     \nMax file locks            unlimited            unlimited            locks     \nMax pending signals       63800                63800                signals   \nMax msgqueue size         819200               819200               bytes     \nMax nice priority         0                    0                    \nMax realtime priority     0                    0                    \nMax realtime timeout      unlimited            unlimited            us        \n",
+        "cgroup": "0::/vms/half-trace-01",
+        "resource_files": {
+          "cpu.max": "50000 100000",
+          "memory.max": "402653184",
+          "memory.swap.max": "0",
+          "pids.max": "32"
+        },
+        "network_devices": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n"
+      },
+      "checks": [
+        "API accepted /boot-source: 204",
+        "API accepted /drives/rootfs: 204",
+        "API accepted /machine-config: 204",
+        "API accepted /actions: 204",
+        "complete guest evidence",
+        "mnt namespace differs",
+        "pid namespace differs",
+        "net namespace differs",
+        "process root is jail root",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "inherited environment canary absent",
+        "inherited canary file descriptor closed",
+        "RLIMIT_NOFILE configured",
+        "VMM resides in its cgroup leaf",
+        "all cgroup limits match requested profile",
+        "VMM is PID 1 in its namespace",
+        "no_new_privs active before and after boot",
+        "all runtime threads hardened",
+        "guest keyboard kbd handler confirmed before shutdown request",
+        "PID ceiling encountered",
+        "mnt namespace differs",
+        "pid namespace differs",
+        "net namespace differs",
+        "process root is jail root",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "inherited environment canary absent",
+        "inherited canary file descriptor closed",
+        "RLIMIT_NOFILE configured",
+        "VMM resides in its cgroup leaf",
+        "all cgroup limits match requested profile",
+        "VMM is PID 1 in its namespace",
+        "no_new_privs active before and after boot",
+        "runtime hardened after PID probe"
+      ],
+      "console_sha256": "98d3756ad6e978b94d1a70a3fd73eb231b4cc752fe16b42bcc623f9c220ad9dc",
+      "console_findings": [
+        "2026-10-21T09:42:42.512115747 [half-trace-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:42.512181247 [half-trace-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:42.517203149 [half-trace-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:42.517264549 [half-trace-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:42.517308649 [half-trace-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:42.517355149 [half-trace-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:42.517376849 [half-trace-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:42.517416849 [half-trace-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:42.517457849 [half-trace-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:42.517493749 [half-trace-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:42.517511749 [half-trace-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:42.517551149 [half-trace-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:42.517594549 [half-trace-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:42.517635749 [half-trace-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:42.517676849 [half-trace-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:42.517717449 [half-trace-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:42.517758449 [half-trace-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:42.517799149 [half-trace-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:42.517851349 [half-trace-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:42.517891949 [half-trace-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "Spectre V2 : User space: Vulnerable",
+        "Speculative Store Bypass: Vulnerable",
+        "2026-10-21T09:42:43.440867847 [half-trace-01:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+        "2026-10-21T09:42:43.521379173 [half-trace-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:43.698207830 [half-trace-01:fc_vcpu 1] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "i8042: Failed to disable AUX port, but continuing anyway... Is this a SiS?",
+        "2026-10-21T09:42:43.739037743 [half-trace-01:fc_vcpu 1] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "2026-10-21T09:42:51.374411722 [half-trace-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:51.374431422 [half-trace-01:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range."
+      ],
+      "outside_canary_unchanged": true,
+      "final_cgroup_events": {
+        "memory.events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 1
+        },
+        "cpu.stat": {
+          "usage_usec": 4034864,
+          "user_usec": 2490363,
+          "system_usec": 1544500,
+          "nice_usec": 0,
+          "nr_periods": 92,
+          "nr_throttled": 62,
+          "throttled_usec": 4839432,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "shutdown_quota": "50000 100000",
+      "kernel_stack_samples": {
+        "sha256": "d20f780910d7f90e05fcac8050d8975061494ed3460fc7ea5a1040d719497594",
+        "records": 93,
+        "errors": 0,
+        "nonempty": 90,
+        "empty": 3,
+        "interval_target_seconds": 0.005
+      },
+      "shutdown": {
+        "http": 204,
+        "seconds": 0.162291,
+        "cpu_before": {
+          "usage_usec": 3975031,
+          "user_usec": 2430530,
+          "system_usec": 1544500,
+          "nice_usec": 0,
+          "nr_periods": 88,
+          "nr_throttled": 62,
+          "throttled_usec": 4839432,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        },
+        "cpu_after": {
+          "usage_usec": 4034864,
+          "user_usec": 2490363,
+          "system_usec": 1544500,
+          "nice_usec": 0,
+          "nr_periods": 90,
+          "nr_throttled": 62,
+          "throttled_usec": 4839432,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "capture_metadata": {
+        "status": "validated",
+        "ptrace": false,
+        "events": {
+          "sched/sched_switch": "(prev_pid == 20147 || prev_pid == 20148) || (next_pid == 20147 || next_pid == 20148) || prev_comm == \"firecracker\" || next_comm == \"firecracker\"",
+          "sched/sched_wakeup": "(pid == 20147 || pid == 20148)",
+          "sched/sched_waking": "(pid == 20147 || pid == 20148)",
+          "sched/sched_process_exit": "(pid == 20147 || pid == 20148)",
+          "signal/signal_generate": "(pid == 20147 || pid == 20148)",
+          "signal/signal_deliver": "(common_pid == 20147 || common_pid == 20148)",
+          "kvm/kvm_entry": "(common_pid == 20147 || common_pid == 20148)",
+          "kvm/kvm_exit": "(common_pid == 20147 || common_pid == 20148)",
+          "fcproto_5d49234f6c624b048513ec6f772ae36a/send_enter": "common_pid > 0",
+          "fcproto_5d49234f6c624b048513ec6f772ae36a/send_return": "common_pid > 0",
+          "fcproto_5d49234f6c624b048513ec6f772ae36a/wait_enter": "common_pid > 0",
+          "fcproto_5d49234f6c624b048513ec6f772ae36a/wait_return": "common_pid > 0",
+          "fcproto_5d49234f6c624b048513ec6f772ae36a/drop_enter": "common_pid > 0",
+          "fcproto_5d49234f6c624b048513ec6f772ae36a/drop_return": "common_pid > 0",
+          "fcproto_5d49234f6c624b048513ec6f772ae36a/run_return": "common_pid > 0",
+          "fcproto_5d49234f6c624b048513ec6f772ae36a/disconnected": "common_pid > 0",
+          "fcproto_5d49234f6c624b048513ec6f772ae36a/join_enter": "common_pid > 0",
+          "fcproto_5d49234f6c624b048513ec6f772ae36a/join_return": "common_pid > 0"
+        },
+        "cleanup": true,
+        "protocol": {
+          "group": "fcproto_5d49234f6c624b048513ec6f772ae36a",
+          "points": [
+            {
+              "name": "send_enter",
+              "kind": "p",
+              "file_offset": "0x12a400",
+              "instruction_bytes": "5541574156415541"
+            },
+            {
+              "name": "send_return",
+              "kind": "r",
+              "file_offset": "0x12a400",
+              "instruction_bytes": "5541574156415541"
+            },
+            {
+              "name": "wait_enter",
+              "kind": "p",
+              "file_offset": "0x12b060",
+              "instruction_bytes": "4157415641545348"
+            },
+            {
+              "name": "wait_return",
+              "kind": "r",
+              "file_offset": "0x12b060",
+              "instruction_bytes": "4157415641545348"
+            },
+            {
+              "name": "drop_enter",
+              "kind": "p",
+              "file_offset": "0x13bf40",
+              "instruction_bytes": "5541574156415541"
+            },
+            {
+              "name": "drop_return",
+              "kind": "r",
+              "file_offset": "0x13bf40",
+              "instruction_bytes": "5541574156415541"
+            },
+            {
+              "name": "run_return",
+              "kind": "p",
+              "file_offset": "0x111806",
+              "instruction_bytes": "c3488d3d17c51800"
+            },
+            {
+              "name": "disconnected",
+              "kind": "p",
+              "file_offset": "0x13c152",
+              "instruction_bytes": "488b7c247831f6ff"
+            },
+            {
+              "name": "join_enter",
+              "kind": "p",
+              "file_offset": "0x13c159",
+              "instruction_bytes": "ff15699e1b0085c0"
+            },
+            {
+              "name": "join_return",
+              "kind": "p",
+              "file_offset": "0x13c15f",
+              "instruction_bytes": "85c00f85c5010000"
+            }
+          ],
+          "probes_removed": true,
+          "stack_trigger_removed": true,
+          "build_id": "43fcf6af0eede7e885a4376d361962fe6d7bfb51",
+          "stack_trigger_readback": "stacktrace:count=64 if (prev_pid == 20147 || prev_pid == 20148 || prev_comm == \"firecracker\") && (prev_state & 3)\n",
+          "scope": "Uprobes target this scenario executable inode; scheduling stacks target discovered vCPUs or firecracker main comm",
+          "cleanup_errors": []
+        },
+        "threads": [
+          {
+            "trace_tid": 20147,
+            "name": "fc_vcpu 0"
+          },
+          {
+            "trace_tid": 20148,
+            "name": "fc_vcpu 1"
+          }
+        ],
+        "discovery_sha256": "fd394613893f1afe3cb0b18fced0e6147104eed5320a788319a1738facc9e12c",
+        "clock": "local global counter uptime perf [mono] mono_raw boot tai x86-tsc",
+        "start_monotonic": 343212.010057024,
+        "raw_sha256": "99a5bf82ce8ea43404275f4c105c8df3d1ea49876d081a5a8feae11f2a4fdad2",
+        "raw_bytes": 591820,
+        "buffer_stats": {
+          "cpu7": "entries: 1370\noverrun: 0\ncommit overrun: 0\nbytes: 82648\noldest event ts: 343212.012443\nnow ts: 343212.360457\ndropped events: 0\nread events: 0\n",
+          "cpu6": "entries: 1925\noverrun: 0\ncommit overrun: 0\nbytes: 115188\noldest event ts: 343212.010165\nnow ts: 343212.360587\ndropped events: 0\nread events: 0\n",
+          "cpu5": "entries: 0\noverrun: 0\ncommit overrun: 0\nbytes: 0\noldest event ts:     0.000000\nnow ts: 343212.360799\ndropped events: 0\nread events: 0\n",
+          "cpu4": "entries: 16\noverrun: 0\ncommit overrun: 0\nbytes: 640\noldest event ts: 343212.080401\nnow ts: 343212.360977\ndropped events: 0\nread events: 0\n",
+          "cpu3": "entries: 0\noverrun: 0\ncommit overrun: 0\nbytes: 0\noldest event ts:     0.000000\nnow ts: 343212.361106\ndropped events: 0\nread events: 0\n",
+          "cpu2": "entries: 0\noverrun: 0\ncommit overrun: 0\nbytes: 0\noldest event ts:     0.000000\nnow ts: 343212.361195\ndropped events: 0\nread events: 0\n",
+          "cpu1": "entries: 0\noverrun: 0\ncommit overrun: 0\nbytes: 0\noldest event ts:     0.000000\nnow ts: 343212.361353\ndropped events: 0\nread events: 0\n",
+          "cpu0": "entries: 4\noverrun: 0\ncommit overrun: 0\nbytes: 160\noldest event ts: 343212.012427\nnow ts: 343212.361414\ndropped events: 0\nread events: 0\n"
+        },
+        "stop_monotonic": 343212.361434317
+      },
+      "stack_trigger_installed": true,
+      "protocol_valid": true,
+      "scheduler_valid": true,
+      "stacks_nonempty": 90,
+      "stack_phases": {
+        "response_wait": 0,
+        "join": 0,
+        "outside_probed_wait": 90
+      },
+      "detail_file": "jailer-4_aesimh-half-trace-01.json",
+      "detail_sha256": "6fbc3456d3ee393f04f37cb0b02f21b2d25615aa2583f3342a9d129059a53185"
+    },
+    {
+      "scenario": "boost-control-01",
+      "status": "observed",
+      "failure": null,
+      "capture_failure": null,
+      "exit_code": 0,
+      "panic": false,
+      "cleanup_forced_stop": false,
+      "traced": false,
+      "pids_probe": {
+        "created_threads": 25,
+        "blocked": true
+      },
+      "keyboard_readiness": {
+        "confirmed": true,
+        "seconds": 0.2225,
+        "input_devices": "I: Bus=0011 Vendor=0001 Product=0002 Version=abba\nN: Name=\"AT Raw Set 2 keyboard\"\nP: Phys=isa0060/serio0/input0\nS: Sysfs=/devices/platform/i8042/serio0/input/input0\nU: Uniq=\nH: Handlers=kbd \nB: PROP=0\nB: EV=120013\nB: KEY=402000002 3803078f800d001 feffffdfffefffff fffffffffffffffe\nB: MSC=10\nB: LED=7\n\n"
+      },
+      "runtime": {
+        "namespaces": {
+          "mnt": {
+            "supervisor": "mnt:[4026537517]",
+            "vmm": "mnt:[4026537777]"
+          },
+          "pid": {
+            "supervisor": "pid:[4026537655]",
+            "vmm": "pid:[4026537778]"
+          },
+          "net": {
+            "supervisor": "net:[4026537657]",
+            "vmm": "net:[4026537717]"
+          },
+          "ipc": {
+            "supervisor": "ipc:[4026537654]",
+            "vmm": "ipc:[4026537654]"
+          },
+          "uts": {
+            "supervisor": "uts:[4026537518]",
+            "vmm": "uts:[4026537518]"
+          },
+          "user": {
+            "supervisor": "user:[4026531837]",
+            "vmm": "user:[4026531837]"
+          },
+          "cgroup": {
+            "supervisor": "cgroup:[4026537656]",
+            "vmm": "cgroup:[4026537656]"
+          }
+        },
+        "threads": {
+          "75": {
+            "Name": "firecracker",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "75\t1"
+          },
+          "76": {
+            "Name": "fc_api",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "76\t2"
+          },
+          "77": {
+            "Name": "fc_vcpu 0",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "77\t3"
+          },
+          "78": {
+            "Name": "fc_vcpu 1",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "78\t4"
+          },
+          "79": {
+            "Name": "kvm-nx-lpage-re",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "79\t5"
+          }
+        },
+        "hardened_runtime": true,
+        "environment_keys": [],
+        "open_fd_count": 31,
+        "limits": "Limit                     Soft Limit           Hard Limit           Units     \nMax cpu time              unlimited            unlimited            seconds   \nMax file size             unlimited            unlimited            bytes     \nMax data size             unlimited            unlimited            bytes     \nMax stack size            8388608              unlimited            bytes     \nMax core file size        unlimited            unlimited            bytes     \nMax resident set          unlimited            unlimited            bytes     \nMax processes             unlimited            unlimited            processes \nMax open files            64                   64                   files     \nMax locked memory         67108864             67108864             bytes     \nMax address space         unlimited            unlimited            bytes     \nMax file locks            unlimited            unlimited            locks     \nMax pending signals       63800                63800                signals   \nMax msgqueue size         819200               819200               bytes     \nMax nice priority         0                    0                    \nMax realtime priority     0                    0                    \nMax realtime timeout      unlimited            unlimited            us        \n",
+        "cgroup": "0::/vms/boost-control-01",
+        "resource_files": {
+          "cpu.max": "50000 100000",
+          "memory.max": "402653184",
+          "memory.swap.max": "0",
+          "pids.max": "32"
+        },
+        "network_devices": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n"
+      },
+      "checks": [
+        "API accepted /boot-source: 204",
+        "API accepted /drives/rootfs: 204",
+        "API accepted /machine-config: 204",
+        "API accepted /actions: 204",
+        "complete guest evidence",
+        "mnt namespace differs",
+        "pid namespace differs",
+        "net namespace differs",
+        "process root is jail root",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "inherited environment canary absent",
+        "inherited canary file descriptor closed",
+        "RLIMIT_NOFILE configured",
+        "VMM resides in its cgroup leaf",
+        "all cgroup limits match requested profile",
+        "VMM is PID 1 in its namespace",
+        "no_new_privs active before and after boot",
+        "all runtime threads hardened",
+        "guest keyboard kbd handler confirmed before shutdown request",
+        "PID ceiling encountered",
+        "mnt namespace differs",
+        "pid namespace differs",
+        "net namespace differs",
+        "process root is jail root",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "inherited environment canary absent",
+        "inherited canary file descriptor closed",
+        "RLIMIT_NOFILE configured",
+        "VMM resides in its cgroup leaf",
+        "all cgroup limits match requested profile",
+        "VMM is PID 1 in its namespace",
+        "no_new_privs active before and after boot",
+        "runtime hardened after PID probe"
+      ],
+      "console_sha256": "22bc0ff4555c92903287fe31951d678ae907bdb43229c939900ac0b808cfd9c9",
+      "console_findings": [
+        "2026-10-21T09:42:53.521558380 [boost-control-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:53.521613880 [boost-control-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:53.521653680 [boost-control-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:53.521681980 [boost-control-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:53.521707580 [boost-control-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:53.521730980 [boost-control-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:53.521756780 [boost-control-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:53.521790180 [boost-control-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:53.521816780 [boost-control-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:53.521840680 [boost-control-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:53.521891480 [boost-control-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:53.521918380 [boost-control-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:53.521943480 [boost-control-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:53.521968780 [boost-control-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:53.521994080 [boost-control-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:53.522019380 [boost-control-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:53.522042780 [boost-control-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:53.522068080 [boost-control-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:53.522093080 [boost-control-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:42:53.522115880 [boost-control-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "Spectre V2 : User space: Vulnerable",
+        "Speculative Store Bypass: Vulnerable",
+        "2026-10-21T09:42:54.302416665 [boost-control-01:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+        "2026-10-21T09:42:54.542019861 [boost-control-01:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "i8042: Failed to disable AUX port, but continuing anyway... Is this a SiS?",
+        "2026-10-21T09:42:54.568748160 [boost-control-01:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)"
+      ],
+      "outside_canary_unchanged": true,
+      "final_cgroup_events": {
+        "memory.events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 1
+        },
+        "cpu.stat": {
+          "usage_usec": 2154757,
+          "user_usec": 1903296,
+          "system_usec": 251460,
+          "nice_usec": 0,
+          "nr_periods": 54,
+          "nr_throttled": 36,
+          "throttled_usec": 2647678,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "shutdown_quota": "200000 100000",
+      "kernel_stack_samples": null,
+      "shutdown": {
+        "http": 204,
+        "seconds": 0.145968,
+        "cpu_before": {
+          "usage_usec": 2090420,
+          "user_usec": 1846029,
+          "system_usec": 244391,
+          "nice_usec": 0,
+          "nr_periods": 53,
+          "nr_throttled": 36,
+          "throttled_usec": 2647678,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        },
+        "cpu_after": {
+          "usage_usec": 2154757,
+          "user_usec": 1903296,
+          "system_usec": 251460,
+          "nice_usec": 0,
+          "nr_periods": 54,
+          "nr_throttled": 36,
+          "throttled_usec": 2647678,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      }
+    },
+    {
+      "scenario": "boost-trace-01",
+      "status": "observed",
+      "failure": null,
+      "capture_failure": null,
+      "exit_code": 0,
+      "panic": false,
+      "cleanup_forced_stop": false,
+      "traced": true,
+      "pids_probe": {
+        "created_threads": 25,
+        "blocked": true
+      },
+      "keyboard_readiness": {
+        "confirmed": true,
+        "seconds": 0.09974,
+        "input_devices": "I: Bus=0011 Vendor=0001 Product=0002 Version=abba\nN: Name=\"AT Raw Set 2 keyboard\"\nP: Phys=isa0060/serio0/input0\nS: Sysfs=/devices/platform/i8042/serio0/input/input0\nU: Uniq=\nH: Handlers=kbd \nB: PROP=0\nB: EV=120013\nB: KEY=402000002 3803078f800d001 feffffdfffefffff fffffffffffffffe\nB: MSC=10\nB: LED=7\n\n"
+      },
+      "runtime": {
+        "namespaces": {
+          "mnt": {
+            "supervisor": "mnt:[4026537517]",
+            "vmm": "mnt:[4026537777]"
+          },
+          "pid": {
+            "supervisor": "pid:[4026537655]",
+            "vmm": "pid:[4026537778]"
+          },
+          "net": {
+            "supervisor": "net:[4026537657]",
+            "vmm": "net:[4026537717]"
+          },
+          "ipc": {
+            "supervisor": "ipc:[4026537654]",
+            "vmm": "ipc:[4026537654]"
+          },
+          "uts": {
+            "supervisor": "uts:[4026537518]",
+            "vmm": "uts:[4026537518]"
+          },
+          "user": {
+            "supervisor": "user:[4026531837]",
+            "vmm": "user:[4026531837]"
+          },
+          "cgroup": {
+            "supervisor": "cgroup:[4026537656]",
+            "vmm": "cgroup:[4026537656]"
+          }
+        },
+        "threads": {
+          "108": {
+            "Name": "firecracker",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "108\t1"
+          },
+          "109": {
+            "Name": "fc_api",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "109\t2"
+          },
+          "110": {
+            "Name": "fc_vcpu 0",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "110\t3"
+          },
+          "111": {
+            "Name": "fc_vcpu 1",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "111\t4"
+          },
+          "112": {
+            "Name": "kvm-nx-lpage-re",
+            "Uid": "65534\t65534\t65534\t65534",
+            "Gid": "65534\t65534\t65534\t65534",
+            "Groups": "",
+            "CapEff": "0000000000000000",
+            "CapPrm": "0000000000000000",
+            "CapInh": "0000000000000000",
+            "CapAmb": "0000000000000000",
+            "CapBnd": "000001ffffffffff",
+            "NoNewPrivs": "1",
+            "Seccomp": "2",
+            "NSpid": "112\t5"
+          }
+        },
+        "hardened_runtime": true,
+        "environment_keys": [],
+        "open_fd_count": 31,
+        "limits": "Limit                     Soft Limit           Hard Limit           Units     \nMax cpu time              unlimited            unlimited            seconds   \nMax file size             unlimited            unlimited            bytes     \nMax data size             unlimited            unlimited            bytes     \nMax stack size            8388608              unlimited            bytes     \nMax core file size        unlimited            unlimited            bytes     \nMax resident set          unlimited            unlimited            bytes     \nMax processes             unlimited            unlimited            processes \nMax open files            64                   64                   files     \nMax locked memory         67108864             67108864             bytes     \nMax address space         unlimited            unlimited            bytes     \nMax file locks            unlimited            unlimited            locks     \nMax pending signals       63800                63800                signals   \nMax msgqueue size         819200               819200               bytes     \nMax nice priority         0                    0                    \nMax realtime priority     0                    0                    \nMax realtime timeout      unlimited            unlimited            us        \n",
+        "cgroup": "0::/vms/boost-trace-01",
+        "resource_files": {
+          "cpu.max": "50000 100000",
+          "memory.max": "402653184",
+          "memory.swap.max": "0",
+          "pids.max": "32"
+        },
+        "network_devices": "Inter-|   Receive                                                |  Transmit\n face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed\n    lo:       0       0    0    0    0     0          0         0        0       0    0    0    0     0       0          0\n"
+      },
+      "checks": [
+        "API accepted /boot-source: 204",
+        "API accepted /drives/rootfs: 204",
+        "API accepted /machine-config: 204",
+        "API accepted /actions: 204",
+        "complete guest evidence",
+        "mnt namespace differs",
+        "pid namespace differs",
+        "net namespace differs",
+        "process root is jail root",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "inherited environment canary absent",
+        "inherited canary file descriptor closed",
+        "RLIMIT_NOFILE configured",
+        "VMM resides in its cgroup leaf",
+        "all cgroup limits match requested profile",
+        "VMM is PID 1 in its namespace",
+        "no_new_privs active before and after boot",
+        "all runtime threads hardened",
+        "guest keyboard kbd handler confirmed before shutdown request",
+        "PID ceiling encountered",
+        "mnt namespace differs",
+        "pid namespace differs",
+        "net namespace differs",
+        "process root is jail root",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "thread UIDs dropped",
+        "thread GIDs dropped",
+        "no supplementary root group",
+        "no effective/permitted/inherited/ambient capabilities",
+        "inherited environment canary absent",
+        "inherited canary file descriptor closed",
+        "RLIMIT_NOFILE configured",
+        "VMM resides in its cgroup leaf",
+        "all cgroup limits match requested profile",
+        "VMM is PID 1 in its namespace",
+        "no_new_privs active before and after boot",
+        "runtime hardened after PID probe"
+      ],
+      "console_sha256": "cfe2e82c3d943f20dd252bc6f42c770bb977fae11f013538aa1b2ff2a6707a0d",
+      "console_findings": [
+        "2026-10-21T09:43:02.051953643 [boost-trace-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:43:02.052034243 [boost-trace-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:43:02.052055643 [boost-trace-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:43:02.052072143 [boost-trace-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:43:02.052088743 [boost-trace-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:43:02.052104743 [boost-trace-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:43:02.052121043 [boost-trace-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:43:02.052136943 [boost-trace-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:43:02.052154343 [boost-trace-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:43:02.052170243 [boost-trace-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:43:02.052186543 [boost-trace-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:43:02.052202343 [boost-trace-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:43:02.052218543 [boost-trace-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:43:02.052234443 [boost-trace-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:43:02.052250343 [boost-trace-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:43:02.052266143 [boost-trace-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:43:02.052282343 [boost-trace-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:43:02.052298043 [boost-trace-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:43:02.052313843 [boost-trace-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:43:02.052329543 [boost-trace-01:fc_vcpu 0] vcpu: IO read @ 0x71:0x1 failed: Failed to find address range.",
+        "Spectre V2 : User space: Vulnerable",
+        "Speculative Store Bypass: Vulnerable",
+        "2026-10-21T09:43:03.047504600 [boost-trace-01:fc_vcpu 0] vcpu: IO write @ 0x80:0x1 failed: Failed to find address range.",
+        "Performance Events: unsupported p6 CPU model 158 no PMU driver, software events only.",
+        "2026-10-21T09:43:03.107050404 [boost-trace-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:43:03.326367916 [boost-trace-01:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "i8042: Failed to disable AUX port, but continuing anyway... Is this a SiS?",
+        "2026-10-21T09:43:03.359016618 [boost-trace-01:fc_vcpu 0] Failed to trigger i8042 kbd interrupt (disabled by guest OS)",
+        "2026-10-21T09:43:07.235306839 [boost-trace-01:fc_vcpu 0] vcpu: IO write @ 0x70:0x1 failed: Failed to find address range.",
+        "2026-10-21T09:43:07.235333339 [boost-trace-01:fc_vcpu 0] vcpu: IO write @ 0x71:0x1 failed: Failed to find address range."
+      ],
+      "outside_canary_unchanged": true,
+      "final_cgroup_events": {
+        "memory.events": {
+          "low": 0,
+          "high": 0,
+          "max": 0,
+          "oom": 0,
+          "oom_kill": 0,
+          "oom_group_kill": 0
+        },
+        "pids.events": {
+          "max": 1
+        },
+        "cpu.stat": {
+          "usage_usec": 2244720,
+          "user_usec": 1870600,
+          "system_usec": 374120,
+          "nice_usec": 0,
+          "nr_periods": 55,
+          "nr_throttled": 30,
+          "throttled_usec": 2213650,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "shutdown_quota": "200000 100000",
+      "kernel_stack_samples": {
+        "sha256": "ee59646d223bca1fb0b52608ac5a4410e1ae3a147b3c3b4ea8188d04d74fb94e",
+        "records": 97,
+        "errors": 0,
+        "nonempty": 92,
+        "empty": 5,
+        "interval_target_seconds": 0.005
+      },
+      "shutdown": {
+        "http": 204,
+        "seconds": 0.162597,
+        "cpu_before": {
+          "usage_usec": 2179933,
+          "user_usec": 1815929,
+          "system_usec": 364003,
+          "nice_usec": 0,
+          "nr_periods": 52,
+          "nr_throttled": 30,
+          "throttled_usec": 2213650,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        },
+        "cpu_after": {
+          "usage_usec": 2244720,
+          "user_usec": 1870600,
+          "system_usec": 374120,
+          "nice_usec": 0,
+          "nr_periods": 53,
+          "nr_throttled": 30,
+          "throttled_usec": 2213650,
+          "nr_bursts": 0,
+          "burst_usec": 0
+        }
+      },
+      "capture_metadata": {
+        "status": "validated",
+        "ptrace": false,
+        "events": {
+          "sched/sched_switch": "(prev_pid == 22519 || prev_pid == 22520) || (next_pid == 22519 || next_pid == 22520) || prev_comm == \"firecracker\" || next_comm == \"firecracker\"",
+          "sched/sched_wakeup": "(pid == 22519 || pid == 22520)",
+          "sched/sched_waking": "(pid == 22519 || pid == 22520)",
+          "sched/sched_process_exit": "(pid == 22519 || pid == 22520)",
+          "signal/signal_generate": "(pid == 22519 || pid == 22520)",
+          "signal/signal_deliver": "(common_pid == 22519 || common_pid == 22520)",
+          "kvm/kvm_entry": "(common_pid == 22519 || common_pid == 22520)",
+          "kvm/kvm_exit": "(common_pid == 22519 || common_pid == 22520)",
+          "fcproto_7b8674930447477d9856df8ffac66e2b/send_enter": "common_pid > 0",
+          "fcproto_7b8674930447477d9856df8ffac66e2b/send_return": "common_pid > 0",
+          "fcproto_7b8674930447477d9856df8ffac66e2b/wait_enter": "common_pid > 0",
+          "fcproto_7b8674930447477d9856df8ffac66e2b/wait_return": "common_pid > 0",
+          "fcproto_7b8674930447477d9856df8ffac66e2b/drop_enter": "common_pid > 0",
+          "fcproto_7b8674930447477d9856df8ffac66e2b/drop_return": "common_pid > 0",
+          "fcproto_7b8674930447477d9856df8ffac66e2b/run_return": "common_pid > 0",
+          "fcproto_7b8674930447477d9856df8ffac66e2b/disconnected": "common_pid > 0",
+          "fcproto_7b8674930447477d9856df8ffac66e2b/join_enter": "common_pid > 0",
+          "fcproto_7b8674930447477d9856df8ffac66e2b/join_return": "common_pid > 0"
+        },
+        "cleanup": true,
+        "protocol": {
+          "group": "fcproto_7b8674930447477d9856df8ffac66e2b",
+          "points": [
+            {
+              "name": "send_enter",
+              "kind": "p",
+              "file_offset": "0x12a400",
+              "instruction_bytes": "5541574156415541"
+            },
+            {
+              "name": "send_return",
+              "kind": "r",
+              "file_offset": "0x12a400",
+              "instruction_bytes": "5541574156415541"
+            },
+            {
+              "name": "wait_enter",
+              "kind": "p",
+              "file_offset": "0x12b060",
+              "instruction_bytes": "4157415641545348"
+            },
+            {
+              "name": "wait_return",
+              "kind": "r",
+              "file_offset": "0x12b060",
+              "instruction_bytes": "4157415641545348"
+            },
+            {
+              "name": "drop_enter",
+              "kind": "p",
+              "file_offset": "0x13bf40",
+              "instruction_bytes": "5541574156415541"
+            },
+            {
+              "name": "drop_return",
+              "kind": "r",
+              "file_offset": "0x13bf40",
+              "instruction_bytes": "5541574156415541"
+            },
+            {
+              "name": "run_return",
+              "kind": "p",
+              "file_offset": "0x111806",
+              "instruction_bytes": "c3488d3d17c51800"
+            },
+            {
+              "name": "disconnected",
+              "kind": "p",
+              "file_offset": "0x13c152",
+              "instruction_bytes": "488b7c247831f6ff"
+            },
+            {
+              "name": "join_enter",
+              "kind": "p",
+              "file_offset": "0x13c159",
+              "instruction_bytes": "ff15699e1b0085c0"
+            },
+            {
+              "name": "join_return",
+              "kind": "p",
+              "file_offset": "0x13c15f",
+              "instruction_bytes": "85c00f85c5010000"
+            }
+          ],
+          "probes_removed": true,
+          "stack_trigger_removed": true,
+          "build_id": "43fcf6af0eede7e885a4376d361962fe6d7bfb51",
+          "stack_trigger_readback": "stacktrace:count=64 if (prev_pid == 22519 || prev_pid == 22520 || prev_comm == \"firecracker\") && (prev_state & 3)\n",
+          "scope": "Uprobes target this scenario executable inode; scheduling stacks target discovered vCPUs or firecracker main comm",
+          "cleanup_errors": []
+        },
+        "threads": [
+          {
+            "trace_tid": 22519,
+            "name": "fc_vcpu 0"
+          },
+          {
+            "trace_tid": 22520,
+            "name": "fc_vcpu 1"
+          }
+        ],
+        "discovery_sha256": "b8a68c40dd09872d6768e9678e8b115bbcd75b92bae394e65c8b62ba8280eeda",
+        "clock": "local global counter uptime perf [mono] mono_raw boot tai x86-tsc",
+        "start_monotonic": 343227.865641232,
+        "raw_sha256": "dfc1d95e19aa15bf1a3db635aeef5034ff6bfe653601e499a83f199ee4a04504",
+        "raw_bytes": 578412,
+        "buffer_stats": {
+          "cpu7": "entries: 483\noverrun: 0\ncommit overrun: 0\nbytes: 28440\noldest event ts: 343227.865841\nnow ts: 343228.225890\ndropped events: 0\nread events: 0\n",
+          "cpu6": "entries: 2731\noverrun: 0\ncommit overrun: 0\nbytes: 164836\noldest event ts: 343227.869259\nnow ts: 343228.225995\ndropped events: 0\nread events: 0\n",
+          "cpu5": "entries: 0\noverrun: 0\ncommit overrun: 0\nbytes: 0\noldest event ts:     0.000000\nnow ts: 343228.226071\ndropped events: 0\nread events: 0\n",
+          "cpu4": "entries: 0\noverrun: 0\ncommit overrun: 0\nbytes: 0\noldest event ts:     0.000000\nnow ts: 343228.226141\ndropped events: 0\nread events: 0\n",
+          "cpu3": "entries: 0\noverrun: 0\ncommit overrun: 0\nbytes: 0\noldest event ts:     0.000000\nnow ts: 343228.226190\ndropped events: 0\nread events: 0\n",
+          "cpu2": "entries: 2\noverrun: 0\ncommit overrun: 0\nbytes: 80\noldest event ts: 343227.890826\nnow ts: 343228.226252\ndropped events: 0\nread events: 0\n",
+          "cpu1": "entries: 0\noverrun: 0\ncommit overrun: 0\nbytes: 0\noldest event ts:     0.000000\nnow ts: 343228.226302\ndropped events: 0\nread events: 0\n",
+          "cpu0": "entries: 10\noverrun: 0\ncommit overrun: 0\nbytes: 400\noldest event ts: 343227.888344\nnow ts: 343228.226359\ndropped events: 0\nread events: 0\n"
+        },
+        "stop_monotonic": 343228.226377952
+      },
+      "stack_trigger_installed": true,
+      "protocol_valid": true,
+      "scheduler_valid": true,
+      "stacks_nonempty": 92,
+      "stack_phases": {
+        "response_wait": 0,
+        "join": 0,
+        "outside_probed_wait": 92
+      },
+      "detail_file": "jailer-4_aesimh-boost-trace-01.json",
+      "detail_sha256": "332270672fb9ec82d60bc936d29d6abc9561db875a07a1354221d1c37d45febd"
+    }
+  ],
+  "load_before": {
+    "running": true,
+    "oom_killed": false,
+    "user": "65534:65534",
+    "affinity": "6,7",
+    "memory": 67108864,
+    "pids_limit": 8
+  },
+  "load_after": {
+    "running": true,
+    "oom_killed": false,
+    "user": "65534:65534",
+    "affinity": "6,7",
+    "memory": 67108864,
+    "pids_limit": 8
+  },
+  "reviewed_status": "passed"
+}

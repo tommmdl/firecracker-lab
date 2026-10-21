@@ -1,0 +1,111 @@
+{
+  "binary_sha256": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+  "debug_sha256": "541cd21d0be873b47965fd0e39d10174a377d43ea5316b48edf5f657d57437b0",
+  "matching_build_id": "43fcf6af0eede7e885a4376d361962fe6d7bfb51",
+  "source_commit": "95f868c8e345b1cc8faccd1a3c910b4989dc3f58",
+  "source_archive_sha256": "27280787407229c412901dfcf74cd378f1336010e71050aba43ace51cd4a0f4f",
+  "source": {
+    "src/vmm/src/vstate/vcpu.rs": {
+      "sha256": "b623b624b00d175f052c0540811683aad3a9e58c18896a50855feb6bf1839006",
+      "join_timeout_constant": "const VCPU_JOIN_TIMEOUT: Duration = Duration::from_secs(1);"
+    },
+    "src/vmm/src/vstate/vm.rs": {
+      "sha256": "efde675dccb5b1558b9afb40194fcec3874db6d0645262f3f0cc84dd6595bae9",
+      "join_timeout_constant": null
+    }
+  },
+  "points": [
+    {
+      "name": "send_enter",
+      "kind": "p",
+      "file_offset": "0x12a400",
+      "instruction_bytes": "5541574156415541",
+      "symbol": "<vmm::vstate::vcpu::VcpuHandle>::send_event",
+      "disassembly": "000000000012a400 <_RNvMs0_NtNtCs5e8JOxqgrjm_3vmm6vstate4vcpuNtB5_10VcpuHandle10send_event>:\n  12a400:\t55                   \tpush   %rbp\n  12a401:\t41 57                \tpush   %r15\n  12a403:\t41 56                \tpush   %r14\n  12a405:\t41 55                \tpush   %r13\n  12a407:\t41                   \trex.B"
+    },
+    {
+      "name": "send_return",
+      "kind": "r",
+      "file_offset": "0x12a400",
+      "instruction_bytes": "5541574156415541",
+      "symbol": "<vmm::vstate::vcpu::VcpuHandle>::send_event",
+      "disassembly": "000000000012a400 <_RNvMs0_NtNtCs5e8JOxqgrjm_3vmm6vstate4vcpuNtB5_10VcpuHandle10send_event>:\n  12a400:\t55                   \tpush   %rbp\n  12a401:\t41 57                \tpush   %r15\n  12a403:\t41 56                \tpush   %r14\n  12a405:\t41 55                \tpush   %r13\n  12a407:\t41                   \trex.B"
+    },
+    {
+      "name": "wait_enter",
+      "kind": "p",
+      "file_offset": "0x12b060",
+      "instruction_bytes": "4157415641545348",
+      "symbol": "<std::sync::mpmc::Receiver<vmm::vstate::vcpu::VcpuResponse>>::recv_timeout",
+      "disassembly": "000000000012b060 <_RNvMsg_NtNtCs4jGZa0kljo6_3std4sync4mpmcINtB5_8ReceiverNtNtNtCs5e8JOxqgrjm_3vmm6vstate4vcpu12VcpuResponseE12recv_timeoutBW_>:\n  12b060:\t41 57                \tpush   %r15\n  12b062:\t41 56                \tpush   %r14\n  12b064:\t41 54                \tpush   %r12\n  12b066:\t53                   \tpush   %rbx\n  12b067:\t48                   \trex.W"
+    },
+    {
+      "name": "wait_return",
+      "kind": "r",
+      "file_offset": "0x12b060",
+      "instruction_bytes": "4157415641545348",
+      "symbol": "<std::sync::mpmc::Receiver<vmm::vstate::vcpu::VcpuResponse>>::recv_timeout",
+      "disassembly": "000000000012b060 <_RNvMsg_NtNtCs4jGZa0kljo6_3std4sync4mpmcINtB5_8ReceiverNtNtNtCs5e8JOxqgrjm_3vmm6vstate4vcpu12VcpuResponseE12recv_timeoutBW_>:\n  12b060:\t41 57                \tpush   %r15\n  12b062:\t41 56                \tpush   %r14\n  12b064:\t41 54                \tpush   %r12\n  12b066:\t53                   \tpush   %rbx\n  12b067:\t48                   \trex.W"
+    },
+    {
+      "name": "drop_enter",
+      "kind": "p",
+      "file_offset": "0x13bf40",
+      "instruction_bytes": "5541574156415541",
+      "symbol": "core::ptr::drop_glue::<vmm::vstate::vcpu::VcpuHandle>",
+      "disassembly": "000000000013bf40 <_RINvNtCs6MsmXZZxg3p_4core3ptr9drop_glueNtNtNtCs5e8JOxqgrjm_3vmm6vstate4vcpu10VcpuHandleEBH_>:\n  13bf40:\t55                   \tpush   %rbp\n  13bf41:\t41 57                \tpush   %r15\n  13bf43:\t41 56                \tpush   %r14\n  13bf45:\t41 55                \tpush   %r13\n  13bf47:\t41                   \trex.B"
+    },
+    {
+      "name": "drop_return",
+      "kind": "r",
+      "file_offset": "0x13bf40",
+      "instruction_bytes": "5541574156415541",
+      "symbol": "core::ptr::drop_glue::<vmm::vstate::vcpu::VcpuHandle>",
+      "disassembly": "000000000013bf40 <_RINvNtCs6MsmXZZxg3p_4core3ptr9drop_glueNtNtNtCs5e8JOxqgrjm_3vmm6vstate4vcpu10VcpuHandleEBH_>:\n  13bf40:\t55                   \tpush   %rbp\n  13bf41:\t41 57                \tpush   %r15\n  13bf43:\t41 56                \tpush   %r14\n  13bf45:\t41 55                \tpush   %r13\n  13bf47:\t41                   \trex.B"
+    },
+    {
+      "name": "run_return",
+      "kind": "p",
+      "file_offset": "0x111806",
+      "instruction_bytes": "c3488d3d17c51800",
+      "symbol": "<vmm::vstate::vcpu::Vcpu>::run",
+      "disassembly": "0000000000111806 <_RNvMNtNtCs5e8JOxqgrjm_3vmm6vstate4vcpuNtB2_4Vcpu3run+0x40f6>:\n  111806:\tc3                   \tret\n  111807:\t48 8d 3d 17 c5 18 00 \tlea    0x18c517(%rip),%rdi        # 29dd25 <_RNvCs8XKpCn63JoO_4itoa13DECIMAL_PAIRS+0xe9f>"
+    },
+    {
+      "name": "disconnected",
+      "kind": "p",
+      "file_offset": "0x13c152",
+      "instruction_bytes": "488b7c247831f6ff",
+      "symbol": "core::ptr::drop_glue::<vmm::vstate::vcpu::VcpuHandle>",
+      "disassembly": "000000000013c152 <_RINvNtCs6MsmXZZxg3p_4core3ptr9drop_glueNtNtNtCs5e8JOxqgrjm_3vmm6vstate4vcpu10VcpuHandleEBH_+0x212>:\n  13c152:\t48 8b 7c 24 78       \tmov    0x78(%rsp),%rdi\n  13c157:\t31 f6                \txor    %esi,%esi\n  13c159:\tff                   \t.byte 0xff"
+    },
+    {
+      "name": "join_enter",
+      "kind": "p",
+      "file_offset": "0x13c159",
+      "instruction_bytes": "ff15699e1b0085c0",
+      "symbol": "core::ptr::drop_glue::<vmm::vstate::vcpu::VcpuHandle>",
+      "disassembly": "000000000013c159 <_RINvNtCs6MsmXZZxg3p_4core3ptr9drop_glueNtNtNtCs5e8JOxqgrjm_3vmm6vstate4vcpu10VcpuHandleEBH_+0x219>:\n  13c159:\tff 15 69 9e 1b 00    \tcall   *0x1b9e69(%rip)        # 2f5fc8 <_GLOBAL_OFFSET_TABLE_+0x368>\n  13c15f:\t85 c0                \ttest   %eax,%eax"
+    },
+    {
+      "name": "join_return",
+      "kind": "p",
+      "file_offset": "0x13c15f",
+      "instruction_bytes": "85c00f85c5010000",
+      "symbol": "core::ptr::drop_glue::<vmm::vstate::vcpu::VcpuHandle>",
+      "disassembly": "000000000013c15f <_RINvNtCs6MsmXZZxg3p_4core3ptr9drop_glueNtNtNtCs5e8JOxqgrjm_3vmm6vstate4vcpu10VcpuHandleEBH_+0x21f>:\n  13c15f:\t85 c0                \ttest   %eax,%eax\n  13c161:\t0f 85 c5 01 00 00    \tjne    13c32c <_RINvNtCs6MsmXZZxg3p_4core3ptr9drop_glueNtNtNtCs5e8JOxqgrjm_3vmm6vstate4vcpu10VcpuHandleEBH_+0x3ec>"
+    }
+  ],
+  "program_headers": "\nElf file type is DYN (Position-Independent Executable file)\nEntry point 0x27c79\nThere are 10 program headers, starting at offset 64\n\nProgram Headers:\n  Type           Offset   VirtAddr           PhysAddr           FileSiz  MemSiz   Flg Align\n  LOAD           0x000000 0x0000000000000000 0x0000000000000000 0x0115a0 0x0115a0 R   0x1000\n  LOAD           0x012000 0x0000000000012000 0x0000000000012000 0x2680b1 0x2680b1 R E 0x1000\n  LOAD           0x27b000 0x000000000027b000 0x000000000027b000 0x06c1f4 0x06c1f4 R   0x1000\n  LOAD           0x2e7a28 0x00000000002e8a28 0x00000000002e8a28 0x00e888 0x011998 RW  0x1000\n  DYNAMIC        0x2f4ae0 0x00000000002f5ae0 0x00000000002f5ae0 0x000180 0x000180 RW  0x8\n  NOTE           0x000270 0x0000000000000270 0x0000000000000270 0x000024 0x000024 R   0x4\n  TLS            0x2e7a28 0x00000000002e8a28 0x00000000002e8a28 0x000049 0x0000a8 R   0x8\n  GNU_EH_FRAME   0x2b36cc 0x00000000002b36cc 0x00000000002b36cc 0x00627c 0x00627c R   0x4\n  GNU_STACK      0x000000 0x0000000000000000 0x0000000000000000 0x000000 0x000000 RW  0x10\n  GNU_RELRO      0x2e7a28 0x00000000002e8a28 0x00000000002e8a28 0x00d5d8 0x00d5d8 R   0x1\n\n Section to Segment mapping:\n  Segment Sections...\n   00     .note.gnu.build-id .gnu.hash .dynsym .dynstr .rela.dyn \n   01     .init .plt .plt.got .text .fini \n   02     .rodata .eh_frame_hdr .eh_frame .gcc_except_table \n   03     .tdata .init_array .fini_array .data.rel.ro .dynamic .got .data .bss \n   04     .dynamic \n   05     .note.gnu.build-id \n   06     .tdata .tbss \n   07     .eh_frame_hdr \n   08     \n   09     .tdata .init_array .fini_array .data.rel.ro .dynamic .got \n",
+  "join_got_relocation": [
+    "00000000002f5fc8  0000000000000008 R_X86_64_RELATIVE                         2736d2"
+  ],
+  "join_symbol": [
+    "00000000002736d2 W pthread_join"
+  ],
+  "limitations": [
+    "Debug information resolves function names but not detailed Rust source lines here. Interior points were reviewed with disassembly.",
+    "Executable PT_LOAD file offsets equal virtual addresses in this exact ELF. Offsets must not be reused for another build.",
+    "No Rust channel payload, response discriminant, or object pointer is decoded by the probes. disconnected labels the branch that proceeds to pthread_join."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "python_append_open": {
+    "errno": 22
+  },
+  "seek_end": {
+    "errno": 22
+  },
+  "interpretation": "Python append-mode open and explicit SEEK_END returned EINVAL. A raw os.open with O_APPEND succeeded; attribute the preparation failure to append-mode file opening/seek behavior, not to O_APPEND alone."
+}

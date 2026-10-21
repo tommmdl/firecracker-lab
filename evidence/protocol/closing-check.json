@@ -1,0 +1,71 @@
+{
+  "at": "2026-10-21T09:53:53.275217+00:00",
+  "tracefs": {
+    "open_flags": {
+      "write_only": {
+        "opened": true
+      },
+      "raw_append": {
+        "opened": true
+      }
+    },
+    "owned_probe_definitions": [],
+    "owned_trace_instances": [],
+    "global_tracing_on": "1"
+  },
+  "active_campaign_containers": [],
+  "source_comparison": {
+    "vcpu_protocol.py": {
+      "executed_sha256": "e253bd3bbd346e220bf5c4b03cb14c514953e775e959560f337a124e60e1eded",
+      "repository_sha256": "56245ebc7f8e07550b79822efbaff6278951982f93e034cb208883fcffdf50e7",
+      "executable_ast_equal": true
+    },
+    "vcpu_scheduling.py": {
+      "executed_sha256": "bff7e9fe16b7eebfa984d5e197547a6bcc8a6bb9971846717503f0beb1da8351",
+      "repository_sha256": "bff7e9fe16b7eebfa984d5e197547a6bcc8a6bb9971846717503f0beb1da8351",
+      "executable_ast_equal": true
+    },
+    "protocol_analysis.py": {
+      "executed_sha256": "4cdcbb4883558694b775793df6b599d2dcb785f60367e6f037b18bdddcd3ba17",
+      "repository_sha256": "4cdcbb4883558694b775793df6b599d2dcb785f60367e6f037b18bdddcd3ba17",
+      "executable_ast_equal": true
+    },
+    "protocol_points.py": {
+      "executed_sha256": "d0e3becfdc29a3521a317c6a6f5ea64b91aa849b39cb3fd5a3bc3e175dd05db2",
+      "repository_sha256": "d0e3becfdc29a3521a317c6a6f5ea64b91aa849b39cb3fd5a3bc3e175dd05db2",
+      "executable_ast_equal": true
+    },
+    "jailer_checks.py": {
+      "executed_sha256": "288ddc08c838709a2b1d8bd7a3cb01edd0bc9f449bf07c60cef276116eaf517f",
+      "repository_sha256": "288ddc08c838709a2b1d8bd7a3cb01edd0bc9f449bf07c60cef276116eaf517f",
+      "executable_ast_equal": true
+    },
+    "jailer_runtime.py": {
+      "executed_sha256": "60bc5e8eb7ad3bfdf4aaf92152158c85543cb91c436810c0a7813a2abf83fe38",
+      "repository_sha256": "60bc5e8eb7ad3bfdf4aaf92152158c85543cb91c436810c0a7813a2abf83fe38",
+      "executable_ast_equal": true
+    },
+    "run_jailer_lab.py": {
+      "executed_sha256": "43fc3116bc06facbdd2c264a53e317bd06f69dd3d745c3088287f8c5ddc5bb2a",
+      "repository_sha256": "43fc3116bc06facbdd2c264a53e317bd06f69dd3d745c3088287f8c5ddc5bb2a",
+      "executable_ast_equal": true
+    }
+  },
+  "source_note": "Only a comment in vcpu_protocol.py was narrowed after checking append-mode behavior; exact executed file is retained. Executable AST is identical.",
+  "original_sha256_after": {
+    "firecracker": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+    "jailer": "65ef226e96f0ceda55ba643f445801ef2cc0ea667ef67cad8ac4f406c9c8434f",
+    "vmlinux": "e816c1aa5249d7a6e3cd937e312ec235f892af75c30ebe67e34e5a3aa55d78e8",
+    "rootfs.ext4": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52"
+  },
+  "all_runtime_isolation_checks_passed": true,
+  "outer_memory_events_local": {
+    "low": 0,
+    "high": 0,
+    "max": 16722,
+    "oom": 0,
+    "oom_kill": 0,
+    "oom_group_kill": 0
+  },
+  "case_count": 20
+}

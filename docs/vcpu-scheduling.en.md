@@ -2,6 +2,8 @@
 
 [Português](vcpu-scheduling.md) · [Shutdown investigation](shutdown-investigation.en.md) · [Evidence](../evidence/scheduling/index.json)
 
+The next stage adds [protocol probes and kernel stacks](vcpu-protocol.en.md): twenty clean shutdowns, ten captures spanning send/channel-return/join, and retained investigation errors. The historical panic still has not recurred.
+
 We captured scheduling, signals, and KVM entry/exit events during shutdowns under host CPU load. The goal was to observe a spontaneous delay without stopping a vCPU with a debugger. **The historical panic did not recur in the final campaigns.** These events explain this sample's shutdowns; they do not establish the cause of the historical failure.
 
 ## Test setup

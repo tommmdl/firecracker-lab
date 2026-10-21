@@ -1,0 +1,135 @@
+{
+  "schema": 1,
+  "method": "Official ELF uprobes plus live procfs kernel stacks; no ptrace, no source patch, no injected vCPU stall",
+  "limitations": [
+    "Uprobes trap and sampling consumes CPU: durations include observer effects.",
+    "Kernel stack/status/wchan reads are sequential, not one atomic task snapshot.",
+    "Empty stacks and task-exit read errors are retained, not interpreted as no kernel activity.",
+    "Source and disassembly identify protocol stages; probes do not decode Rust channel payloads.",
+    "Capturing clean shutdowns cannot establish the historical panic cause."
+  ],
+  "runs": [
+    {
+      "run": "jailer-lwz9nknv",
+      "file": "jailer-lwz9nknv.json",
+      "sha256": "aea0f90be5055e95cc0d95f515df4b0447f53c2998caf8d05691c7e807ef2d4d",
+      "complete": true,
+      "reviewed_status": "failed",
+      "scenarios": 4,
+      "primary": false,
+      "shutdown_seconds": {
+        "half-control": {
+          "count": 1,
+          "min": 0.224768,
+          "median": 0.224768,
+          "max": 0.224768
+        },
+        "boost-control": {
+          "count": 1,
+          "min": 0.107399,
+          "median": 0.107399,
+          "max": 0.107399
+        }
+      }
+    },
+    {
+      "run": "jailer-4_aesimh",
+      "file": "jailer-4_aesimh.json",
+      "sha256": "61794ab8199b680adf15e2e7f09b2672c43715fe693b3b2f90bbd79ed92ef0e9",
+      "complete": true,
+      "reviewed_status": "passed",
+      "scenarios": 4,
+      "primary": false,
+      "shutdown_seconds": {
+        "half-control": {
+          "count": 1,
+          "min": 0.188258,
+          "median": 0.188258,
+          "max": 0.188258
+        },
+        "half-trace": {
+          "count": 1,
+          "min": 0.162291,
+          "median": 0.162291,
+          "max": 0.162291
+        },
+        "boost-control": {
+          "count": 1,
+          "min": 0.145968,
+          "median": 0.145968,
+          "max": 0.145968
+        },
+        "boost-trace": {
+          "count": 1,
+          "min": 0.162597,
+          "median": 0.162597,
+          "max": 0.162597
+        }
+      }
+    },
+    {
+      "run": "jailer-2_064uwa",
+      "file": "jailer-2_064uwa.json",
+      "sha256": "85caffbf00929a98ceee6c009e33bb09857b1da0518c5a1c6135122a41638e85",
+      "complete": false,
+      "reviewed_status": "failed",
+      "scenarios": 3,
+      "primary": false,
+      "shutdown_seconds": {
+        "boost-control": {
+          "count": 1,
+          "min": 0.11488,
+          "median": 0.11488,
+          "max": 0.11488
+        },
+        "half-control": {
+          "count": 1,
+          "min": 0.130591,
+          "median": 0.130591,
+          "max": 0.130591
+        },
+        "half-trace": {
+          "count": 1,
+          "min": 0.137085,
+          "median": 0.137085,
+          "max": 0.137085
+        }
+      }
+    },
+    {
+      "run": "jailer-joh82tm9",
+      "file": "jailer-joh82tm9.json",
+      "sha256": "80d013ff9a14fa56accdb85a408b21a0e42ef54f2c9801eb480d3b2080d2dab4",
+      "complete": true,
+      "reviewed_status": "passed",
+      "scenarios": 20,
+      "primary": true,
+      "shutdown_seconds": {
+        "half-control": {
+          "count": 5,
+          "min": 0.119545,
+          "median": 0.132691,
+          "max": 0.171032
+        },
+        "half-trace": {
+          "count": 5,
+          "min": 0.105047,
+          "median": 0.173144,
+          "max": 0.222555
+        },
+        "boost-control": {
+          "count": 5,
+          "min": 0.135689,
+          "median": 0.178351,
+          "max": 0.241151
+        },
+        "boost-trace": {
+          "count": 5,
+          "min": 0.17787,
+          "median": 0.225125,
+          "max": 0.272778
+        }
+      }
+    }
+  ]
+}

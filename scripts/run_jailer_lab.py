@@ -19,7 +19,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--host-load', action='store_true', help='Bounded CPU contention on the same two host CPUs')
     parser.add_argument('--profile', help='Explicit diagnostic profile; default is the approved jailer profile')
-    parser.add_argument('--suite', choices=['jailer_checks', 'shutdown_investigation', 'vcpu_scheduling'], default='jailer_checks')
+    parser.add_argument('--suite', choices=['jailer_checks', 'shutdown_investigation', 'vcpu_scheduling', 'vcpu_protocol'], default='jailer_checks')
     parser.add_argument('--binary-dir',required=True)
     parser.add_argument('--artifacts',required=True)
     parser.add_argument('--output-parent',required=True)

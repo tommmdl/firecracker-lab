@@ -2,6 +2,8 @@
 
 [English](vcpu-scheduling.en.md) · [Investigação do shutdown](shutdown-investigation.md) · [Evidências](../evidence/scheduling/index.json)
 
+A etapa seguinte acrescenta [sondas do protocolo e stacks do kernel](vcpu-protocol.md): vinte encerramentos limpos, dez capturas com envio, retorno do canal e `join`, além dos erros da própria investigação preservados. O panic antigo continua sem recorrência.
+
 Capturamos o escalonamento, os sinais e as entradas e saídas de KVM durante encerramentos sob carga no host. O objetivo era observar um atraso espontâneo sem pausar a vCPU com um depurador. **O panic histórico não reapareceu nas rodadas finais.** Os eventos explicam os encerramentos desta amostra, mas não fecham a causa daquela execução antiga.
 
 ## Como o teste foi montado

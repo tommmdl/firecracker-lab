@@ -1,0 +1,9 @@
+{
+  "instance": "fc-lab-7ff6424b7cfc46b1a6b98fe33d001cfc",
+  "reason": "Known instance from interrupted owned campaign; no active lab helpers; remove only this literal name",
+  "removed": true,
+  "previous_filter": "prev_comm ~ \"fc_vcpu*\" || next_comm ~ \"fc_vcpu*\"",
+  "previous_tracing_on": "1",
+  "remaining_owned_instances": [],
+  "remaining_owned_probes": []
+}

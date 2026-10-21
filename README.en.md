@@ -63,6 +63,8 @@ The historical shutdown panic remains preserved. The [investigation](docs/shutdo
 
 The [scheduler and signal investigation](docs/vcpu-scheduling.en.md) added 24 clean shutdowns under host load, including 12 valid traces, untraced controls, and a task-limit test. The longest observed runnable wait was 13.262 ms; the historical panic did not recur and its cause remains unresolved. Invalid and interrupted attempts are also published.
 
+The [protocol and kernel-stack investigation](docs/vcpu-protocol.en.md) traces sending, channel waiting, and join in the official binary. The final campaign completed 20 clean shutdowns, with ten instrumented captures and actual futex/KVM stacks. Channel waiting reached 5.867 ms and join reached 83 µs; the historical panic remains unexplained. Setup, validator, and read failures are also published.
+
 ## Hardening still to do
 
 The [real test records](evidence/source-build-results.json) include a retained shutdown failure, two passing boots after the correction and ten regression tests. They also record rejection of a modified source archive. These ran locally, without a GitHub Actions boot run.
