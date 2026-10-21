@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-21T10:33:45.324384+00:00",
+  "trace_cleanup": {
+    "owned_instances": [],
+    "owned_probes": [],
+    "global_tracing_on": "1"
+  },
+  "remaining_campaign_containers": [],
+  "original_sha256_final": {
+    "firecracker": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+    "jailer": "65ef226e96f0ceda55ba643f445801ef2cc0ea667ef67cad8ac4f406c9c8434f",
+    "vmlinux": "e816c1aa5249d7a6e3cd937e312ec235f892af75c30ebe67e34e5a3aa55d78e8",
+    "rootfs.ext4": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52"
+  },
+  "original_hashes_match": true,
+  "unit_tests": {
+    "total": 31,
+    "passed": 31,
+    "initial_exporter_errors": 3,
+    "initial_exporter_error": "Synthetic records omitted optional keys; aggregator raised KeyError. Corrected to use normalized optional fields. No VM runtime change."
+  },
+  "runtime_changes": false
+}

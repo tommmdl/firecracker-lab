@@ -1,0 +1,1918 @@
+{
+  "protocol": {
+    "valid": true,
+    "errors": [],
+    "counts": {
+      "send_return": 2,
+      "run_return": 2,
+      "drop_return": 2,
+      "send_enter": 2,
+      "wait_enter": 2,
+      "disconnected": 2,
+      "drop_enter": 2,
+      "join_enter": 2,
+      "wait_return": 2,
+      "join_return": 2
+    },
+    "events": [
+      {
+        "time": 346032.405048,
+        "cpu": 6,
+        "event": "send_enter",
+        "thread": "firecracker"
+      },
+      {
+        "time": 346032.405066,
+        "cpu": 6,
+        "event": "send_return",
+        "thread": "firecracker"
+      },
+      {
+        "time": 346032.405067,
+        "cpu": 6,
+        "event": "send_enter",
+        "thread": "firecracker"
+      },
+      {
+        "time": 346032.405079,
+        "cpu": 6,
+        "event": "send_return",
+        "thread": "firecracker"
+      },
+      {
+        "time": 346032.405083,
+        "cpu": 6,
+        "event": "drop_enter",
+        "thread": "firecracker"
+      },
+      {
+        "time": 346032.405085,
+        "cpu": 6,
+        "event": "wait_enter",
+        "thread": "firecracker"
+      },
+      {
+        "time": 346032.405166,
+        "cpu": 6,
+        "event": "run_return",
+        "thread": "fc_vcpu 1"
+      },
+      {
+        "time": 346032.412082,
+        "cpu": 6,
+        "event": "run_return",
+        "thread": "fc_vcpu 0"
+      },
+      {
+        "time": 346032.41215,
+        "cpu": 6,
+        "event": "wait_return",
+        "thread": "firecracker"
+      },
+      {
+        "time": 346032.412153,
+        "cpu": 6,
+        "event": "disconnected",
+        "thread": "firecracker"
+      },
+      {
+        "time": 346032.412157,
+        "cpu": 6,
+        "event": "join_enter",
+        "thread": "firecracker"
+      },
+      {
+        "time": 346032.412218,
+        "cpu": 6,
+        "event": "join_return",
+        "thread": "firecracker"
+      },
+      {
+        "time": 346032.412237,
+        "cpu": 6,
+        "event": "drop_return",
+        "thread": "firecracker"
+      },
+      {
+        "time": 346032.41224,
+        "cpu": 6,
+        "event": "drop_enter",
+        "thread": "firecracker"
+      },
+      {
+        "time": 346032.412242,
+        "cpu": 6,
+        "event": "wait_enter",
+        "thread": "firecracker"
+      },
+      {
+        "time": 346032.412243,
+        "cpu": 6,
+        "event": "wait_return",
+        "thread": "firecracker"
+      },
+      {
+        "time": 346032.412244,
+        "cpu": 6,
+        "event": "disconnected",
+        "thread": "firecracker"
+      },
+      {
+        "time": 346032.412247,
+        "cpu": 6,
+        "event": "join_enter",
+        "thread": "firecracker"
+      },
+      {
+        "time": 346032.412261,
+        "cpu": 6,
+        "event": "join_return",
+        "thread": "firecracker"
+      },
+      {
+        "time": 346032.412276,
+        "cpu": 6,
+        "event": "drop_return",
+        "thread": "firecracker"
+      }
+    ],
+    "intervals": {
+      "send": [
+        {
+          "entry_index": 0,
+          "return_index": 1,
+          "start": 346032.405048,
+          "end": 346032.405066,
+          "microseconds": 18.0
+        },
+        {
+          "entry_index": 2,
+          "return_index": 3,
+          "start": 346032.405067,
+          "end": 346032.405079,
+          "microseconds": 12.0
+        }
+      ],
+      "wait": [
+        {
+          "entry_index": 5,
+          "return_index": 8,
+          "start": 346032.405085,
+          "end": 346032.41215,
+          "microseconds": 7065.0
+        },
+        {
+          "entry_index": 14,
+          "return_index": 15,
+          "start": 346032.412242,
+          "end": 346032.412243,
+          "microseconds": 1.0
+        }
+      ],
+      "join": [
+        {
+          "entry_index": 10,
+          "return_index": 11,
+          "start": 346032.412157,
+          "end": 346032.412218,
+          "microseconds": 61.0
+        },
+        {
+          "entry_index": 17,
+          "return_index": 18,
+          "start": 346032.412247,
+          "end": 346032.412261,
+          "microseconds": 14.0
+        }
+      ],
+      "drop": [
+        {
+          "entry_index": 4,
+          "return_index": 12,
+          "start": 346032.405083,
+          "end": 346032.412237,
+          "microseconds": 7154.0
+        },
+        {
+          "entry_index": 13,
+          "return_index": 19,
+          "start": 346032.41224,
+          "end": 346032.412276,
+          "microseconds": 36.0
+        }
+      ]
+    },
+    "trigger_stack_events": 0
+  },
+  "scheduler": {
+    "capture_valid": true,
+    "event_counts": {
+      "tracing_mark_write": 2,
+      "sched_switch": 207,
+      "kvm_entry": 1529,
+      "kvm_exit": 1529,
+      "sched_waking": 57,
+      "sched_wakeup": 57,
+      "signal_generate": 2,
+      "signal_deliver": 2,
+      "sched_process_exit": 2
+    },
+    "vcpus": [
+      {
+        "name": "fc_vcpu 0",
+        "trace_tid": 3920,
+        "runnable_intervals": 69,
+        "longest_runnable_wait_us": 23974.0,
+        "longest_intervals": [
+          {
+            "start": 346032.376063,
+            "end": 346032.400037,
+            "microseconds": 23974.0
+          },
+          {
+            "start": 346032.284023,
+            "end": 346032.300061,
+            "microseconds": 16038.0
+          },
+          {
+            "start": 346032.221379,
+            "end": 346032.230968,
+            "microseconds": 9589.0
+          },
+          {
+            "start": 346032.34421,
+            "end": 346032.352796,
+            "microseconds": 8586.0
+          },
+          {
+            "start": 346032.327543,
+            "end": 346032.336058,
+            "microseconds": 8515.0
+          }
+        ],
+        "signal35_generate": [
+          346032.405059
+        ],
+        "signal35_deliver": [
+          346032.41203
+        ],
+        "exit_time": 346032.412184,
+        "last_generate_to_next_delivery_us": 6971.0,
+        "last_generate_to_exit_us": 7125.0
+      },
+      {
+        "name": "fc_vcpu 1",
+        "trace_tid": 3921,
+        "runnable_intervals": 70,
+        "longest_runnable_wait_us": 15965.0,
+        "longest_intervals": [
+          {
+            "start": 346032.37605,
+            "end": 346032.392015,
+            "microseconds": 15965.0
+          },
+          {
+            "start": 346032.355432,
+            "end": 346032.364034,
+            "microseconds": 8602.0
+          },
+          {
+            "start": 346032.279708,
+            "end": 346032.288018,
+            "microseconds": 8310.0
+          },
+          {
+            "start": 346032.396032,
+            "end": 346032.404026,
+            "microseconds": 7994.0
+          },
+          {
+            "start": 346032.300061,
+            "end": 346032.308019,
+            "microseconds": 7958.0
+          }
+        ],
+        "signal35_generate": [
+          346032.405076
+        ],
+        "signal35_deliver": [
+          346032.405155
+        ],
+        "exit_time": 346032.405207,
+        "last_generate_to_next_delivery_us": 79.0,
+        "last_generate_to_exit_us": 131.0
+      }
+    ]
+  },
+  "raw_trace_sha256": "71a67bbb51e7282ea7f43d6d554f963a4a5964501118d77d9ada5cad0c445f83",
+  "stacks": {
+    "raw_sha256": "b4fe5ac16efe14094cdfa01de55c7622a5b4e978f98420384757068183e5192d",
+    "unique_stacks": {
+      "8d259970fa9a55be": [
+        "do_epoll_wait+0x56e/0x5d0",
+        "do_compat_epoll_pwait.part.0+0xf/0x70",
+        "__x64_sys_epoll_pwait+0x82/0x130",
+        "x64_sys_call+0x1a41/0x20f0",
+        "do_syscall_64+0x6e/0xfa0",
+        "entry_SYSCALL_64_after_hwframe+0x76/0x7e"
+      ],
+      "04c947782a5c1831": [
+        "kvm_vcpu_block+0x52/0xd0 [kvm]",
+        "kvm_vcpu_halt+0xd4/0x470 [kvm]",
+        "kvm_arch_vcpu_ioctl_run+0xcdf/0x1f50 [kvm]",
+        "gfn_to_hva+0x1cc/0xb60 [kvm]",
+        "__x64_sys_ioctl+0xa1/0xf0",
+        "x64_sys_call+0x102c/0x20f0",
+        "do_syscall_64+0x6e/0xfa0",
+        "entry_SYSCALL_64_after_hwframe+0x76/0x7e"
+      ],
+      "994f2ec30e3b639d": [
+        "kvm_mmu_reset_context+0x5e7/0x7a0 [kvm]",
+        "vhost_task_fn+0x57/0xf0",
+        "ret_from_fork+0x137/0x190",
+        "ret_from_fork_asm+0x1a/0x30"
+      ],
+      "ef46b7a0318df5d4": [
+        "xfer_to_guest_mode_handle_work+0x81/0xb0",
+        "kvm_arch_vcpu_ioctl_run+0xeee/0x1f50 [kvm]",
+        "gfn_to_hva+0x1cc/0xb60 [kvm]",
+        "__x64_sys_ioctl+0xa1/0xf0",
+        "x64_sys_call+0x102c/0x20f0",
+        "do_syscall_64+0x6e/0xfa0",
+        "entry_SYSCALL_64_after_hwframe+0x76/0x7e"
+      ],
+      "e909745a64df6975": [
+        "exit_to_user_mode_loop+0x55/0xf0",
+        "do_syscall_64+0x26b/0xfa0",
+        "entry_SYSCALL_64_after_hwframe+0x76/0x7e"
+      ],
+      "e3b0c44298fc1c14": [],
+      "5a11f5ef2ed705e3": [
+        "task_work_run+0x69/0xa0",
+        "xfer_to_guest_mode_handle_work+0xa2/0xb0",
+        "kvm_arch_vcpu_ioctl_run+0xeee/0x1f50 [kvm]",
+        "gfn_to_hva+0x1cc/0xb60 [kvm]",
+        "__x64_sys_ioctl+0xa1/0xf0",
+        "x64_sys_call+0x102c/0x20f0",
+        "do_syscall_64+0x6e/0xfa0",
+        "entry_SYSCALL_64_after_hwframe+0x76/0x7e"
+      ],
+      "52dff5d3f4877c0d": [
+        "futex_do_wait+0x3e/0x70",
+        "__futex_wait+0x9d/0x100",
+        "futex_wait+0x69/0x110",
+        "do_futex+0xcd/0x1a0",
+        "__x64_sys_futex+0x111/0x1d0",
+        "x64_sys_call+0xa79/0x20f0",
+        "do_syscall_64+0x6e/0xfa0",
+        "entry_SYSCALL_64_after_hwframe+0x76/0x7e"
+      ],
+      "a3247ca0ecc5a143": [
+        "__synchronize_srcu.part.0+0x83/0xb0",
+        "synchronize_srcu+0x88/0x140",
+        "kvm_unregister_irq_mask_notifier+0x60/0x70 [kvm]",
+        "kvm_pic_destroy+0x138/0xd00 [kvm]",
+        "kvm_free_pit+0x61/0x910 [kvm]",
+        "kvm_arch_pre_destroy_vm+0x31/0x70 [kvm]",
+        "kvm_disable_virtualization+0x168/0x3b0 [kvm]",
+        "kvm_put_kvm+0x2e/0xe00 [kvm]",
+        "kvm_put_kvm+0x82/0xe00 [kvm]",
+        "__fput+0xed/0x2d0",
+        "fput_close_sync+0x41/0xa0",
+        "__x64_sys_close+0x42/0x90",
+        "x64_sys_call+0x18aa/0x20f0",
+        "do_syscall_64+0x6e/0xfa0",
+        "entry_SYSCALL_64_after_hwframe+0x76/0x7e"
+      ],
+      "a730dffeb32b4c9d": [
+        "__synchronize_srcu.part.0+0x83/0xb0",
+        "synchronize_srcu+0x64/0x140",
+        "mmu_notifier_unregister+0xbc/0xf0",
+        "kvm_disable_virtualization+0x1da/0x3b0 [kvm]",
+        "kvm_put_kvm+0x2e/0xe00 [kvm]",
+        "kvm_put_kvm+0x82/0xe00 [kvm]",
+        "__fput+0xed/0x2d0",
+        "fput_close_sync+0x41/0xa0",
+        "__x64_sys_close+0x42/0x90",
+        "x64_sys_call+0x18aa/0x20f0",
+        "do_syscall_64+0x6e/0xfa0",
+        "entry_SYSCALL_64_after_hwframe+0x76/0x7e"
+      ],
+      "4b43c6a7fbd31559": [
+        "rcu_barrier+0x206/0x300",
+        "kvm_mmu_uninit_tdp_mmu+0x39/0x60 [kvm]",
+        "kvm_mmu_uninit_vm+0x5c/0x60 [kvm]",
+        "kvm_arch_destroy_vm+0x9f/0x110 [kvm]",
+        "kvm_disable_virtualization+0x22a/0x3b0 [kvm]",
+        "kvm_put_kvm+0x2e/0xe00 [kvm]",
+        "kvm_put_kvm+0x82/0xe00 [kvm]",
+        "__fput+0xed/0x2d0",
+        "fput_close_sync+0x41/0xa0",
+        "__x64_sys_close+0x42/0x90",
+        "x64_sys_call+0x18aa/0x20f0",
+        "do_syscall_64+0x6e/0xfa0",
+        "entry_SYSCALL_64_after_hwframe+0x76/0x7e"
+      ]
+    },
+    "samples": [
+      {
+        "t": 0,
+        "read_begin_monotonic": 346032.20907243,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.20944283,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0,
+        "read_begin_monotonic": 346032.20945913,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.20972953,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0,
+        "read_begin_monotonic": 346032.20974123,
+        "name": "fc_vcpu 0",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.21005723,
+        "stack_id": "04c947782a5c1831",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0,
+        "read_begin_monotonic": 346032.21006913,
+        "name": "fc_vcpu 1",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_vcpu_block",
+        "read_end_monotonic": 346032.21039103,
+        "stack_id": "04c947782a5c1831",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0,
+        "read_begin_monotonic": 346032.21039923,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.21067013,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.007495,
+        "read_begin_monotonic": 346032.21646323,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.21673273,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.007495,
+        "read_begin_monotonic": 346032.21674203,
+        "name": "fc_api",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.21693243,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.007495,
+        "read_begin_monotonic": 346032.21694083,
+        "name": "fc_vcpu 0",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.21721673,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.007495,
+        "read_begin_monotonic": 346032.21722593,
+        "name": "fc_vcpu 1",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.21746053,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.007495,
+        "read_begin_monotonic": 346032.21746823,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.21770113,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.0153,
+        "read_begin_monotonic": 346032.22441313,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.22476483,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.0153,
+        "read_begin_monotonic": 346032.22477783,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.22502573,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.0153,
+        "read_begin_monotonic": 346032.22503643,
+        "name": "fc_vcpu 0",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.22527553,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.0153,
+        "read_begin_monotonic": 346032.22528573,
+        "name": "fc_vcpu 1",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.22554173,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.0153,
+        "read_begin_monotonic": 346032.22555103,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.22584593,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.02322,
+        "read_begin_monotonic": 346032.23239563,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.23280163,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.02322,
+        "read_begin_monotonic": 346032.23282033,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.23312943,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.02322,
+        "read_begin_monotonic": 346032.23314093,
+        "name": "fc_vcpu 0",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.23342983,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.02322,
+        "read_begin_monotonic": 346032.23344463,
+        "name": "fc_vcpu 1",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.23375003,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.02322,
+        "read_begin_monotonic": 346032.23376063,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.23407163,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.030432,
+        "read_begin_monotonic": 346032.23948293,
+        "name": "firecracker",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.23976533,
+        "stack_id": "e909745a64df6975",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.030432,
+        "read_begin_monotonic": 346032.23977583,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.23997613,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.030432,
+        "read_begin_monotonic": 346032.23998483,
+        "name": "fc_vcpu 0",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_vcpu_block",
+        "read_end_monotonic": 346032.24198813,
+        "stack_id": "04c947782a5c1831",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.030432,
+        "read_begin_monotonic": 346032.24201023,
+        "name": "fc_vcpu 1",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.24229293,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.030432,
+        "read_begin_monotonic": 346032.24230373,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.24259503,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.038988,
+        "read_begin_monotonic": 346032.24824663,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.24857023,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.038988,
+        "read_begin_monotonic": 346032.24858583,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.24880793,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.038988,
+        "read_begin_monotonic": 346032.24881673,
+        "name": "fc_vcpu 0",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.24907793,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.038988,
+        "read_begin_monotonic": 346032.24908733,
+        "name": "fc_vcpu 1",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.24929383,
+        "stack_id": "e3b0c44298fc1c14",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.038988,
+        "read_begin_monotonic": 346032.24930323,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.24951743,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.045816,
+        "read_begin_monotonic": 346032.25482243,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.25506323,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.045816,
+        "read_begin_monotonic": 346032.25507523,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.25527663,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.045816,
+        "read_begin_monotonic": 346032.25528923,
+        "name": "fc_vcpu 0",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.25545683,
+        "stack_id": "e3b0c44298fc1c14",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.045816,
+        "read_begin_monotonic": 346032.25546403,
+        "name": "fc_vcpu 1",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.25565623,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.045816,
+        "read_begin_monotonic": 346032.25566243,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.25585663,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.052151,
+        "read_begin_monotonic": 346032.26117953,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.26157563,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.052151,
+        "read_begin_monotonic": 346032.26161353,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.26217473,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.052151,
+        "read_begin_monotonic": 346032.26219103,
+        "name": "fc_vcpu 0",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.26267783,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.052151,
+        "read_begin_monotonic": 346032.26269193,
+        "name": "fc_vcpu 1",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.26354173,
+        "stack_id": "e3b0c44298fc1c14",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.052151,
+        "read_begin_monotonic": 346032.26355773,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.26393793,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.064289,
+        "read_begin_monotonic": 346032.273361631,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.273692931,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.064289,
+        "read_begin_monotonic": 346032.273705331,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.273961031,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.064289,
+        "read_begin_monotonic": 346032.273973231,
+        "name": "fc_vcpu 0",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_vcpu_block",
+        "read_end_monotonic": 346032.274381131,
+        "stack_id": "04c947782a5c1831",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.064289,
+        "read_begin_monotonic": 346032.274397531,
+        "name": "fc_vcpu 1",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_vcpu_block",
+        "read_end_monotonic": 346032.274789131,
+        "stack_id": "04c947782a5c1831",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.064289,
+        "read_begin_monotonic": 346032.274802531,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.275123831,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.071441,
+        "read_begin_monotonic": 346032.280454031,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.280696831,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.071441,
+        "read_begin_monotonic": 346032.280704831,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.280863631,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.071441,
+        "read_begin_monotonic": 346032.280870931,
+        "name": "fc_vcpu 0",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.281017331,
+        "stack_id": "e3b0c44298fc1c14",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.071441,
+        "read_begin_monotonic": 346032.281024231,
+        "name": "fc_vcpu 1",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.281214731,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.071441,
+        "read_begin_monotonic": 346032.281223931,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.281419731,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.077711,
+        "read_begin_monotonic": 346032.286720631,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.286963031,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.077711,
+        "read_begin_monotonic": 346032.286971131,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.287183631,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.077711,
+        "read_begin_monotonic": 346032.287192531,
+        "name": "fc_vcpu 0",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.287413931,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.077711,
+        "read_begin_monotonic": 346032.287422031,
+        "name": "fc_vcpu 1",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.287642831,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.077711,
+        "read_begin_monotonic": 346032.287650131,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.287889331,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.087215,
+        "read_begin_monotonic": 346032.296282531,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.296588931,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.087215,
+        "read_begin_monotonic": 346032.296600431,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.296867131,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.087215,
+        "read_begin_monotonic": 346032.296877031,
+        "name": "fc_vcpu 0",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.297160731,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.087215,
+        "read_begin_monotonic": 346032.297172431,
+        "name": "fc_vcpu 1",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.297436131,
+        "stack_id": "e3b0c44298fc1c14",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.087215,
+        "read_begin_monotonic": 346032.297447131,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.297768631,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.094094,
+        "read_begin_monotonic": 346032.303138231,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.303454831,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.094094,
+        "read_begin_monotonic": 346032.303467031,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.303673031,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.094094,
+        "read_begin_monotonic": 346032.303680131,
+        "name": "fc_vcpu 0",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.304065131,
+        "stack_id": "e3b0c44298fc1c14",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.094094,
+        "read_begin_monotonic": 346032.304079331,
+        "name": "fc_vcpu 1",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.304413231,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.094094,
+        "read_begin_monotonic": 346032.304425031,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.304838831,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.103219,
+        "read_begin_monotonic": 346032.312270831,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.312690431,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.103219,
+        "read_begin_monotonic": 346032.312705131,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.312952531,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.103219,
+        "read_begin_monotonic": 346032.312962131,
+        "name": "fc_vcpu 0",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.313208231,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.103219,
+        "read_begin_monotonic": 346032.313216631,
+        "name": "fc_vcpu 1",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.313382731,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.103219,
+        "read_begin_monotonic": 346032.313388731,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.313620631,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.109924,
+        "read_begin_monotonic": 346032.318926431,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.319180931,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.109924,
+        "read_begin_monotonic": 346032.319188431,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.319330031,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.109924,
+        "read_begin_monotonic": 346032.319336331,
+        "name": "fc_vcpu 0",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.319462231,
+        "stack_id": "e3b0c44298fc1c14",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.109924,
+        "read_begin_monotonic": 346032.319468131,
+        "name": "fc_vcpu 1",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.319623031,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.109924,
+        "read_begin_monotonic": 346032.319628131,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.319788931,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.119271,
+        "read_begin_monotonic": 346032.328307931,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.328598731,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.119271,
+        "read_begin_monotonic": 346032.328607331,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.328781131,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.119271,
+        "read_begin_monotonic": 346032.328788131,
+        "name": "fc_vcpu 0",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.328956131,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.119271,
+        "read_begin_monotonic": 346032.328962031,
+        "name": "fc_vcpu 1",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.329090231,
+        "stack_id": "e3b0c44298fc1c14",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.119271,
+        "read_begin_monotonic": 346032.329095631,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.329259231,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.125773,
+        "read_begin_monotonic": 346032.334760531,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.334971931,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.125773,
+        "read_begin_monotonic": 346032.334978831,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.335121131,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.125773,
+        "read_begin_monotonic": 346032.335127531,
+        "name": "fc_vcpu 0",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.335288131,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.125773,
+        "read_begin_monotonic": 346032.335294731,
+        "name": "fc_vcpu 1",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.335448131,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.125773,
+        "read_begin_monotonic": 346032.335453331,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.335623731,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.131909,
+        "read_begin_monotonic": 346032.340917631,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.341159331,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.131909,
+        "read_begin_monotonic": 346032.341167231,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.341328531,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.131909,
+        "read_begin_monotonic": 346032.341335531,
+        "name": "fc_vcpu 0",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.341494131,
+        "stack_id": "e3b0c44298fc1c14",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.131909,
+        "read_begin_monotonic": 346032.341501631,
+        "name": "fc_vcpu 1",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.341650131,
+        "stack_id": "e909745a64df6975",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.131909,
+        "read_begin_monotonic": 346032.341656631,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.341885731,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.138183,
+        "read_begin_monotonic": 346032.347294031,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.347539831,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.138183,
+        "read_begin_monotonic": 346032.347547931,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.347707031,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.138183,
+        "read_begin_monotonic": 346032.347714331,
+        "name": "fc_vcpu 0",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.347908031,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.138183,
+        "read_begin_monotonic": 346032.347914731,
+        "name": "fc_vcpu 1",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.348164731,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.138183,
+        "read_begin_monotonic": 346032.348173931,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.348455031,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.144757,
+        "read_begin_monotonic": 346032.353837431,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.354115731,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.144757,
+        "read_begin_monotonic": 346032.354127031,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.354317931,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.144757,
+        "read_begin_monotonic": 346032.354326531,
+        "name": "fc_vcpu 0",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_vcpu_block",
+        "read_end_monotonic": 346032.354638231,
+        "stack_id": "04c947782a5c1831",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.144757,
+        "read_begin_monotonic": 346032.354647631,
+        "name": "fc_vcpu 1",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.354867131,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.144757,
+        "read_begin_monotonic": 346032.354874431,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.355126231,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.151475,
+        "read_begin_monotonic": 346032.360525631,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.360826431,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.151475,
+        "read_begin_monotonic": 346032.360837331,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.361053531,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.151475,
+        "read_begin_monotonic": 346032.361063831,
+        "name": "fc_vcpu 0",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.361442031,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.151475,
+        "read_begin_monotonic": 346032.361453531,
+        "name": "fc_vcpu 1",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.361701931,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.151475,
+        "read_begin_monotonic": 346032.361711631,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.361991531,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.156571,
+        "read_begin_monotonic": 346032.365576731,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.366103931,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.156571,
+        "read_begin_monotonic": 346032.366120131,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.366613531,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.156571,
+        "read_begin_monotonic": 346032.366626131,
+        "name": "fc_vcpu 0",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.366852631,
+        "stack_id": "e3b0c44298fc1c14",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.156571,
+        "read_begin_monotonic": 346032.366867531,
+        "name": "fc_vcpu 1",
+        "state": "State:\tS (sleeping)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.367237731,
+        "stack_id": "04c947782a5c1831",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.156571,
+        "read_begin_monotonic": 346032.367250431,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.367537731,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.167219,
+        "read_begin_monotonic": 346032.376279831,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.376782431,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.167219,
+        "read_begin_monotonic": 346032.376804131,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.377172431,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.167219,
+        "read_begin_monotonic": 346032.377189931,
+        "name": "fc_vcpu 0",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.377514831,
+        "stack_id": "5a11f5ef2ed705e3",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.167219,
+        "read_begin_monotonic": 346032.377531631,
+        "name": "fc_vcpu 1",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.377972931,
+        "stack_id": "5a11f5ef2ed705e3",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.167219,
+        "read_begin_monotonic": 346032.377991231,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.378288631,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.174602,
+        "read_begin_monotonic": 346032.383635431,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.383939931,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.174602,
+        "read_begin_monotonic": 346032.383949731,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.384254931,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.174602,
+        "read_begin_monotonic": 346032.384268331,
+        "name": "fc_vcpu 0",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.384641931,
+        "stack_id": "5a11f5ef2ed705e3",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.174602,
+        "read_begin_monotonic": 346032.384651731,
+        "name": "fc_vcpu 1",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.385082131,
+        "stack_id": "5a11f5ef2ed705e3",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.174602,
+        "read_begin_monotonic": 346032.385100531,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.385823731,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.182168,
+        "read_begin_monotonic": 346032.391205932,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.391530532,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.182168,
+        "read_begin_monotonic": 346032.391542432,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.391783232,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.182168,
+        "read_begin_monotonic": 346032.391794132,
+        "name": "fc_vcpu 0",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.392140532,
+        "stack_id": "5a11f5ef2ed705e3",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.182168,
+        "read_begin_monotonic": 346032.392152532,
+        "name": "fc_vcpu 1",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.392380632,
+        "stack_id": "e3b0c44298fc1c14",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.182168,
+        "read_begin_monotonic": 346032.392390632,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.392660532,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.188965,
+        "read_begin_monotonic": 346032.398012332,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.398316932,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.188965,
+        "read_begin_monotonic": 346032.398324732,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.398465432,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.188965,
+        "read_begin_monotonic": 346032.398471432,
+        "name": "fc_vcpu 0",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.398632432,
+        "stack_id": "5a11f5ef2ed705e3",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.188965,
+        "read_begin_monotonic": 346032.398638232,
+        "name": "fc_vcpu 1",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.398789432,
+        "stack_id": "ef46b7a0318df5d4",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.188965,
+        "read_begin_monotonic": 346032.398794632,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.399003332,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.195318,
+        "read_begin_monotonic": 346032.404359732,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.404627732,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.195318,
+        "read_begin_monotonic": 346032.404636232,
+        "name": "fc_api",
+        "state": "State:\tS (sleeping)",
+        "wchan": "do_epoll_wait",
+        "read_end_monotonic": 346032.404795532,
+        "stack_id": "8d259970fa9a55be",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.195318,
+        "read_begin_monotonic": 346032.404802432,
+        "name": "fc_vcpu 0",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.404945332,
+        "stack_id": "e909745a64df6975",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.195318,
+        "read_begin_monotonic": 346032.404952032,
+        "name": "fc_vcpu 1",
+        "state": "State:\tS (sleeping)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.405160832,
+        "stack_id": "04c947782a5c1831",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.195318,
+        "read_begin_monotonic": 346032.405167332,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.405406832,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.201755,
+        "read_begin_monotonic": 346032.410742032,
+        "name": "firecracker",
+        "state": "State:\tS (sleeping)",
+        "wchan": "futex_do_wait",
+        "read_end_monotonic": 346032.410980132,
+        "stack_id": "52dff5d3f4877c0d",
+        "phase": "response_wait"
+      },
+      {
+        "t": 0.201755,
+        "read_begin_monotonic": 346032.410988332,
+        "name": "fc_vcpu 0",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.411163632,
+        "stack_id": "e909745a64df6975",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.201755,
+        "read_begin_monotonic": 346032.411170032,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.411347732,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.20852,
+        "read_begin_monotonic": 346032.417572032,
+        "name": "firecracker",
+        "state": "State:\tD (disk sleep)",
+        "wchan": "__synchronize_srcu.part.0",
+        "read_end_monotonic": 346032.418195332,
+        "stack_id": "a3247ca0ecc5a143",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.20852,
+        "read_begin_monotonic": 346032.418213832,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.418612932,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.214926,
+        "read_begin_monotonic": 346032.423895232,
+        "name": "firecracker",
+        "state": "State:\tD (disk sleep)",
+        "wchan": "__synchronize_srcu.part.0",
+        "read_end_monotonic": 346032.424308832,
+        "stack_id": "a3247ca0ecc5a143",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.214926,
+        "read_begin_monotonic": 346032.424316832,
+        "name": "kvm-nx-lpage-re",
+        "state": "State:\tS (sleeping)",
+        "wchan": "kvm_mmu_reset_context",
+        "read_end_monotonic": 346032.424523132,
+        "stack_id": "994f2ec30e3b639d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.22329,
+        "read_begin_monotonic": 346032.432432332,
+        "name": "firecracker",
+        "state": "State:\tR (running)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.432845732,
+        "stack_id": "a730dffeb32b4c9d",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.229158,
+        "read_begin_monotonic": 346032.438184632,
+        "name": "firecracker",
+        "state": "State:\tD (disk sleep)",
+        "wchan": "rcu_barrier",
+        "read_end_monotonic": 346032.438725532,
+        "stack_id": "4b43c6a7fbd31559",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.235039,
+        "read_begin_monotonic": 346032.444065532,
+        "name": "firecracker",
+        "state": "State:\tD (disk sleep)",
+        "wchan": "rcu_barrier",
+        "read_end_monotonic": 346032.444510232,
+        "stack_id": "4b43c6a7fbd31559",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.241698,
+        "read_begin_monotonic": 346032.450619232,
+        "name": "firecracker",
+        "state": "State:\tD (disk sleep)",
+        "wchan": "rcu_barrier",
+        "read_end_monotonic": 346032.450925932,
+        "stack_id": "4b43c6a7fbd31559",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.247248,
+        "read_begin_monotonic": 346032.456216032,
+        "name": "firecracker",
+        "state": "State:\tD (disk sleep)",
+        "wchan": "rcu_barrier",
+        "read_end_monotonic": 346032.456517632,
+        "stack_id": "4b43c6a7fbd31559",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.252802,
+        "read_begin_monotonic": 346032.461835432,
+        "name": "firecracker",
+        "state": "State:\tD (disk sleep)",
+        "wchan": "rcu_barrier",
+        "read_end_monotonic": 346032.462289232,
+        "stack_id": "4b43c6a7fbd31559",
+        "phase": "outside_probed_wait"
+      },
+      {
+        "t": 0.257932,
+        "read_begin_monotonic": 346032.466951732,
+        "name": "firecracker",
+        "state": "State:\tZ (zombie)",
+        "wchan": "0",
+        "read_end_monotonic": 346032.467243032,
+        "stack_id": "e3b0c44298fc1c14",
+        "phase": "outside_probed_wait"
+      }
+    ],
+    "nonempty": 137,
+    "nonempty_by_phase": {
+      "response_wait": 1,
+      "join": 0,
+      "outside_probed_wait": 136
+    },
+    "errors": 0,
+    "empty": 12
+  }
+}

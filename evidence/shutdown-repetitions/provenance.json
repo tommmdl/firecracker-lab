@@ -1,0 +1,8 @@
+{
+  "base_commit": "bc5f2ac90daf24efd3c99e01a207bfde2956f045",
+  "planned_cases": 72,
+  "campaigns": 3,
+  "repetitions_per_arm_per_campaign": 6,
+  "cache_policy": "release-stopped-clones",
+  "method": "Sequential full four-arm campaigns, official one-second binary, host-load workers, original jailer ceilings, no injected pauses"
+}

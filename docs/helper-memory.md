@@ -98,3 +98,5 @@ python3 -m unittest discover -s tests -v
 O exportador revisa os eventos do protocolo e, depois das campanhas, confere os hashes dos clones tratados contra os registrados antes do conselho de cache. Essa leitura de integridade acontece no host, fora das medições do auxiliar. Os arquivos brutos e discos permanecem locais; a cópia pública inclui campos revisados e seus hashes, sem chaves ou endereços absolutos das stacks.
 
 Referências: [contabilidade, eventos e PSI do cgroup v2](https://docs.kernel.org/admin-guide/cgroup-v2.html), [`POSIX_FADV_DONTNEED` e persistência prévia](https://man7.org/linux/man-pages/man2/posix_fadvise.2.html).
+
+Continuação: [72 novos encerramentos sob carga](shutdown-repetitions.md), com o cache corrigido e resultados separados deste A/B.

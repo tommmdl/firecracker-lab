@@ -1,0 +1,118 @@
+{
+  "schema": 1,
+  "method": "Official ELF uprobes plus live procfs kernel stacks; no ptrace, no source patch, no injected vCPU stall",
+  "limitations": [
+    "Uprobes trap and sampling consumes CPU: durations include observer effects.",
+    "Kernel stack/status/wchan reads are sequential, not one atomic task snapshot.",
+    "Empty stacks and task-exit read errors are retained, not interpreted as no kernel activity.",
+    "Source and disassembly identify protocol stages; probes do not decode Rust channel payloads.",
+    "Capturing clean shutdowns cannot establish the historical panic cause."
+  ],
+  "runs": [
+    {
+      "run": "jailer-tuksn0jb",
+      "file": "jailer-tuksn0jb.json",
+      "sha256": "8173589e39e1039269870ba571ee1501c1b1157f630df9691cc1edf1bbc35f20",
+      "complete": true,
+      "reviewed_status": "passed",
+      "scenarios": 24,
+      "primary": false,
+      "shutdown_seconds": {
+        "half-control": {
+          "count": 6,
+          "min": 0.123362,
+          "median": 0.1453705,
+          "max": 0.280723
+        },
+        "half-trace": {
+          "count": 6,
+          "min": 0.146283,
+          "median": 0.19799899999999998,
+          "max": 0.25597
+        },
+        "boost-control": {
+          "count": 6,
+          "min": 0.116176,
+          "median": 0.154594,
+          "max": 0.234263
+        },
+        "boost-trace": {
+          "count": 6,
+          "min": 0.127824,
+          "median": 0.2076385,
+          "max": 0.30329
+        }
+      }
+    },
+    {
+      "run": "jailer-mbk7ng3x",
+      "file": "jailer-mbk7ng3x.json",
+      "sha256": "09ca4441a9f469912d6e6779cb77e5cb2413b2e8f63c1147183b4ef85f91a1ca",
+      "complete": true,
+      "reviewed_status": "passed",
+      "scenarios": 24,
+      "primary": false,
+      "shutdown_seconds": {
+        "half-control": {
+          "count": 6,
+          "min": 0.094569,
+          "median": 0.1709445,
+          "max": 0.269096
+        },
+        "half-trace": {
+          "count": 6,
+          "min": 0.125477,
+          "median": 0.2185405,
+          "max": 0.330106
+        },
+        "boost-control": {
+          "count": 6,
+          "min": 0.075894,
+          "median": 0.121357,
+          "max": 0.157667
+        },
+        "boost-trace": {
+          "count": 6,
+          "min": 0.115898,
+          "median": 0.184927,
+          "max": 0.224618
+        }
+      }
+    },
+    {
+      "run": "jailer-1ky6mv3w",
+      "file": "jailer-1ky6mv3w.json",
+      "sha256": "c462a1130171b51db2b6c289f4f04b7636b0e0e1f5adf5ee9c120cb57d24d0bf",
+      "complete": true,
+      "reviewed_status": "passed",
+      "scenarios": 24,
+      "primary": false,
+      "shutdown_seconds": {
+        "half-control": {
+          "count": 6,
+          "min": 0.09321,
+          "median": 0.12388450000000001,
+          "max": 0.16148
+        },
+        "half-trace": {
+          "count": 6,
+          "min": 0.168196,
+          "median": 0.1880365,
+          "max": 0.25855
+        },
+        "boost-control": {
+          "count": 6,
+          "min": 0.100472,
+          "median": 0.15704849999999998,
+          "max": 0.198725
+        },
+        "boost-trace": {
+          "count": 6,
+          "min": 0.093396,
+          "median": 0.17714400000000002,
+          "max": 0.296021
+        }
+      }
+    }
+  ]
+}

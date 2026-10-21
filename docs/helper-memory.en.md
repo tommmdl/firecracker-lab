@@ -98,3 +98,5 @@ python3 -m unittest discover -s tests -v
 The exporter reviews protocol events and, after the campaigns, checks treated-clone hashes against those recorded before cache advice. This host-side integrity read is outside helper measurements. Raw observations and disks remain local; public copies contain reviewed fields and digests, excluding keys and absolute kernel-stack addresses.
 
 References: [cgroup v2 accounting, events, and PSI](https://docs.kernel.org/admin-guide/cgroup-v2.html), [`POSIX_FADV_DONTNEED` and prior persistence](https://man7.org/linux/man-pages/man2/posix_fadvise.2.html).
+
+Follow-up: [72 new shutdowns under load](shutdown-repetitions.en.md), using corrected cache handling and reported separately from this A/B.

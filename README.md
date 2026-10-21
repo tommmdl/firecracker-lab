@@ -67,6 +67,8 @@ A [investigação do protocolo e das stacks do kernel](docs/vcpu-protocol.md) ac
 
 A [investigação de memória do auxiliar](docs/helper-memory.md) identificou cache de clones acumulado e adotou liberação após cada VM parada. No A/B sob carga, o pico caiu de 768 para 262,45 MiB e os eventos no teto passaram de 7.434 para zero, com os mesmos limites. Foram 24 encerramentos limpos no par, hashes preservados e 28 testes automatizados aprovados. A regressão também preserva uma falha de prontidão da API e sua correção.
 
+A [amostra ampliada sob carga](docs/shutdown-repetitions.md) acrescentou 72 encerramentos limpos e 36 capturas válidas com o cache corrigido. Os picos ficaram entre 322,23 e 326,75 MiB, sem OOM nem eventos no teto; leituras vazias, erros de coleta e pequenos incrementos de PSI continuam publicados. O panic histórico segue sem causa esclarecida.
+
 ## O que ainda falta de hardening
 
 Os [testes reais](evidence/source-build-results.json) incluem uma falha de shutdown preservada, dois boots aprovados depois da correção e dez testes de regressão. Também registram a rejeição de um fonte alterado. Foram executados localmente, sem boot no GitHub Actions.

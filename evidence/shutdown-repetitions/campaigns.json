@@ -1,0 +1,335 @@
+{
+  "planned_campaigns": 3,
+  "planned_cases_per_campaign": 24,
+  "planned_total": 72,
+  "profile": "/home/tommmdl/fc-repeat-9glo9ncx/profile.json",
+  "results": [
+    {
+      "campaign": 1,
+      "exit_code": 0,
+      "report": {
+        "run_directory": "/home/tommmdl/fc-lab/jailer-tuksn0jb",
+        "status": "passed",
+        "scenarios": [
+          [
+            "half-control-01",
+            "observed"
+          ],
+          [
+            "half-trace-01",
+            "observed"
+          ],
+          [
+            "boost-control-01",
+            "observed"
+          ],
+          [
+            "boost-trace-01",
+            "observed"
+          ],
+          [
+            "boost-trace-02",
+            "observed"
+          ],
+          [
+            "boost-control-02",
+            "observed"
+          ],
+          [
+            "half-trace-02",
+            "observed"
+          ],
+          [
+            "half-control-02",
+            "observed"
+          ],
+          [
+            "half-control-03",
+            "observed"
+          ],
+          [
+            "half-trace-03",
+            "observed"
+          ],
+          [
+            "boost-control-03",
+            "observed"
+          ],
+          [
+            "boost-trace-03",
+            "observed"
+          ],
+          [
+            "boost-trace-04",
+            "observed"
+          ],
+          [
+            "boost-control-04",
+            "observed"
+          ],
+          [
+            "half-trace-04",
+            "observed"
+          ],
+          [
+            "half-control-04",
+            "observed"
+          ],
+          [
+            "half-control-05",
+            "observed"
+          ],
+          [
+            "half-trace-05",
+            "observed"
+          ],
+          [
+            "boost-control-05",
+            "observed"
+          ],
+          [
+            "boost-trace-05",
+            "observed"
+          ],
+          [
+            "boost-trace-06",
+            "observed"
+          ],
+          [
+            "boost-control-06",
+            "observed"
+          ],
+          [
+            "half-trace-06",
+            "observed"
+          ],
+          [
+            "half-control-06",
+            "observed"
+          ]
+        ],
+        "failure": null,
+        "findings": [],
+        "exit_code": 0
+      }
+    },
+    {
+      "campaign": 2,
+      "exit_code": 0,
+      "report": {
+        "run_directory": "/home/tommmdl/fc-lab/jailer-mbk7ng3x",
+        "status": "passed",
+        "scenarios": [
+          [
+            "half-control-01",
+            "observed"
+          ],
+          [
+            "half-trace-01",
+            "observed"
+          ],
+          [
+            "boost-control-01",
+            "observed"
+          ],
+          [
+            "boost-trace-01",
+            "observed"
+          ],
+          [
+            "boost-trace-02",
+            "observed"
+          ],
+          [
+            "boost-control-02",
+            "observed"
+          ],
+          [
+            "half-trace-02",
+            "observed"
+          ],
+          [
+            "half-control-02",
+            "observed"
+          ],
+          [
+            "half-control-03",
+            "observed"
+          ],
+          [
+            "half-trace-03",
+            "observed"
+          ],
+          [
+            "boost-control-03",
+            "observed"
+          ],
+          [
+            "boost-trace-03",
+            "observed"
+          ],
+          [
+            "boost-trace-04",
+            "observed"
+          ],
+          [
+            "boost-control-04",
+            "observed"
+          ],
+          [
+            "half-trace-04",
+            "observed"
+          ],
+          [
+            "half-control-04",
+            "observed"
+          ],
+          [
+            "half-control-05",
+            "observed"
+          ],
+          [
+            "half-trace-05",
+            "observed"
+          ],
+          [
+            "boost-control-05",
+            "observed"
+          ],
+          [
+            "boost-trace-05",
+            "observed"
+          ],
+          [
+            "boost-trace-06",
+            "observed"
+          ],
+          [
+            "boost-control-06",
+            "observed"
+          ],
+          [
+            "half-trace-06",
+            "observed"
+          ],
+          [
+            "half-control-06",
+            "observed"
+          ]
+        ],
+        "failure": null,
+        "findings": [],
+        "exit_code": 0
+      }
+    },
+    {
+      "campaign": 3,
+      "exit_code": 0,
+      "report": {
+        "run_directory": "/home/tommmdl/fc-lab/jailer-1ky6mv3w",
+        "status": "passed",
+        "scenarios": [
+          [
+            "half-control-01",
+            "observed"
+          ],
+          [
+            "half-trace-01",
+            "observed"
+          ],
+          [
+            "boost-control-01",
+            "observed"
+          ],
+          [
+            "boost-trace-01",
+            "observed"
+          ],
+          [
+            "boost-trace-02",
+            "observed"
+          ],
+          [
+            "boost-control-02",
+            "observed"
+          ],
+          [
+            "half-trace-02",
+            "observed"
+          ],
+          [
+            "half-control-02",
+            "observed"
+          ],
+          [
+            "half-control-03",
+            "observed"
+          ],
+          [
+            "half-trace-03",
+            "observed"
+          ],
+          [
+            "boost-control-03",
+            "observed"
+          ],
+          [
+            "boost-trace-03",
+            "observed"
+          ],
+          [
+            "boost-trace-04",
+            "observed"
+          ],
+          [
+            "boost-control-04",
+            "observed"
+          ],
+          [
+            "half-trace-04",
+            "observed"
+          ],
+          [
+            "half-control-04",
+            "observed"
+          ],
+          [
+            "half-control-05",
+            "observed"
+          ],
+          [
+            "half-trace-05",
+            "observed"
+          ],
+          [
+            "boost-control-05",
+            "observed"
+          ],
+          [
+            "boost-trace-05",
+            "observed"
+          ],
+          [
+            "boost-trace-06",
+            "observed"
+          ],
+          [
+            "boost-control-06",
+            "observed"
+          ],
+          [
+            "half-trace-06",
+            "observed"
+          ],
+          [
+            "half-control-06",
+            "observed"
+          ]
+        ],
+        "failure": null,
+        "findings": [],
+        "exit_code": 0
+      }
+    }
+  ]
+}
