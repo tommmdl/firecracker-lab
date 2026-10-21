@@ -65,6 +65,8 @@ The [scheduler and signal investigation](docs/vcpu-scheduling.en.md) added 24 cl
 
 The [protocol and kernel-stack investigation](docs/vcpu-protocol.en.md) traces sending, channel waiting, and join in the official binary. The final campaign completed 20 clean shutdowns, with ten instrumented captures and actual futex/KVM stacks. Channel waiting reached 5.867 ms and join reached 83 µs; the historical panic remains unexplained. Setup, validator, and read failures are also published.
 
+The [helper memory investigation](docs/helper-memory.en.md) identified accumulated clone cache and adopted cache release after each VM stops. Under host load, the A/B peak fell from 768 to 262.45 MiB and limit events went from 7,434 to zero, retaining the same ceilings. The pair completed 24 clean shutdowns, preserved file hashes, and passed 28 automated tests. Regression evidence also retains an API readiness failure and its correction.
+
 ## Hardening still to do
 
 The [real test records](evidence/source-build-results.json) include a retained shutdown failure, two passing boots after the correction and ten regression tests. They also record rejection of a modified source archive. These ran locally, without a GitHub Actions boot run.

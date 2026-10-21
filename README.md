@@ -65,6 +65,8 @@ A [captura de escalonamento e sinais](docs/vcpu-scheduling.md) acrescentou 24 en
 
 A [investigação do protocolo e das stacks do kernel](docs/vcpu-protocol.md) acompanha o envio, a espera do canal e o `join` no binário oficial. A rodada final teve 20 encerramentos limpos, dez capturas instrumentadas e stacks reais em futex/KVM. A espera pelo canal chegou a 5,867 ms, e o `join`, a 83 µs; a causa do panic antigo continua aberta. Falhas de preparação, do validador e de leitura também estão publicadas.
 
+A [investigação de memória do auxiliar](docs/helper-memory.md) identificou cache de clones acumulado e adotou liberação após cada VM parada. No A/B sob carga, o pico caiu de 768 para 262,45 MiB e os eventos no teto passaram de 7.434 para zero, com os mesmos limites. Foram 24 encerramentos limpos no par, hashes preservados e 28 testes automatizados aprovados. A regressão também preserva uma falha de prontidão da API e sua correção.
+
 ## O que ainda falta de hardening
 
 Os [testes reais](evidence/source-build-results.json) incluem uma falha de shutdown preservada, dois boots aprovados depois da correção e dez testes de regressão. Também registram a rejeição de um fonte alterado. Foram executados localmente, sem boot no GitHub Actions.

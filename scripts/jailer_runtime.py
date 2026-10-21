@@ -40,3 +40,11 @@ def runtime_is_hardened(threads, uid, gid):
         )
     except (KeyError, ValueError):
         return False
+
+
+def api_filter_ready(threads):
+    """Socket existence is insufficient: observe the actual filtered API thread."""
+    return any(row.get('Name','').strip()=='fc_api'
+               and row.get('Seccomp','').strip()=='2'
+               and row.get('NoNewPrivs','').strip()=='1'
+               for row in threads.values())

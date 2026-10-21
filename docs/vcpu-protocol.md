@@ -2,6 +2,8 @@
 
 [English](vcpu-protocol.en.md) · [Escalonamento](vcpu-scheduling.md) · [Evidências](../evidence/protocol/index.json) · [Símbolos e instruções](../evidence/protocol/symbols.json)
 
+A pressão registrada aqui foi investigada na etapa seguinte: [memória do auxiliar e cache dos clones](helper-memory.md), com medições por etapa, comparação sob carga e preservação dos arquivos.
+
 A captura anterior mostrava sinais e saída das threads, mas não as etapas internas do encerramento. Agora acompanhamos o protocolo no **binário oficial v1.17.0**, com seu prazo de um segundo, e coletamos stacks do **kernel do host WSL2/KVM**. Não recompilamos nem substituímos o Firecracker pela candidata de cinco segundos.
 
 ## As etapas que procuramos

@@ -1,0 +1,64 @@
+{
+  "at": "2026-10-21T10:18:52.931712+00:00",
+  "positive_campaigns": [
+    {
+      "run": "jailer-lbymgyks",
+      "cases": 12,
+      "traces": 6,
+      "isolation_passed": true,
+      "originals_unchanged": true,
+      "no_outer_oom": true
+    },
+    {
+      "run": "jailer-3u6_dwnp",
+      "cases": 12,
+      "traces": 6,
+      "isolation_passed": true,
+      "originals_unchanged": true,
+      "no_outer_oom": true
+    },
+    {
+      "run": "jailer-qz0gtv58",
+      "cases": 12,
+      "traces": 6,
+      "isolation_passed": true,
+      "originals_unchanged": true,
+      "no_outer_oom": true
+    }
+  ],
+  "paired_executable_modules_sha256": {
+    "helper_memory.py": "1c045f9e130ec0a74b602470ba76478089f81dbdd6778569c234dd8f4dc12eed",
+    "vcpu_memory.py": "d12749dc5551441b4331406f0a021e5294eb2eb62d2794d5564b9615fb9d46cb",
+    "vcpu_protocol.py": "56245ebc7f8e07550b79822efbaff6278951982f93e034cb208883fcffdf50e7",
+    "vcpu_scheduling.py": "bff7e9fe16b7eebfa984d5e197547a6bcc8a6bb9971846717503f0beb1da8351",
+    "jailer_checks.py": "c01cccf6003921fef474452f8a128f43d00e787002c05d5caf7ec7ea26d39778",
+    "jailer_runtime.py": "60bc5e8eb7ad3bfdf4aaf92152158c85543cb91c436810c0a7813a2abf83fe38",
+    "protocol_analysis.py": "4cdcbb4883558694b775793df6b599d2dcb785f60367e6f037b18bdddcd3ba17",
+    "protocol_points.py": "d0e3becfdc29a3521a317c6a6f5ea64b91aa849b39cb3fd5a3bc3e175dd05db2",
+    "run_jailer_lab.py": "4c42dbe72bd2ca240a93c899d1691b9e1c5fa9476682df7683f122fb56710a2c"
+  },
+  "paired_profiles_only_cache_policy_differs": true,
+  "later_readiness_fix": "Exact paired jailer_checks.py and jailer_runtime.py are retained; later readiness changes were validated by the original six-scenario regression.",
+  "regression_run": "jailer-d9gm_tlp",
+  "regression_status": "passed",
+  "regression_local_memory_events": {
+    "low": 0,
+    "high": 0,
+    "max": 0,
+    "oom": 0,
+    "oom_kill": 0,
+    "oom_group_kill": 0
+  },
+  "original_sha256_final": {
+    "firecracker": "99ad0f5cd0514a88aad0e9ae8cfdb3cc3b4ab9d190e1194602406c786b5de7a5",
+    "jailer": "65ef226e96f0ceda55ba643f445801ef2cc0ea667ef67cad8ac4f406c9c8434f",
+    "vmlinux": "e816c1aa5249d7a6e3cd937e312ec235f892af75c30ebe67e34e5a3aa55d78e8",
+    "rootfs.ext4": "a6cd2a13f2e0c4e5976afe667034191c9b83bdb8a6bbfff3c3813ca35e143a52"
+  },
+  "trace_cleanup": {
+    "owned_instances": [],
+    "owned_probes": [],
+    "global_tracing_on": "1"
+  },
+  "remaining_campaign_containers": []
+}

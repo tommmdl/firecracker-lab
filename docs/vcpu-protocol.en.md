@@ -2,6 +2,8 @@
 
 [Português](vcpu-protocol.md) · [Scheduling investigation](vcpu-scheduling.en.md) · [Evidence](../evidence/protocol/index.json) · [Symbols and instructions](../evidence/protocol/symbols.json)
 
+The pressure recorded here was investigated next: [helper memory and clone cache](helper-memory.en.md), with phase measurements, host-load comparison, and retained files.
+
 The previous capture showed signals and thread exit, but not the internal shutdown stages. We now trace the **official v1.17.0 binary**, retaining its one-second deadline, and collect **host WSL2/KVM kernel** stacks. We neither rebuild Firecracker nor replace it with the five-second candidate.
 
 ## Stages under investigation

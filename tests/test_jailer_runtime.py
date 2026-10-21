@@ -34,6 +34,16 @@ class RuntimePolicyTests(unittest.TestCase):
         self.assertFalse(runtime.runtime_is_hardened(rows,65534,65534))
 
 
+class APIReadinessTests(unittest.TestCase):
+    def test_socket_created_thread_is_not_ready(self):
+        self.assertFalse(runtime.api_filter_ready({'2':{'Name':'firecracker','Seccomp':'0','NoNewPrivs':'1'}}))
+    def test_named_but_unfiltered_api_is_not_ready(self):
+        self.assertFalse(runtime.api_filter_ready({'2':{'Name':'fc_api','Seccomp':'0','NoNewPrivs':'1'}}))
+        self.assertFalse(runtime.api_filter_ready({'2':{'Name':'fc_api','Seccomp':'2','NoNewPrivs':'0'}}))
+    def test_filtered_api_is_ready(self):
+        self.assertTrue(runtime.api_filter_ready({'2':{'Name':'fc_api','Seccomp':'2','NoNewPrivs':'1'}}))
+
+
 class APIFramingTests(unittest.TestCase):
     def exchange(self,response,keep_open=False):
         with tempfile.TemporaryDirectory() as directory:

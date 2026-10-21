@@ -22,7 +22,8 @@ import uuid
 from datetime import datetime, timezone
 
 from boot_check import guest_evidence, normalize_console, digest
-from jailer_runtime import request, runtime_is_hardened
+from jailer_runtime import request, runtime_is_hardened, api_filter_ready
+from helper_memory import release_stopped_clones
 
 CG = Path('/sys/fs/cgroup')
 INPUT = Path('/inputs')
@@ -163,6 +164,22 @@ class VM:
         self.report['runtime']=observed
         return observed
 
+    def wait_api_filter(self):
+        started=time.monotonic();samples=[]
+        self.report['api_filter_readiness']={'confirmed':False,'deadline_seconds':5,'samples':samples}
+        while time.monotonic()-started<5:
+            rows={}
+            for task in Path(f'/proc/{self.pid}/task').glob('*'):
+                try:
+                    fields=status(int(task.name));rows[task.name]={k:fields[k].strip() for k in ('Name','Seccomp','NoNewPrivs')}
+                except (OSError,KeyError):continue
+            samples.append({'seconds':round(time.monotonic()-started,6),'threads':rows})
+            if api_filter_ready(rows):
+                self.report['api_filter_readiness'].update(confirmed=True,seconds=round(time.monotonic()-started,6));return
+            check(self.alive(),'VMM exited before API seccomp readiness')
+            self.capture(.01)
+        raise TimeoutError('API thread seccomp readiness deadline exceeded')
+
     def boot(self):
         for endpoint,body in [('/boot-source',{'kernel_image_path':'/vmlinux','boot_args':'console=ttyS0 reboot=k panic=1 pci=off root=/dev/vda rw init=/sbin/init'}),('/drives/rootfs',{'drive_id':'rootfs','path_on_host':'/rootfs.ext4','is_root_device':True,'is_read_only':False}),('/machine-config',{'vcpu_count':2,'mem_size_mib':256}),('/actions',{'action_type':'InstanceStart'})]:
             code,text=request(self.socket,'PUT',endpoint,body);self.expect(code==204,'API accepted '+endpoint+': '+str(code))
@@ -233,7 +250,15 @@ class VM:
         if self.cg.exists():
             self.report['final_cgroup_events']={key:kv(self.cg/key) for key in ['memory.events','pids.events','cpu.stat']}
             self.cg.rmdir()
+        self.after_stop()
         (self.directory/'result.json').write_text(json.dumps(self.report,indent=2)+'\n')
+
+    def after_stop(self):
+        policy=PROFILE.get('helper_cache_policy','retain')
+        check(policy in ('retain','release-stopped-clones'),'unknown helper cache policy')
+        if policy=='release-stopped-clones':
+            start=time.monotonic()
+            self.report['cache_release']={'files':release_stopped_clones(self.root,stopped=not self.alive()),'seconds':round(time.monotonic()-start,6)}
 
 
 def run_suite():
@@ -270,6 +295,8 @@ def run_suite():
                     vm.close();report['scenarios'].append(vm.report)
 
         def baseline(vm):
+            vm.inspect('preboot-initial')
+            vm.wait_api_filter()
             observation=vm.inspect('preboot')
             vm.report['preboot_filter_note']='VMM main seccomp is installed during InstanceStart; API thread is filtered before boot'
             vm.expect(any(t['Name']=='fc_api' and t['Seccomp']=='2' for t in observation['threads'].values()),'preboot API thread has seccomp filter')

@@ -1,0 +1,130 @@
+{
+  "schema": 1,
+  "method": "Same capped protocol matrix; retain clone cache versus fsync + DONTNEED on two stopped clone files only",
+  "limits": {
+    "outer_memory_bytes": 805306368,
+    "outer_swap_bytes": 0,
+    "outer_cpus": 2,
+    "outer_pids": 256,
+    "vm_memory_bytes": 402653184,
+    "vm_swap_bytes": 0,
+    "vm_pids": 32
+  },
+  "limitations": [
+    "Cgroup counters/stat fields are read sequentially; samples are not atomic.",
+    "memory.peak covers unsampled peaks; 100ms polling and phase markers do not capture every transient.",
+    "DONTNEED is advisory, not a guaranteed eviction or a resident-memory cap.",
+    "Page-cache charges depend on first touch and shared input history; cohorts are local observations, not a universal benchmark.",
+    "fsync/advice and optional cache-integrity checks run after VM exit, outside measured shutdown."
+  ],
+  "runs": [
+    {
+      "run": "jailer-lbymgyks",
+      "policy": "retain",
+      "raw_status": "passed",
+      "case_count": 12,
+      "trace_count": 6,
+      "observer_seconds": 89.27389,
+      "outer_memory_peak_bytes": 805306368,
+      "sampled_current_max_bytes": 805306368,
+      "end_current_bytes": 773320704,
+      "end_file_bytes": 719814656,
+      "end_anon_bytes": 31895552,
+      "event_delta": {
+        "low": 0,
+        "high": 0,
+        "max": 7891,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "pressure_total_delta_us": {
+        "some": 790211,
+        "full": 712673
+      },
+      "pressure_wall_fraction": {
+        "some": 0.008852,
+        "full": 0.007983
+      },
+      "pgscan_delta": 276800,
+      "pgscan_direct_delta": 254475,
+      "originals_unchanged": true,
+      "raw_observations_sha256": "80e661f821365b1c2f7dcac0b47de0fd00b8823de859762d44c4b616a1ca3c4b",
+      "raw_result_sha256": "89c1bf36aa537b09b665192f5c67303655299cf8ec2d7184ecc36627b448aa1d",
+      "file": "jailer-lbymgyks.json",
+      "sha256": "00bbbc01ebef24c1b99b40679ac1ef217d0ae860ab0b81b15d5042f9751b1692"
+    },
+    {
+      "run": "jailer-3u6_dwnp",
+      "policy": "retain",
+      "raw_status": "passed",
+      "case_count": 12,
+      "trace_count": 6,
+      "observer_seconds": 89.101816,
+      "outer_memory_peak_bytes": 805306368,
+      "sampled_current_max_bytes": 805306368,
+      "end_current_bytes": 773931008,
+      "end_file_bytes": 727379968,
+      "end_anon_bytes": 32485376,
+      "event_delta": {
+        "low": 0,
+        "high": 0,
+        "max": 7434,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "pressure_total_delta_us": {
+        "some": 1177182,
+        "full": 1095044
+      },
+      "pressure_wall_fraction": {
+        "some": 0.013212,
+        "full": 0.01229
+      },
+      "pgscan_delta": 274351,
+      "pgscan_direct_delta": 240016,
+      "originals_unchanged": true,
+      "raw_observations_sha256": "8dc774047d8659267db0c36736435096a698afcf63659178e9413195771477f6",
+      "raw_result_sha256": "21bbb9535a3d3c3bf10b0631422919ffc28d16b8652c9788ab2e5b2dcf462291",
+      "file": "jailer-3u6_dwnp.json",
+      "sha256": "926b800a6012725eb8d6b5e3ff5d2cfd786d0b25975243c62b6196511a16bfa1"
+    },
+    {
+      "run": "jailer-qz0gtv58",
+      "policy": "release-stopped-clones",
+      "raw_status": "passed",
+      "case_count": 12,
+      "trace_count": 6,
+      "observer_seconds": 90.37295,
+      "outer_memory_peak_bytes": 275193856,
+      "sampled_current_max_bytes": 274395136,
+      "end_current_bytes": 87187456,
+      "end_file_bytes": 51789824,
+      "end_anon_bytes": 31883264,
+      "event_delta": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "pressure_total_delta_us": {
+        "some": 0,
+        "full": 0
+      },
+      "pressure_wall_fraction": {
+        "some": 0.0,
+        "full": 0.0
+      },
+      "pgscan_delta": 0,
+      "pgscan_direct_delta": 0,
+      "originals_unchanged": true,
+      "raw_observations_sha256": "19d391f13d236abb862a50bb50244c3679194c61bc816a353616d6cac504fb4d",
+      "raw_result_sha256": "cdbbd12e091ffe1144515eb2891310f57cdabc89e7769a26176733b4da47210d",
+      "file": "jailer-qz0gtv58.json",
+      "sha256": "cc1ffe787becc67074c9f47679104e15c4b2db9431ed5c28aceb7aa2c3bee0fe"
+    }
+  ]
+}

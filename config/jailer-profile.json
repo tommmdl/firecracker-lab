@@ -13,5 +13,6 @@
   "oom_memory_max": 100663296,
   "boot_timeout": 60,
   "shutdown_timeout": 15,
-  "shutdown_cpu_max": "200000 100000"
+  "shutdown_cpu_max": "200000 100000",
+  "helper_cache_policy": "release-stopped-clones"
 }

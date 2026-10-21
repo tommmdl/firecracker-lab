@@ -19,7 +19,7 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--host-load', action='store_true', help='Bounded CPU contention on the same two host CPUs')
     parser.add_argument('--profile', help='Explicit diagnostic profile; default is the approved jailer profile')
-    parser.add_argument('--suite', choices=['jailer_checks', 'shutdown_investigation', 'vcpu_scheduling', 'vcpu_protocol'], default='jailer_checks')
+    parser.add_argument('--suite', choices=['jailer_checks', 'shutdown_investigation', 'vcpu_scheduling', 'vcpu_protocol', 'vcpu_memory'], default='jailer_checks')
     parser.add_argument('--binary-dir',required=True)
     parser.add_argument('--artifacts',required=True)
     parser.add_argument('--output-parent',required=True)
@@ -27,6 +27,7 @@ def main():
     repo=Path(__file__).resolve().parents[1]
     profile_path=Path(args.profile).resolve(strict=True) if args.profile else repo/'config/jailer-profile.json'
     profile=json.loads(profile_path.read_text())
+    if profile.get('helper_cache_policy','retain') not in ('retain','release-stopped-clones'):parser.error('Unknown helper cache policy')
     if profile.get('investigation_matrix')=='host-load' and not args.host_load:parser.error('host-load matrix requires --host-load')
     binaries=Path(args.binary_dir).resolve(strict=True)
     artifacts=Path(args.artifacts).resolve(strict=True)
