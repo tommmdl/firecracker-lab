@@ -4,6 +4,7 @@
 !/.gitattributes
 !/README.md
 !/README.en.md
+!/LICENSE
 !/config/
 !/docs/
 !/scripts/
